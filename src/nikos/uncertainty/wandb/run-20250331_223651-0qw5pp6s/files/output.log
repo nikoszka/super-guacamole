@@ -1,0 +1,14 @@
+2025-03-31 22:36:51 INFO     Finished wandb init.
+Downloading builder script: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6.47k/6.47k [00:00<?, ?B/s]
+Downloading extra modules: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11.3k/11.3k [00:00<?, ?B/s]
+Traceback (most recent call last):
+  File "C:\Users\nikos\PycharmProjects\nllSAR\src\generate_answers.py", line 263, in <module>
+    main(args)
+  File "C:\Users\nikos\PycharmProjects\nllSAR\src\generate_answers.py", line 54, in main
+    train_dataset, validation_dataset = load_ds(
+                                        ^^^^^^^^
+  File "C:\Users\nikos\PycharmProjects\nllSAR\src\data\data_utils.py", line 9, in load_ds
+    user = os.environ['USER']
+           ~~~~~~~~~~^^^^^^^^
+  File "<frozen os>", line 714, in __getitem__
+KeyError: 'USER'

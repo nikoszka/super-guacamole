@@ -1,0 +1,16 @@
+{"time":"2025-03-31T23:52:07.124302+02:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-03-31T23:52:07.124302+02:00","level":"INFO","msg":"created symlink","path":"nikos\\uncertainty\\wandb\\run-20250331_235207-g40dahc2\\logs\\debug-core.log"}
+{"time":"2025-03-31T23:52:07.2342485+02:00","level":"INFO","msg":"created new stream","id":"g40dahc2"}
+{"time":"2025-03-31T23:52:07.2342485+02:00","level":"INFO","msg":"stream: started","id":"g40dahc2"}
+{"time":"2025-03-31T23:52:07.2342485+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"g40dahc2"}
+{"time":"2025-03-31T23:52:07.2342485+02:00","level":"INFO","msg":"sender: started","stream_id":"g40dahc2"}
+{"time":"2025-03-31T23:52:07.2342485+02:00","level":"INFO","msg":"handler: started","stream_id":"g40dahc2"}
+{"time":"2025-03-31T23:52:07.6992055+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-31T23:52:16.7696076+02:00","level":"INFO","msg":"stream: closing","id":"g40dahc2"}
+{"time":"2025-03-31T23:52:16.7696076+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-31T23:52:16.7702193+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-31T23:52:17.6335125+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-31T23:52:17.9928009+02:00","level":"INFO","msg":"handler: closed","stream_id":"g40dahc2"}
+{"time":"2025-03-31T23:52:17.9928009+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"g40dahc2"}
+{"time":"2025-03-31T23:52:17.9928009+02:00","level":"INFO","msg":"sender: closed","stream_id":"g40dahc2"}
+{"time":"2025-03-31T23:52:17.9928009+02:00","level":"INFO","msg":"stream: closed","id":"g40dahc2"}

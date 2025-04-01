@@ -15,8 +15,8 @@ from transformers import StoppingCriteriaList
 from huggingface_hub import snapshot_download
 
 
-from uncertainty.models.base_model import BaseModel
-from uncertainty.models.base_model import STOP_SEQUENCES
+from models.base_model import BaseModel
+from models.base_model import STOP_SEQUENCES
 
 
 class StoppingCriteriaSub(StoppingCriteria):
@@ -104,9 +104,9 @@ class HuggingfaceModel(BaseModel):
                 kwargs = {}
                 eightbit = False
 
-            if 'Llama-2' in model_name:
+            if 'Llama-3' in model_name or 'Llama-2' in model_name:
                 base = 'meta-llama'
-                model_name = model_name + '-hf'
+                #model_name = model_name + '-hf'
             else:
                 base = 'huggyllama'
 
@@ -114,10 +114,13 @@ class HuggingfaceModel(BaseModel):
                 f"{base}/{model_name}", device_map="auto",
                 token_type_ids=None)
 
+            # Ensure "1b", "7b", and "13b" are detected in Llama-3.2 models
+            model_size = model_name.split('-')[-1].lower()  # Extract last part (e.g., "1b")
+
             llama65b = '65b' in model_name and base == 'huggyllama'
             llama2_70b = '70b' in model_name and base == 'meta-llama'
 
-            if ('7b' in model_name or '13b' in model_name) or eightbit:
+            if model_size in ['1b', '7b', '13b'] or eightbit:
                 self.model = AutoModelForCausalLM.from_pretrained(
                     f"{base}/{model_name}", device_map="auto",
                     max_memory={0: '80GIB'}, **kwargs,)
