@@ -1,0 +1,1 @@
+{"auroc_p_ik_train_test":0.6438095238095238,"_timestamp":1.7441764761558993e+09,"converged":true,"auroc_p_ik_eval":0.6765236206274793,"_step":3,"_runtime":741.5413663,"_wandb":{"runtime":744},"train_accuracy":0.3725,"auroc_p_ik_train_train":1,"acc_p_ik_train_train":1,"n_iter":74,"acc_p_ik_train_test":0.625,"validation_accuracy":0.295,"acc_p_ik_eval":0.6675,"len_p_true":19}

@@ -106,7 +106,7 @@ class HuggingfaceModel(BaseModel):
 
             if 'Llama-3' in model_name or 'Llama-2' in model_name:
                 base = 'meta-llama'
-                #model_name = model_name + '-hf'
+                model_name = model_name
             else:
                 base = 'huggyllama'
 
@@ -114,13 +114,17 @@ class HuggingfaceModel(BaseModel):
                 f"{base}/{model_name}", device_map="auto",
                 token_type_ids=None)
 
-            # Ensure "1b", "7b", and "13b" are detected in Llama-3.2 models
-            model_size = model_name.split('-')[-1].lower()  # Extract last part (e.g., "1b")
+            # Remove "-hf" if it appears at the end of the model name
+            if model_name.endswith('-hf'):
+                model_name_without_hf = model_name.rsplit('-hf', 1)[0]
+                # Extract model size (e.g., "1b", "7b", "13b")
+                model_size = model_name_without_hf.split('-')[-1].lower()
 
+            model_size = model_name.split('-')[-1].lower()
             llama65b = '65b' in model_name and base == 'huggyllama'
             llama2_70b = '70b' in model_name and base == 'meta-llama'
-
-            if model_size in ['1b', '7b', '13b'] or eightbit:
+            print("Initializing model: ", model_name + " and base:", base)
+            if model_size in ['1b', '7b','8b', '13b'] or eightbit:
                 self.model = AutoModelForCausalLM.from_pretrained(
                     f"{base}/{model_name}", device_map="auto",
                     max_memory={0: '80GIB'}, **kwargs,)
@@ -228,7 +232,7 @@ class HuggingfaceModel(BaseModel):
                 output_scores=True,
                 output_hidden_states=True,
                 temperature=temperature,
-                do_sample=True,
+                do_sample=False,
                 stopping_criteria=stopping_criteria,
                 pad_token_id=pad_token_id,
             )
@@ -244,14 +248,54 @@ class HuggingfaceModel(BaseModel):
         if return_full:
             return full_answer
 
+        '''
+        # Get the input data length.
         # For some models, we need to remove the input_data from the answer.
         if full_answer.startswith(input_data):
             input_data_offset = len(input_data)
         else:
+            answer = full_answer
+            print("Answer before value error:" + answer)
             raise ValueError('Have not tested this in a while.')
+        
 
         # Remove input from answer.
         answer = full_answer[input_data_offset:]
+        '''
+
+        answer = None
+        if full_answer.startswith(input_data):
+            input_data_offset = len(input_data)
+            answer = full_answer[input_data_offset:].strip()
+            logging.warning("⚠️ Model returned! ⚠️")
+            logging.warning(f"🔹 input_data: {repr(input_data)}")
+            logging.warning(f"🔹 full_answer: {repr(full_answer)}")
+
+            if not answer:
+                logging.warning("⚠️ Model returned only the input, no new answer provided! ⚠️")
+                logging.warning(f"🔹 input_data: {repr(input_data)}")
+                logging.warning(f"🔹 full_answer: {repr(full_answer)}")
+                answer = full_answer.strip()
+
+        else:
+            input_data_offset = len(input_data)
+            answer = full_answer[input_data_offset:].strip()
+            # Try fuzzy match (e.g., in LLaMA or if whitespace/punctuation differs)
+            logging.warning("⚠️ input_data not at the beginning of full_answer! Attempting fallback slicing... ⚠️")
+            logging.warning(f"🔹 input_data: {repr(input_data)}")
+            logging.warning(f"🔹 full_answer: {repr(full_answer)}")
+            logging.warning(f"🔹 Answer: {repr(answer)}")
+
+
+            # Try locating the last occurrence of 'Answer:' and slicing after it
+            last_answer_idx = full_answer.lower().rfind('answer:')
+            if last_answer_idx != -1:
+                answer = full_answer[last_answer_idx + len('answer:'):].strip()
+                logging.info(f"✅ Fallback extracted answer: {repr(answer)}")
+            else:
+                # As a last resort, return the full output
+                answer = full_answer.strip()
+                logging.warning("⚠️ Could not find 'Answer:' – using entire model output.")
 
         # Remove stop_words from answer.
         stop_at = len(answer)

@@ -197,12 +197,18 @@ def main(args):
                     logging.info('correct answer: '.ljust(15) + str(correct_answer))
                     logging.info('accuracy: '.ljust(15) + str(acc))
 
+                    sequence_nll = -sum(token_log_likelihoods)  # negative log likelihood of whole sequence
+                    sequence_prob = np.exp(-sequence_nll)  # sequence probability
+
                     accuracies.append(acc)
                     most_likely_answer_dict = {
                         'response': predicted_answer,
                         'token_log_likelihoods': token_log_likelihoods,
+                        'sequence_nll': seqgiuence_nll,
+                        'sequence_prob': sequence_prob,
                         'embedding': embedding,
-                        'accuracy': acc}
+                        'accuracy': acc
+                    }
                     generations[example['id']].update({
                         'most_likely_answer': most_likely_answer_dict,
                         'reference': utils.get_reference(example)})

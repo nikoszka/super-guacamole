@@ -5,6 +5,7 @@ import os
 import pickle
 import numpy as np
 import wandb
+import tqdm
 
 from analyze_results import analyze_run
 from data.data_utils import load_ds
@@ -34,7 +35,7 @@ def main(args):
     if args.train_wandb_runid is None:
         args.train_wandb_runid = args.eval_wandb_runid
 
-    user = os.environ['USER']
+    user = os.environ.get('USER') or os.environ.get('USERNAME')
     scratch_dir = os.getenv('SCRATCH_DIR', '.')
     wandb_dir = f'{scratch_dir}/{user}/uncertainty'
     slurm_jobid = os.getenv('SLURM_JOB_ID', None)

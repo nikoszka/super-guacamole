@@ -1,0 +1,16 @@
+{"time":"2025-04-08T21:39:17.3306918+02:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-04-08T21:39:17.3306918+02:00","level":"INFO","msg":"created symlink","path":"nikos\\uncertainty\\wandb\\run-20250408_213917-jbfy72i7\\logs\\debug-core.log"}
+{"time":"2025-04-08T21:39:17.6178002+02:00","level":"INFO","msg":"created new stream","id":"jbfy72i7"}
+{"time":"2025-04-08T21:39:17.6178002+02:00","level":"INFO","msg":"stream: started","id":"jbfy72i7"}
+{"time":"2025-04-08T21:39:17.6178002+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"jbfy72i7"}
+{"time":"2025-04-08T21:39:17.6178002+02:00","level":"INFO","msg":"sender: started","stream_id":"jbfy72i7"}
+{"time":"2025-04-08T21:39:17.6178002+02:00","level":"INFO","msg":"handler: started","stream_id":"jbfy72i7"}
+{"time":"2025-04-08T21:39:18.0089439+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-08T22:46:52.1506343+02:00","level":"INFO","msg":"stream: closing","id":"jbfy72i7"}
+{"time":"2025-04-08T22:46:52.1506343+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-08T22:46:52.1518711+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-08T22:46:59.2345929+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-08T22:46:59.5668542+02:00","level":"INFO","msg":"sender: closed","stream_id":"jbfy72i7"}
+{"time":"2025-04-08T22:46:59.5668542+02:00","level":"INFO","msg":"handler: closed","stream_id":"jbfy72i7"}
+{"time":"2025-04-08T22:46:59.5668542+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"jbfy72i7"}
+{"time":"2025-04-08T22:46:59.5668542+02:00","level":"INFO","msg":"stream: closed","id":"jbfy72i7"}
