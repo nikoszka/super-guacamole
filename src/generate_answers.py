@@ -204,7 +204,7 @@ def main(args):
                     most_likely_answer_dict = {
                         'response': predicted_answer,
                         'token_log_likelihoods': token_log_likelihoods,
-                        'sequence_nll': seqgiuence_nll,
+                        'sequence_nll': sequence_nll,
                         'sequence_prob': sequence_prob,
                         'embedding': embedding,
                         'accuracy': acc
