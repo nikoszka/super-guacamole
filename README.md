@@ -13,7 +13,8 @@ Modern LLMs are powerful but inherently uncertain in their outputs. Understandin
 - Use and evaluate uncertainty estimation metrics like:
   - **Negative Log-Likelihood (NLL)**
   - **Entropy-based methods**
-  - **Semantic Answer Rating (SAR)**
+  - **Semantic Entropy**
+  - **Shifting Attention to Relevance (SAR)**
 - Explore how uncertainty correlates with downstream task performance and human-perceived quality
 - Propose or evaluate methods to *reduce* or *calibrate* uncertainty in LLM predictions
 
