@@ -45,10 +45,13 @@ Modern LLMs are powerful but inherently uncertain in their outputs. Understandin
 - **Negative Log-Likelihood (NLL)**  
   Measures the likelihood of the model output under its predicted distribution.
 
-- **Semantic Answer Rating (SAR)**  
+- **Semantic Uncertainty**  
   A proposed or adopted metric to score semantic quality and alignment with expected meaning.
 
 - **Entropy & Token-wise Variance**  
   Estimates uncertainty from the output distribution of tokens.
+  
+- **Shifting Attention to Relevance (SAR)**  
+  A metric designed to evaluate the **semantic alignment and focus** of LLM responses. SAR quantifies how much the model’s attention shifts toward **relevant** content in relation to the prompt or task, capturing deeper semantic uncertainty.
 
 
