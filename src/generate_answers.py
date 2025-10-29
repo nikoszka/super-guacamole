@@ -174,8 +174,8 @@ def main(args):
 
             for i in range(num_generations):
 
-                # Temperature for first generation is always `0.1`.
-                temperature = 0.1 if i == 0 else args.temperature
+                # Use the specified temperature for all generations
+                temperature = args.temperature
 
                 predicted_answer, token_log_likelihoods, embedding = model.predict(
                     local_prompt, temperature)

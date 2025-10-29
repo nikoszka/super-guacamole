@@ -225,17 +225,31 @@ class HuggingfaceModel(BaseModel):
 
         logging.debug('temperature: %f', temperature)
         with torch.no_grad():
-            outputs = self.model.generate(
-                **inputs,
-                max_new_tokens=self.max_new_tokens,
-                return_dict_in_generate=True,
-                output_scores=True,
-                output_hidden_states=True,
-                temperature=temperature,
-                do_sample=False,
-                stopping_criteria=stopping_criteria,
-                pad_token_id=pad_token_id,
-            )
+            # For greedy decoding (temperature=0), use do_sample=True with top_p=1.0
+            if temperature == 0.0:
+                outputs = self.model.generate(
+                    **inputs,
+                    max_new_tokens=self.max_new_tokens,
+                    return_dict_in_generate=True,
+                    output_scores=True,
+                    output_hidden_states=True,
+                    do_sample=True,
+                    top_p=1.0,
+                    stopping_criteria=stopping_criteria,
+                    pad_token_id=pad_token_id,
+                )
+            else:
+                outputs = self.model.generate(
+                    **inputs,
+                    max_new_tokens=self.max_new_tokens,
+                    return_dict_in_generate=True,
+                    output_scores=True,
+                    output_hidden_states=True,
+                    temperature=temperature,
+                    do_sample=True,
+                    stopping_criteria=stopping_criteria,
+                    pad_token_id=pad_token_id,
+                )
 
         if len(outputs.sequences[0]) > self.token_limit:
             raise ValueError(

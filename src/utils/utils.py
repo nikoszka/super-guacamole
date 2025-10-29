@@ -12,8 +12,10 @@ from models.huggingface_models import HuggingfaceModel
 from utils import openai as oai
 
 BRIEF_PROMPTS = {
-    'default': "Answer the following question as briefly as possible.\n",
-    'chat': 'Answer the following question in a single brief but complete sentence.\n'}
+    'default': "Answer the following question in a complete sentence.\n",
+    'chat': 'Answer the following question in a single complete sentence.\n',
+    'sentence': 'Answer the following question in a complete, informative sentence.\n',
+    'detailed': 'Provide a detailed, well-structured answer to the following question. Write your response as a complete sentence that thoroughly addresses the question.\n'}
 
 
 def get_parser(stages=['generate', 'compute']):
@@ -41,7 +43,7 @@ def get_parser(stages=['generate', 'compute']):
             "--model_name", type=str, default="Llama-2-7b-chat", help="Model name",
         )
         parser.add_argument(
-            "--model_max_new_tokens", type=int, default=50,
+            "--model_max_new_tokens", type=int, default=150,
             help="Max number of tokens generated.",
         )
         parser.add_argument(
@@ -66,11 +68,11 @@ def get_parser(stages=['generate', 'compute']):
             action=argparse.BooleanOptionalAction,
             help="Get generations for training set?")
         parser.add_argument(
-            "--num_generations", type=int, default=10,
-            help="Number of generations to use")
+            "--num_generations", type=int, default=1,
+            help="Number of generations to use for creating distributions over sentences")
         parser.add_argument(
-            "--temperature", type=float, default=1.0,
-            help="Temperature")
+            "--temperature", type=float, default=0.0,
+            help="Temperature (0.0 for greedy decoding)")
         parser.add_argument(
             "--use_mc_options", type=bool, default=True,
             help="Include MC options question?")
@@ -95,7 +97,9 @@ def get_parser(stages=['generate', 'compute']):
         parser.add_argument(
             "--enable_brief", default=True, action=argparse.BooleanOptionalAction)
         parser.add_argument(
-            "--brief_prompt", default='default', type=str)
+            "--brief_prompt", default='detailed', type=str, 
+            choices=['default', 'chat', 'sentence', 'detailed'],
+            help="Type of brief prompt to use for answer generation")
         parser.add_argument(
             "--prompt_type", default='default', type=str)
         parser.add_argument(
