@@ -1,5 +1,6 @@
 """Compute uncertainty measures after generating answers."""
 from collections import defaultdict
+import glob
 import logging
 import os
 import pickle
@@ -61,8 +62,37 @@ def main(args):
         )
 
         def restore(filename):
-            old_run.file(filename).download(
-                replace=True, exist_ok=False, root=wandb.run.dir)
+            # First, try to find the file locally in the old run's directory
+            # Wandb stores files in: wandb_dir/run-<timestamp>-<runid>/files/
+            local_run_dir = f'{wandb_dir}/run-*-{args.eval_wandb_runid}'
+            matching_dirs = glob.glob(local_run_dir)
+            
+            if matching_dirs:
+                local_file_path = f'{matching_dirs[0]}/files/{filename}'
+                if os.path.exists(local_file_path):
+                    logging.info(f'Found {filename} locally at {local_file_path}')
+                    class Restored:
+                        name = local_file_path
+                    return Restored
+            
+            # If not found locally, try to download from wandb
+            try:
+                old_run.file(filename).download(
+                    replace=True, exist_ok=False, root=wandb.run.dir)
+            except Exception as e:
+                # If download fails, try to find it in any local run directory
+                all_run_dirs = glob.glob(f'{wandb_dir}/run-*')
+                for run_dir in all_run_dirs:
+                    potential_file = f'{run_dir}/files/{filename}'
+                    if os.path.exists(potential_file):
+                        logging.info(f'Found {filename} in local run directory: {potential_file}')
+                        class Restored:
+                            name = potential_file
+                        return Restored
+                
+                # If still not found, raise the original error
+                logging.error(f'Failed to download {filename} from wandb and not found locally')
+                raise
 
             class Restored:
                 name = f'{wandb.run.dir}/{filename}'
