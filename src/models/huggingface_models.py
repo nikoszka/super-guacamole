@@ -125,6 +125,12 @@ class HuggingfaceModel(BaseModel):
             llama70b = '70b' in model_name.lower() and base == 'meta-llama'
             print("Initializing model: ", model_name + " and base:", base)
             if model_size in ['1b', '7b','8b', '13b'] or eightbit:
+                # Use device_map="auto" which automatically distributes across all available GPUs
+                # accelerate library will handle multi-GPU distribution automatically
+                import torch
+                num_gpus = torch.cuda.device_count()
+                if num_gpus > 1:
+                    logging.info(f'Using device_map="auto" - will distribute across {num_gpus} GPU(s)')
                 self.model = AutoModelForCausalLM.from_pretrained(
                     f"{base}/{model_name}", device_map="auto",
                     max_memory={0: '80GIB'}, **kwargs,)
@@ -142,7 +148,11 @@ class HuggingfaceModel(BaseModel):
                         **{k: v for k, v in kwargs.items() if k != 'quantization_config'}
                     )
                 else:
-                    # Original multi-GPU loading path (requires multiple GPUs)
+                    # Multi-GPU loading path (automatically uses all available GPUs)
+                    import torch
+                    num_gpus = torch.cuda.device_count()
+                    logging.info(f'Detected {num_gpus} GPU(s) for model loading')
+                    
                     path = snapshot_download(
                         repo_id=f'{base}/{model_name}',
                         allow_patterns=['*.json', '*.model', '*.safetensors'],
@@ -154,14 +164,21 @@ class HuggingfaceModel(BaseModel):
                     self.model.tie_weights()
                     max_mem = 15 * 4686198491
 
+                    # Configure max_memory for all available GPUs
+                    # Each GPU gets equal memory allocation
+                    max_memory_dict = {i: max_mem for i in range(num_gpus)}
+                    logging.info(f'Distributing model across {num_gpus} GPU(s) with max_memory: {max_memory_dict}')
+
                     device_map = accelerate.infer_auto_device_map(
                         self.model.model,
-                        max_memory={0: max_mem, 1: max_mem},
+                        max_memory=max_memory_dict,
                         dtype='float16'
                     )
                     device_map = remove_split_layer(device_map)
                     full_model_device_map = {f"model.{k}": v for k, v in device_map.items()}
                     full_model_device_map["lm_head"] = 0
+
+                    logging.info(f'Device map: {full_model_device_map}')
 
                     self.model = accelerate.load_checkpoint_and_dispatch(
                         self.model, path, device_map=full_model_device_map,
