@@ -1,6 +1,7 @@
 """Implement HuggingfaceModel models."""
 import copy
 import logging
+import os
 from collections import Counter
 import torch
 
@@ -17,6 +18,38 @@ from huggingface_hub import snapshot_download
 
 from models.base_model import BaseModel
 from models.base_model import STOP_SEQUENCES
+
+
+def get_hf_cache_dir():
+    """Get HuggingFace model cache directory from environment variable or default.
+    
+    Priority order:
+    1. HF_MODELS_CACHE (custom environment variable - direct model cache path)
+    2. TRANSFORMERS_CACHE (standard transformers environment variable - direct model cache path)
+    3. HF_HOME (standard HuggingFace environment variable - base directory, models in hub/)
+    4. Default HuggingFace cache location (~/.cache/huggingface/hub)
+    
+    Note: HF_HOME is the base directory for all HuggingFace data. Models are stored in HF_HOME/hub/
+    HF_MODELS_CACHE and TRANSFORMERS_CACHE are direct paths to the model cache.
+    
+    Returns:
+        str: Path to cache directory, or None to use default
+    """
+    # Check for direct cache directory variables first
+    cache_dir = os.getenv('HF_MODELS_CACHE') or os.getenv('TRANSFORMERS_CACHE')
+    
+    # If not set, check HF_HOME (base directory, models go in hub/)
+    if not cache_dir:
+        hf_home = os.getenv('HF_HOME')
+        if hf_home:
+            cache_dir = os.path.join(hf_home, 'hub')
+    
+    if cache_dir:
+        logging.info(f'Using HuggingFace model cache directory: {cache_dir}')
+    else:
+        logging.info('Using default HuggingFace cache directory (~/.cache/huggingface/hub). '
+                    'Set HF_MODELS_CACHE, TRANSFORMERS_CACHE, or HF_HOME to customize.')
+    return cache_dir
 
 
 class StoppingCriteriaSub(StoppingCriteria):
@@ -85,13 +118,28 @@ def remove_split_layer(device_map_in):
 class HuggingfaceModel(BaseModel):
     """Hugging Face Model."""
 
-    def __init__(self, model_name, stop_sequences=None, max_new_tokens=None):
+    def __init__(self, model_name, stop_sequences=None, max_new_tokens=None, cache_dir=None):
+        """Initialize HuggingFace model.
+        
+        Args:
+            model_name: Name of the model to load
+            stop_sequences: Sequences that stop generation
+            max_new_tokens: Maximum number of new tokens to generate
+            cache_dir: Custom cache directory for models (optional).
+                      If None, uses environment variables HF_MODELS_CACHE, HF_HOME, or TRANSFORMERS_CACHE.
+                      If still None, uses default HuggingFace cache location.
+        """
         if max_new_tokens is None:
             raise
         self.max_new_tokens = max_new_tokens
 
         if stop_sequences == 'default':
             stop_sequences = STOP_SEQUENCES
+
+        # Get cache directory: parameter > environment variable > default
+        if cache_dir is None:
+            cache_dir = get_hf_cache_dir()
+        self.cache_dir = cache_dir
 
         if 'llama' in model_name.lower():
 
@@ -112,7 +160,7 @@ class HuggingfaceModel(BaseModel):
 
             self.tokenizer = AutoTokenizer.from_pretrained(
                 f"{base}/{model_name}", device_map="auto",
-                token_type_ids=None)
+                token_type_ids=None, cache_dir=self.cache_dir)
 
             # Remove "-hf" if it appears at the end of the model name
             if model_name.endswith('-hf'):
@@ -133,7 +181,7 @@ class HuggingfaceModel(BaseModel):
                     logging.info(f'Using device_map="auto" - will distribute across {num_gpus} GPU(s)')
                 self.model = AutoModelForCausalLM.from_pretrained(
                     f"{base}/{model_name}", device_map="auto",
-                    max_memory={0: '80GIB'}, **kwargs,)
+                    max_memory={0: '80GIB'}, cache_dir=self.cache_dir, **kwargs,)
 
             elif llama70b or llama65b:
                 # For 70B models, use quantization if requested (via -8bit suffix)
@@ -145,6 +193,7 @@ class HuggingfaceModel(BaseModel):
                         device_map="auto",
                         quantization_config=kwargs.get('quantization_config'),
                         max_memory={0: '8GIB'},  # Limit to 8GB per GPU
+                        cache_dir=self.cache_dir,
                         **{k: v for k, v in kwargs.items() if k != 'quantization_config'}
                     )
                 else:
@@ -156,9 +205,10 @@ class HuggingfaceModel(BaseModel):
                     path = snapshot_download(
                         repo_id=f'{base}/{model_name}',
                         allow_patterns=['*.json', '*.model', '*.safetensors'],
-                        ignore_patterns=['pytorch_model.bin.index.json']
+                        ignore_patterns=['pytorch_model.bin.index.json'],
+                        cache_dir=self.cache_dir
                     )
-                    config = AutoConfig.from_pretrained(f"{base}/{model_name}")
+                    config = AutoConfig.from_pretrained(f"{base}/{model_name}", cache_dir=self.cache_dir)
                     with accelerate.init_empty_weights():
                         self.model = AutoModelForCausalLM.from_config(config)
                     self.model.tie_weights()
@@ -202,12 +252,13 @@ class HuggingfaceModel(BaseModel):
             model_id = f'mistralai/{model_name}'
             self.tokenizer = AutoTokenizer.from_pretrained(
                 model_id, device_map='auto', token_type_ids=None,
-                clean_up_tokenization_spaces=False)
+                clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
 
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_id,
                 device_map='auto',
                 max_memory={0: '80GIB'},
+                cache_dir=self.cache_dir,
                 **kwargs,
             )
 
@@ -215,10 +266,11 @@ class HuggingfaceModel(BaseModel):
             model_id = f'tiiuae/{model_name}'
             self.tokenizer = AutoTokenizer.from_pretrained(
                 model_id, device_map='auto', token_type_ids=None,
-                clean_up_tokenization_spaces=False)
+                clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
 
             kwargs = {'quantization_config': BitsAndBytesConfig(
-                load_in_8bit=True,)}
+                load_in_8bit=True,),
+                'cache_dir': self.cache_dir}
 
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_id,
