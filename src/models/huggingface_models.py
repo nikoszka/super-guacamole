@@ -52,6 +52,39 @@ def get_hf_cache_dir():
     return cache_dir
 
 
+def get_gpu_memory_dict():
+    """Get max_memory dictionary for all available GPUs.
+    
+    Automatically detects GPU memory capacity and creates a max_memory dictionary
+    that can be used with device_map="auto" to distribute models across all GPUs.
+    
+    Returns:
+        dict: Dictionary mapping GPU index to available memory string (e.g., {0: '10GiB', 1: '10GiB'})
+              Returns None if CUDA is not available
+    """
+    import torch
+    if not torch.cuda.is_available():
+        return None
+    
+    num_gpus = torch.cuda.device_count()
+    if num_gpus == 0:
+        return None
+    
+    max_memory = {}
+    
+    for i in range(num_gpus):
+        # Get GPU memory capacity in bytes
+        total_memory_bytes = torch.cuda.get_device_properties(i).total_memory
+        # Convert to GB
+        total_memory_gb = total_memory_bytes / (1024**3)
+        # Reserve ~500MB for system overhead, use rest for model
+        # Use at least 1GB to avoid issues
+        available_memory_gb = max(1, int(total_memory_gb - 0.5))
+        max_memory[i] = f'{available_memory_gb}GiB'
+    
+    return max_memory
+
+
 class StoppingCriteriaSub(StoppingCriteria):
     """Stop generations when they match a particular text or token."""
     def __init__(self, stops, tokenizer, match_on='text', initial_length=None):
@@ -177,22 +210,35 @@ class HuggingfaceModel(BaseModel):
                 # accelerate library will handle multi-GPU distribution automatically
                 import torch
                 num_gpus = torch.cuda.device_count()
+                
+                # Get max_memory for all GPUs to enable proper multi-GPU distribution
+                max_memory_dict = get_gpu_memory_dict()
                 if num_gpus > 1:
                     logging.info(f'Using device_map="auto" - will distribute across {num_gpus} GPU(s)')
+                    if max_memory_dict:
+                        logging.info(f'Max memory per GPU: {max_memory_dict}')
+                
                 self.model = AutoModelForCausalLM.from_pretrained(
                     f"{base}/{model_name}", device_map="auto",
-                    max_memory={0: '80GIB'}, cache_dir=self.cache_dir, **kwargs,)
+                    max_memory=max_memory_dict if max_memory_dict else None,
+                    cache_dir=self.cache_dir, **kwargs,)
 
             elif llama70b or llama65b:
                 # For 70B models, use quantization if requested (via -8bit suffix)
                 if eightbit:
                     # Load with 8-bit quantization for memory efficiency
                     logging.warning('Loading 70B model with 8-bit quantization. This may still require significant GPU memory.')
+                    
+                    # Get max_memory for all GPUs to enable proper multi-GPU distribution
+                    max_memory_dict = get_gpu_memory_dict()
+                    if max_memory_dict:
+                        logging.info(f'Using max_memory per GPU for quantized model: {max_memory_dict}')
+                    
                     self.model = AutoModelForCausalLM.from_pretrained(
                         f"{base}/{model_name}", 
                         device_map="auto",
                         quantization_config=kwargs.get('quantization_config'),
-                        max_memory={0: '8GIB'},  # Limit to 8GB per GPU
+                        max_memory=max_memory_dict if max_memory_dict else {0: '8GIB'},  # Limit per GPU based on actual GPU capacity
                         cache_dir=self.cache_dir,
                         **{k: v for k, v in kwargs.items() if k != 'quantization_config'}
                     )
@@ -254,10 +300,12 @@ class HuggingfaceModel(BaseModel):
                 model_id, device_map='auto', token_type_ids=None,
                 clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
 
+            # Get max_memory for all GPUs to enable proper multi-GPU distribution
+            max_memory_dict = get_gpu_memory_dict()
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_id,
                 device_map='auto',
-                max_memory={0: '80GIB'},
+                max_memory=max_memory_dict if max_memory_dict else {0: '80GIB'},
                 cache_dir=self.cache_dir,
                 **kwargs,
             )
