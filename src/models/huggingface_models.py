@@ -104,7 +104,7 @@ class HuggingfaceModel(BaseModel):
                 kwargs = {}
                 eightbit = False
 
-            if 'Llama-3' in model_name or 'Llama-2' in model_name:
+            if 'Llama-3' in model_name or 'Llama-3.1' in model_name or 'Meta-Llama-3' in model_name or 'Llama-2' in model_name:
                 base = 'meta-llama'
                 model_name = model_name
             else:
@@ -122,37 +122,50 @@ class HuggingfaceModel(BaseModel):
 
             model_size = model_name.split('-')[-1].lower()
             llama65b = '65b' in model_name and base == 'huggyllama'
-            llama2_70b = '70b' in model_name and base == 'meta-llama'
+            llama70b = '70b' in model_name.lower() and base == 'meta-llama'
             print("Initializing model: ", model_name + " and base:", base)
             if model_size in ['1b', '7b','8b', '13b'] or eightbit:
                 self.model = AutoModelForCausalLM.from_pretrained(
                     f"{base}/{model_name}", device_map="auto",
                     max_memory={0: '80GIB'}, **kwargs,)
 
-            elif llama2_70b or llama65b:
-                path = snapshot_download(
-                    repo_id=f'{base}/{model_name}',
-                    allow_patterns=['*.json', '*.model', '*.safetensors'],
-                    ignore_patterns=['pytorch_model.bin.index.json']
-                )
-                config = AutoConfig.from_pretrained(f"{base}/{model_name}")
-                with accelerate.init_empty_weights():
-                    self.model = AutoModelForCausalLM.from_config(config)
-                self.model.tie_weights()
-                max_mem = 15 * 4686198491
+            elif llama70b or llama65b:
+                # For 70B models, use quantization if requested (via -8bit suffix)
+                if eightbit:
+                    # Load with 8-bit quantization for memory efficiency
+                    logging.warning('Loading 70B model with 8-bit quantization. This may still require significant GPU memory.')
+                    self.model = AutoModelForCausalLM.from_pretrained(
+                        f"{base}/{model_name}", 
+                        device_map="auto",
+                        quantization_config=kwargs.get('quantization_config'),
+                        max_memory={0: '8GIB'},  # Limit to 8GB per GPU
+                        **{k: v for k, v in kwargs.items() if k != 'quantization_config'}
+                    )
+                else:
+                    # Original multi-GPU loading path (requires multiple GPUs)
+                    path = snapshot_download(
+                        repo_id=f'{base}/{model_name}',
+                        allow_patterns=['*.json', '*.model', '*.safetensors'],
+                        ignore_patterns=['pytorch_model.bin.index.json']
+                    )
+                    config = AutoConfig.from_pretrained(f"{base}/{model_name}")
+                    with accelerate.init_empty_weights():
+                        self.model = AutoModelForCausalLM.from_config(config)
+                    self.model.tie_weights()
+                    max_mem = 15 * 4686198491
 
-                device_map = accelerate.infer_auto_device_map(
-                    self.model.model,
-                    max_memory={0: max_mem, 1: max_mem},
-                    dtype='float16'
-                )
-                device_map = remove_split_layer(device_map)
-                full_model_device_map = {f"model.{k}": v for k, v in device_map.items()}
-                full_model_device_map["lm_head"] = 0
+                    device_map = accelerate.infer_auto_device_map(
+                        self.model.model,
+                        max_memory={0: max_mem, 1: max_mem},
+                        dtype='float16'
+                    )
+                    device_map = remove_split_layer(device_map)
+                    full_model_device_map = {f"model.{k}": v for k, v in device_map.items()}
+                    full_model_device_map["lm_head"] = 0
 
-                self.model = accelerate.load_checkpoint_and_dispatch(
-                    self.model, path, device_map=full_model_device_map,
-                    dtype='float16', skip_keys='past_key_values')
+                    self.model = accelerate.load_checkpoint_and_dispatch(
+                        self.model, path, device_map=full_model_device_map,
+                        dtype='float16', skip_keys='past_key_values')
             else:
                 raise ValueError
 
@@ -201,9 +214,28 @@ class HuggingfaceModel(BaseModel):
 
         self.model_name = model_name
         self.stop_sequences = stop_sequences + [self.tokenizer.eos_token]
-        self.token_limit = 4096 if 'Llama-2' in model_name else 2048
+        # Set token limit based on model capabilities
+        if 'Llama-2' in model_name:
+            self.token_limit = 4096
+        elif 'Llama-3' in model_name or 'Llama-3.1' in model_name or 'Meta-Llama-3' in model_name:
+            # Llama-3 models support 8192 tokens, but use 4096 for safety
+            self.token_limit = 4096
+        else:
+            self.token_limit = 2048
 
     def predict(self, input_data, temperature, return_full=False):
+
+        # Truncate input if it's too long (keep the end which contains the question)
+        input_tokens = self.tokenizer.encode(input_data)
+        max_input_tokens = self.token_limit - self.max_new_tokens - 50  # Reserve space for generation + buffer
+        
+        if len(input_tokens) > max_input_tokens:
+            # Truncate from the beginning, keeping the end
+            truncated_tokens = input_tokens[-max_input_tokens:]
+            input_data = self.tokenizer.decode(truncated_tokens, skip_special_tokens=False)
+            logging.warning(
+                'Input truncated from %d to %d tokens to fit within limit',
+                len(input_tokens), max_input_tokens)
 
         # Implement prediction.
         inputs = self.tokenizer(input_data, return_tensors="pt").to("cuda")

@@ -1,0 +1,73 @@
+{
+  "os":  "Windows-11-10.0.26200-SP0",
+  "python":  "3.12.7",
+  "startedAt":  "2025-11-04T20:29:35.087511Z",
+  "args":  [
+    "--model_name",
+    "Llama-3.2-1B",
+    "--dataset",
+    "trivia_qa",
+    "--num_samples",
+    "100",
+    "--num_few_shot",
+    "5",
+    "--temperature",
+    "0.0",
+    "--num_generations",
+    "1",
+    "--brief_prompt",
+    "detailed",
+    "--enable_brief",
+    "--brief_always",
+    "--no-compute_uncertainties",
+    "--no-compute_p_true",
+    "--no-get_training_set_generations",
+    "--use_context",
+    "--metric",
+    "llm_llama-3-70b",
+    "--entity",
+    "nikosteam",
+    "--project",
+    "super_guacamole",
+    "--experiment_lot",
+    "greedy_sentences_20251104_212927"
+  ],
+  "program":  "C:\\Users\\nikos\\PycharmProjects\\nllSAR\\src\\generate_answers.py",
+  "codePath":  "src\\generate_answers.py",
+  "git":  {
+    "remote":  "https://github.com/nikoszka/super-guacamole.git",
+    "commit":  "dd9c791321d66d8e7c6c0dd35f4ebc1d6562574a"
+  },
+  "email":  "nikosz@hotmail.sk",
+  "root":  "./nikos/uncertainty",
+  "host":  "niko-desktop",
+  "username":  "nikos",
+  "executable":  "C:\\Users\\nikos\\anaconda3\\envs\\nllSAR\\python.exe",
+  "codePathLocal":  "generate_answers.py",
+  "cpu_count":  8,
+  "cpu_count_logical":  8,
+  "gpu":  "NVIDIA GeForce RTX 3070",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "998574649344",
+      "used":  "861041856512"
+    }
+  },
+  "memory":  {
+    "total":  "34272518144"
+  },
+  "cpu":  {
+    "count":  8,
+    "countLogical":  8
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 3070",
+      "memoryTotal":  "8589934592",
+      "cudaCores":  5888,
+      "architecture":  "Ampere"
+    }
+  ],
+  "cudaVersion":  "12.9"
+}

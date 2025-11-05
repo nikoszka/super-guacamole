@@ -1,0 +1,16 @@
+{"time":"2025-11-04T21:26:58.4204382+01:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-11-04T21:26:58.4204382+01:00","level":"INFO","msg":"created symlink","path":"nikos\\uncertainty\\wandb\\run-20251104_212658-dglt1qwz\\logs\\debug-core.log"}
+{"time":"2025-11-04T21:26:58.530285+01:00","level":"INFO","msg":"created new stream","id":"dglt1qwz"}
+{"time":"2025-11-04T21:26:58.530285+01:00","level":"INFO","msg":"stream: started","id":"dglt1qwz"}
+{"time":"2025-11-04T21:26:58.530285+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"dglt1qwz"}
+{"time":"2025-11-04T21:26:58.530285+01:00","level":"INFO","msg":"sender: started","stream_id":"dglt1qwz"}
+{"time":"2025-11-04T21:26:58.530285+01:00","level":"INFO","msg":"handler: started","stream_id":"dglt1qwz"}
+{"time":"2025-11-04T21:26:58.8916197+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-11-04T21:26:59.538885+01:00","level":"INFO","msg":"stream: closing","id":"dglt1qwz"}
+{"time":"2025-11-04T21:26:59.538885+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-11-04T21:26:59.538885+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-11-04T21:27:00.3423511+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-11-04T21:27:00.6111763+01:00","level":"INFO","msg":"handler: closed","stream_id":"dglt1qwz"}
+{"time":"2025-11-04T21:27:00.6111763+01:00","level":"INFO","msg":"sender: closed","stream_id":"dglt1qwz"}
+{"time":"2025-11-04T21:27:00.6111763+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"dglt1qwz"}
+{"time":"2025-11-04T21:27:00.6111763+01:00","level":"INFO","msg":"stream: closed","id":"dglt1qwz"}

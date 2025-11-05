@@ -38,9 +38,15 @@ def main(args):
     if not os.path.exists(f"{scratch_dir}/{user}/uncertainty"):
         os.makedirs(f"{scratch_dir}/{user}/uncertainty")
 
+    # Determine project name: use provided project, or default based on debug mode
+    if args.project is not None:
+        project_name = args.project
+    else:
+        project_name = "semantic_uncertainty" if not args.debug else "semantic_uncertainty_debug"
+    
     wandb.init(
         entity=args.entity,
-        project="semantic_uncertainty" if not args.debug else "semantic_uncertainty_debug",
+        project=project_name,
         dir=f"{scratch_dir}/{user}/uncertainty",
         config=args,
         notes=f'slurm_id: {slurm_jobid}, experiment_lot: {args.experiment_lot}',

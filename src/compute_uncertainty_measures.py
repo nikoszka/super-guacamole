@@ -39,7 +39,11 @@ def main(args):
     scratch_dir = os.getenv('SCRATCH_DIR', '.')
     wandb_dir = f'{scratch_dir}/{user}/uncertainty'
     slurm_jobid = os.getenv('SLURM_JOB_ID', None)
-    project = "semantic_uncertainty" if not args.debug else "semantic_uncertainty_debug"
+    # Determine project name: use provided project, or default based on debug mode
+    if args.project is not None:
+        project = args.project
+    else:
+        project = "semantic_uncertainty" if not args.debug else "semantic_uncertainty_debug"
     if args.assign_new_wandb_id:
         logging.info('Assign new wandb_id.')
         api = wandb.Api()

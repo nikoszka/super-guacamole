@@ -26,11 +26,13 @@ def get_parser(stages=['generate', 'compute']):
         "--debug", action=argparse.BooleanOptionalAction, default=False,
         help="Keep default wandb clean.")
     parser.add_argument('--entity', type=str, default=entity)
+    parser.add_argument('--project', type=str, default=None,
+                        help='WandB project name (defaults to semantic_uncertainty if not set)')
     parser.add_argument('--random_seed', type=int, default=10)
     parser.add_argument(
         "--metric", type=str, default="squad",
-        choices=['squad', 'llm', 'llm_gpt-3.5', 'llm_gpt-4'],
-        help="Metric to assign accuracy to generations.")
+        choices=['squad', 'llm', 'llm_gpt-3.5', 'llm_gpt-4', 'llm_llama-3.1-70b', 'llm_llama-3-70b', 'llm_llama-3-8b', 'llm_llama-2-70b', 'llm_llama-2-13b'],
+        help="Metric to assign accuracy to generations. Supports OpenAI models (llm_gpt-*) and HuggingFace Llama models (llm_llama-*).")
     parser.add_argument(
         "--compute_accuracy_at_all_temps",
         action=argparse.BooleanOptionalAction, default=True,
@@ -267,6 +269,69 @@ def get_gpt_metric(metric_name):
     return gpt_metric
 
 
+def get_llama_metric(metric_name, max_new_tokens=50):
+    """Create a metric using a HuggingFace Llama model as judge.
+    
+    Args:
+        metric_name: Format like 'llm_llama-3-70b' or 'llm_llama-2-13b'
+        max_new_tokens: Maximum tokens for judge response
+    """
+    
+    # Extract model name (e.g., 'llm_llama-3.1-70b' -> 'llama-3.1-70b')
+    model_name_str = '_'.join(metric_name.split('_')[1:])  # 'llama-3.1-70b' or 'llama-3-70b'
+    
+    # Convert to proper format expected by HuggingFace:
+    # 'Llama-3.1-70B' for Llama-3.1 (becomes meta-llama/Llama-3.1-70B)
+    # 'Meta-Llama-3-70B' for Llama-3 (becomes meta-llama/Meta-Llama-3-70B)
+    # 'Llama-2-70b-chat-hf' for Llama-2 (becomes meta-llama/Llama-2-70b-chat-hf)
+    # Split by '-' and format appropriately
+    parts = model_name_str.split('-')  # ['llama', '3.1', '70b'] or ['llama', '3', '70b']
+    
+    if len(parts) >= 3 and parts[0].lower() == 'llama':
+        version_num = parts[1]  # '3.1', '3', or '2'
+        size = parts[2]  # '70b', '8b', '13b', etc.
+        
+        if version_num.startswith('3.1'):
+            # Format: 'Llama-3.1-70B' (for meta-llama/Llama-3.1-70B)
+            model_name = f'Llama-{version_num}-{size.upper()}'
+        elif version_num == '3':
+            # Format: 'Meta-Llama-3-70B' (for meta-llama/Meta-Llama-3-70B)
+            model_name = f'Meta-Llama-{version_num}-{size.upper()}'
+        else:
+            # Format: 'Llama-2-70b-chat-hf' (for meta-llama/Llama-2-70b-chat-hf)
+            model_name = f'Llama-{version_num}-{size.lower()}-chat-hf'
+    elif len(parts) == 2:
+        # Format: 'Llama-2-70b-chat-hf' (if someone uses 'llama-2-70b')
+        model_name = f'Llama-{parts[1]}-{parts[0].lower()}-chat-hf'
+    else:
+        model_name = model_name_str.capitalize()
+    
+    # Auto-add quantization for large models (70B+) to fit in GPU memory
+    if '70b' in model_name.lower():
+        logging.warning(
+            f'70B models require significant GPU memory (~35GB with 8-bit quantization). '
+            f'If you have only 8GB GPU, consider using a smaller judge model like Llama-3-8B. '
+            f'Attempting to load {model_name} with 8-bit quantization...'
+        )
+        model_name_with_quant = f'{model_name}-8bit'
+    else:
+        logging.info(f'Initializing Llama judge model: {model_name}')
+        model_name_with_quant = model_name
+    
+    # Initialize the HuggingFace model for judging
+    judge_model = HuggingfaceModel(
+        model_name_with_quant, 
+        stop_sequences='default',
+        max_new_tokens=max_new_tokens
+    )
+    
+    def llama_metric(predicted_answer, example, model):
+        del model  # Not used, we use judge_model instead
+        return model_based_metric(predicted_answer, example, judge_model)
+    
+    return llama_metric
+
+
 def get_reference(example):
     if 'answers' not in example:
         example = example['reference']
@@ -334,8 +399,11 @@ def get_metric(metric):
         metric = get_gpt_metric(metric)
     elif metric == 'llm_gpt-4':
         metric = get_gpt_metric(metric)
+    elif metric.startswith('llm_llama-'):
+        # Use HuggingFace Llama model as judge
+        metric = get_llama_metric(metric, max_new_tokens=50)
     else:
-        raise ValueError
+        raise ValueError(f'Unknown metric: {metric}')
 
     return metric
 

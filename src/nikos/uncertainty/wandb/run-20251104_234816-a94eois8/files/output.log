@@ -1,0 +1,52 @@
+2025-11-04 23:48:17 INFO     Finished wandb init.
+2025-11-04 23:48:17 INFO     Initializing Llama judge model: Meta-Llama-3-8B
+tokenizer_config.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 50.6k/50.6k [00:00<00:00, 2.78MB/s]
+tokenizer.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9.09M/9.09M [00:00<00:00, 14.0MB/s]
+special_tokens_map.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 73.0/73.0 [00:00<?, ?B/s]
+Initializing model:  Meta-Llama-3-8B and base: meta-llama
+config.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 654/654 [00:00<00:00, 1.15MB/s]
+model.safetensors.index.json: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 23.9k/23.9k [00:00<00:00, 13.0MB/s]
+Downloading shards:   0%|                                                                                                                                                                                                                  | 0/4 [00:00<?, ?it/s]Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-11-04 23:48:22 WARNING  Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+model-00001-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4.98G/4.98G [04:19<00:00, 19.2MB/s]
+Downloading shards:  25%|██████████████████████████████████████████████████▎                                                                                                                                                      | 1/4 [04:20<13:00, 260.11s/it]Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-11-04 23:52:42 WARNING  Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+model-00002-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5.00G/5.00G [04:20<00:00, 19.2MB/s]
+Downloading shards:  50%|████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                    | 2/4 [08:41<08:41, 260.93s/it]Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-11-04 23:57:04 WARNING  Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+model-00003-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4.92G/4.92G [04:15<00:00, 19.2MB/s]
+Downloading shards:  75%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                  | 3/4 [12:57<04:18, 258.76s/it]Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-11-05 00:01:20 WARNING  Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+model-00004-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.17G/1.17G [01:00<00:00, 19.3MB/s]
+Downloading shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [13:59<00:00, 209.77s/it]
+Loading checkpoint shards:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                 | 2/4 [00:19<00:19,  9.75s/it]
+Traceback (most recent call last):
+  File "C:\Users\nikos\PycharmProjects\nllSAR\src\generate_answers.py", line 275, in <module>
+    main(args)
+  File "C:\Users\nikos\PycharmProjects\nllSAR\src\generate_answers.py", line 57, in main
+    metric = utils.get_metric(args.metric)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nikos\PycharmProjects\nllSAR\src\utils\utils.py", line 404, in get_metric
+    metric = get_llama_metric(metric, max_new_tokens=50)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nikos\PycharmProjects\nllSAR\src\utils\utils.py", line 322, in get_llama_metric
+    judge_model = HuggingfaceModel(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nikos\PycharmProjects\nllSAR\src\models\huggingface_models.py", line 128, in __init__
+    self.model = AutoModelForCausalLM.from_pretrained(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nikos\anaconda3\envs\nllSAR\Lib\site-packages\transformers\models\auto\auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nikos\anaconda3\envs\nllSAR\Lib\site-packages\transformers\modeling_utils.py", line 4225, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nikos\anaconda3\envs\nllSAR\Lib\site-packages\transformers\modeling_utils.py", line 4728, in _load_pretrained_model
+    new_error_msgs, offload_index, state_dict_index = _load_state_dict_into_meta_model(
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nikos\anaconda3\envs\nllSAR\Lib\site-packages\transformers\modeling_utils.py", line 993, in _load_state_dict_into_meta_model
+    set_module_tensor_to_device(model, param_name, param_device, **set_module_kwargs)
+  File "C:\Users\nikos\anaconda3\envs\nllSAR\Lib\site-packages\accelerate\utils\modeling.py", line 339, in set_module_tensor_to_device
+    new_value = value.to(device)
+                ^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 224.00 MiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Of the allocated memory 22.49 GiB is allocated by PyTorch, and 1.20 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
