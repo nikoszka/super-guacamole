@@ -15,7 +15,8 @@ BRIEF_PROMPTS = {
     'default': "Answer the following question in a complete sentence.\n",
     'chat': 'Answer the following question in a single complete sentence.\n',
     'sentence': 'Answer the following question in a complete, informative sentence.\n',
-    'detailed': 'Provide a detailed, well-structured answer to the following question. Write your response as a complete sentence that thoroughly addresses the question.\n'}
+    'detailed': 'Provide a detailed, well-structured answer to the following question. Write your response as a complete sentence that thoroughly addresses the question.\n',
+    'short': 'Answer the following question with a brief, concise answer. Use only a few words or a short phrase, not a full sentence.\n'}
 
 
 def get_parser(stages=['generate', 'compute']):
@@ -100,7 +101,7 @@ def get_parser(stages=['generate', 'compute']):
             "--enable_brief", default=True, action=argparse.BooleanOptionalAction)
         parser.add_argument(
             "--brief_prompt", default='detailed', type=str, 
-            choices=['default', 'chat', 'sentence', 'detailed'],
+            choices=['default', 'chat', 'sentence', 'detailed', 'short'],
             help="Type of brief prompt to use for answer generation")
         parser.add_argument(
             "--prompt_type", default='default', type=str)
