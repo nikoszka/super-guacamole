@@ -150,7 +150,8 @@ def main(args):
 
         it = 0
         for index in tqdm(indices):
-            if (it + 1 % 10) == 0:
+            # Fix: Correct operator precedence - need parentheses around (it + 1)
+            if ((it + 1) % 10) == 0:
                 gc.collect()
                 torch.cuda.empty_cache()
             it += 1
@@ -186,6 +187,10 @@ def main(args):
                 predicted_answer, token_log_likelihoods, embedding = model.predict(
                     local_prompt, temperature)
                 embedding = embedding.cpu() if embedding is not None else None
+                
+                # Clear cache after each generation to prevent memory buildup
+                if i % 2 == 0:  # Clear every other generation
+                    torch.cuda.empty_cache()
 
                 # Only compute accuracy if question is answerable.
                 compute_acc = args.compute_accuracy_at_all_temps or (i == 0)

@@ -355,7 +355,9 @@ class HuggingfaceModel(BaseModel):
                 len(input_tokens), max_input_tokens)
 
         # Implement prediction.
-        inputs = self.tokenizer(input_data, return_tensors="pt").to("cuda")
+        # Determine the correct device - use the device of the first model parameter
+        device = next(self.model.parameters()).device
+        inputs = self.tokenizer(input_data, return_tensors="pt").to(device)
 
         if 'llama' in self.model_name.lower() or 'falcon' in self.model_name or 'mistral' in self.model_name.lower():
             if 'token_type_ids' in inputs:  # Some HF models have changed.
@@ -399,6 +401,10 @@ class HuggingfaceModel(BaseModel):
                     stopping_criteria=stopping_criteria,
                     pad_token_id=pad_token_id,
                 )
+            
+            # Clear input tensors from GPU memory immediately after generation
+            del inputs
+            torch.cuda.empty_cache()
 
         if len(outputs.sequences[0]) > self.token_limit:
             raise ValueError(
@@ -539,8 +545,12 @@ class HuggingfaceModel(BaseModel):
 
         # Then access last layer for input
         last_layer = last_input[-1]
-        # Then access last token in input.
+        # Then access last token in input - move to CPU immediately to free GPU memory
         last_token_embedding = last_layer[:, -1, :].cpu()
+        
+        # Clear hidden states from GPU memory after extracting what we need
+        del hidden, last_input, last_layer
+        torch.cuda.empty_cache()
 
         # Get log_likelihoods.
         # outputs.scores are the logits for the generated token.
@@ -563,6 +573,11 @@ class HuggingfaceModel(BaseModel):
 
         if len(log_likelihoods) == 0:
             raise ValueError
+
+        # Clear transition_scores from GPU memory before returning
+        # Note: outputs.scores and outputs.sequences will be garbage collected when outputs goes out of scope
+        del transition_scores
+        torch.cuda.empty_cache()
 
         return sliced_answer, log_likelihoods, last_token_embedding
 
