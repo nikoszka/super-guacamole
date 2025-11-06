@@ -375,6 +375,9 @@ class HuggingfaceModel(BaseModel):
             stopping_criteria = None
 
         logging.debug('temperature: %f', temperature)
+        # Save n_input_token before generation (needed later for calculations)
+        n_input_token = len(inputs['input_ids'][0])
+        
         with torch.no_grad():
             # For greedy decoding (temperature=0), use do_sample=True with top_p=1.0
             if temperature == 0.0:
@@ -493,7 +496,7 @@ class HuggingfaceModel(BaseModel):
         # non-trivial interactions between the input_data and generated part
         # in tokenization (particularly around whitespaces.)
         token_stop_index = self.tokenizer(full_answer[:input_data_offset + stop_at], return_tensors="pt")['input_ids'].shape[1]
-        n_input_token = len(inputs['input_ids'][0])
+        # n_input_token was already saved before generation (see above)
         n_generated = token_stop_index - n_input_token
 
         if n_generated == 0:
@@ -519,29 +522,57 @@ class HuggingfaceModel(BaseModel):
         else:
             hidden = outputs.hidden_states
 
+        # Ensure n_generated is valid (non-negative and within reasonable bounds)
+        if n_generated < 1:
+            logging.warning(
+                'n_generated is %d, setting to 1. '
+                'n_input_token: %d, token_stop_index: %d',
+                n_generated, n_input_token, token_stop_index)
+            n_generated = 1
+
+        # Calculate the index we want to access
+        target_idx = n_generated - 1
+        
+        # Handle empty hidden states
+        if len(hidden) == 0:
+            logging.error(
+                'Hidden states tuple is empty! '
+                'n_generated: %d, n_input_token: %d, token_stop_index: %d, '
+                'full_answer: %s',
+                n_generated, n_input_token, token_stop_index, full_answer)
+            raise ValueError('Hidden states tuple is empty - cannot extract embedding')
+        
+        # Select the appropriate hidden state with robust bounds checking
         if len(hidden) == 1:
             logging.warning(
                 'Taking first and only generation for hidden! '
-                'n_generated: %d, n_input_token: %d, token_stop_index %d, '
+                'n_generated: %d, n_input_token: %d, token_stop_index: %d, '
+                'len(hidden): %d, target_idx: %d, '
                 'last_token: %s, generation was: %s',
-                n_generated, n_input_token, token_stop_index,
+                n_generated, n_input_token, token_stop_index, len(hidden), target_idx,
                 self.tokenizer.decode(outputs['sequences'][0][-1]),
-                full_answer,
-                )
+                full_answer)
             last_input = hidden[0]
-        elif ((n_generated - 1) >= len(hidden)):
-            # If access idx is larger/equal.
+        elif target_idx < 0:
+            # n_generated was 0 or negative (shouldn't happen after our check, but be safe)
+            logging.warning(
+                'target_idx is negative (%d), using first hidden state. '
+                'n_generated: %d, len(hidden): %d',
+                target_idx, n_generated, len(hidden))
+            last_input = hidden[0]
+        elif target_idx >= len(hidden):
+            # Index is out of range - use the last available hidden state
             logging.error(
-                'Taking last state because n_generated is too large'
-                'n_generated: %d, n_input_token: %d, token_stop_index %d, '
+                'target_idx (%d) >= len(hidden) (%d). Using last hidden state. '
+                'n_generated: %d, n_input_token: %d, token_stop_index: %d, '
                 'last_token: %s, generation was: %s, slice_answer: %s',
-                n_generated, n_input_token, token_stop_index,
+                target_idx, len(hidden), n_generated, n_input_token, token_stop_index,
                 self.tokenizer.decode(outputs['sequences'][0][-1]),
-                full_answer, sliced_answer
-                )
+                full_answer, sliced_answer)
             last_input = hidden[-1]
         else:
-            last_input = hidden[n_generated - 1]
+            # Normal case: index is valid
+            last_input = hidden[target_idx]
 
         # Then access last layer for input
         last_layer = last_input[-1]
