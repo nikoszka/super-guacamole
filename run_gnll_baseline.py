@@ -172,8 +172,10 @@ def compute_gnll_auroc(pickle_path, use_rouge=False, rouge_threshold=0.3):
     # Compute AUROC
     try:
         # For AUROC, higher uncertainty (higher NLL) should predict incorrect answers
-        # So we use gnll_uncertainties directly (higher = more uncertain = more likely wrong)
-        auroc = roc_auc_score(y_true, gnll_uncertainties)
+        # roc_auc_score expects higher scores to predict positive class (correct=1)
+        # So we negate G-NLL: higher confidence (lower NLL) should predict correct answers
+        # This means we use -gnll_uncertainties as scores
+        auroc = roc_auc_score(y_true, -np.array(gnll_uncertainties))
         
         accuracy = sum(y_true) / len(y_true) if len(y_true) > 0 else 0
         
