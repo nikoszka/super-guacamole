@@ -101,19 +101,45 @@ def evaluate_with_judge(wandb_runid, metric, entity='nikosteam', project='super_
         print(f"❌ Error evaluating: {e}")
         sys.exit(1)
 
-def compute_gnll_auroc(pickle_path, use_rouge=False, rouge_threshold=0.3):
+def compute_gnll_auroc(pickle_path, use_rouge=False, rouge_threshold=0.3, 
+                       use_rw_gnll=False, similarity_model_name='cross-encoder/stsb-roberta-large',
+                       model_name=None, tokenizer=None):
     """
-    Compute AUROC for G-NLL baseline.
+    Compute AUROC for G-NLL baseline and optionally RW-G-NLL.
     
     Args:
         pickle_path: Path to validation_generations.pkl
         use_rouge: If True, use ROUGE scores for correctness (for short answers)
                    If False, use LLM judge accuracy (for long answers)
         rouge_threshold: ROUGE-L threshold for correctness (if use_rouge=True)
+        use_rw_gnll: If True, also compute RW-G-NLL metric
+        similarity_model_name: Name of similarity model to use for RW-G-NLL
+        model_name: Model name used for generation (needed for tokenizer if use_rw_gnll=True)
+        tokenizer: Tokenizer instance (if None and use_rw_gnll=True, will try to load from model_name)
     """
     import numpy as np
     from sklearn.metrics import roc_auc_score
     from rouge_score import rouge_scorer
+    
+    # Import RW-G-NLL functions if needed
+    if use_rw_gnll:
+        try:
+            # Add src to path for imports
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            src_dir = os.path.join(script_dir, 'src')
+            if src_dir not in sys.path:
+                sys.path.insert(0, src_dir)
+            
+            from uncertainty_measures.rw_gnll import (
+                initialize_similarity_model,
+                compute_rw_gnll
+            )
+            from transformers import AutoTokenizer
+            from models.huggingface_models import get_hf_cache_dir
+        except ImportError as e:
+            print(f"❌ Error importing RW-G-NLL module: {e}")
+            print("Falling back to G-NLL only")
+            use_rw_gnll = False
     
     print(f"\n{'='*80}")
     print(f"Computing G-NLL AUROC...")
@@ -127,6 +153,60 @@ def compute_gnll_auroc(pickle_path, use_rouge=False, rouge_threshold=0.3):
     
     y_true = []
     gnll_uncertainties = []
+    rw_gnll_uncertainties = [] if use_rw_gnll else None
+    
+    # Initialize RW-G-NLL components if needed
+    similarity_model = None
+    rw_tokenizer = tokenizer
+    similarity_cache = {}
+    
+    if use_rw_gnll:
+        print(f"\nInitializing RW-G-NLL components...")
+        print(f"  Similarity model: {similarity_model_name}")
+        
+        # Initialize similarity model
+        try:
+            similarity_model = initialize_similarity_model(similarity_model_name)
+            print(f"  ✅ Similarity model loaded")
+        except Exception as e:
+            print(f"  ❌ Error loading similarity model: {e}")
+            print("  Falling back to G-NLL only")
+            use_rw_gnll = False
+            similarity_model = None
+        
+        # Initialize tokenizer if not provided
+        if rw_tokenizer is None and model_name:
+            print(f"  Loading tokenizer for model: {model_name}")
+            try:
+                cache_dir = get_hf_cache_dir()
+                
+                # Determine base path for model
+                if 'llama' in model_name.lower():
+                    if 'Llama-3' in model_name or 'Llama-3.1' in model_name or 'Meta-Llama-3' in model_name or 'Llama-2' in model_name:
+                        base = 'meta-llama'
+                    else:
+                        base = 'huggyllama'
+                    
+                    rw_tokenizer = AutoTokenizer.from_pretrained(
+                        f"{base}/{model_name}",
+                        token_type_ids=None,
+                        cache_dir=cache_dir
+                    )
+                    print(f"  ✅ Tokenizer loaded")
+                else:
+                    print(f"  ⚠️  Unknown model type, cannot load tokenizer automatically")
+                    print(f"  Please provide tokenizer parameter or set use_rw_gnll=False")
+                    use_rw_gnll = False
+            except Exception as e:
+                print(f"  ❌ Error loading tokenizer: {e}")
+                print("  Falling back to G-NLL only")
+                use_rw_gnll = False
+                rw_tokenizer = None
+        elif rw_tokenizer is None:
+            print(f"  ⚠️  No tokenizer provided and no model_name given")
+            print(f"  Cannot compute RW-G-NLL without tokenizer")
+            print("  Falling back to G-NLL only")
+            use_rw_gnll = False
     
     if use_rouge:
         scorer = rouge_scorer.RougeScorer(['rougeL'], use_stemmer=True)
@@ -161,6 +241,19 @@ def compute_gnll_auroc(pickle_path, use_rouge=False, rouge_threshold=0.3):
             token_log_likelihoods = mla['token_log_likelihoods']
             sequence_nll = -sum(token_log_likelihoods)  # Negative log likelihood
             gnll_uncertainties.append(sequence_nll)
+            
+            # Compute RW-G-NLL if enabled
+            if use_rw_gnll and similarity_model is not None and rw_tokenizer is not None:
+                try:
+                    rw_gnll_score, _ = compute_rw_gnll(
+                        entry, similarity_model, rw_tokenizer, cache=similarity_cache
+                    )
+                    rw_gnll_uncertainties.append(rw_gnll_score)
+                except Exception as e:
+                    print(f"Warning: Error computing RW-G-NLL for {example_id}: {e}")
+                    # Fallback to G-NLL value
+                    rw_gnll_uncertainties.append(sequence_nll)
+            
             y_true.append(is_correct)
         else:
             print(f"Warning: No token_log_likelihoods for example {example_id}")
@@ -193,6 +286,21 @@ def compute_gnll_auroc(pickle_path, use_rouge=False, rouge_threshold=0.3):
         print(f"  Number of examples: {len(y_true)}")
         print(f"  Mean G-NLL: {np.mean(gnll_uncertainties):.4f}")
         print(f"  Std G-NLL: {np.std(gnll_uncertainties):.4f}")
+        
+        # Compute RW-G-NLL AUROC if enabled
+        if use_rw_gnll and rw_gnll_uncertainties and len(rw_gnll_uncertainties) == len(y_true):
+            try:
+                rw_gnll_auroc = roc_auc_score(y_true, -np.array(rw_gnll_uncertainties))
+                results['RW-G-NLL_AUROC'] = rw_gnll_auroc
+                results['Mean_RW-G-NLL'] = np.mean(rw_gnll_uncertainties)
+                results['Std_RW-G-NLL'] = np.std(rw_gnll_uncertainties)
+                
+                print(f"\nRW-G-NLL Results:")
+                print(f"  RW-G-NLL AUROC: {rw_gnll_auroc:.4f}")
+                print(f"  Mean RW-G-NLL: {np.mean(rw_gnll_uncertainties):.4f}")
+                print(f"  Std RW-G-NLL: {np.std(rw_gnll_uncertainties):.4f}")
+            except Exception as e:
+                print(f"\n⚠️  Error computing RW-G-NLL AUROC: {e}")
         
         return results
         
@@ -273,11 +381,17 @@ def main():
     short_pickle = input(f"Enter path to short answers validation_generations.pkl (or press Enter to skip): ").strip()
     if short_pickle and os.path.exists(short_pickle):
         print("\n--- Short Answers: ROUGE-based correctness ---")
-        results['short_rouge'] = compute_gnll_auroc(short_pickle, use_rouge=True, rouge_threshold=0.3)
+        results['short_rouge'] = compute_gnll_auroc(
+            short_pickle, use_rouge=True, rouge_threshold=0.3,
+            use_rw_gnll=False, model_name=model_name
+        )
         
         # Also compute with LLM judge
         print("\n--- Short Answers: LLM Judge-based correctness ---")
-        results['short_judge'] = compute_gnll_auroc(short_pickle, use_rouge=False)
+        results['short_judge'] = compute_gnll_auroc(
+            short_pickle, use_rouge=False,
+            use_rw_gnll=False, model_name=model_name
+        )
     else:
         print("Skipping short answers AUROC computation")
     
@@ -288,8 +402,14 @@ def main():
     
     long_pickle = input(f"Enter path to long answers validation_generations.pkl (or press Enter to skip): ").strip()
     if long_pickle and os.path.exists(long_pickle):
+        # Ask if user wants to compute RW-G-NLL for long answers
+        use_rw_gnll_long = input("Compute RW-G-NLL for long answers? (y/n, default=n): ").strip().lower() == 'y'
+        
         print("\n--- Long Answers: LLM Judge-based correctness ---")
-        results['long_judge'] = compute_gnll_auroc(long_pickle, use_rouge=False)
+        results['long_judge'] = compute_gnll_auroc(
+            long_pickle, use_rouge=False,
+            use_rw_gnll=use_rw_gnll_long, model_name=model_name
+        )
     else:
         print("Skipping long answers AUROC computation")
     
@@ -312,6 +432,8 @@ def main():
         print(f"\nLong Answers (LLM Judge-based):")
         print(f"  G-NLL AUROC: {results['long_judge']['G-NLL_AUROC']:.4f}")
         print(f"  Accuracy: {results['long_judge']['Accuracy']:.4f}")
+        if 'RW-G-NLL_AUROC' in results['long_judge']:
+            print(f"  RW-G-NLL AUROC: {results['long_judge']['RW-G-NLL_AUROC']:.4f}")
     
     # Save results to JSON
     output_file = 'gnll_baseline_results.json'
