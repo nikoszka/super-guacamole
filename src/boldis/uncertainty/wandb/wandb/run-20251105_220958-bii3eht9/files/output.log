@@ -1,0 +1,841 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-05 22:10:00 WARNING  Recompute accuracy enabled. This does not apply to precomputed p_true!
+2025-11-05 22:10:00 INFO     Initializing Llama judge model: Meta-Llama-3-8B
+2025-11-05 22:10:00 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+Initializing model:  Meta-Llama-3-8B and base: meta-llama
+2025-11-05 22:10:01 INFO     Using device_map="auto" - will distribute across 4 GPU(s)
+2025-11-05 22:10:01 INFO     Max memory per GPU: {0: '10GiB', 1: '10GiB', 2: '10GiB', 3: '10GiB'}
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:06<00:00,  1.62s/it]
+./boldis/uncertainty/wandb/run-*-vkbx3b70
+2025-11-05 22:10:09 INFO     Found uncertainty_measures.pkl locally at ./boldis/uncertainty/wandb/run-20251105_210031-vkbx3b70/files/uncertainty_measures.pkl
+./boldis/uncertainty/wandb/run-*-vkbx3b70
+2025-11-05 22:10:09 INFO     Found validation_generations.pkl locally at ./boldis/uncertainty/wandb/run-20251105_210031-vkbx3b70/files/validation_generations.pkl
+2025-11-05 22:10:09 INFO     Recomputing accuracy!
+2025-11-05 22:10:15 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:15 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which US property tycoon bought Turnberry Golf Course in April?\nThe expected answer is: donald trump.\nThe proposed answer is: donald trump\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:10:15 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which US property tycoon bought Turnberry Golf Course in April?\nThe expected answer is: donald trump.\nThe proposed answer is: donald trump\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: donald trump\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: donald trump\n'
+2025-11-05 22:10:15 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:10:15 INFO     Recomputed accuracy!
+2025-11-05 22:10:15 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:15 INFO     Recomputing accuracy!
+2025-11-05 22:10:20 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:20 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: A second referendum is due to be held for which commonwealth to decide whether, among other options, to become the 51st state of the USA?\nThe expected answer is: puerto rico.\nThe proposed answer is: puerto rico\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:10:20 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: A second referendum is due to be held for which commonwealth to decide whether, among other options, to become the 51st state of the USA?\nThe expected answer is: puerto rico.\nThe proposed answer is: puerto rico\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: puerto rico\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: puerto rico\nWithin the'
+2025-11-05 22:10:20 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:10:20 INFO     Recomputed accuracy!
+2025-11-05 22:10:20 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:20 INFO     Recomputing accuracy!
+2025-11-05 22:10:25 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:25 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Of which country was Adrian Nastase Prime Minister from 2000 to 2004?\nThe expected answer is: romania.\nThe proposed answer is: romania\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:10:25 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Of which country was Adrian Nastase Prime Minister from 2000 to 2004?\nThe expected answer is: romania.\nThe proposed answer is: romania\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: romania\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: romania\nWithin the'
+2025-11-05 22:10:25 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:10:25 INFO     Recomputed accuracy!
+2025-11-05 22:10:25 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:25 INFO     Recomputing accuracy!
+2025-11-05 22:10:30 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:30 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which 1st World War battle of 1916 saw 60,000 British casualties on the first day? The battle lasted from July to November, resulting in a British advance of 12 kilometres.\nThe expected answer is: somme.\nThe proposed answer is: the battle of the Somme\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:10:30 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which 1st World War battle of 1916 saw 60,000 British casualties on the first day? The battle lasted from July to November, resulting in a British advance of 12 kilometres.\nThe expected answer is: somme.\nThe proposed answer is: the battle of the Somme\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: the battle of the Somme\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: the'
+2025-11-05 22:10:30 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:10:30 INFO     Recomputed accuracy!
+2025-11-05 22:10:30 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:30 INFO     Recomputing accuracy!
+2025-11-05 22:10:35 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:35 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which actress left Eastenders for Hollywood only to flop as The Bionic Woman?\nThe expected answer is: michelle ryan.\nThe proposed answer is: michelle ryan\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:10:35 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which actress left Eastenders for Hollywood only to flop as The Bionic Woman?\nThe expected answer is: michelle ryan.\nThe proposed answer is: michelle ryan\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: michelle ryan\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: michelle r'
+2025-11-05 22:10:35 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:10:35 INFO     Recomputed accuracy!
+2025-11-05 22:10:35 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:35 INFO     Recomputing accuracy!
+2025-11-05 22:10:40 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:40 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: What is the common name of the laryngeal prominence?\nThe expected answer is: laryngeal prominence.\nThe proposed answer is: adam's apple\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:10:40 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: What is the common name of the laryngeal prominence?\nThe expected answer is: laryngeal prominence.\nThe proposed answer is: adam's apple\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: laryngeal prominence\nThe proposed answer is: laryngeal prominence\nThe proposed answer is: laryngeal prominence\nThe proposed answer is: laryngeal prominence\nThe proposed answer is"
+2025-11-05 22:10:40 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:10:40 INFO     Recomputed accuracy!
+2025-11-05 22:10:40 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:40 INFO     Recomputing accuracy!
+2025-11-05 22:10:45 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:45 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In 1818, British obstetrician James Blundell performed the first successful human what?\nThe expected answer is: transfusions.\nThe proposed answer is: transfusion\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:10:45 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In 1818, British obstetrician James Blundell performed the first successful human what?\nThe expected answer is: transfusions.\nThe proposed answer is: transfusion\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: transfusion\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: transfusion\nWithin the'
+2025-11-05 22:10:45 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:10:45 INFO     Recomputed accuracy!
+2025-11-05 22:10:45 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:45 INFO     Recomputing accuracy!
+2025-11-05 22:10:50 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:50 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: "Who said, To err is human but it feels divine?"""\nThe expected answer is: mae west.\nThe proposed answer is: mae west\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:10:50 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: "Who said, To err is human but it feels divine?"""\nThe expected answer is: mae west.\nThe proposed answer is: mae west\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: mae west\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: mae west\n'
+2025-11-05 22:10:50 INFO     Recomputed accuracy!
+2025-11-05 22:10:50 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:50 INFO     Recomputing accuracy!
+2025-11-05 22:10:55 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:10:55 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which ship did Drake command against the Spanish Armada?\nThe expected answer is: revenge.\nThe proposed answer is: the san juan de ulua\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:10:55 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: Which ship did Drake command against the Spanish Armada?\nThe expected answer is: revenge.\nThe proposed answer is: the san juan de ulua\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes, the proposed answer means the same as the expected answer.\nResponse: No, the proposed answer does not mean the same as the expected answer.\nResponse: I don't know.\nResponse: I don't understand the question.\nResponse: I don"
+2025-11-05 22:10:55 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:10:55 INFO     Recomputed accuracy!
+2025-11-05 22:10:55 INFO     validation_is_true: 1.000000
+2025-11-05 22:10:55 INFO     Recomputing accuracy!
+2025-11-05 22:11:01 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:01 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What animal is the Scandinavian Christmas Julbock symbol?\nThe expected answer is: goat.\nThe proposed answer is: goat\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:11:01 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What animal is the Scandinavian Christmas Julbock symbol?\nThe expected answer is: goat.\nThe proposed answer is: goat\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: reindeer\nThe proposed answer is: sheep\nThe proposed answer is: donkey\nThe proposed answer is: cow\nThe proposed answer is: horse\nThe proposed answer is: pig\nThe proposed answer is'
+2025-11-05 22:11:01 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:01 INFO     Recomputed accuracy!
+2025-11-05 22:11:01 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:01 INFO     Recomputing accuracy!
+2025-11-05 22:11:06 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:06 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: What is the appropriate name of the largest type of 'frog'?\nThe expected answer is: goliath.\nThe proposed answer is: goliath frog\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:11:06 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: What is the appropriate name of the largest type of 'frog'?\nThe expected answer is: goliath.\nThe proposed answer is: goliath frog\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nResponse: No\nResponse: Unsure\nResponse: Other\nResponse: Other (please specify)\nResponse: Other (please specify)\nResponse: Other (please specify)\nResponse: Other (please specify)\nResponse: Other (please specify)\nResponse"
+2025-11-05 22:11:06 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:06 INFO     Recomputed accuracy!
+2025-11-05 22:11:06 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:06 INFO     Recomputing accuracy!
+2025-11-05 22:11:11 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:11 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: Bundes in the German 'Bundesliga' soccer league refers to?\nThe expected answer is: federal.\nThe proposed answer is: league\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:11:11 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: Bundes in the German 'Bundesliga' soccer league refers to?\nThe expected answer is: federal.\nThe proposed answer is: league\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: state\nThe proposed answer is: country\nThe proposed answer is: team\nThe proposed answer is: association\nThe proposed answer is: federation\nThe proposed answer is: union\nThe proposed answer is: conf"
+2025-11-05 22:11:11 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:11 INFO     Recomputed accuracy!
+2025-11-05 22:11:11 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:11 INFO     Recomputing accuracy!
+2025-11-05 22:11:16 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:16 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which jazz saxophonist was nicknamed Bird\nThe expected answer is: charlie parker.\nThe proposed answer is: stanhope\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:11:16 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which jazz saxophonist was nicknamed Bird\nThe expected answer is: charlie parker.\nThe proposed answer is: stanhope\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: parker\nThe proposed answer is: parker charlie\nThe proposed answer is: parker charlie bird\nThe proposed answer is: parker charlie birdie\nThe proposed answer is: parker'
+2025-11-05 22:11:16 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:16 INFO     Recomputed accuracy!
+2025-11-05 22:11:16 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:16 INFO     Recomputing accuracy!
+2025-11-05 22:11:21 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:21 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In which sport would you see someone slam-dunking the ball?\nThe expected answer is: basketball.\nThe proposed answer is: basketball\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:11:21 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In which sport would you see someone slam-dunking the ball?\nThe expected answer is: basketball.\nThe proposed answer is: basketball\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: volleyball\nThe proposed answer is: football\nThe proposed answer is: soccer\nThe proposed answer is: baseball\nThe proposed answer is: tennis\nThe proposed answer is: hockey\nThe proposed answer is: golf'
+2025-11-05 22:11:21 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:21 INFO     Recomputed accuracy!
+2025-11-05 22:11:21 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:21 INFO     Recomputing accuracy!
+2025-11-05 22:11:26 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:26 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In which Scottish border town was seven-a-side rugby first played?\nThe expected answer is: melrose.\nThe proposed answer is: melrose\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:11:26 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In which Scottish border town was seven-a-side rugby first played?\nThe expected answer is: melrose.\nThe proposed answer is: melrose\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: melrose\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: melrose\nWithin the'
+2025-11-05 22:11:26 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:26 INFO     Recomputed accuracy!
+2025-11-05 22:11:26 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:26 INFO     Recomputing accuracy!
+2025-11-05 22:11:31 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:31 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which stretch of waterway separates Madagascar from the African mainland?\nThe expected answer is: mozambique channel.\nThe proposed answer is: indian ocean\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:11:31 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which stretch of waterway separates Madagascar from the African mainland?\nThe expected answer is: mozambique channel.\nThe proposed answer is: indian ocean\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: indian ocean\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: indian ocean\nWithin the'
+2025-11-05 22:11:31 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:31 INFO     Recomputed accuracy!
+2025-11-05 22:11:31 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:31 INFO     Recomputing accuracy!
+2025-11-05 22:11:36 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:36 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which Scottish newspaper features the Broons and Oor Wullie?\nThe expected answer is: sunday post.\nThe proposed answer is: sunday post\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:11:36 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which Scottish newspaper features the Broons and Oor Wullie?\nThe expected answer is: sunday post.\nThe proposed answer is: sunday post\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe expected answer is: sunday post.\nThe proposed answer is: sunday post\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe expected'
+2025-11-05 22:11:36 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 71, token_stop_index 122, last_token:  expected, generation was: We are assessing the quality of answers to the following question: Which Scottish newspaper features the Broons and Oor Wullie?
+The expected answer is: sunday post.
+The proposed answer is: sunday post
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The expected answer is: sunday post.
+The proposed answer is: sunday post
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The expected, slice_answer: yes
+The expected answer is: sunday post.
+The proposed answer is: sunday post
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The expected
+2025-11-05 22:11:36 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:36 INFO     Recomputed accuracy!
+2025-11-05 22:11:36 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:36 INFO     Recomputing accuracy!
+2025-11-05 22:11:41 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:41 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Where did Richard III ‘imprison’ his two young nephews in order to eliminate them from succession to the throne so that he could gain the crown of England?\nThe expected answer is: tower of london.\nThe proposed answer is: the tower of london\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:11:41 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Where did Richard III ‘imprison’ his two young nephews in order to eliminate them from succession to the throne so that he could gain the crown of England?\nThe expected answer is: tower of london.\nThe proposed answer is: the tower of london\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes, the proposed answer means the same as the expected answer.\nResponse: No, the proposed answer does not mean the same as the expected answer.\nThe expected answer is: tower of london.\nThe proposed answer is: the tower of london\nWithin'
+2025-11-05 22:11:41 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 94, token_stop_index 145, last_token: Within, generation was: We are assessing the quality of answers to the following question: Where did Richard III ‘imprison’ his two young nephews in order to eliminate them from succession to the throne so that he could gain the crown of England?
+The expected answer is: tower of london.
+The proposed answer is: the tower of london
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: Yes, the proposed answer means the same as the expected answer.
+Response: No, the proposed answer does not mean the same as the expected answer.
+The expected answer is: tower of london.
+The proposed answer is: the tower of london
+Within, slice_answer: Yes, the proposed answer means the same as the expected answer.
+Response: No, the proposed answer does not mean the same as the expected answer.
+The expected answer is: tower of london.
+The proposed answer is: the tower of london
+Within
+2025-11-05 22:11:41 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:41 INFO     Recomputed accuracy!
+2025-11-05 22:11:41 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:41 INFO     Recomputing accuracy!
+2025-11-05 22:11:46 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:46 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: Which group topped the UK charts for one week in 1997 with 'D'You Know What I Mean'?\nThe expected answer is: oasis.\nThe proposed answer is: oasis\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:11:46 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: Which group topped the UK charts for one week in 1997 with 'D'You Know What I Mean'?\nThe expected answer is: oasis.\nThe proposed answer is: oasis\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: oasis\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: oasis\nWithin the context of"
+2025-11-05 22:11:46 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:46 INFO     Recomputed accuracy!
+2025-11-05 22:11:46 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:46 INFO     Recomputing accuracy!
+2025-11-05 22:11:51 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:51 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: The word barber - meaning a men's/boy's hairdresser - is from Latin meaning?\nThe expected answer is: beards.\nThe proposed answer is: barbator\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:11:51 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: The word barber - meaning a men's/boy's hairdresser - is from Latin meaning?\nThe expected answer is: beards.\nThe proposed answer is: barbator\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: barba\nThe proposed answer is: barba\nThe proposed answer is: barba\nThe proposed answer is: barba\nThe proposed answer is: barba\nThe proposed answer is: barba\n"
+2025-11-05 22:11:51 INFO     Recomputed accuracy!
+2025-11-05 22:11:51 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:51 INFO     Recomputing accuracy!
+2025-11-05 22:11:56 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:11:56 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: When sending an email you are given the option to 'Add Cc' or 'Add Bcc'. For which word is the 'B' the initial letter?\nThe expected answer is: bcc.\nThe proposed answer is: bcc\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:11:56 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: When sending an email you are given the option to 'Add Cc' or 'Add Bcc'. For which word is the 'B' the initial letter?\nThe expected answer is: bcc.\nThe proposed answer is: bcc\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: bcc\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: bcc\nWithin the"
+2025-11-05 22:11:56 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:11:56 INFO     Recomputed accuracy!
+2025-11-05 22:11:56 INFO     validation_is_true: 1.000000
+2025-11-05 22:11:56 INFO     Recomputing accuracy!
+2025-11-05 22:12:01 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:01 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What is the more common name for atmospheric vapour frozen in a crystalline form\nThe expected answer is: snow.\nThe proposed answer is: snow\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:01 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What is the more common name for atmospheric vapour frozen in a crystalline form\nThe expected answer is: snow.\nThe proposed answer is: snow\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: snow\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: snow\nWithin the context of'
+2025-11-05 22:12:01 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:01 INFO     Recomputed accuracy!
+2025-11-05 22:12:01 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:01 INFO     Recomputing accuracy!
+2025-11-05 22:12:06 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:06 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Who of these musicians was inducted into the Rock and Roll Hall of Fame in 2014?\nThe expected answer is: cat stevens.\nThe proposed answer is: peter gabriel\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:06 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Who of these musicians was inducted into the Rock and Roll Hall of Fame in 2014?\nThe expected answer is: cat stevens.\nThe proposed answer is: peter gabriel\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: cat stevens\nThe proposed answer is: peter gabriel\nThe proposed answer is: cat stevens\nThe proposed answer is: peter gabriel\nThe proposed answer is: cat stevens\nThe proposed answer'
+2025-11-05 22:12:06 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 79, token_stop_index 130, last_token:  answer, generation was: We are assessing the quality of answers to the following question: Who of these musicians was inducted into the Rock and Roll Hall of Fame in 2014?
+The expected answer is: cat stevens.
+The proposed answer is: peter gabriel
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer is: cat stevens
+The proposed answer is: peter gabriel
+The proposed answer is: cat stevens
+The proposed answer is: peter gabriel
+The proposed answer is: cat stevens
+The proposed answer, slice_answer: yes
+The proposed answer is: cat stevens
+The proposed answer is: peter gabriel
+The proposed answer is: cat stevens
+The proposed answer is: peter gabriel
+The proposed answer is: cat stevens
+The proposed answer
+2025-11-05 22:12:06 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:06 INFO     Recomputed accuracy!
+2025-11-05 22:12:06 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:06 INFO     Recomputing accuracy!
+2025-11-05 22:12:11 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:11 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: Which city in Egypt has been characterised as the 'world's greatest open air museum' and contains the ruins of the temple complexes at Karnak as well as monuments that include the Valley of the Kings and the Valley of the Queens?\nThe expected answer is: luxor.\nThe proposed answer is: luxor\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:12:11 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: Which city in Egypt has been characterised as the 'world's greatest open air museum' and contains the ruins of the temple complexes at Karnak as well as monuments that include the Valley of the Kings and the Valley of the Queens?\nThe expected answer is: luxor.\nThe proposed answer is: luxor\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: cairo\nThe proposed answer is: alexandria\nThe proposed answer is: aswan\nThe proposed answer is: giza\nThe proposed answer is: sharm el sheikh\nThe proposed answer is:"
+2025-11-05 22:12:11 INFO     Recomputed accuracy!
+2025-11-05 22:12:11 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:11 INFO     Recomputing accuracy!
+2025-11-05 22:12:16 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:16 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What is the name for a natural satellite that orbits a planet?\nThe expected answer is: moon.\nThe proposed answer is: moon\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:16 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What is the name for a natural satellite that orbits a planet?\nThe expected answer is: moon.\nThe proposed answer is: moon\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: moon\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: moon\nWithin the context of'
+2025-11-05 22:12:16 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:16 INFO     Recomputed accuracy!
+2025-11-05 22:12:16 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:16 INFO     Recomputing accuracy!
+2025-11-05 22:12:21 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:21 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Irish writer and poet Oscar Wilde, who died in 1900, is buried in which European country?\nThe expected answer is: france.\nThe proposed answer is: italy\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:21 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Irish writer and poet Oscar Wilde, who died in 1900, is buried in which European country?\nThe expected answer is: france.\nThe proposed answer is: italy\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: spain\nThe proposed answer is: england\nThe proposed answer is: switzerland\nThe proposed answer is: germany\nThe proposed answer is: sweden\nThe proposed answer is: belgium\nThe'
+2025-11-05 22:12:21 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:21 INFO     Recomputed accuracy!
+2025-11-05 22:12:21 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:21 INFO     Recomputing accuracy!
+2025-11-05 22:12:26 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:26 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What was the 42nd state to join the Union on Nov 11, 1889?\nThe expected answer is: washington.\nThe proposed answer is: washington\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:26 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What was the 42nd state to join the Union on Nov 11, 1889?\nThe expected answer is: washington.\nThe proposed answer is: washington\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: washington\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: washington\nWithin the context of'
+2025-11-05 22:12:26 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:26 INFO     Recomputed accuracy!
+2025-11-05 22:12:26 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:26 INFO     Recomputing accuracy!
+2025-11-05 22:12:31 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:31 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which country in 2001 became the first to decriminalize recreational drug use?\nThe expected answer is: portugal.\nThe proposed answer is: portugal\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:31 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which country in 2001 became the first to decriminalize recreational drug use?\nThe expected answer is: portugal.\nThe proposed answer is: portugal\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: portugal\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: portugal\nWithin the'
+2025-11-05 22:12:31 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:31 INFO     Recomputed accuracy!
+2025-11-05 22:12:31 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:31 INFO     Recomputing accuracy!
+2025-11-05 22:12:36 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:36 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In the 1920s by what name did Angelo Siciliano become better known?\nThe expected answer is: angelo siciliano.\nThe proposed answer is: charles atlas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:36 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In the 1920s by what name did Angelo Siciliano become better known?\nThe expected answer is: angelo siciliano.\nThe proposed answer is: charles atlas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: charles atlas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: charles atlas\n'
+2025-11-05 22:12:36 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:36 INFO     Recomputed accuracy!
+2025-11-05 22:12:36 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:36 INFO     Recomputing accuracy!
+2025-11-05 22:12:41 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:41 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: The German 'Dosenwerfen', the French 'Chamboule-tout', and the British 'Aunt Sally' are?\nThe expected answer is: game.\nThe proposed answer is: coconut shy\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:12:41 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: The German 'Dosenwerfen', the French 'Chamboule-tout', and the British 'Aunt Sally' are?\nThe expected answer is: game.\nThe proposed answer is: coconut shy\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: coconut shy\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: coconut shy\nWithin the"
+2025-11-05 22:12:41 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:41 INFO     Recomputed accuracy!
+2025-11-05 22:12:41 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:41 INFO     Recomputing accuracy!
+2025-11-05 22:12:46 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:46 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: "Which artist\'s name means in translation ""Little Barrel""?"\nThe expected answer is: little barrel.\nThe proposed answer is: Botticelli\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:46 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: "Which artist\'s name means in translation ""Little Barrel""?"\nThe expected answer is: little barrel.\nThe proposed answer is: Botticelli\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: Botticelli\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: Botticelli\n'
+2025-11-05 22:12:46 INFO     Recomputed accuracy!
+2025-11-05 22:12:46 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:46 INFO     Recomputing accuracy!
+2025-11-05 22:12:51 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:51 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What is the medical name for the breastbone?\nThe expected answer is: manubrium.\nThe proposed answer is: sternum\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:12:51 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What is the medical name for the breastbone?\nThe expected answer is: manubrium.\nThe proposed answer is: sternum\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is: sternum\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is: sternum\nWithin the'
+2025-11-05 22:12:51 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:12:51 INFO     Recomputed accuracy!
+2025-11-05 22:12:51 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:51 INFO     Recomputing accuracy!
+2025-11-05 22:12:56 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:12:56 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: The song 'Everybody's Talkin' by Nilsson, featured in which film?\nThe expected answer is: midnight cowboy.\nThe proposed answer is: midnight cowboys\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:12:56 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: The song 'Everybody's Talkin' by Nilsson, featured in which film?\nThe expected answer is: midnight cowboy.\nThe proposed answer is: midnight cowboys\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: midnight cowboys\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: midnight cowboys\n"
+2025-11-05 22:12:56 INFO     Recomputed accuracy!
+2025-11-05 22:12:56 INFO     validation_is_true: 1.000000
+2025-11-05 22:12:56 INFO     Recomputing accuracy!
+2025-11-05 22:13:01 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:01 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Tanganyika and Zanzibar merged in 1964 to become which East African Republic?\nThe expected answer is: tanzania.\nThe proposed answer is: tanzania\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:01 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Tanganyika and Zanzibar merged in 1964 to become which East African Republic?\nThe expected answer is: tanzania.\nThe proposed answer is: tanzania\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: tanzania\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: tanzania\n'
+2025-11-05 22:13:01 INFO     Recomputed accuracy!
+2025-11-05 22:13:01 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:01 INFO     Recomputing accuracy!
+2025-11-05 22:13:06 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:06 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Sandygate Road football and cricket stadium is in which English city?\nThe expected answer is: sheffield.\nThe proposed answer is: Sheffield\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:06 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Sandygate Road football and cricket stadium is in which English city?\nThe expected answer is: sheffield.\nThe proposed answer is: Sheffield\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: Sheffield\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: Sheffield\nWithin the context of'
+2025-11-05 22:13:06 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:13:06 INFO     Recomputed accuracy!
+2025-11-05 22:13:06 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:06 INFO     Recomputing accuracy!
+2025-11-05 22:13:11 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:11 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which island group in the South Atlantic was once known as the Sebald Islands?\nThe expected answer is: falkland islands.\nThe proposed answer is: malvinas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:11 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which island group in the South Atlantic was once known as the Sebald Islands?\nThe expected answer is: falkland islands.\nThe proposed answer is: malvinas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: falkland islands\nThe proposed answer is: malvinas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes'
+2025-11-05 22:13:11 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:13:11 INFO     Recomputed accuracy!
+2025-11-05 22:13:11 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:11 INFO     Recomputing accuracy!
+2025-11-05 22:13:17 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:17 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: The Reign Of Terror was a period in the revolution of which country?\nThe expected answer is: france.\nThe proposed answer is: france\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:17 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: The Reign Of Terror was a period in the revolution of which country?\nThe expected answer is: france.\nThe proposed answer is: france\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: france\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: france\nWithin the context of'
+2025-11-05 22:13:17 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:13:17 INFO     Recomputed accuracy!
+2025-11-05 22:13:17 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:17 INFO     Recomputing accuracy!
+2025-11-05 22:13:22 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:22 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In humans, the medical condition Hyposmia affects which of the senses?\nThe expected answer is: smell.\nThe proposed answer is: smell\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:22 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In humans, the medical condition Hyposmia affects which of the senses?\nThe expected answer is: smell.\nThe proposed answer is: smell\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: taste\nThe proposed answer is: hearing\nThe proposed answer is: touch\nThe proposed answer is: sight\nThe proposed answer is: vision\nThe proposed answer is: hearing\nThe proposed answer is: touch'
+2025-11-05 22:13:22 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 70, token_stop_index 121, last_token:  touch, generation was: We are assessing the quality of answers to the following question: In humans, the medical condition Hyposmia affects which of the senses?
+The expected answer is: smell.
+The proposed answer is: smell
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer is: taste
+The proposed answer is: hearing
+The proposed answer is: touch
+The proposed answer is: sight
+The proposed answer is: vision
+The proposed answer is: hearing
+The proposed answer is: touch, slice_answer: yes
+The proposed answer is: taste
+The proposed answer is: hearing
+The proposed answer is: touch
+The proposed answer is: sight
+The proposed answer is: vision
+The proposed answer is: hearing
+The proposed answer is: touch
+2025-11-05 22:13:22 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:13:22 INFO     Recomputed accuracy!
+2025-11-05 22:13:22 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:22 INFO     Recomputing accuracy!
+2025-11-05 22:13:27 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:27 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: "Which make of car is advertised under the slogan ""Vorsprung Durch Technik""?"\nThe expected answer is: audi.\nThe proposed answer is: audi\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:27 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: "Which make of car is advertised under the slogan ""Vorsprung Durch Technik""?"\nThe expected answer is: audi.\nThe proposed answer is: audi\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: bmw\nThe proposed answer is: mercedes\nThe proposed answer is: volkswagen\nThe proposed answer is: toyota\nThe proposed answer is: ford\nThe proposed answer is: nissan\n'
+2025-11-05 22:13:27 INFO     Recomputed accuracy!
+2025-11-05 22:13:27 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:27 INFO     Recomputing accuracy!
+2025-11-05 22:13:32 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:32 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which female singer had a top ten hit in 1998 with My Favourite Mistake\nThe expected answer is: sheryl suzanne crow.\nThe proposed answer is: sheryl crow\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:32 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which female singer had a top ten hit in 1998 with My Favourite Mistake\nThe expected answer is: sheryl suzanne crow.\nThe proposed answer is: sheryl crow\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: sheryl crow\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: sheryl crow\n'
+2025-11-05 22:13:32 INFO     Recomputed accuracy!
+2025-11-05 22:13:32 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:32 INFO     Recomputing accuracy!
+2025-11-05 22:13:37 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:37 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In what month was the attack on Pearl Harbor?\nThe expected answer is: december.\nThe proposed answer is: december 7\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:37 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In what month was the attack on Pearl Harbor?\nThe expected answer is: december.\nThe proposed answer is: december 7\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: december 7 1941\nThe proposed answer is: december 7th\nThe proposed answer is: december 7th 1941\nThe proposed answer is: december 7th 1941\n'
+2025-11-05 22:13:37 INFO     Recomputed accuracy!
+2025-11-05 22:13:37 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:37 INFO     Recomputing accuracy!
+2025-11-05 22:13:42 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:42 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In which US state is Green Bay?\nThe expected answer is: wisconsin.\nThe proposed answer is: wisconsin\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:42 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In which US state is Green Bay?\nThe expected answer is: wisconsin.\nThe proposed answer is: wisconsin\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: wisconsin\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: wisconsin\nWithin the'
+2025-11-05 22:13:42 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:13:42 INFO     Recomputed accuracy!
+2025-11-05 22:13:42 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:42 INFO     Recomputing accuracy!
+2025-11-05 22:13:47 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:47 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which wild life quiz show was hosted by Henry Kelly\nThe expected answer is: monkey business.\nThe proposed answer is: game for a laugh\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:47 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which wild life quiz show was hosted by Henry Kelly\nThe expected answer is: monkey business.\nThe proposed answer is: game for a laugh\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: game for a laugh\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: game for a'
+2025-11-05 22:13:47 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:13:47 INFO     Recomputed accuracy!
+2025-11-05 22:13:47 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:47 INFO     Recomputing accuracy!
+2025-11-05 22:13:52 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:52 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: ‘The King of Barataria’ is the subtitle of which Gilbert and Sullivan operetta?\nThe expected answer is: gondoliers.\nThe proposed answer is: the gondoliers\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:52 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: ‘The King of Barataria’ is the subtitle of which Gilbert and Sullivan operetta?\nThe expected answer is: gondoliers.\nThe proposed answer is: the gondoliers\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: the gondoliers\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: the g'
+2025-11-05 22:13:52 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:13:52 INFO     Recomputed accuracy!
+2025-11-05 22:13:52 INFO     validation_is_true: 1.000000
+2025-11-05 22:13:52 INFO     Recomputing accuracy!
+2025-11-05 22:13:57 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:13:57 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What was the name of the Brazilian player who won the Women’s Singles Finals at Wimbledon in 1959, 1960 and 1964?\nThe expected answer is: maria bueno.\nThe proposed answer is: billie jean king\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:13:57 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What was the name of the Brazilian player who won the Women’s Singles Finals at Wimbledon in 1959, 1960 and 1964?\nThe expected answer is: maria bueno.\nThe proposed answer is: billie jean king\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: no\nExplanation: The proposed answer is not the same as the expected answer. The expected answer is the name of the Brazilian player who won the Women’s Singles Finals at Wimbledon in 1959, 1960 and 1964. The proposed'
+2025-11-05 22:13:57 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:13:57 INFO     Recomputed accuracy!
+2025-11-05 22:13:57 INFO     validation_is_true: 0.000000
+2025-11-05 22:13:57 INFO     Recomputing accuracy!
+2025-11-05 22:14:02 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:02 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What was the name of the cat in Rising Damp?\nThe expected answer is: vienna.\nThe proposed answer is: violette\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:02 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What was the name of the cat in Rising Damp?\nThe expected answer is: vienna.\nThe proposed answer is: violette\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: vienna\nThe proposed answer is: vienna\nThe proposed answer is: vienna\nThe proposed answer is: vienna\nThe proposed answer is: vienna\nThe proposed answer is: vienna\n'
+2025-11-05 22:14:02 INFO     Recomputed accuracy!
+2025-11-05 22:14:02 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:02 INFO     Recomputing accuracy!
+2025-11-05 22:14:07 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:07 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which French artist joined a Post-Impressionist group, started the Synthetist movement and worked in Tahiti from 1891 to 1893, and 1895 to 1901?\nThe expected answer is: gauguin.\nThe proposed answer is: paul gauguin\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:07 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which French artist joined a Post-Impressionist group, started the Synthetist movement and worked in Tahiti from 1891 to 1893, and 1895 to 1901?\nThe expected answer is: gauguin.\nThe proposed answer is: paul gauguin\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: paul gauguin\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: paul gaugu'
+2025-11-05 22:14:07 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:07 INFO     Recomputed accuracy!
+2025-11-05 22:14:07 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:07 INFO     Recomputing accuracy!
+2025-11-05 22:14:12 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:12 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What is the young of a hawk called?\nThe expected answer is: falcons.\nThe proposed answer is: young\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:12 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What is the young of a hawk called?\nThe expected answer is: falcons.\nThe proposed answer is: young\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: young\nThe expected answer is: falcons\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: no\nThe proposed answer'
+2025-11-05 22:14:12 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 65, token_stop_index 116, last_token:  answer, generation was: We are assessing the quality of answers to the following question: What is the young of a hawk called?
+The expected answer is: falcons.
+The proposed answer is: young
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer is: young
+The expected answer is: falcons
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: no
+The proposed answer, slice_answer: yes
+The proposed answer is: young
+The expected answer is: falcons
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: no
+The proposed answer
+2025-11-05 22:14:12 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:12 INFO     Recomputed accuracy!
+2025-11-05 22:14:12 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:12 INFO     Recomputing accuracy!
+2025-11-05 22:14:17 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:17 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which band was founded by Chris Difford and Glenn Tilbrook in 1974?\nThe expected answer is: squeeze.\nThe proposed answer is: squeeze\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:17 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which band was founded by Chris Difford and Glenn Tilbrook in 1974?\nThe expected answer is: squeeze.\nThe proposed answer is: squeeze\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: squeeze\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: squeeze\nWithin the context of'
+2025-11-05 22:14:17 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:17 INFO     Recomputed accuracy!
+2025-11-05 22:14:17 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:17 INFO     Recomputing accuracy!
+2025-11-05 22:14:22 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:22 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Psychoanalyst A A Brill described what as ‘Torches of Freedom’ in the 1920’s, as symbols of equality for women?\nThe expected answer is: cigarettes.\nThe proposed answer is: cigarettes\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:22 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Psychoanalyst A A Brill described what as ‘Torches of Freedom’ in the 1920’s, as symbols of equality for women?\nThe expected answer is: cigarettes.\nThe proposed answer is: cigarettes\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: cigars\nThe proposed answer is: cigars\nThe proposed answer is: cigars\nThe proposed answer is: cigars\nThe proposed answer is: cigars\nThe proposed answer is: cigars\nThe proposed answer is: cigars'
+2025-11-05 22:14:22 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:22 INFO     Recomputed accuracy!
+2025-11-05 22:14:22 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:22 INFO     Recomputing accuracy!
+2025-11-05 22:14:27 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:27 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What was the name of the Russian Space Station, launched in 1986?\nThe expected answer is: space station mir.\nThe proposed answer is: mir\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:27 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What was the name of the Russian Space Station, launched in 1986?\nThe expected answer is: space station mir.\nThe proposed answer is: mir\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: mir space station\nThe proposed answer is: mir space station\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\n'
+2025-11-05 22:14:27 INFO     Recomputed accuracy!
+2025-11-05 22:14:27 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:27 INFO     Recomputing accuracy!
+2025-11-05 22:14:32 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:32 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Saint Therese is associated with which town?\nThe expected answer is: lisieux.\nThe proposed answer is: lisieux\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:32 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Saint Therese is associated with which town?\nThe expected answer is: lisieux.\nThe proposed answer is: lisieux\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: lisieux\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: lisieux\nWithin the'
+2025-11-05 22:14:32 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:32 INFO     Recomputed accuracy!
+2025-11-05 22:14:32 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:32 INFO     Recomputing accuracy!
+2025-11-05 22:14:37 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:37 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which Tennis star was Brooke Shields once married to?\nThe expected answer is: andre agassi.\nThe proposed answer is: andre agassi\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:37 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which Tennis star was Brooke Shields once married to?\nThe expected answer is: andre agassi.\nThe proposed answer is: andre agassi\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: andre agassi\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: andre agassi\n'
+2025-11-05 22:14:37 INFO     Recomputed accuracy!
+2025-11-05 22:14:37 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:37 INFO     Recomputing accuracy!
+2025-11-05 22:14:42 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:42 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: The Erythraean Sea, lying between Africa and Asia is more commonly called the (What?) Sea?\nThe expected answer is: red sea.\nThe proposed answer is: red sea\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:42 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: The Erythraean Sea, lying between Africa and Asia is more commonly called the (What?) Sea?\nThe expected answer is: red sea.\nThe proposed answer is: red sea\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: red sea\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: red sea\nWithin the'
+2025-11-05 22:14:42 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:42 INFO     Recomputed accuracy!
+2025-11-05 22:14:42 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:42 INFO     Recomputing accuracy!
+2025-11-05 22:14:47 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:47 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which country singer released the 1975 concept album Red Headed Stranger?\nThe expected answer is: willie nelson.\nThe proposed answer is: willie nelson\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:47 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which country singer released the 1975 concept album Red Headed Stranger?\nThe expected answer is: willie nelson.\nThe proposed answer is: willie nelson\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: willie nelson\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: willie n'
+2025-11-05 22:14:47 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:47 INFO     Recomputed accuracy!
+2025-11-05 22:14:47 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:47 INFO     Recomputing accuracy!
+2025-11-05 22:14:52 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:52 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Where is the administrative centre of Cumbria?\nThe expected answer is: carlisle.\nThe proposed answer is: Carlisle\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:52 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Where is the administrative centre of Cumbria?\nThe expected answer is: carlisle.\nThe proposed answer is: Carlisle\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: Carlisle\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: Carlisle\nWithin the'
+2025-11-05 22:14:52 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:52 INFO     Recomputed accuracy!
+2025-11-05 22:14:52 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:52 INFO     Recomputing accuracy!
+2025-11-05 22:14:57 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:14:57 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What U.S. state is closest to Africa (geographically)?\nThe expected answer is: maine.\nThe proposed answer is: maine\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:14:57 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What U.S. state is closest to Africa (geographically)?\nThe expected answer is: maine.\nThe proposed answer is: maine\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: maine\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: maine\nWithin the'
+2025-11-05 22:14:57 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:14:57 INFO     Recomputed accuracy!
+2025-11-05 22:14:57 INFO     validation_is_true: 1.000000
+2025-11-05 22:14:57 INFO     Recomputing accuracy!
+2025-11-05 22:15:02 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:02 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: I n dressmaking what are featherweight, skirt weight and open ended\nThe expected answer is: zips.\nThe proposed answer is: heavy duty\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:02 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: I n dressmaking what are featherweight, skirt weight and open ended\nThe expected answer is: zips.\nThe proposed answer is: heavy duty\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: No\nThe proposed answer is: heavy duty\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: No\nThe proposed answer is: heavy duty\nWithin the'
+2025-11-05 22:15:02 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:02 INFO     Recomputed accuracy!
+2025-11-05 22:15:02 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:02 INFO     Recomputing accuracy!
+2025-11-05 22:15:07 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:07 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Where did the Shinning Path terrorists operate?\nThe expected answer is: peru.\nThe proposed answer is: peru\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:07 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Where did the Shinning Path terrorists operate?\nThe expected answer is: peru.\nThe proposed answer is: peru\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: peru\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: peru\nWithin the context of'
+2025-11-05 22:15:07 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:07 INFO     Recomputed accuracy!
+2025-11-05 22:15:07 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:07 INFO     Recomputing accuracy!
+2025-11-05 22:15:12 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:12 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What element is often called quicksilver?\nThe expected answer is: mercury.\nThe proposed answer is: mercury\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:12 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What element is often called quicksilver?\nThe expected answer is: mercury.\nThe proposed answer is: mercury\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is: mercury\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is: mercury\nWithin the context of'
+2025-11-05 22:15:12 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:12 INFO     Recomputed accuracy!
+2025-11-05 22:15:12 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:12 INFO     Recomputing accuracy!
+2025-11-05 22:15:17 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:17 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In 2015 Edgar Lungu became prime minister of?\nThe expected answer is: zambia.\nThe proposed answer is: zambia\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:17 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In 2015 Edgar Lungu became prime minister of?\nThe expected answer is: zambia.\nThe proposed answer is: zambia\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: zambia\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: zambia\nWithin the'
+2025-11-05 22:15:17 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:17 INFO     Recomputed accuracy!
+2025-11-05 22:15:17 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:17 INFO     Recomputing accuracy!
+2025-11-05 22:15:22 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:22 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which car manufacturer originally made the model known as the Matiz?\nThe expected answer is: daewoo.\nThe proposed answer is: chevrolet\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:22 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which car manufacturer originally made the model known as the Matiz?\nThe expected answer is: daewoo.\nThe proposed answer is: chevrolet\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: daewoo\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: daewoo\n'
+2025-11-05 22:15:22 INFO     Recomputed accuracy!
+2025-11-05 22:15:22 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:22 INFO     Recomputing accuracy!
+2025-11-05 22:15:27 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:27 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: How is children's author Mary Pollock better known?\nThe expected answer is: mary pollock.\nThe proposed answer is: enid blyton\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:15:27 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: How is children's author Mary Pollock better known?\nThe expected answer is: mary pollock.\nThe proposed answer is: enid blyton\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: mary pollock\nThe proposed answer is: mary pollock, enid blyton\nThe proposed answer is: enid blyton, mary pollock\nThe proposed answer is: enid bly"
+2025-11-05 22:15:27 INFO     Recomputed accuracy!
+2025-11-05 22:15:27 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:27 INFO     Recomputing accuracy!
+2025-11-05 22:15:32 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:32 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In which field of the arts has American born Annie Leibovitz achieved fame?\nThe expected answer is: photographic.\nThe proposed answer is: photography\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:32 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In which field of the arts has American born Annie Leibovitz achieved fame?\nThe expected answer is: photographic.\nThe proposed answer is: photography\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is: photography\nThe expected answer is: photographic.\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is'
+2025-11-05 22:15:32 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:32 INFO     Recomputed accuracy!
+2025-11-05 22:15:32 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:32 INFO     Recomputing accuracy!
+2025-11-05 22:15:37 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:37 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What is the currency of Lithuania?\nThe expected answer is: lithuanian litas.\nThe proposed answer is: litas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:37 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What is the currency of Lithuania?\nThe expected answer is: lithuanian litas.\nThe proposed answer is: litas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: litas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: litas\nWithin the'
+2025-11-05 22:15:37 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:37 INFO     Recomputed accuracy!
+2025-11-05 22:15:37 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:37 INFO     Recomputing accuracy!
+2025-11-05 22:15:42 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:42 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: In Rowing, who received gold medals for the Women's coxless pair?\nThe expected answer is: helen glover and heather stanning.\nThe proposed answer is: heather stanning and helena Glover\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:15:42 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: In Rowing, who received gold medals for the Women's coxless pair?\nThe expected answer is: helen glover and heather stanning.\nThe proposed answer is: heather stanning and helena Glover\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: heather stanning and helena Glover\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is"
+2025-11-05 22:15:42 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:42 INFO     Recomputed accuracy!
+2025-11-05 22:15:42 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:42 INFO     Recomputing accuracy!
+2025-11-05 22:15:47 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:47 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In 1926, Irish aristocrat Violet Gibson attempted but failed to assassinate which political leader?\nThe expected answer is: mussolini.\nThe proposed answer is: mussolini\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:47 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In 1926, Irish aristocrat Violet Gibson attempted but failed to assassinate which political leader?\nThe expected answer is: mussolini.\nThe proposed answer is: mussolini\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: mussolini\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: mussolini\nWithin the'
+2025-11-05 22:15:47 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:47 INFO     Recomputed accuracy!
+2025-11-05 22:15:47 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:47 INFO     Recomputing accuracy!
+2025-11-05 22:15:52 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:52 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: In which film did Kenneth Williams say infamy infamy they've all got it in for me?\nThe expected answer is: carry on cleo.\nThe proposed answer is: carry on cleo\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:15:52 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: In which film did Kenneth Williams say infamy infamy they've all got it in for me?\nThe expected answer is: carry on cleo.\nThe proposed answer is: carry on cleo\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: carry on cleo\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: carry on cle"
+2025-11-05 22:15:52 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:52 INFO     Recomputed accuracy!
+2025-11-05 22:15:52 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:52 INFO     Recomputing accuracy!
+2025-11-05 22:15:57 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:15:57 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Smoky, Leaf-nosed and Vesper are all species of which creature?\nThe expected answer is: bats.\nThe proposed answer is: bats\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:15:57 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Smoky, Leaf-nosed and Vesper are all species of which creature?\nThe expected answer is: bats.\nThe proposed answer is: bats\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: bats\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: bats\nWithin the context of'
+2025-11-05 22:15:57 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:15:57 INFO     Recomputed accuracy!
+2025-11-05 22:15:57 INFO     validation_is_true: 1.000000
+2025-11-05 22:15:57 INFO     Recomputing accuracy!
+2025-11-05 22:16:02 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:02 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What is the thick watery substance filling the space between the lens and the retina of the eye?\nThe expected answer is: vitreous humor.\nThe proposed answer is: vitreous humor\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:02 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What is the thick watery substance filling the space between the lens and the retina of the eye?\nThe expected answer is: vitreous humor.\nThe proposed answer is: vitreous humor\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is: vitreous humor\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is: vitreous'
+2025-11-05 22:16:02 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:02 INFO     Recomputed accuracy!
+2025-11-05 22:16:02 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:02 INFO     Recomputing accuracy!
+2025-11-05 22:16:07 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:07 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: The first Apollo moon landing?\nThe expected answer is: 11.\nThe proposed answer is: 1969-07-16\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:07 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: The first Apollo moon landing?\nThe expected answer is: 11.\nThe proposed answer is: 1969-07-16\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is: 1969-07-20\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nThe proposed answer is:'
+2025-11-05 22:16:07 INFO     Recomputed accuracy!
+2025-11-05 22:16:07 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:07 INFO     Recomputing accuracy!
+2025-11-05 22:16:13 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:13 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: To which poet does Il Postino deliver mail?\nThe expected answer is: pablo neruda.\nThe proposed answer is: pablo neruda\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:13 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: To which poet does Il Postino deliver mail?\nThe expected answer is: pablo neruda.\nThe proposed answer is: pablo neruda\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: pablo neruda\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: pablo ner'
+2025-11-05 22:16:13 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:13 INFO     Recomputed accuracy!
+2025-11-05 22:16:13 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:13 INFO     Recomputing accuracy!
+2025-11-05 22:16:17 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:17 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which is the most powerful chess piece?\nThe expected answer is: queen.\nThe proposed answer is: king\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:17 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: Which is the most powerful chess piece?\nThe expected answer is: queen.\nThe proposed answer is: king\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: Yes\nResponse: No\nResponse: Unsure\nResponse: Other\nResponse: I don't know\nResponse: I don't understand the question\nResponse: I don't understand the answer\nResponse: I don't understand the question or the answer"
+2025-11-05 22:16:17 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 63, token_stop_index 114, last_token:  answer, generation was: We are assessing the quality of answers to the following question: Which is the most powerful chess piece?
+The expected answer is: queen.
+The proposed answer is: king
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: Yes
+Response: No
+Response: Unsure
+Response: Other
+Response: I don't know
+Response: I don't understand the question
+Response: I don't understand the answer
+Response: I don't understand the question or the answer, slice_answer: Yes
+Response: No
+Response: Unsure
+Response: Other
+Response: I don't know
+Response: I don't understand the question
+Response: I don't understand the answer
+Response: I don't understand the question or the answer
+2025-11-05 22:16:17 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:17 INFO     Recomputed accuracy!
+2025-11-05 22:16:17 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:17 INFO     Recomputing accuracy!
+2025-11-05 22:16:22 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:22 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: The existance of which planet was mathematically\nThe expected answer is: neptune.\nThe proposed answer is: neptune\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:22 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: The existance of which planet was mathematically\nThe expected answer is: neptune.\nThe proposed answer is: neptune\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: neptune\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: neptune\nWithin the'
+2025-11-05 22:16:22 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:22 INFO     Recomputed accuracy!
+2025-11-05 22:16:22 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:22 INFO     Recomputing accuracy!
+2025-11-05 22:16:28 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:28 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What aid to baking was invented by Henry Jones of Bristol in 1845\nThe expected answer is: flour.\nThe proposed answer is: patent flour\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:28 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What aid to baking was invented by Henry Jones of Bristol in 1845\nThe expected answer is: flour.\nThe proposed answer is: patent flour\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: patent flour\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: patent flour\nWithin the'
+2025-11-05 22:16:28 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:28 INFO     Recomputed accuracy!
+2025-11-05 22:16:28 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:28 INFO     Recomputing accuracy!
+2025-11-05 22:16:33 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:33 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In 2010 British ex-soldier Ed Stafford became the first person (ever known) to walk the entire length of what river?\nThe expected answer is: amazon.\nThe proposed answer is: amazom\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:33 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In 2010 British ex-soldier Ed Stafford became the first person (ever known) to walk the entire length of what river?\nThe expected answer is: amazon.\nThe proposed answer is: amazom\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nResponse: no\nResponse: yes\nResponse: no\nResponse: yes\nResponse: no\nResponse: yes\nResponse: no\nResponse: yes\nResponse: no\nResponse: yes\nResponse: no\nResponse: yes\n'
+2025-11-05 22:16:33 INFO     Recomputed accuracy!
+2025-11-05 22:16:33 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:33 INFO     Recomputing accuracy!
+2025-11-05 22:16:38 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:38 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: According to figures released by the ONS what was the most popular name for baby boys in 2012?\nThe expected answer is: harry.\nThe proposed answer is: amelia\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:38 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: According to figures released by the ONS what was the most popular name for baby boys in 2012?\nThe expected answer is: harry.\nThe proposed answer is: amelia\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: harry\nThe proposed answer is: harry harry\nThe proposed answer is: harry harry harry\nThe proposed answer is: harry harry harry harry\nThe proposed answer is'
+2025-11-05 22:16:38 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:38 INFO     Recomputed accuracy!
+2025-11-05 22:16:38 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:38 INFO     Recomputing accuracy!
+2025-11-05 22:16:43 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:43 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which city was the setting for Shakespeare’s play Measure for Measure?\nThe expected answer is: city of vienna.\nThe proposed answer is: vienna\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:43 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which city was the setting for Shakespeare’s play Measure for Measure?\nThe expected answer is: city of vienna.\nThe proposed answer is: vienna\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: vienna\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: vienna\nWithin the'
+2025-11-05 22:16:43 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:43 INFO     Recomputed accuracy!
+2025-11-05 22:16:43 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:43 INFO     Recomputing accuracy!
+2025-11-05 22:16:48 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:48 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which Roman Emperor was allegedy killed by his wife, Aggripina, in AD54?\nThe expected answer is: claudius.\nThe proposed answer is: Nero\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:48 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which Roman Emperor was allegedy killed by his wife, Aggripina, in AD54?\nThe expected answer is: claudius.\nThe proposed answer is: Nero\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: Claudius\nThe proposed answer is: Nero\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer'
+2025-11-05 22:16:48 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 77, token_stop_index 128, last_token:  answer, generation was: We are assessing the quality of answers to the following question: Which Roman Emperor was allegedy killed by his wife, Aggripina, in AD54?
+The expected answer is: claudius.
+The proposed answer is: Nero
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer is: Claudius
+The proposed answer is: Nero
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer, slice_answer: yes
+The proposed answer is: Claudius
+The proposed answer is: Nero
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer
+2025-11-05 22:16:48 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:48 INFO     Recomputed accuracy!
+2025-11-05 22:16:48 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:48 INFO     Recomputing accuracy!
+2025-11-05 22:16:53 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:53 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: The main characters in which TV programme had the surnames Geller, Green, Bing, Buffay, Tribbiani and Geller?\nThe expected answer is: central perk.\nThe proposed answer is: friends\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:53 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: The main characters in which TV programme had the surnames Geller, Green, Bing, Buffay, Tribbiani and Geller?\nThe expected answer is: central perk.\nThe proposed answer is: friends\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: friends\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: friends\nWithin the context of'
+2025-11-05 22:16:53 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:16:53 INFO     Recomputed accuracy!
+2025-11-05 22:16:53 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:53 INFO     Recomputing accuracy!
+2025-11-05 22:16:58 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:16:58 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: The 2002 film ‘We Were Soldiers’ is set in which war?\nThe expected answer is: vietnam war.\nThe proposed answer is: vietnam\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:16:58 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: The 2002 film ‘We Were Soldiers’ is set in which war?\nThe expected answer is: vietnam war.\nThe proposed answer is: vietnam\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: vietnam war\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: vietnam war\n'
+2025-11-05 22:16:58 INFO     Recomputed accuracy!
+2025-11-05 22:16:58 INFO     validation_is_true: 1.000000
+2025-11-05 22:16:58 INFO     Recomputing accuracy!
+2025-11-05 22:17:03 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:03 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In which U S state is Arches National Park located just outside the city of Moab?\nThe expected answer is: utah.\nThe proposed answer is: utah\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:03 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In which U S state is Arches National Park located just outside the city of Moab?\nThe expected answer is: utah.\nThe proposed answer is: utah\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: utah\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: utah\nWithin the'
+2025-11-05 22:17:03 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:03 INFO     Recomputed accuracy!
+2025-11-05 22:17:03 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:03 INFO     Recomputing accuracy!
+2025-11-05 22:17:08 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:08 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which rugby league team will play at Langtree Park in 2012?\nThe expected answer is: st helens.\nThe proposed answer is: saints\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:08 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which rugby league team will play at Langtree Park in 2012?\nThe expected answer is: st helens.\nThe proposed answer is: saints\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: st helens\nThe proposed answer is: st helens rlfc\nThe proposed answer is: st helens rlfc\nThe proposed answer is: st helens rlfc\nThe proposed answer is: st'
+2025-11-05 22:17:08 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:08 INFO     Recomputed accuracy!
+2025-11-05 22:17:08 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:08 INFO     Recomputing accuracy!
+2025-11-05 22:17:13 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:13 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Ereuthophobia is the irrational fear of which colour?\nThe expected answer is: color red.\nThe proposed answer is: red\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:13 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Ereuthophobia is the irrational fear of which colour?\nThe expected answer is: color red.\nThe proposed answer is: red\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: red\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: red\nWithin the context of'
+2025-11-05 22:17:13 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:13 INFO     Recomputed accuracy!
+2025-11-05 22:17:13 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:13 INFO     Recomputing accuracy!
+2025-11-05 22:17:18 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:18 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Which ball sport is played on a court 18 metres long by 9 metres wide?\nThe expected answer is: volleyball.\nThe proposed answer is: volleyball\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:18 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Which ball sport is played on a court 18 metres long by 9 metres wide?\nThe expected answer is: volleyball.\nThe proposed answer is: volleyball\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: basketball\nThe proposed answer is: tennis\nThe proposed answer is: handball\nThe proposed answer is: badminton\nThe proposed answer is: squash\nThe proposed answer is: table tennis\nThe proposed'
+2025-11-05 22:17:18 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:18 INFO     Recomputed accuracy!
+2025-11-05 22:17:18 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:18 INFO     Recomputing accuracy!
+2025-11-05 22:17:23 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:23 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Who betrayed Jesus for 30 pieces of silver?\nThe expected answer is: judas.\nThe proposed answer is: judas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:23 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: Who betrayed Jesus for 30 pieces of silver?\nThe expected answer is: judas.\nThe proposed answer is: judas\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nResponse: no\nResponse: I don't know\nResponse: I don't care\nResponse: I don't understand the question\nResponse: I don't understand the answer\nResponse: I don't understand the context\nResponse: I"
+2025-11-05 22:17:23 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:23 INFO     Recomputed accuracy!
+2025-11-05 22:17:23 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:23 INFO     Recomputing accuracy!
+2025-11-05 22:17:28 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:28 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: "Who wrote, directed, and starred in ""Citizen Kane""?"\nThe expected answer is: orson welles.\nThe proposed answer is: orson welles\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:28 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: "Who wrote, directed, and starred in ""Citizen Kane""?"\nThe expected answer is: orson welles.\nThe proposed answer is: orson welles\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: orson welles\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: orson wel'
+2025-11-05 22:17:28 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:28 INFO     Recomputed accuracy!
+2025-11-05 22:17:28 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:28 INFO     Recomputing accuracy!
+2025-11-05 22:17:33 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:33 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: In which country would you find the wine-producing region known as 'Casablanca Valley'?\nThe expected answer is: chile.\nThe proposed answer is: chile\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:17:33 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: In which country would you find the wine-producing region known as 'Casablanca Valley'?\nThe expected answer is: chile.\nThe proposed answer is: chile\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: chile\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: chile\nWithin the"
+2025-11-05 22:17:33 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:33 INFO     Recomputed accuracy!
+2025-11-05 22:17:33 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:33 INFO     Recomputing accuracy!
+2025-11-05 22:17:38 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:38 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In 2009, who became the first woman to referee the World Snooker Championship final?\nThe expected answer is: michaela tabb.\nThe proposed answer is: michaela tabb\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:38 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In 2009, who became the first woman to referee the World Snooker Championship final?\nThe expected answer is: michaela tabb.\nThe proposed answer is: michaela tabb\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: michaela tabb\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: michaela tab'
+2025-11-05 22:17:38 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:38 INFO     Recomputed accuracy!
+2025-11-05 22:17:38 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:38 INFO     Recomputing accuracy!
+2025-11-05 22:17:43 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:43 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: How is the Shakespeare character 'Robin Goodfellow' better known?\nThe expected answer is: puck.\nThe proposed answer is: puck\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:17:43 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: How is the Shakespeare character 'Robin Goodfellow' better known?\nThe expected answer is: puck.\nThe proposed answer is: puck\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: puck\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: puck\nWithin the context of"
+2025-11-05 22:17:43 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:43 INFO     Recomputed accuracy!
+2025-11-05 22:17:43 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:43 INFO     Recomputing accuracy!
+2025-11-05 22:17:48 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:48 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Who was the British Admiral who died in 1707 when four of his ships were wrecked in the Scilly Isles?\nThe expected answer is: shovell.\nThe proposed answer is: sir cloudesley shovell\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:48 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Who was the British Admiral who died in 1707 when four of his ships were wrecked in the Scilly Isles?\nThe expected answer is: shovell.\nThe proposed answer is: sir cloudesley shovell\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: sir cloudesley shovell\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is:'
+2025-11-05 22:17:48 INFO     Recomputed accuracy!
+2025-11-05 22:17:48 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:48 INFO     Recomputing accuracy!
+2025-11-05 22:17:53 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:53 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: "Who won ""Hell\'s Kitchen 2009"" on Television?"\nThe expected answer is: linda evans.\nThe proposed answer is: linda evans\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:53 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: "Who won ""Hell\'s Kitchen 2009"" on Television?"\nThe expected answer is: linda evans.\nThe proposed answer is: linda evans\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: linda evans\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: linda ev'
+2025-11-05 22:17:53 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:53 INFO     Recomputed accuracy!
+2025-11-05 22:17:53 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:53 INFO     Recomputing accuracy!
+2025-11-05 22:17:58 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:17:58 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Who was the first woman to fly the Atlantic solo\nThe expected answer is: amelia earhart.\nThe proposed answer is: amelia earhart\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:17:58 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Who was the first woman to fly the Atlantic solo\nThe expected answer is: amelia earhart.\nThe proposed answer is: amelia earhart\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: amelia earhart\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: amelia ear'
+2025-11-05 22:17:58 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:17:58 INFO     Recomputed accuracy!
+2025-11-05 22:17:58 INFO     validation_is_true: 1.000000
+2025-11-05 22:17:58 INFO     Recomputing accuracy!
+2025-11-05 22:18:03 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:18:03 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: In what park would you find Half Dome, a mecca for rock climbers?\nThe expected answer is: yosemite national.\nThe proposed answer is: yosemite national park\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:18:03 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: In what park would you find Half Dome, a mecca for rock climbers?\nThe expected answer is: yosemite national.\nThe proposed answer is: yosemite national park\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: yosemite national park\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: yosemite national'
+2025-11-05 22:18:03 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 76, token_stop_index 127, last_token:  national, generation was: We are assessing the quality of answers to the following question: In what park would you find Half Dome, a mecca for rock climbers?
+The expected answer is: yosemite national.
+The proposed answer is: yosemite national park
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer is: yosemite national park
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer is: yosemite national, slice_answer: yes
+The proposed answer is: yosemite national park
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer is: yosemite national
+2025-11-05 22:18:03 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:18:03 INFO     Recomputed accuracy!
+2025-11-05 22:18:03 INFO     validation_is_true: 1.000000
+2025-11-05 22:18:03 INFO     Recomputing accuracy!
+2025-11-05 22:18:08 WARNING  ⚠️ input_data not at the beginning of full_answer! Attempting fallback slicing... ⚠️
+2025-11-05 22:18:08 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: What was the former name of Manchester airport ?\nThe expected answer is: ringway.\nThe proposed answer is: ringway\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:18:08 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: What was the former name of Manchester airport?\nThe expected answer is: ringway.\nThe proposed answer is: ringway\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: ringway\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: ringway\nWithin the'
+2025-11-05 22:18:08 WARNING  🔹 Answer: 'yes\nThe proposed answer is: ringway\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: ringway\nWithin the'
+2025-11-05 22:18:08 WARNING  ⚠️ Could not find 'Answer:' – using entire model output.
+2025-11-05 22:18:08 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:18:08 INFO     Recomputed accuracy!
+2025-11-05 22:18:08 INFO     validation_is_true: 1.000000
+2025-11-05 22:18:08 INFO     Recomputing accuracy!
+2025-11-05 22:18:13 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:18:13 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: "Who was the American who, in 1871, collected animals and freaks for a travelling circus, menagerie and museum, which by 1872 was billing itself as ""The Greatest Show on Earth""?"\nThe expected answer is: barnum.\nThe proposed answer is: billy the kid\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:18:13 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: "Who was the American who, in 1871, collected animals and freaks for a travelling circus, menagerie and museum, which by 1872 was billing itself as ""The Greatest Show on Earth""?"\nThe expected answer is: barnum.\nThe proposed answer is: billy the kid\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: no\nExplanation: The proposed answer is not the same as the expected answer. The expected answer is the name of the person who founded the circus, while the proposed answer is the name of a famous outlaw.'
+2025-11-05 22:18:13 INFO     Recomputed accuracy!
+2025-11-05 22:18:13 INFO     validation_is_true: 0.000000
+2025-11-05 22:18:13 INFO     Recomputing accuracy!
+2025-11-05 22:18:18 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:18:18 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: Of which country is Yingluck Shinawatra the Prime Minister?\nThe expected answer is: thailand.\nThe proposed answer is: thailand\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:18:18 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: Of which country is Yingluck Shinawatra the Prime Minister?\nThe expected answer is: thailand.\nThe proposed answer is: thailand\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: thailand\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: thailand\nWithin the'
+2025-11-05 22:18:18 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:18:18 INFO     Recomputed accuracy!
+2025-11-05 22:18:18 INFO     validation_is_true: 1.000000
+2025-11-05 22:18:18 INFO     Recomputing accuracy!
+2025-11-05 22:18:20 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:18:20 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: She was the title character on TV’s ‘Ellen’, who ‘came out’ on the front of Time magazine?\nThe expected answer is: ellen degeneres.\nThe proposed answer is: portia de rossi\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:18:20 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: She was the title character on TV’s ‘Ellen’, who ‘came out’ on the front of Time magazine?\nThe expected answer is: ellen degeneres.\nThe proposed answer is: portia de rossi\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: No\nExplanation: Portia de Rossi is Ellen DeGeneres’ wife.'
+2025-11-05 22:18:20 INFO     Recomputed accuracy!
+2025-11-05 22:18:20 INFO     validation_is_true: 0.000000
+2025-11-05 22:18:20 INFO     Recomputing accuracy!
+2025-11-05 22:18:25 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:18:25 WARNING  🔹 input_data: 'We are assessing the quality of answers to the following question: All children except one grow up.\nThe expected answer is: peter pan.\nThe proposed answer is: one\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:'
+2025-11-05 22:18:25 WARNING  🔹 full_answer: 'We are assessing the quality of answers to the following question: All children except one grow up.\nThe expected answer is: peter pan.\nThe proposed answer is: one\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: peter\nThe proposed answer is: peter pan\nThe proposed answer is: peter pan peter pan\nThe proposed answer is: peter pan peter pan peter pan\nThe proposed answer is: peter pan peter pan peter pan'
+2025-11-05 22:18:25 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:18:25 INFO     Recomputed accuracy!
+2025-11-05 22:18:25 INFO     validation_is_true: 1.000000
+2025-11-05 22:18:25 INFO     Recomputing accuracy!
+2025-11-05 22:18:30 WARNING  ⚠️ Model returned! ⚠️
+2025-11-05 22:18:30 WARNING  🔹 input_data: "We are assessing the quality of answers to the following question: Traitor's Gate is part of which building?\nThe expected answer is: tower of london.\nThe proposed answer is: byward tower\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse:"
+2025-11-05 22:18:30 WARNING  🔹 full_answer: "We are assessing the quality of answers to the following question: Traitor's Gate is part of which building?\nThe expected answer is: tower of london.\nThe proposed answer is: byward tower\nWithin the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.\nResponse: yes\nThe proposed answer is: tower of london\nThe proposed answer is: tower of london\nThe proposed answer is: tower of london\nThe proposed answer is: tower of london\nThe proposed answer is: tower of london\nThe proposed answer"
+2025-11-05 22:18:30 ERROR    Taking last state because n_generated is too largen_generated: 51, n_input_token: 69, token_stop_index 120, last_token:  answer, generation was: We are assessing the quality of answers to the following question: Traitor's Gate is part of which building?
+The expected answer is: tower of london.
+The proposed answer is: byward tower
+Within the context of the question, does the proposed answer mean the same as the expected answer? Respond only with yes or no.
+Response: yes
+The proposed answer is: tower of london
+The proposed answer is: tower of london
+The proposed answer is: tower of london
+The proposed answer is: tower of london
+The proposed answer is: tower of london
+The proposed answer, slice_answer: yes
+The proposed answer is: tower of london
+The proposed answer is: tower of london
+The proposed answer is: tower of london
+The proposed answer is: tower of london
+The proposed answer is: tower of london
+The proposed answer
+2025-11-05 22:18:30 WARNING  Generation interrupted by max_token limit.
+2025-11-05 22:18:30 INFO     Recomputed accuracy!
+2025-11-05 22:18:30 INFO     validation_is_true: 1.000000
+2025-11-05 22:18:30 INFO     Accuracy on original task: 0.970000
+2025-11-05 22:18:30 INFO     Unanswerable prop on validation: 0.000000

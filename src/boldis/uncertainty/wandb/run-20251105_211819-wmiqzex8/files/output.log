@@ -1,0 +1,93 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-05 21:18:21 WARNING  Recompute accuracy enabled. This does not apply to precomputed p_true!
+2025-11-05 21:18:21 INFO     Initializing Llama judge model: Meta-Llama-3-8B
+tokenizer_config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 50.6k/50.6k [00:00<00:00, 29.3MB/s]
+tokenizer.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9.09M/9.09M [00:00<00:00, 12.5MB/s]
+special_tokens_map.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 73.0/73.0 [00:00<00:00, 236kB/s]
+Initializing model:  Meta-Llama-3-8B and base: meta-llama
+config.json: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 654/654 [00:00<00:00, 1.97MB/s]
+model.safetensors.index.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 23.9k/23.9k [00:00<00:00, 75.1MB/s]
+model-00004-of-00004.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.17G/1.17G [00:41<00:00, 28.4MB/s]
+model-00002-of-00004.safetensors:  68%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                         | 3.42G/5.00G [02:13<01:01, 25.6MB/s]
+model-00003-of-00004.safetensors:  77%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                     | 3.78G/4.92G [02:13<00:40, 28.3MB/s]
+model-00001-of-00004.safetensors:  68%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                         | 3.40G/4.98G [02:16<01:03, 24.9MB/s]
+Fetching 4 files:   0%|                                                                                                                                                                                                                                                                       | 0/4 [02:18<?, ?it/s]
+Traceback (most recent call last): 67%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                             | 3.34G/5.00G [02:10<00:49, 33.8MB/s]
+  File "/system/user/studentwork/boldis/super-guacamole/src/compute_uncertainty_measures.py", line 360, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/compute_uncertainty_measures.py", line 167, in main
+    metric = utils.get_metric(args.metric)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/utils/utils.py", line 404, in get_metric
+    metric = get_llama_metric(metric, max_new_tokens=50)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/utils/utils.py", line 322, in get_llama_metric
+    judge_model = HuggingfaceModel(
+                  ^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 128, in __init__
+    self.model = AutoModelForCausalLM.from_pretrained(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4900, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/modeling_utils.py", line 1200, in _get_resolved_checkpoint_files
+    checkpoint_files, sharded_metadata = get_checkpoint_shard_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/hub.py", line 1084, in get_checkpoint_shard_files
+    cached_filenames = cached_files(
+                       ^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/hub.py", line 567, in cached_files
+    raise e
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/hub.py", line 494, in cached_files
+    snapshot_download(
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/_snapshot_download.py", line 332, in snapshot_download
+    thread_map(
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/tqdm/contrib/concurrent.py", line 69, in thread_map
+    return _executor_map(ThreadPoolExecutor, fn, *iterables, **tqdm_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/tqdm/contrib/concurrent.py", line 51, in _executor_map
+    return list(tqdm_class(ex.map(fn, *iterables, chunksize=chunksize), **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/_snapshot_download.py", line 306, in _inner_hf_hub_download
+    return hf_hub_download(
+           ^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1168, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1720, in _download_to_tmp_and_move
+    xet_get(
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 626, in xet_get
+    download_files(
+RuntimeError: Data processing error: CAS service error : IO Error: No space left on device (os error 28)

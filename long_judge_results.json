@@ -1,0 +1,11 @@
+{
+  "G-NLL_AUROC": 0.24844622019279552,
+  "Accuracy": 0.73,
+  "Num_examples": 400,
+  "Num_correct": 292,
+  "Num_incorrect": 108,
+  "Mean_G-NLL": 0.9775655290623695,
+  "Std_G-NLL": 1.719699219223873,
+  "Min_G-NLL": 6.246371776796877e-05,
+  "Max_G-NLL": 13.479802661044232
+}

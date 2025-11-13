@@ -40,7 +40,7 @@ python generate_answers.py \
 ```bash
 cd src
 python compute_uncertainty_measures.py \
-    --eval_wandb_runid <SHORT_RUN_ID> \
+    --eval_wandb_runid 5dlvyae5 \
     --metric llm_llama-3-8b \
     --recompute_accuracy \
     --no-compute_predictive_entropy \
@@ -82,7 +82,7 @@ python generate_answers.py \
 ```bash
 cd src
 python compute_uncertainty_measures.py \
-    --eval_wandb_runid <LONG_RUN_ID> \
+    --eval_wandb_runid uir95r78 \
     --metric llm_llama-3-8b \
     --recompute_accuracy \
     --no-compute_predictive_entropy \
@@ -102,7 +102,7 @@ After generation and evaluation, compute AUROC using the standalone script:
 
 ```bash
 python compute_gnll_auroc.py \
-    src/nikos/uncertainty/wandb/run-<SHORT_RUN_ID>/files/validation_generations.pkl \
+    src/nikos/uncertainty/wandb/run-20251107_121616-5dlvyae5/files/validation_generations.pkl \
     --rouge \
     --rouge-threshold 0.3 \
     --output short_rouge_results.json
@@ -120,7 +120,7 @@ python compute_gnll_auroc.py \
 
 ```bash
 python compute_gnll_auroc.py \
-    src/nikos/uncertainty/wandb/run-<LONG_RUN_ID>/files/validation_generations.pkl \
+    src/boldis/uncertainty/wandb/run-20251107_162702-uir95r78/files/validation_generations.pkl \
     --output long_judge_results.json
 ```
 

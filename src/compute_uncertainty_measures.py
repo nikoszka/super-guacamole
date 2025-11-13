@@ -38,7 +38,7 @@ def main(args):
 
     user = os.environ.get('USER') or os.environ.get('USERNAME')
     scratch_dir = os.getenv('SCRATCH_DIR', '.')
-    wandb_dir = f'{scratch_dir}/{user}/uncertainty'
+    wandb_dir = f'{scratch_dir}/{user}/uncertainty/wandb'
     slurm_jobid = os.getenv('SLURM_JOB_ID', None)
     # Determine project name: use provided project, or default based on debug mode
     if args.project is not None:

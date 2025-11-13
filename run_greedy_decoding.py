@@ -27,11 +27,11 @@ def main():
         'python', 'generate_answers.py',
         '--model_name', 'Llama-3.2-1B',  # Change this to your preferred model
         '--dataset', 'trivia_qa',  # Change this to your preferred dataset
-        '--num_samples', '100',  # Start with a small number for testing
+        '--num_samples', '400',  # Start with a small number for testing
         '--num_few_shot', '5',
         '--temperature', '0.0',  # Greedy decoding (temperature=0)
         '--num_generations', '1',  # Only one generation per question (greedy)
-        '--brief_prompt', 'detailed',  # Sentence-based answer prompt ('default', 'chat', 'sentence', 'detailed')
+        '--brief_prompt', 'sentence',  # Sentence-based answer prompt ('default', 'chat', 'sentence', 'detailed')
         '--enable_brief',  # Enable the brief prompt (boolean flag)
         '--brief_always',  # Always use brief prompt (boolean flag)
         '--no-compute_uncertainties',  # Skip uncertainty computation for now
@@ -41,7 +41,7 @@ def main():
         # Metric: Use 'squad' for generation (no model needed, saves memory)
         # LLM judge metrics can be computed later using compute_uncertainty_measures.py with --recompute_accuracy
         # Judge options: 'squad', 'llm_gpt-4', 'llm_gpt-3.5', 'llm_llama-3.1-70b', 'llm_llama-3-8b', etc.
-        #'--metric', 'squad',  # Using squad metric (no model) to avoid memory issues during generation
+        #'--metric', 'llm_llama-3-8b',  # Using squad metric (no model) to avoid memory issues during generation
         '--entity', 'nikosteam',  # WandB entity
         '--project', 'super_guacamole',  # WandB project
         '--experiment_lot', experiment_name  # Unique experiment name

@@ -1,0 +1,43 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-05 21:44:28 WARNING  Recompute accuracy enabled. This does not apply to precomputed p_true!
+2025-11-05 21:44:28 INFO     Initializing Llama judge model: Meta-Llama-3-8B
+2025-11-05 21:44:28 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+Initializing model:  Meta-Llama-3-8B and base: meta-llama
+2025-11-05 21:44:29 INFO     Using device_map="auto" - will distribute across 4 GPU(s)
+2025-11-05 21:44:29 INFO     Max memory per GPU: {0: '10GiB', 1: '10GiB', 2: '10GiB', 3: '10GiB'}
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [01:34<00:00, 23.64s/it]
+generation_config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 177/177 [00:00<00:00, 573kB/s]
+[34m[1mwandb[0m: [32m[41mERROR[0m HTTP 404: file vkbx3b70/uncertainty_measures.pkl not found while downloading file
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/apis/normalize.py", line 27, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 319, in wrapped_fn
+    return retrier(*args, **kargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 159, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/apis/public/files.py", line 337, in download
+    util.download_file_from_url(path, self.url, api.api_key)
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/util.py", line 1408, in download_file_from_url
+    response.raise_for_status()
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/files/nikosteam/super_guacamole/vkbx3b70/uncertainty_measures.pkl
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/src/compute_uncertainty_measures.py", line 360, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/compute_uncertainty_measures.py", line 170, in main
+    result_dict_pickle = restore('uncertainty_measures.pkl')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/compute_uncertainty_measures.py", line 64, in restore
+    old_run.file(filename).download(
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/apis/normalize.py", line 44, in wrapper
+    raise CommError(message, error)
+wandb.errors.errors.CommError: HTTP 404: file vkbx3b70/uncertainty_measures.pkl not found while downloading file

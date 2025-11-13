@@ -1,0 +1,23 @@
+2025-11-05 23:55:28,600 INFO    MainThread:1363249 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_setup.py:_flush():81] Configure stats pid to 1363249
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_setup.py:_flush():81] Loading settings from /system/user/boldis/.config/wandb/settings
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_setup.py:_flush():81] Loading settings from /system/user/studentwork/boldis/super-guacamole/src/wandb/settings
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_init.py:setup_run_log_directory():706] Logging user logs to ./boldis/uncertainty/wandb/run-20251105_235528-bzuc37eg/logs/debug.log
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to ./boldis/uncertainty/wandb/run-20251105_235528-bzuc37eg/logs/debug-internal.log
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_init.py:init():833] calling init triggers
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'debug': False, 'entity': 'nikosteam', 'project': 'super_guacamole', 'random_seed': 10, 'metric': 'squad', 'compute_accuracy_at_all_temps': True, 'experiment_lot': 'greedy_sentences_20251105_235505', 'model_name': 'Llama-3-8B', 'model_max_new_tokens': 150, 'dataset': 'trivia_qa', 'ood_train_dataset': None, 'num_samples': 100, 'num_few_shot': 5, 'p_true_num_fewshot': 20, 'p_true_hint': False, 'num_generations': 1, 'temperature': 0.0, 'use_mc_options': True, 'get_training_set_generations': False, 'use_context': True, 'get_training_set_generations_most_likely_only': True, 'compute_p_true': False, 'brief_always': True, 'enable_brief': True, 'brief_prompt': 'sentence', 'prompt_type': 'default', 'compute_uncertainties': False, 'answerable_only': False, 'recompute_accuracy': False, 'eval_wandb_runid': None, 'train_wandb_runid': None, 'num_eval_samples': 10000000000000000000, 'compute_predictive_entropy': True, 'compute_p_ik': True, 'compute_p_ik_answerable': False, 'compute_context_entails_response': False, 'analyze_run': True, 'assign_new_wandb_id': True, 'restore_entity_eval': None, 'restore_entity_train': None, 'condition_on_question': True, 'strict_entailment': True, 'use_all_generations': True, 'use_num_generations': -1, 'entailment_model': 'deberta', 'entailment_cache_id': None, 'entailment_cache_only': False, 'compute_p_true_in_compute_stage': False, 'reuse_entailment_model': False, '_wandb': {}}
+2025-11-05 23:55:28,601 INFO    MainThread:1363249 [wandb_init.py:init():881] starting backend
+2025-11-05 23:55:28,825 INFO    MainThread:1363249 [wandb_init.py:init():884] sending inform_init request
+2025-11-05 23:55:28,834 INFO    MainThread:1363249 [wandb_init.py:init():892] backend started and connected
+2025-11-05 23:55:28,837 INFO    MainThread:1363249 [wandb_init.py:init():962] updated telemetry
+2025-11-05 23:55:28,869 INFO    MainThread:1363249 [wandb_init.py:init():986] communicating run to backend with 90.0 second timeout
+2025-11-05 23:55:29,481 INFO    MainThread:1363249 [wandb_init.py:init():1033] starting run threads in backend
+2025-11-05 23:55:30,118 INFO    MainThread:1363249 [wandb_run.py:_console_start():2506] atexit reg
+2025-11-05 23:55:30,118 INFO    MainThread:1363249 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-11-05 23:55:30,118 INFO    MainThread:1363249 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-11-05 23:55:30,118 INFO    MainThread:1363249 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-11-05 23:55:30,126 INFO    MainThread:1363249 [wandb_init.py:init():1073] run started, returning control to user process
+2025-11-05 23:55:36,048 INFO    wandb-AsyncioManager-main:1363249 [service_client.py:_forward_responses():80] Reached EOF.
+2025-11-05 23:55:36,049 INFO    wandb-AsyncioManager-main:1363249 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

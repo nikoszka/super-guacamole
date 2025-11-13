@@ -1,0 +1,106 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-05 23:55:30 INFO     Finished wandb init.
+2025-11-05 23:55:33 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2025-11-05 23:55:35 INFO     Prompt is: Answer the following question in a complete, informative sentence.
+Context: [DOC] [TLE] Childhood Sweetheart : Read Childhood Sweetheart Latest ...Childhood Sweetheart : Read Childhood Sweetheart Latest News, Photos, Videos Online on Midday [PAR] Argentina's football star Carlos Tevez gets married to childhood sweetheart [PAR] 23-Dec-2016 [PAR] Argentine veteran footballer Carlos Tevez married childhood girlfriend Vanesa Mansilla in the Argentine city of San Isidro, and the couple headed out for a four-day celebration in the Uruguayan city of Carmelo with 260 guests [PAR] Rio 2016: Canada's childhood sweethearts are now medal-winners [PAR] 22-Aug-2016 [PAR] Ashton Eaton and Brianne Theisen-Eaton are the power couple of the Olympics, a gold and bronze medal to their names, but they have little to talk about. American star Eaton, who retained his decathlon crown in Rio, and his Canadian heptathlon bronze medallist wife, married in 2013 [PAR] 5 romantic web series for different kinds of couples [PAR] 14-Jul-2016 [PAR] The beautiful weather also brings along that time of the year when the romantic side of you comes out. From the freshly washed earth to the radiant green plants and trees, everything around you looks dreamy [PAR] Guy Pearce splits from wife of 18 years [PAR] 15-Oct-2015 [PAR] 'Iron Man 3' actor Guy Pearce, who married his childhood sweetheart Kate Mestitz in 1997, has confirmed their split after 18 years of marriage [PAR] Andy Murray catches up on some football [PAR] 23-
+Question: In April, which sportsman married his childhood sweetheart Kim Sears?
+Answer: andy murray
+
+Answer the following question in a complete, informative sentence.
+Context: [DOC] [TLE] It's Elemental - The Element SilverIt's Elemental - The Element Silver [PAR] It's Elemental [PAR] Melting Point: 1234.93 K (961.78°C or 1763.20°F) [PAR] Boiling Point: 2435 K (2162°C or 3924°F) [PAR] Density: 10.501 grams per cubic centimeter [PAR] Phase at Room Temperature: Solid [PAR] Element Classification: Metal [PAR] Period Number: 5    Group Number: 11    Group Name: none [PAR] What's in a name? From the Anglo-Saxon word seolfor. Silver's chemical symbol comes from the Latin word for silver, argentum. [PAR] Say what? Silver is pronounced as SIL-ver. [PAR] History and Uses: [PAR] Archaeological evidence suggests that people have been using silver for at least 5000 years. Silver can be obtained from pure deposits, from silver ores such as argentite (Ag2S) and horn silver (AgCl), and in conjunction with deposits of ores containing lead , gold or copper . [PAR] Silver and silver compounds have many uses. Pure silver is the best conductor of heat and electricity of all known metals, so it is sometimes used in making solder, electrical contacts and printed circuit boards. Silver is also the best reflector of visible light known, but silver mirrors must be given a protective coating to prevent them from tarnishing.
+Question: From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+Answer: silver
+
+Answer the following question in a complete, informative sentence.
+Context: [PAR] Secret Warhol art set for show [PAR] The answer, we are led to believe, is the lantern currently on display at Auckland Castle and on loan from the Ashmolean Museum in Oxford. [PAR] GET AWAY ON A U.K. CITY BREAK; THE LOWDOWN...expert advice, news and money-saving tips; TRAVEL INSIDERS [PAR] uk SOUTH & LONDON SOUTH & LONDON 19ENJOY 19 ENJOY a series of free summer events at the Ashmolean Museum of Art and Archaeology in Oxford, including a Tutankhamun day. [PAR] United Kingdom : BAM to build Au33m residential care facility in Oxfordshire [PAR] uk SOUTH & LONDON 19 ENJOY a series of free summer events at the Ashmolean Museum of Art and Archaeology in Oxford, including a Tutankhamun day. [PAR] Copyright © 2003-2017 Farlex, Inc [PAR] Disclaimer [PAR] All content on this website, including dictionary, thesaurus, literature, geography, and other reference data is for informational purposes only. This information should not be considered complete, up to date, and is not intended to be used in place of a visit, consultation, or advice of a legal, medical, or any other professional. [PAR]  [DOC] [TLE] Ashmolean Museum of Art and Archaeology , OxfordVisit Ashmolean Museum of Art and Archaeology on your trip to Oxford [PAR] Click here for promotion tips.
+Question: In which English city will you find the Ashmolean museum?
+Answer: oxford
+
+Answer the following question in a complete, informative sentence.
+Context: ” [PAR] John Lennon and his wife, Yoko Ono, were returning home from a transfer session at a midtown Manhattan recording studio at approximately 10:50 p.m. on this day in 1980, when they exited their limousine onto the West 72nd Street sidewalk just outside their apartment building, the now-famous Dakota. On nearly the same spot some six hours earlier, Lennon had signed his autograph on a copy of his new album, Double Fantasy, for the man who would soon shoot him dead: Mark David Chapman. In his statement to the authorities later that evening, the 25-year-old Chapman, whom police took into custody peaceably after finding him reading a copy of The Catcher in the Rye at the site of the shooting, said, “I’m sure the large part of me is Holden Caulfield, who is the main person in the book. The small part of me must be the Devil.” [PAR] A worldwide outpouring of grief and tribute followed John Lennon’s assassination, culminating in a 10-minute silent vigil on December 14 that saw some 100,000 people gather in New York’s Central Park and tens of thousands of others in cities around the world. Of Chapman, who pled guilty to Lennon’s killing and was sentenced to 20 years to life in prison, Yoko Ono would later say, “I don’t even want to think about him, and I usually don’t.
+Question: In which city was John Lennon murdered?
+Answer: new york
+
+Answer the following question in a complete, informative sentence.
+Context: According to Groucho, when Shean visited he would throw the local waifs a few coins so that when he knocked at the door, he would be surrounded by adoring fans. Marx and his brothers respected his opinions and asked him on several occasions to write some material for them. [PAR] Minnie Marx did not have an entertainment industry career, but had intense ambition for her sons to go on stage like their uncle. While pushing her career eldest son (Chico Marx) in piano lessons, she found that Julius had a pleasant soprano voice and the ability to remain on key. Even though Julius's early career goal was to be a doctor, the family's need for income forced Julius out of school at the age of twelve. By that time, Julius had become a voracious reader, particularly fond of Horatio Algar. Throughout the rest of his life, Marx would overcome his lack of formal education by becoming a very well-read. [PAR] After a few unsuccessful stabs at entry-level office work and other jobs suitable for adolescents. Julius took to the stage as a boy singer in 1905. Though he reputedly claimed that as a vaudevillian he was "hopelessly average" it was merely a wisecrack. By 1909, Minnie Marx successfully in Nacogdoches, Texas, Julius, Milton and Arthur began cracking jokes onstage for their own amusement. Much to their surprise, the audience liked them better as comedians than as singers.
+Question: What was Groucho Marx's real first name?
+Answer: julius
+
+
+2025-11-05 23:55:35 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 402, in hf_raise_for_status
+    response.raise_for_status()
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/meta-llama/Llama-3-8B/resolve/main/tokenizer_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/hub.py", line 479, in cached_files
+    hf_hub_download(
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1655, in _raise_on_head_call_error
+    raise head_call_error
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+    r = _request_wrapper(
+        ^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+               ^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 307, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 452, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response) from e
+huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-690bd5e7-3e27466a6e0335010c7e17da;dc448300-356f-4b57-9a37-d30d1612cf1c)
+
+Repository Not Found for url: https://huggingface.co/meta-llama/Llama-3-8B/resolve/main/tokenizer_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 275, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 95, in main
+    model = utils.init_model(args)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/utils/utils.py", line 348, in init_model
+    model = HuggingfaceModel(
+            ^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 194, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 1073, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 905, in get_tokenizer_config
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/hub.py", line 322, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/hub.py", line 511, in cached_files
+    raise OSError(
+OSError: meta-llama/Llama-3-8B is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
