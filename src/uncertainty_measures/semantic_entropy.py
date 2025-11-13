@@ -2,6 +2,7 @@
 import os
 import pickle
 import logging
+from typing import Dict, Any, List, Tuple, Optional
 
 import numpy as np
 import wandb
@@ -268,3 +269,122 @@ def cluster_assignment_entropy(semantic_ids):
     assert np.isclose(probabilities.sum(), 1)
     entropy = - (probabilities * np.log(probabilities)).sum()
     return entropy
+
+
+def compute_semantic_entropy(
+    entry: Dict[str, Any],
+    responses: List[Tuple[str, List[float], Any, float]],
+    entailment_model: BaseEntailment,
+    num_samples: Optional[int] = None,
+    strict_entailment: bool = False
+) -> Tuple[float, Optional[Dict[str, Any]]]:
+    """Compute Semantic Entropy for an entry with multiple sampled responses.
+    
+    This function clusters semantically equivalent responses and computes
+    entropy over the semantic clusters using token likelihoods.
+    
+    Args:
+        entry: Dictionary containing 'question', 'context' (optional)
+        responses: List of tuples (response, token_log_likelihoods, embedding, acc)
+                  from multiple samples (M samples)
+        entailment_model: Initialized entailment model for semantic clustering
+        num_samples: Optional limit on number of samples to use (None = use all)
+        strict_entailment: If True, require bidirectional entailment for equivalence
+        
+    Returns:
+        Tuple of (semantic_entropy_score, details_dict) where details_dict contains
+        cluster information
+    """
+    if not responses:
+        logging.warning("No responses provided for Semantic Entropy computation")
+        return 0.0, None
+    
+    if num_samples is not None:
+        responses = responses[:num_samples]
+    
+    # Extract response strings and log-likelihoods
+    response_strings = []
+    sequence_log_likelihoods = []
+    
+    for response, token_log_likelihoods, _, _ in responses:
+        if not response or not token_log_likelihoods:
+            continue
+        response_strings.append(response)
+        # Sequence log-likelihood is sum of token log-likelihoods
+        sequence_log_likelihoods.append(sum(token_log_likelihoods))
+    
+    if not response_strings:
+        logging.warning("No valid responses for Semantic Entropy computation")
+        return 0.0, None
+    
+    M = len(response_strings)
+    
+    # Get semantic cluster IDs
+    example = {'question': entry.get('question', '')}
+    semantic_ids = get_semantic_ids(
+        response_strings, 
+        entailment_model,
+        strict_entailment=strict_entailment,
+        example=example
+    )
+    
+    # Compute log-likelihoods per semantic cluster
+    log_likelihood_per_cluster = logsumexp_by_id(
+        semantic_ids,
+        sequence_log_likelihoods,
+        agg='sum_normalized'
+    )
+    
+    # Convert to probabilities
+    # log_likelihood_per_cluster are already normalized log-probs
+    cluster_probs = np.exp(log_likelihood_per_cluster)
+    
+    # Compute entropy: H = -Σ_k p_k * log(p_k)
+    # Avoid log(0) by using np.log with small epsilon
+    cluster_probs_safe = np.clip(cluster_probs, 1e-10, 1.0)
+    semantic_entropy = -np.sum(cluster_probs * np.log(cluster_probs_safe))
+    
+    # Also compute cluster assignment entropy (without likelihoods)
+    cluster_entropy = cluster_assignment_entropy(semantic_ids)
+    
+    details = {
+        'num_samples': M,
+        'num_clusters': len(set(semantic_ids)),
+        'semantic_ids': semantic_ids,
+        'cluster_probs': cluster_probs.tolist(),
+        'cluster_entropy': float(cluster_entropy),
+        'semantic_entropy': float(semantic_entropy)
+    }
+    
+    return float(semantic_entropy), details
+
+
+def compute_semantic_entropy_from_entry(
+    entry: Dict[str, Any],
+    entailment_model: BaseEntailment,
+    num_samples: Optional[int] = None,
+    strict_entailment: bool = False
+) -> Tuple[float, Optional[Dict[str, Any]]]:
+    """Compute Semantic Entropy for an entry.
+    
+    Convenience function that extracts responses from entry and computes SE.
+    
+    Args:
+        entry: Dictionary containing 'question', 'context', and 'responses'
+        entailment_model: Initialized entailment model
+        num_samples: Optional limit on number of samples to use
+        strict_entailment: If True, require bidirectional entailment
+        
+    Returns:
+        Tuple of (semantic_entropy_score, details_dict)
+    """
+    if 'responses' not in entry:
+        logging.warning("Entry does not contain 'responses' field for multi-sample Semantic Entropy")
+        return 0.0, None
+    
+    responses = entry['responses']
+    return compute_semantic_entropy(
+        entry, responses, entailment_model,
+        num_samples=num_samples,
+        strict_entailment=strict_entailment
+    )
