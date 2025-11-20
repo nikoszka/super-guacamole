@@ -345,8 +345,15 @@ def get_reference(example):
 def init_model(args):
     mn = args.model_name
     if 'llama' in mn.lower() or 'falcon' in mn or 'mistral' in mn.lower():
+        # Use relaxed stop sequences for detailed answers to allow multi-sentence responses
+        # For detailed mode, we remove '\n\n' and '\n\n\n' to prevent premature stopping
+        if args.brief_prompt == 'detailed':
+            stop_sequences = 'detailed'
+        else:
+            stop_sequences = 'default'
+        
         model = HuggingfaceModel(
-            mn, stop_sequences='default',
+            mn, stop_sequences=stop_sequences,
             max_new_tokens=args.model_max_new_tokens)
     else:
         raise ValueError(f'Unknown model_name `{mn}`.')

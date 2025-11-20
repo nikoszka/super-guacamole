@@ -3,6 +3,7 @@ from typing import List, Text
 
 
 STOP_SEQUENCES = ['\n\n\n\n', '\n\n\n', '\n\n', 'Question:', 'Context:', 'Answer:']
+STOP_SEQUENCES_DETAILED = ['\n\n\n\n', 'Question:', 'Context:', 'Answer:']  # Relaxed for detailed answers
 
 
 class BaseModel(ABC):

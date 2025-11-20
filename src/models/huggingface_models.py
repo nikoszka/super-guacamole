@@ -18,6 +18,7 @@ from huggingface_hub import snapshot_download
 
 from models.base_model import BaseModel
 from models.base_model import STOP_SEQUENCES
+from models.base_model import STOP_SEQUENCES_DETAILED
 
 
 def get_hf_cache_dir():
@@ -168,6 +169,8 @@ class HuggingfaceModel(BaseModel):
 
         if stop_sequences == 'default':
             stop_sequences = STOP_SEQUENCES
+        elif stop_sequences == 'detailed':
+            stop_sequences = STOP_SEQUENCES_DETAILED
 
         # Get cache directory: parameter > environment variable > default
         if cache_dir is None:
