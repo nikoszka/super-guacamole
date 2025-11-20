@@ -431,17 +431,18 @@ class HuggingfaceModel(BaseModel):
         # few-shot prompts that contain multiple "Answer:" markers
         
         generated_token_ids = outputs.sequences[0][n_input_token:]
-        answer = self.tokenizer.decode(generated_token_ids, skip_special_tokens=True).strip()
+        # DON'T strip here - we need to detect stop sequences first!
+        answer = self.tokenizer.decode(generated_token_ids, skip_special_tokens=True)
         
         logging.debug(f"✅ Token-based extraction: {len(generated_token_ids)} tokens generated")
-        logging.debug(f"✅ Extracted answer: {repr(answer[:100])}..." if len(answer) > 100 else f"✅ Extracted answer: {repr(answer)}")
+        logging.debug(f"✅ Extracted answer (raw): {repr(answer[:100])}..." if len(answer) > 100 else f"✅ Extracted answer (raw): {repr(answer)}")
         
         # Sanity check: Compare with string-based extraction for debugging
         if full_answer.startswith(input_data):
             string_based_answer = full_answer[len(input_data):].strip()
-            if answer != string_based_answer:
+            if answer.strip() != string_based_answer:
                 logging.warning("⚠️ Token-based and string-based extraction differ!")
-                logging.warning(f"🔹 Token-based: {repr(answer[:100])}")
+                logging.warning(f"🔹 Token-based: {repr(answer.strip()[:100])}")
                 logging.warning(f"🔹 String-based: {repr(string_based_answer[:100])}")
                 # Use token-based as it's more reliable
         else:
@@ -450,15 +451,23 @@ class HuggingfaceModel(BaseModel):
         # ===================================================================
         # HANDLE STOP SEQUENCES AND COMPUTE n_generated
         # ===================================================================
-        # Remove stop_words from answer if present
-        stop_at = len(answer)
+        # Remove stop sequences from answer if present
+        # IMPORTANT: Do this BEFORE stripping, so we can detect whitespace stop sequences like '\n\n'
         sliced_answer = answer
+        num_stop_tokens = 0  # Track how many tokens were in the stop sequence
+        
         if self.stop_sequences is not None:
             for stop in self.stop_sequences:
                 if answer.endswith(stop):
-                    stop_at = len(answer) - len(stop)
-                    sliced_answer = answer[:stop_at]
+                    # Found a stop sequence - remove it
+                    sliced_answer = answer[:-len(stop)]
+                    # Calculate how many tokens were in the stop sequence
+                    stop_tokens_encoded = self.tokenizer.encode(stop, add_special_tokens=False)
+                    num_stop_tokens = len(stop_tokens_encoded)
+                    logging.debug(f"🛑 Removed stop sequence {repr(stop)} ({num_stop_tokens} tokens)")
                     break
+            
+            # Verify stop sequences were removed successfully
             if not all([stop not in sliced_answer for stop in self.stop_sequences]):
                 error_msg = 'Error: Stop words not removed successfully!'
                 error_msg += f'Answer: >{answer}< '
@@ -468,22 +477,16 @@ class HuggingfaceModel(BaseModel):
                 else:
                     logging.error(error_msg)
 
-        # Remove whitespaces from answer
+        # NOW strip whitespace from the final answer (after stop sequence removal)
         sliced_answer = sliced_answer.strip()
 
-        # Compute n_generated at the token level
-        # We need to know how many tokens were actually generated (excluding stop tokens)
-        # Tokenize the sliced answer to get the exact token count
-        if sliced_answer:
-            sliced_answer_tokens = self.tokenizer.encode(sliced_answer, add_special_tokens=False)
-            n_generated = len(sliced_answer_tokens)
-        else:
-            # Empty answer after removing stop sequences
-            n_generated = len(generated_token_ids)
+        # Compute n_generated from ORIGINAL token IDs (not re-tokenization!)
+        # This ensures perfect alignment between token_ids, tokens, and log_likelihoods
+        n_generated = len(generated_token_ids) - num_stop_tokens
         
-        # Ensure we have at least 1 generated token
-        if n_generated == 0:
-            logging.warning('Only stop_words were generated. For likelihoods and embeddings, taking stop word instead.')
+        # Ensure we have at least 1 generated token (for embeddings and likelihoods)
+        if n_generated <= 0:
+            logging.warning('n_generated <= 0 after removing stop tokens (only stop_words generated). Using 1 for embeddings.')
             n_generated = 1
 
         # Calculate token_stop_index for logging/debugging
