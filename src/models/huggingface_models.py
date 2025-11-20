@@ -420,56 +420,34 @@ class HuggingfaceModel(BaseModel):
         if return_full:
             return full_answer
 
-        '''
-        # Get the input data length.
-        # For some models, we need to remove the input_data from the answer.
-        if full_answer.startswith(input_data):
-            input_data_offset = len(input_data)
-        else:
-            answer = full_answer
-            print("Answer before value error:" + answer)
-            raise ValueError('Have not tested this in a while.')
+        # ===================================================================
+        # TOKEN-BASED EXTRACTION (Reliable method)
+        # ===================================================================
+        # Extract only the generated tokens (ignores input tokens)
+        # This is MUCH more reliable than string matching, especially with
+        # few-shot prompts that contain multiple "Answer:" markers
         
-
-        # Remove input from answer.
-        answer = full_answer[input_data_offset:]
-        '''
-
-        answer = None
+        generated_token_ids = outputs.sequences[0][n_input_token:]
+        answer = self.tokenizer.decode(generated_token_ids, skip_special_tokens=True).strip()
+        
+        logging.debug(f"✅ Token-based extraction: {len(generated_token_ids)} tokens generated")
+        logging.debug(f"✅ Extracted answer: {repr(answer[:100])}..." if len(answer) > 100 else f"✅ Extracted answer: {repr(answer)}")
+        
+        # Sanity check: Compare with string-based extraction for debugging
         if full_answer.startswith(input_data):
-            input_data_offset = len(input_data)
-            answer = full_answer[input_data_offset:].strip()
-            logging.warning("⚠️ Model returned! ⚠️")
-            logging.warning(f"🔹 input_data: {repr(input_data)}")
-            logging.warning(f"🔹 full_answer: {repr(full_answer)}")
-
-            if not answer:
-                logging.warning("⚠️ Model returned only the input, no new answer provided! ⚠️")
-                logging.warning(f"🔹 input_data: {repr(input_data)}")
-                logging.warning(f"🔹 full_answer: {repr(full_answer)}")
-                answer = full_answer.strip()
-
+            string_based_answer = full_answer[len(input_data):].strip()
+            if answer != string_based_answer:
+                logging.warning("⚠️ Token-based and string-based extraction differ!")
+                logging.warning(f"🔹 Token-based: {repr(answer[:100])}")
+                logging.warning(f"🔹 String-based: {repr(string_based_answer[:100])}")
+                # Use token-based as it's more reliable
         else:
-            input_data_offset = len(input_data)
-            answer = full_answer[input_data_offset:].strip()
-            # Try fuzzy match (e.g., in LLaMA or if whitespace/punctuation differs)
-            logging.warning("⚠️ input_data not at the beginning of full_answer! Attempting fallback slicing... ⚠️")
-            logging.warning(f"🔹 input_data: {repr(input_data)}")
-            logging.warning(f"🔹 full_answer: {repr(full_answer)}")
-            logging.warning(f"🔹 Answer: {repr(answer)}")
+            logging.debug("ℹ️ Input not echoed exactly - token-based extraction used")
 
-
-            # Try locating the last occurrence of 'Answer:' and slicing after it
-            last_answer_idx = full_answer.lower().rfind('answer:')
-            if last_answer_idx != -1:
-                answer = full_answer[last_answer_idx + len('answer:'):].strip()
-                logging.info(f"✅ Fallback extracted answer: {repr(answer)}")
-            else:
-                # As a last resort, return the full output
-                answer = full_answer.strip()
-                logging.warning("⚠️ Could not find 'Answer:' – using entire model output.")
-
-        # Remove stop_words from answer.
+        # ===================================================================
+        # HANDLE STOP SEQUENCES AND COMPUTE n_generated
+        # ===================================================================
+        # Remove stop_words from answer if present
         stop_at = len(answer)
         sliced_answer = answer
         if self.stop_sequences is not None:
@@ -487,18 +465,20 @@ class HuggingfaceModel(BaseModel):
                 else:
                     logging.error(error_msg)
 
-        # Remove whitespaces from answer (in particular from beginning.)
+        # Remove whitespaces from answer
         sliced_answer = sliced_answer.strip()
 
-        # Get the number of tokens until the stop word comes up.
-        # Note: Indexing with `stop_at` already excludes the stop_token.
-        # Note: It's important we do this with full answer, since there might be
-        # non-trivial interactions between the input_data and generated part
-        # in tokenization (particularly around whitespaces.)
-        token_stop_index = self.tokenizer(full_answer[:input_data_offset + stop_at], return_tensors="pt")['input_ids'].shape[1]
-        # n_input_token was already saved before generation (see above)
-        n_generated = token_stop_index - n_input_token
-
+        # Compute n_generated at the token level
+        # We need to know how many tokens were actually generated (excluding stop tokens)
+        # Tokenize the sliced answer to get the exact token count
+        if sliced_answer:
+            sliced_answer_tokens = self.tokenizer.encode(sliced_answer, add_special_tokens=False)
+            n_generated = len(sliced_answer_tokens)
+        else:
+            # Empty answer after removing stop sequences
+            n_generated = len(generated_token_ids)
+        
+        # Ensure we have at least 1 generated token
         if n_generated == 0:
             logging.warning('Only stop_words were generated. For likelihoods and embeddings, taking stop word instead.')
             n_generated = 1

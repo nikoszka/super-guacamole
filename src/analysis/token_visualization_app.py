@@ -38,11 +38,17 @@ def normalize_scores(scores: List[float], invert: bool = False) -> List[float]:
     return norm.tolist()
 
 
-def token_span(token: str, score: float, cmap: str = "red") -> str:
-    """Render a single token as an HTML span with background color based on score.
+def token_span(token: str, score: float, raw_score: float, cmap: str = "red") -> str:
+    """Render a single token as an HTML span with background color and score below.
 
     cmap = "red" -> white to red
     cmap = "blue" -> white to blue
+    
+    Args:
+        token: The token text
+        score: Normalized score [0, 1] for coloring
+        raw_score: The actual score value to display
+        cmap: Color map to use
     """
     alpha = score  # 0..1
     if cmap == "red":
@@ -50,13 +56,26 @@ def token_span(token: str, score: float, cmap: str = "red") -> str:
     else:
         color = f"rgba(0, 0, 255, {alpha:.2f})"
     safe_token = token.replace("<", "&lt;").replace(">", "&gt;")
-    return f'<span style="background-color:{color}; padding:2px; margin:1px; border-radius:3px;">{safe_token}</span>'
+    
+    # Display token on top, score below in smaller font
+    return f'''<span style="display:inline-block; text-align:center; margin:2px; padding:3px; border-radius:3px; background-color:{color};">
+        <div style="font-family:monospace; font-size:14px; white-space:nowrap;">{safe_token}</div>
+        <div style="font-family:monospace; font-size:10px; color:#555; margin-top:2px;">{raw_score:.3f}</div>
+    </span>'''
 
 
 def render_token_sequence(tokens: List[str], scores: List[float], cmap: str) -> None:
+    """Render a sequence of tokens with colored backgrounds and scores displayed below each token.
+    
+    Args:
+        tokens: List of token strings
+        scores: List of raw scores for each token
+        cmap: Color map to use ('red' or 'blue')
+    """
     norm_scores = normalize_scores(scores)
-    spans = [token_span(tok, s, cmap=cmap) for tok, s in zip(tokens, norm_scores)]
-    html = " ".join(spans)
+    spans = [token_span(tok, norm_s, raw_s, cmap=cmap) 
+             for tok, norm_s, raw_s in zip(tokens, norm_scores, scores)]
+    html = '<div style="line-height:2.5;">' + "".join(spans) + '</div>'
     st.markdown(html, unsafe_allow_html=True)
 
 
