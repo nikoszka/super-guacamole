@@ -483,6 +483,10 @@ class HuggingfaceModel(BaseModel):
             logging.warning('Only stop_words were generated. For likelihoods and embeddings, taking stop word instead.')
             n_generated = 1
 
+        # Calculate token_stop_index for logging/debugging
+        # This represents the total number of tokens (input + generated up to stop)
+        token_stop_index = n_input_token + n_generated
+
         # Get the last hidden state (last layer) and the last token's embedding of the answer.
         # Note: We do not want this to be the stop token.
 
