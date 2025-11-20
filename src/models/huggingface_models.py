@@ -605,12 +605,18 @@ class HuggingfaceModel(BaseModel):
         if len(log_likelihoods) == 0:
             raise ValueError
 
+        # Extract the generated token IDs (important for exact alignment with log_likelihoods)
+        generated_token_ids = outputs.sequences[0][n_input_token:n_input_token + n_generated].tolist()
+        
+        # Also get token strings for easier debugging/analysis
+        generated_tokens = [self.tokenizer.decode([tid]) for tid in generated_token_ids]
+
         # Clear transition_scores from GPU memory before returning
         # Note: outputs.scores and outputs.sequences will be garbage collected when outputs goes out of scope
         del transition_scores
         torch.cuda.empty_cache()
 
-        return sliced_answer, log_likelihoods, last_token_embedding
+        return sliced_answer, log_likelihoods, last_token_embedding, generated_token_ids, generated_tokens
 
     def get_p_true(self, input_data):
         """Get the probability of the model anwering A (True) for the given input."""

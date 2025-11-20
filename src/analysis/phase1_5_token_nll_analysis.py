@@ -122,18 +122,29 @@ def compute_token_nll_analysis(
     if not response or not token_log_likelihoods:
         return None
 
-    # Tokenize response to approximate alignment with token_log_likelihoods
-    token_ids = tokenizer.encode(response, add_special_tokens=False)
-    tokens = [tokenizer.decode([tid]) for tid in token_ids]
+    # Try to use stored tokens/token_ids if available (exact alignment guaranteed)
+    if "tokens" in mla and mla["tokens"] and len(mla["tokens"]) == len(token_log_likelihoods):
+        tokens = mla["tokens"]
+        logger.debug("Using stored tokens from pickle (exact alignment)")
+    elif "token_ids" in mla and mla["token_ids"] and len(mla["token_ids"]) == len(token_log_likelihoods):
+        # Reconstruct tokens from token_ids
+        token_ids = mla["token_ids"]
+        tokens = [tokenizer.decode([tid]) for tid in token_ids]
+        logger.debug("Using stored token_ids from pickle (exact alignment)")
+    else:
+        # Fallback: re-tokenize response (may have alignment issues with old pickles)
+        logger.debug("No stored tokens/token_ids found, re-tokenizing response (may cause misalignment)")
+        token_ids = tokenizer.encode(response, add_special_tokens=False)
+        tokens = [tokenizer.decode([tid]) for tid in token_ids]
 
-    if len(tokens) != len(token_log_likelihoods):
-        logger.warning(
-            "Token count mismatch for response (len(tokens)=%d, len(log_liks)=%d). "
-            "Skipping.",
-            len(tokens),
-            len(token_log_likelihoods),
-        )
-        return None
+        if len(tokens) != len(token_log_likelihoods):
+            logger.warning(
+                "Token count mismatch for response (len(tokens)=%d, len(log_liks)=%d). "
+                "Skipping. Re-generate pickle with token_ids for exact alignment.",
+                len(tokens),
+                len(token_log_likelihoods),
+            )
+            return None
 
     # Negative log-likelihoods (NLL) per token
     log_probs = np.array(token_log_likelihoods, dtype=float)

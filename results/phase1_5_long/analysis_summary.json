@@ -1,0 +1,35 @@
+{
+  "total_tokens_analyzed": 129,
+  "position_correlation_nll": -0.20097536261691287,
+  "mean_nll": 0.21833950389434237,
+  "std_nll": 0.9539213463796993,
+  "mean_prob": 0.9014041807702664,
+  "std_prob": 0.2073471931129722,
+  "pos_tag_statistics": {
+    "ADJ": {
+      "mean_nll": 0.002057103905826807,
+      "std_nll": NaN,
+      "count": 1
+    },
+    "DET": {
+      "mean_nll": 1.5080220699310303,
+      "std_nll": NaN,
+      "count": 1
+    },
+    "PUNCT": {
+      "mean_nll": 0.22286381791345775,
+      "std_nll": 0.45423500818157914,
+      "count": 5
+    },
+    "UNKNOWN": {
+      "mean_nll": 0.21108541549791943,
+      "std_nll": 0.9741926070290644,
+      "count": 121
+    },
+    "VERB": {
+      "mean_nll": 6.246371776796877e-05,
+      "std_nll": NaN,
+      "count": 1
+    }
+  }
+}

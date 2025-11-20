@@ -149,9 +149,27 @@ def compute_token_importance_analysis(
         # Compute NLLs (negative log-likelihoods)
         nlls = [-log_prob for log_prob in token_log_likelihoods]
         
-        # Tokenize response to get token strings
-        token_ids = tokenizer.encode(response, add_special_tokens=False)
-        tokens = [tokenizer.decode([tid]) for tid in token_ids]
+        # Try to use stored tokens/token_ids if available (exact alignment guaranteed)
+        if "tokens" in mla and mla["tokens"] and len(mla["tokens"]) == len(token_log_likelihoods):
+            tokens = mla["tokens"]
+            logger.debug("Using stored tokens from pickle (exact alignment)")
+        elif "token_ids" in mla and mla["token_ids"] and len(mla["token_ids"]) == len(token_log_likelihoods):
+            # Reconstruct tokens from token_ids
+            token_ids = mla["token_ids"]
+            tokens = [tokenizer.decode([tid]) for tid in token_ids]
+            logger.debug("Using stored token_ids from pickle (exact alignment)")
+        else:
+            # Fallback: re-tokenize response (may have alignment issues with old pickles)
+            logger.debug("No stored tokens/token_ids found, re-tokenizing response")
+            token_ids = tokenizer.encode(response, add_special_tokens=False)
+            tokens = [tokenizer.decode([tid]) for tid in token_ids]
+            
+            if len(tokens) != len(token_log_likelihoods):
+                logger.warning(
+                    f"Token count mismatch after re-tokenization: {len(tokens)} vs {len(token_log_likelihoods)}. "
+                    "Re-generate pickle with token_ids for exact alignment."
+                )
+                return None
         
         # Get positions (normalized 0-1)
         positions = np.linspace(0, 1, len(tokens))

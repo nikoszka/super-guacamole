@@ -184,7 +184,7 @@ def main(args):
                 # Use the specified temperature for all generations
                 temperature = args.temperature
 
-                predicted_answer, token_log_likelihoods, embedding = model.predict(
+                predicted_answer, token_log_likelihoods, embedding, token_ids, tokens = model.predict(
                     local_prompt, temperature)
                 embedding = embedding.cpu() if embedding is not None else None
                 
@@ -214,6 +214,8 @@ def main(args):
                     accuracies.append(acc)
                     most_likely_answer_dict = {
                         'response': predicted_answer,
+                        'token_ids': token_ids,  # Exact token IDs generated
+                        'tokens': tokens,  # String representation of tokens
                         'token_log_likelihoods': token_log_likelihoods,
                         'sequence_nll': sequence_nll,
                         'sequence_prob': sequence_prob,
@@ -227,8 +229,15 @@ def main(args):
                 else:
                     logging.info('high-t prediction '.ljust(15) + str(i) + ' : ' + predicted_answer)
                     # Aggregate predictions over num_generations.
-                    full_responses.append(
-                        (predicted_answer, token_log_likelihoods, embedding, acc))
+                    # Store as dict to include token_ids and tokens for high-temp generations too
+                    full_responses.append({
+                        'response': predicted_answer,
+                        'token_ids': token_ids,
+                        'tokens': tokens,
+                        'token_log_likelihoods': token_log_likelihoods,
+                        'embedding': embedding,
+                        'accuracy': acc
+                    })
 
             # Append all predictions for this example to `generations`.
             generations[example['id']]['responses'] = full_responses
@@ -237,7 +246,8 @@ def main(args):
                 # Already compute p_true here. Avoid cost of generations in compute_uncertainty script.
                 p_true = p_true_utils.calculate_p_true(
                     model, question, most_likely_answer_dict['response'],
-                    [r[0] for r in full_responses], p_true_few_shot_prompt,
+                    [r['response'] if isinstance(r, dict) else r[0] for r in full_responses], 
+                    p_true_few_shot_prompt,
                     hint=args.p_true_hint)
                 p_trues.append(p_true)
                 logging.info('p_true: %s', p_true)

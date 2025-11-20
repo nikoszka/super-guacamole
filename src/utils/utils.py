@@ -228,7 +228,7 @@ def model_based_metric(predicted_answer, example, model):
     if 'gpt' in model.model_name.lower():
         predicted_answer = model.predict(prompt, 0.01)
     else:
-        predicted_answer, _, _ = model.predict(prompt, 0.01)
+        predicted_answer, _, _, _, _ = model.predict(prompt, 0.01)
 
     if 'yes' in predicted_answer.lower():
         return 1.0
@@ -236,7 +236,7 @@ def model_based_metric(predicted_answer, example, model):
         return 0.0
     else:
         logging.warning('Redo llm check.')
-        predicted_answer, _, _ = model.predict(prompt, 1)
+        predicted_answer, _, _, _, _ = model.predict(prompt, 1)
         if 'yes' in predicted_answer.lower():
             return 1.0
         elif 'no' in predicted_answer.lower():

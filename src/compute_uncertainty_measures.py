@@ -223,12 +223,19 @@ def main(args):
         full_responses = example["responses"]
         most_likely_answer = example['most_likely_answer']
 
+        # Handle both old tuple format (response, log_liks, embedding, acc) and new dict format
+        def get_response(fr):
+            return fr['response'] if isinstance(fr, dict) else fr[0]
+        
+        def get_log_liks(fr):
+            return fr['token_log_likelihoods'] if isinstance(fr, dict) else fr[1]
+        
         if not args.use_all_generations:
             if args.use_num_generations == -1:
                 raise ValueError
-            responses = [fr[0] for fr in full_responses[:args.use_num_generations]]
+            responses = [get_response(fr) for fr in full_responses[:args.use_num_generations]]
         else:
-            responses = [fr[0] for fr in full_responses]
+            responses = [get_response(fr) for fr in full_responses]
 
         if args.recompute_accuracy:
             logging.info('Recomputing accuracy!')
@@ -249,9 +256,9 @@ def main(args):
         if args.compute_predictive_entropy:
             # Token log likelihoods. Shape = (n_sample, n_tokens)
             if not args.use_all_generations:
-                log_liks = [r[1] for r in full_responses[:args.use_num_generations]]
+                log_liks = [get_log_liks(r) for r in full_responses[:args.use_num_generations]]
             else:
-                log_liks = [r[1] for r in full_responses]
+                log_liks = [get_log_liks(r) for r in full_responses]
 
             for i in log_liks:
                 assert i
@@ -302,7 +309,7 @@ def main(args):
             logging.info('Low Temperature Generation Accuracy:')
             logging.info(most_likely_answer['accuracy'])
             logging.info('High Temp Generation:')
-            logging.info([r[0] for r in full_responses])
+            logging.info([get_response(r) for r in full_responses])
             logging.info('High Temp Generation:')
             logging.info(log_str, semantic_ids, log_liks_agg, entropies_fmt)
 

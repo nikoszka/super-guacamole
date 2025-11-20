@@ -156,7 +156,7 @@ class EntailmentLlama(EntailmentLLM):
         return prompt
 
     def predict(self, prompt, temperature):
-        predicted_answer, _, _ = self.model.predict(prompt, temperature)
+        predicted_answer, _, _, _, _ = self.model.predict(prompt, temperature)
         return predicted_answer
 
 
@@ -303,10 +303,18 @@ def compute_semantic_entropy(
         responses = responses[:num_samples]
     
     # Extract response strings and log-likelihoods
+    # Handle both old tuple format and new dict format
     response_strings = []
     sequence_log_likelihoods = []
     
-    for response, token_log_likelihoods, _, _ in responses:
+    for r in responses:
+        if isinstance(r, dict):
+            response = r.get('response', '')
+            token_log_likelihoods = r.get('token_log_likelihoods', [])
+        else:
+            # Old tuple format: (response, token_log_likelihoods, embedding, accuracy)
+            response, token_log_likelihoods, _, _ = r
+        
         if not response or not token_log_likelihoods:
             continue
         response_strings.append(response)

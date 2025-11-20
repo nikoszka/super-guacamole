@@ -71,7 +71,16 @@ def compute_sar_for_entry(
     if show_progress:
         sample_range = tqdm(sample_range, desc="Computing SAR", unit="sample")
     
-    for m, (response, token_log_likelihoods, _, _) in enumerate(sample_range):
+    for m in sample_range:
+        r = responses[m]
+        # Handle both old tuple format and new dict format
+        if isinstance(r, dict):
+            response = r.get('response', '')
+            token_log_likelihoods = r.get('token_log_likelihoods', [])
+        else:
+            # Old tuple format: (response, token_log_likelihoods, embedding, accuracy)
+            response, token_log_likelihoods, _, _ = r
+        
         if not response or not token_log_likelihoods:
             continue
         
