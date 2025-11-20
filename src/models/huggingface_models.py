@@ -198,13 +198,25 @@ class HuggingfaceModel(BaseModel):
                 f"{base}/{model_name}", device_map="auto",
                 token_type_ids=None, cache_dir=self.cache_dir)
 
-            # Remove "-hf" if it appears at the end of the model name
-            if model_name.endswith('-hf'):
-                model_name_without_hf = model_name.rsplit('-hf', 1)[0]
-                # Extract model size (e.g., "1b", "7b", "13b")
-                model_size = model_name_without_hf.split('-')[-1].lower()
-
-            model_size = model_name.split('-')[-1].lower()
+            # Extract model size, handling suffixes like -Instruct, -hf, etc.
+            # Split model name and look for the size component (e.g., '8B', '1B', '7B', '70B')
+            model_name_parts = model_name.replace('-hf', '').split('-')
+            model_size = None
+            
+            # Look for size pattern in format like '8B', '1B', '7B', '70B', etc.
+            for part in model_name_parts:
+                part_lower = part.lower()
+                # Check if this part is a model size (ends with 'b' and has numbers before it)
+                if part_lower.endswith('b') and part_lower[:-1].isdigit():
+                    model_size = part_lower
+                    break
+            
+            if not model_size:
+                # Fallback: take last part (old behavior)
+                logging.warning(f"Could not detect model size from name '{model_name}', using fallback")
+                model_size = model_name.split('-')[-1].lower()
+            
+            logging.info(f"Detected model size: {model_size}")
             llama65b = '65b' in model_name and base == 'huggyllama'
             llama70b = '70b' in model_name.lower() and base == 'meta-llama'
             print("Initializing model: ", model_name + " and base:", base)
