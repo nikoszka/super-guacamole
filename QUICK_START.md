@@ -1,20 +1,20 @@
 # 🚀 Quick Start: Generate & Analyze
 
-## Step 1: Generate Short Answers (30-60 min)
+## Step 1: Generate Short Answers (15-30 min)
 
 ```bash
 python -m src.generate_answers \
   --model_name Llama-3.2-1B \
   --dataset trivia_qa \
   --num_samples 200 \
-  --num_generations 10 \
-  --temperature 1.0 \
+  --num_generations 1 \
+  --temperature 0.0 \
   --model_max_new_tokens 50 \
   --brief_prompt short \
   --metric squad \
   --use_context False \
   --compute_p_true False \
-  --entity YOUR_WANDB_ENTITY \
+  --entity nikosteam \
   --project nllSAR_short
 ```
 
@@ -22,21 +22,21 @@ python -m src.generate_answers \
 
 ---
 
-## Step 2: Generate Long Answers (1-2 hours)
+## Step 2: Generate Long Answers (30-60 min)
 
 ```bash
 python -m src.generate_answers \
   --model_name Llama-3.2-1B \
   --dataset trivia_qa \
   --num_samples 200 \
-  --num_generations 10 \
-  --temperature 1.0 \
+  --num_generations 1 \
+  --temperature 0.0 \
   --model_max_new_tokens 200 \
   --brief_prompt detailed \
   --metric llm_llama-3.1-70b \
   --use_context True \
   --compute_p_true False \
-  --entity YOUR_WANDB_ENTITY \
+  --entity nikosteam \
   --project nllSAR_long
 ```
 
@@ -282,7 +282,8 @@ most_likely_answer = {
 | Phase 1.5 | ❌ 35% success | ✅ 100% success |
 | Phase 1.6 | ✅ Works | ✅ Works |
 | Phase 2 | ❌ ~40% success | ✅ 100% success |
-| Phase 5 | ⚠️ Partial | ✅ Full |
+| Phase 5 (baselines) | ✅ Works | ✅ Works |
+| Phase 5 (SAR/SE) | ❌ Need multi-samples | ✅ Works with temp=1.0 |
 
 ---
 
@@ -298,9 +299,11 @@ most_likely_answer = {
 
 1. **Start small**: Use `--num_samples 50` for testing
 2. **Use ROUGE for speed**: `--metric squad` is much faster than LLM judges
-3. **GPU memory**: Monitor with `nvidia-smi` during generation
-4. **Intermediate saves**: Wandb auto-saves, check wandb run folder periodically
-5. **Analysis order**: Run Phase 1 → 1.5 → 1.6 → 2 → 5 in sequence
+3. **Greedy first**: Always start with `--num_generations 1 --temperature 0.0` for baseline
+4. **Few-shot helps**: Keep `--num_few_shot 5` (improves quality, unrelated to temperature)
+5. **GPU memory**: Monitor with `nvidia-smi` during generation
+6. **Intermediate saves**: Wandb auto-saves, check wandb run folder periodically
+7. **Analysis order**: Run Phase 1 → 1.5 → 1.6 → 2 → 5 in sequence
 
 ---
 

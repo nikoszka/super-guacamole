@@ -11,8 +11,8 @@ python -m src.generate_answers \
   --model_name Llama-3.2-1B \
   --dataset trivia_qa \
   --num_samples 400 \
-  --num_generations 10 \
-  --temperature 1.0 \
+  --num_generations 1 \
+  --temperature 0.0 \
   --model_max_new_tokens 50 \
   --num_few_shot 5 \
   --brief_prompt short \
@@ -22,7 +22,7 @@ python -m src.generate_answers \
   --answerable_only True \
   --get_training_set_generations True \
   --compute_p_true False \
-  --entity YOUR_WANDB_ENTITY \
+  --entity nikosteam \
   --project nllSAR_short_answers
 ```
 
@@ -33,8 +33,8 @@ python -m src.generate_answers \
   --model_name Llama-3.2-1B \
   --dataset trivia_qa \
   --num_samples 400 \
-  --num_generations 10 \
-  --temperature 1.0 \
+  --num_generations 1 \
+  --temperature 0.0 \
   --model_max_new_tokens 200 \
   --num_few_shot 5 \
   --brief_prompt detailed \
@@ -44,7 +44,7 @@ python -m src.generate_answers \
   --answerable_only True \
   --get_training_set_generations True \
   --compute_p_true False \
-  --entity YOUR_WANDB_ENTITY \
+  --entity nikosteam \
   --project nllSAR_long_answers
 ```
 
@@ -58,12 +58,14 @@ python -m src.generate_answers \
 |-----------|---------------|--------------|-------------|
 | `--model_name` | `Llama-3.2-1B` | `Llama-3.2-1B` | Model to use. Also try: `Llama-3.1-8B`, `Llama-2-7b-chat` |
 | `--model_max_new_tokens` | **50** | **200** | Max tokens per answer. Short: 30-70, Long: 150-300 |
-| `--temperature` | **1.0** | **1.0** | Temperature for sampling (greedy=0.0 is i=0 generation) |
+| `--temperature` | **0.0** | **0.0** | Temperature for sampling (0.0 = greedy/deterministic) |
+| `--num_generations` | **1** | **1** | Number of samples (1 = greedy only, 10+ for SAR/SE) |
 
 **Why these values?**
 - **50 tokens** for short: Enough for factoid answers (e.g., "The Battle of Hastings occurred in 1066")
 - **200 tokens** for long: Allows detailed explanations with context
-- **Temperature 1.0**: Creates diversity in high-temp generations for SAR/SE analysis
+- **Temperature 0.0**: Pure greedy decoding for baseline/token-level analysis
+- **1 generation**: Focuses on greedy baseline (increase to 10+ only if you need SAR/SE)
 
 ---
 
@@ -73,15 +75,15 @@ python -m src.generate_answers \
 |-----------|-------------|-------------|
 | `--dataset` | `trivia_qa`, `squad`, `bioasq` | QA dataset to use |
 | `--num_samples` | **400** (min: 100, max: 1000) | Number of questions to process |
-| `--num_generations` | **10** (min: 5, max: 20) | High-temp samples for SAR/SE |
+| `--num_generations` | **1** (baseline) or **10+** (SAR/SE) | Number of samples per question |
 | `--num_few_shot` | **5** | Few-shot examples in prompt |
 | `--use_context` | Short: `False`, Long: `True` | Include context passages |
 | `--answerable_only` | **True** | Skip unanswerable questions |
 
 **Why these values?**
 - **400 samples**: Good balance between statistical power and computation time
-- **10 generations**: Sufficient for SAR (needs multiple samples) and SE analysis
-- **Few-shot 5**: Provides enough in-context examples without excessive prompt length
+- **1 generation**: For baseline/token analysis (Phases 1-2). Use 10+ only for SAR/SE (Phase 5)
+- **Few-shot 5**: Provides enough in-context examples without excessive prompt length (unrelated to temperature!)
 
 ---
 
@@ -136,8 +138,8 @@ python -m src.generate_answers \
   --model_name Llama-3.2-1B \
   --dataset trivia_qa \
   --num_samples 200 \
-  --num_generations 15 \
-  --temperature 1.0 \
+  --num_generations 1 \
+  --temperature 0.0 \
   --model_max_new_tokens 150 \
   --num_few_shot 5 \
   --brief_prompt detailed \
@@ -148,16 +150,18 @@ python -m src.generate_answers \
   --get_training_set_generations False \
   --compute_p_true False \
   --compute_accuracy_at_all_temps True \
-  --entity YOUR_WANDB_ENTITY \
+  --entity nikosteam \
   --project nllSAR_demo
 ```
 
 **Why these settings?**
-- ✅ **200 samples**: Fast enough for testing (~1-2 hours on GPU), sufficient for analysis
+- ✅ **200 samples**: Fast enough for testing (~30-60 min on GPU), sufficient for analysis
 - ✅ **150 max tokens**: Middle ground between short/long, good token distribution
-- ✅ **15 generations**: Rich sampling for SAR/SE with good diversity
+- ✅ **1 generation + temp 0.0**: Pure greedy decoding for baseline/token analysis
 - ✅ **detailed prompt**: Generates interesting multi-token answers with varied NLL patterns
 - ✅ **llm_llama-3.1-70b judge**: Good accuracy without needing OpenAI API
+
+**Note:** For SAR/SE analysis (Phase 5), you'll need multiple generations. See "Temperature & Sampling Strategy" below.
 
 ---
 
@@ -165,11 +169,12 @@ python -m src.generate_answers \
 
 | Analysis Phase | Needs Multiple Generations? | Min Tokens per Answer | Recommended Settings |
 |----------------|------------------------------|------------------------|----------------------|
-| **Phase 1** (Baseline) | No (uses i=0 only) | 5+ | Any settings work |
-| **Phase 1.5** (Token NLL) | No | 10+ | `max_new_tokens >= 50` |
-| **Phase 1.6** (Prefix NLL) | No | 10+ | `max_new_tokens >= 30` |
-| **Phase 2** (Token Relevance) | No | 15+ | `max_new_tokens >= 50` |
-| **Phase 5** (SAR/SE/RW-G-NLL) | **Yes** (for SAR/SE) | 10+ | `num_generations >= 10` |
+| **Phase 1** (Baseline) | No (uses i=0 only) | 5+ | `num_gen=1, temp=0.0` |
+| **Phase 1.5** (Token NLL) | No | 10+ | `num_gen=1, temp=0.0, max_tokens>=50` |
+| **Phase 1.6** (Prefix NLL) | No | 10+ | `num_gen=1, temp=0.0, max_tokens>=30` |
+| **Phase 2** (Token Relevance / RW-G-NLL) | No | 15+ | `num_gen=1, temp=0.0, max_tokens>=50` |
+| **Phase 5 (partial)** (Baselines + RW-G-NLL) | No | 10+ | `num_gen=1, temp=0.0` |
+| **Phase 5 (full)** (+ SAR/SE) | **Yes** | 10+ | `num_gen=10+, temp=1.0` |
 
 ---
 
@@ -190,44 +195,190 @@ We added **exact token tracking** to prevent mismatches:
 
 ## 🎯 Example Commands for Different Scenarios
 
-### Scenario 1: Quick Test (15 minutes)
+### Scenario 1: Quick Test (10-15 minutes)
 ```bash
 python -m src.generate_answers \
   --model_name Llama-3.2-1B \
   --dataset trivia_qa \
   --num_samples 50 \
-  --num_generations 5 \
+  --num_generations 1 \
+  --temperature 0.0 \
   --model_max_new_tokens 100 \
   --brief_prompt detailed \
   --metric squad \
-  --compute_p_true False
+  --compute_p_true False \
+  --entity nikosteam
 ```
+**Runs:** Phase 1, 1.5, 1.6, 2, 5 (partial - no SAR/SE)
 
-### Scenario 2: Full Analysis Run (2-3 hours)
+### Scenario 2: Full Baseline Analysis (30-60 min)
 ```bash
 python -m src.generate_answers \
   --model_name Llama-3.2-1B \
   --dataset trivia_qa \
   --num_samples 400 \
-  --num_generations 15 \
-  --model_max_new_tokens 200 \
+  --num_generations 1 \
+  --temperature 0.0 \
+  --model_max_new_tokens 150 \
   --brief_prompt detailed \
   --metric llm_llama-3.1-70b \
-  --use_context True
+  --use_context True \
+  --entity nikosteam
 ```
+**Runs:** Phase 1, 1.5, 1.6, 2, 5 (baselines + RW-G-NLL only)
 
-### Scenario 3: Short Answers Only (ROUGE evaluation)
+### Scenario 3: Short Answers (ROUGE, 20-40 min)
+```bash
+python -m src.generate_answers \
+  --model_name Llama-3.2-1B \
+  --dataset trivia_qa \
+  --num_samples 400 \
+  --num_generations 1 \
+  --temperature 0.0 \
+  --model_max_new_tokens 40 \
+  --brief_prompt short \
+  --metric squad \
+  --use_context False \
+  --entity nikosteam
+```
+**Runs:** All phases except SAR/SE
+
+### Scenario 4: High-Temp for SAR/SE (2-3 hours)
 ```bash
 python -m src.generate_answers \
   --model_name Llama-3.2-1B \
   --dataset trivia_qa \
   --num_samples 400 \
   --num_generations 10 \
-  --model_max_new_tokens 40 \
-  --brief_prompt short \
-  --metric squad \
-  --use_context False
+  --temperature 1.0 \
+  --model_max_new_tokens 150 \
+  --brief_prompt detailed \
+  --metric llm_llama-3.1-70b \
+  --use_context True \
+  --entity nikosteam
 ```
+**Runs:** Phase 5 (SAR & SE analysis)  
+**Note:** i=0 will be stochastic, not pure greedy!
+
+---
+
+---
+
+## 🌡️ Temperature & Sampling Strategy
+
+### Understanding Temperature and Generations
+
+**Temperature** controls randomness:
+- `--temperature 0.0` → **Greedy** (deterministic, always picks highest probability token)
+- `--temperature 1.0` → **Stochastic** (samples from full probability distribution)
+
+**Number of Generations** (`--num_generations`):
+- Sets how many answers to generate per question
+- `i=0` is the baseline answer (uses `--temperature`)
+- `i>0` are additional samples (also use `--temperature`)
+
+### ⚠️ Important Limitation
+
+**The current code uses the same temperature for ALL generations** (including i=0). This means:
+
+```python
+# All generations use args.temperature
+for i in range(num_generations):
+    answer = model.predict(prompt, temperature=args.temperature)
+```
+
+### 📋 Recommended Strategies
+
+#### **Strategy 1: Pure Greedy (Recommended for token analysis)**
+```bash
+--num_generations 1 \
+--temperature 0.0
+```
+- ✅ Best for Phases 1, 1.5, 1.6, 2 (baseline & token-level analysis)
+- ✅ Deterministic, reproducible results
+- ✅ Focused on the model's most confident answer
+- ❌ Cannot compute SAR/SE (need multiple samples)
+
+#### **Strategy 2: Multiple Greedy Runs (Not useful)**
+```bash
+--num_generations 10 \
+--temperature 0.0
+```
+- ❌ All 10 generations will be **identical**
+- ❌ Wastes compute time
+- ❌ SAR/SE will fail (no diversity)
+
+#### **Strategy 3: Two Separate Runs (For full analysis)**
+```bash
+# Run 1: Greedy baseline
+--num_generations 1 --temperature 0.0
+
+# Run 2: High-temp for SAR/SE
+--num_generations 10 --temperature 1.0
+```
+- ✅ Clean separation of greedy vs stochastic
+- ✅ Can run all analysis phases
+- ⚠️ Requires two separate generation runs
+
+#### **Strategy 4: Low Non-Zero Temperature (Compromise)**
+```bash
+--num_generations 10 \
+--temperature 0.1
+```
+- ⚠️ i=0 is **mostly greedy** but slightly stochastic
+- ✅ i>0 have some diversity for SAR/SE
+- ⚠️ Not pure greedy baseline
+- ⚠️ May affect baseline metrics slightly
+
+### 💡 Our Recommendation
+
+**For your first run (token-level analysis focus):**
+```bash
+--num_generations 1 \
+--temperature 0.0 \
+--num_samples 400
+```
+
+This gives you:
+- ✅ Phase 1: Baseline metrics (G-NLL, Avg NLL, Perplexity) ✅
+- ✅ Phase 1.5: Token-level NLL analysis ✅
+- ✅ Phase 1.6: Prefix-level NLL analysis ✅
+- ✅ Phase 2: Token relevance (RW-G-NLL) ✅
+- ❌ Phase 5: SAR & SE (need multiple samples) ❌
+
+**Later, if you want SAR/SE analysis:**
+Run a second generation with `--num_generations 10 --temperature 1.0`
+
+---
+
+## 🏷️ WandB Entity & Project Settings
+
+### What is `--entity`?
+Your **wandb username or team name**. Based on your previous runs, you're using: **`nikosteam`**
+
+### Setting Your Entity
+
+**Option 1: Environment Variable (Recommended)**
+```powershell
+# PowerShell (Windows)
+$env:WANDB_SEM_UNC_ENTITY = "nikosteam"
+
+# Then omit --entity from commands (auto-filled)
+```
+
+**Option 2: Command Argument**
+```bash
+--entity nikosteam
+```
+
+**Option 3: Let wandb auto-detect** (uses your logged-in username)
+
+### Project Names
+- `--project nllSAR_short` → Short answer experiments
+- `--project nllSAR_long` → Long answer experiments  
+- `--project nllSAR_demo` → Test/demo runs
+
+Your runs appear at: `wandb.ai/nikosteam/PROJECT_NAME/runs/...`
 
 ---
 
@@ -275,9 +426,11 @@ print(f"✅ First 5 tokens: {mla['tokens'][:5]}")
 
 1. **Token Distribution**: Aim for mean token length 20-100 for interesting patterns
 2. **Accuracy Balance**: Target ~60-80% accuracy for good correct/incorrect separation
-3. **High-Temp Diversity**: Use `temperature=1.0` and `num_generations >= 10` for SAR/SE
-4. **Avoid Edge Cases**: Skip very short (<5 tokens) or interrupted (max_tokens) generations
-5. **GPU Memory**: If OOM, reduce `num_samples` or use smaller model
+3. **Start with Greedy**: Use `--num_generations 1 --temperature 0.0` for initial analysis
+4. **High-Temp for SAR/SE**: Only use `temperature=1.0` + `num_generations >= 10` if you need SAR/SE
+5. **Few-Shot Helps**: Always use `--num_few_shot 5` (improves answer quality, unrelated to temperature)
+6. **Avoid Edge Cases**: Skip very short (<5 tokens) or interrupted (max_tokens) generations
+7. **GPU Memory**: If OOM, reduce `num_samples` or use smaller model
 
 ---
 
