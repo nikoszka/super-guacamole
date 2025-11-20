@@ -23,7 +23,7 @@ python -m src.generate_answers \
   --get_training_set_generations True \
   --compute_p_true False \
   --entity nikosteam \
-  --project nllSAR_short_answers
+  --project super_guacamole
 ```
 
 ### For LONG Answers (LLM judge evaluation)
@@ -45,7 +45,7 @@ python -m src.generate_answers \
   --get_training_set_generations True \
   --compute_p_true False \
   --entity nikosteam \
-  --project nllSAR_long_answers
+  --project super_guacamole
 ```
 
 ---
