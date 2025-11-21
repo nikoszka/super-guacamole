@@ -48,7 +48,7 @@ def get_parser(stages=['generate', 'compute']):
     parser.add_argument('--random_seed', type=int, default=10)
     parser.add_argument(
         "--metric", type=str, default="squad",
-        choices=['squad', 'llm', 'llm_gpt-3.5', 'llm_gpt-4', 'llm_llama-3.1-70b', 'llm_llama-3-70b', 'llm_llama-3-8b', 'llm_llama-2-70b', 'llm_llama-2-13b'],
+        choices=['squad', 'llm', 'llm_gpt-3.5', 'llm_gpt-4', 'llm_llama-3.1-70b', 'llm_llama-3-70b', 'llm_llama-3-8b', 'llm_llama-3.1-8b', 'llm_llama-2-70b', 'llm_llama-2-13b'],
         help="Metric to assign accuracy to generations. Supports OpenAI models (llm_gpt-*) and HuggingFace Llama models (llm_llama-*).")
     parser.add_argument(
         "--compute_accuracy_at_all_temps",

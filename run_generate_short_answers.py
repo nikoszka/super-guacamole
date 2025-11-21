@@ -14,7 +14,7 @@ def main():
 
     cmd = [
         'python', 'generate_answers.py',
-        '--model_name', 'Llama-3.2-1B',
+        '--model_name', 'Llama-3.1-8B',
         '--dataset', 'trivia_qa',
         '--num_samples', '400',
         '--num_generations', '1',
