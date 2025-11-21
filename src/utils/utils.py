@@ -16,7 +16,23 @@ BRIEF_PROMPTS = {
     'chat': 'Answer the following question in a single complete sentence.\n',
     'sentence': 'Answer the following question in a complete, informative sentence.\n',
     'detailed': 'Provide a detailed, well-structured answer to the following question. Write your response as a complete sentence that thoroughly addresses the question.\n',
-    'short': 'Answer the following question with a brief, concise answer. Use only a few words or a short phrase, not a full sentence.\n'}
+    'short': 'Answer the following question with a brief, concise answer. Use only a few words or a short phrase, not a full sentence.\n',
+    'manual': """Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+"""
+}
 
 
 def get_parser(stages=['generate', 'compute']):
@@ -101,7 +117,7 @@ def get_parser(stages=['generate', 'compute']):
             "--enable_brief", default=True, action=argparse.BooleanOptionalAction)
         parser.add_argument(
             "--brief_prompt", default='detailed', type=str, 
-            choices=['default', 'chat', 'sentence', 'detailed', 'short'],
+            choices=['default', 'chat', 'sentence', 'detailed', 'short','manual'],
             help="Type of brief prompt to use for answer generation")
         parser.add_argument(
             "--prompt_type", default='default', type=str)

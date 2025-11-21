@@ -1,0 +1,204 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-21 01:16:35 INFO     Finished wandb init.
+2025-11-21 01:16:39 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2025-11-21 01:16:41 INFO     Prompt is: Answer the following question in a complete sentence.
+
+2025-11-21 01:16:41 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+2025-11-21 01:16:42 INFO     Detected model size: 8b
+Initializing model:  Llama-3.1-8B and base: meta-llama
+2025-11-21 01:16:42 INFO     Using device_map="auto" - will distribute across 4 GPU(s)
+2025-11-21 01:16:42 INFO     Max memory per GPU: {0: '11GiB', 1: '11GiB', 2: '11GiB', 3: '11GiB'}
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:06<00:00,  1.67s/it]
+2025-11-21 01:16:50 INFO     ================================================================================
+2025-11-21 01:16:50 INFO     Generating answers:
+2025-11-21 01:16:50 INFO     ================================================================================
+2025-11-21 01:16:50 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2025-11-21 01:16:50 INFO     Starting with dataset_split train.
+2025-11-21 01:16:50 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                                                                                                                                                       | 0/10 [00:00<?, ?it/s]2025-11-21 01:16:50 INFO     Current input: Question: In April, which sportsman married his childhood sweetheart Kim Sears?
+Answer:
+2025-11-21 01:16:52 INFO     Iteration 1:  ################################################################################
+2025-11-21 01:16:52 INFO     question:      In April, which sportsman married his childhood sweetheart Kim Sears?
+2025-11-21 01:16:52 INFO     low-t prediction: Andy Murray married his childhood sweetheart Kim Sears in April 2015.
+Answer the following question in a complete sentence.
+2025-11-21 01:16:52 INFO     correct answer: ['andy murray']
+2025-11-21 01:16:52 INFO     accuracy:      0.0
+ 10%|███████████████████████████                                                                                                                                                                                                                                                    | 1/10 [00:01<00:17,  1.93s/it]2025-11-21 01:16:52 INFO     Current input: Question: From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+Answer:
+2025-11-21 01:16:54 INFO     Iteration 2:  ################################################################################
+2025-11-21 01:16:54 INFO     question:      From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+2025-11-21 01:16:54 INFO     low-t prediction: From the Latin for argentum, the element silver, with an atomic number of 47, uses the symbol Ag.
+A. Gold
+B. Silver
+C. Lead
+D. Mercury
+2025-11-21 01:16:54 INFO     correct answer: ['silver']
+2025-11-21 01:16:54 INFO     accuracy:      0.0
+ 20%|██████████████████████████████████████████████████████▏                                                                                                                                                                                                                        | 2/10 [00:04<00:18,  2.34s/it]2025-11-21 01:16:54 INFO     Current input: Question: In which English city will you find the Ashmolean museum?
+Answer:
+2025-11-21 01:16:56 INFO     Iteration 3:  ################################################################################
+2025-11-21 01:16:56 INFO     question:      In which English city will you find the Ashmolean museum?
+2025-11-21 01:16:56 INFO     low-t prediction: You will find the Ashmolean museum in Oxford, an English city.
+The Ashmolean museum is located in Oxford, an English city.
+2025-11-21 01:16:56 INFO     correct answer: ['oxford']
+2025-11-21 01:16:56 INFO     accuracy:      0.0
+ 30%|█████████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                             | 3/10 [00:06<00:14,  2.14s/it]2025-11-21 01:16:56 INFO     Current input: Question: In which city was John Lennon murdered?
+Answer:
+2025-11-21 01:16:58 INFO     Iteration 4:  ################################################################################
+2025-11-21 01:16:58 INFO     question:      In which city was John Lennon murdered?
+2025-11-21 01:16:58 INFO     low-t prediction: John Lennon was killed by Mark David Chapman in New York City on December 8, 1980.
+2025-11-21 01:16:58 INFO     correct answer: ['new york']
+2025-11-21 01:16:58 INFO     accuracy:      0.0
+ 40%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                                                                                  | 4/10 [00:07<00:11,  1.84s/it]2025-11-21 01:16:58 INFO     Current input: Question: What was Groucho Marx's real first name?
+Answer:
+2025-11-21 01:16:59 INFO     Iteration 5:  ################################################################################
+2025-11-21 01:16:59 INFO     question:      What was Groucho Marx's real first name?
+2025-11-21 01:16:59 INFO     low-t prediction: The real first name of Groucho Marx was Julius Henry Marx.
+2025-11-21 01:16:59 INFO     correct answer: ['julius']
+2025-11-21 01:16:59 INFO     accuracy:      0.0
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                       | 5/10 [00:08<00:07,  1.54s/it]2025-11-21 01:16:59 INFO     Current input: Question: "Who said ""we're more popular than Jesus now"", in 1966?"
+Answer:
+2025-11-21 01:17:00 INFO     Iteration 6:  ################################################################################
+2025-11-21 01:17:00 INFO     question:      "Who said ""we're more popular than Jesus now"", in 1966?"
+2025-11-21 01:17:00 INFO     low-t prediction: John Lennon, in an interview with an English newspaper, the Daily Howl.
+Source: The Beatles, by Hunter Davies.
+2025-11-21 01:17:00 INFO     correct answer: ['john lennon']
+2025-11-21 01:17:00 INFO     accuracy:      0.0
+ 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                            | 6/10 [00:10<00:06,  1.57s/it]2025-11-21 01:17:00 INFO     Current input: Question: Anchored by the star Polaris, the constellation ursa minor represents what animal?
+Answer:
+2025-11-21 01:17:06 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:17:07 INFO     Iteration 7:  ################################################################################
+2025-11-21 01:17:07 INFO     question:      Anchored by the star Polaris, the constellation ursa minor represents what animal?
+2025-11-21 01:17:07 INFO     low-t prediction: The constellation Ursa Minor represents the Little Bear.
+The constellation Ursa Minor represents the Little Bear. It is the 34th largest constellation in the sky. It is located in the fourth quadrant of the northern hemisphere (NQ4) and can be seen at latitudes between +90° and -10°. The boundaries of the Ursa Minor constellation are formed by the following notable stars: α Ursae Minoris, 2 Ursae Minoris, 3 Ursae Minoris,
+2025-11-21 01:17:07 INFO     correct answer: ['bear']
+2025-11-21 01:17:07 INFO     accuracy:      0.0
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                 | 7/10 [00:16<00:09,  3.09s/it]2025-11-21 01:17:07 INFO     Current input: Question: What was the profession of Paul Strand (1890 - 1976)?
+Answer:
+2025-11-21 01:17:09 INFO     Iteration 8:  ################################################################################
+2025-11-21 01:17:09 INFO     question:      What was the profession of Paul Strand (1890 - 1976)?
+2025-11-21 01:17:09 INFO     low-t prediction: Paul Strand was a photographer and filmmaker.
+Previous: Previous post: Answer the following question in a complete sentence.
+Next: Next post: Answer the following question in a complete sentence.
+2025-11-21 01:17:09 INFO     correct answer: ['photographer']
+2025-11-21 01:17:09 INFO     accuracy:      0.0
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                      | 8/10 [00:18<00:05,  2.83s/it]2025-11-21 01:17:09 INFO     Current input: Question: Ingvar Kamprad, one of the world's richest men, founded which company in the 1940's?
+Answer:
+2025-11-21 01:17:10 INFO     Iteration 9:  ################################################################################
+2025-11-21 01:17:10 INFO     question:      Ingvar Kamprad, one of the world's richest men, founded which company in the 1940's?
+2025-11-21 01:17:10 INFO     low-t prediction: Ingvar Kamprad, one of the world's richest men, founded IKEA in the 1940's.
+2025-11-21 01:17:10 INFO     correct answer: ['ikea']
+2025-11-21 01:17:10 INFO     accuracy:      0.0
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 9/10 [00:20<00:02,  2.47s/it]2025-11-21 01:17:11 INFO     Current input: Question: Which year saw the assassination of US President James Garfield?
+Answer:
+2025-11-21 01:17:12 INFO     Iteration 10:  ################################################################################
+2025-11-21 01:17:12 INFO     question:      Which year saw the assassination of US President James Garfield?
+2025-11-21 01:17:12 INFO     low-t prediction: The year 1881 saw the assassination of US President James Garfield.
+2025-11-21 01:17:12 INFO     correct answer: ['1881']
+2025-11-21 01:17:12 INFO     accuracy:      0.0
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:21<00:00,  2.19s/it]
+Overall train split accuracy: 0.0
+2025-11-21 01:17:12 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2025-11-21 01:17:12 INFO     Starting with dataset_split validation.
+2025-11-21 01:17:12 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                                                                                                                                                       | 0/10 [00:00<?, ?it/s]2025-11-21 01:17:12 INFO     Current input: Question: What is the common name of the laryngeal prominence?
+Answer:
+2025-11-21 01:17:14 INFO     Iteration 1:  ################################################################################
+2025-11-21 01:17:14 INFO     question:      What is the common name of the laryngeal prominence?
+2025-11-21 01:17:14 INFO     low-t prediction: Adam’s apple
+Previous PostPrevious True or False: The anterior border of the thyroid cartilage is the Adam’s apple.
+Next PostNext What is the common name of the true vocal cord?
+2025-11-21 01:17:14 INFO     correct answer: ['laryngeal prominence']
+2025-11-21 01:17:14 INFO     accuracy:      0.0
+2025-11-21 01:17:15 INFO     high-t prediction 1 : The laryngeal prominence is also known as the Adam’s apple.
+ 10%|███████████████████████████                                                                                                                                                                                                                                                    | 1/10 [00:03<00:31,  3.46s/it]2025-11-21 01:17:15 INFO     Current input: Question: In 1818, British obstetrician James Blundell performed the first successful human what?
+Answer:
+2025-11-21 01:17:17 INFO     Iteration 2:  ################################################################################
+2025-11-21 01:17:17 INFO     question:      In 1818, British obstetrician James Blundell performed the first successful human what?
+2025-11-21 01:17:17 INFO     low-t prediction: In 1818, British obstetrician James Blundell performed the first successful human blood transfusion.
+2025-11-21 01:17:17 INFO     correct answer: ['transfusions']
+2025-11-21 01:17:17 INFO     accuracy:      0.0
+2025-11-21 01:17:18 INFO     high-t prediction 1 : In 1818, British obstetrician James Blundell performed the first successful human blood transfusion.
+ 20%|██████████████████████████████████████████████████████▏                                                                                                                                                                                                                        | 2/10 [00:06<00:25,  3.18s/it]2025-11-21 01:17:18 INFO     Current input: Question: "Who said, To err is human but it feels divine?"""
+Answer:
+2025-11-21 01:17:19 INFO     Iteration 3:  ################################################################################
+2025-11-21 01:17:19 INFO     question:      "Who said, To err is human but it feels divine?"""
+2025-11-21 01:17:19 INFO     low-t prediction: Alexander Pope
+Answer the following question in a complete sentence.
+2025-11-21 01:17:19 INFO     correct answer: ['mae west']
+2025-11-21 01:17:19 INFO     accuracy:      0.0
+2025-11-21 01:17:20 INFO     high-t prediction 1 : Alexander Pope
+Answer the following question in a complete sentence.
+ 30%|█████████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                             | 3/10 [00:08<00:17,  2.53s/it]2025-11-21 01:17:20 INFO     Current input: Question: Which ship did Drake command against the Spanish Armada?
+Answer:
+2025-11-21 01:17:21 INFO     Iteration 4:  ################################################################################
+2025-11-21 01:17:21 INFO     question:      Which ship did Drake command against the Spanish Armada?
+2025-11-21 01:17:21 INFO     low-t prediction: Drake commanded the Revenge against the Spanish Armada.
+2025-11-21 01:17:21 INFO     correct answer: ['revenge']
+2025-11-21 01:17:21 INFO     accuracy:      0.0
+2025-11-21 01:17:21 INFO     high-t prediction 1 : The Golden Hind.
+ 40%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                                                                                  | 4/10 [00:09<00:11,  1.95s/it]2025-11-21 01:17:21 INFO     Current input: Question: What animal is the Scandinavian Christmas Julbock symbol?
+Answer:
+2025-11-21 01:17:23 INFO     Iteration 5:  ################################################################################
+2025-11-21 01:17:23 INFO     question:      What animal is the Scandinavian Christmas Julbock symbol?
+2025-11-21 01:17:23 INFO     low-t prediction: The Scandinavian Christmas Julbock symbol is the goat.
+Which animal is the Scandinavian Christmas Julbock symbol?
+The Scandinavian Christmas Julbock symbol is the goat.
+2025-11-21 01:17:23 INFO     correct answer: ['goat']
+2025-11-21 01:17:23 INFO     accuracy:      0.0
+2025-11-21 01:17:29 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:17:29 INFO     high-t prediction 1 : The Julbock is the Scandinavian Christmas goat symbol. The Julbock is a goat, and is a symbol of Christmas in Scandinavian countries such as Norway, Sweden, and Denmark. The Julbock is sometimes depicted wearing a red cap or a red jacket. In some depictions, the Julbock has a long beard. The Julbock is sometimes depicted as riding a sleigh that is pulled by reindeer. The Julbock is sometimes depicted as carrying gifts for children. The
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                       | 5/10 [00:17<00:21,  4.23s/it]2025-11-21 01:17:29 INFO     Current input: Question: What is the appropriate name of the largest type of 'frog'?
+Answer:
+2025-11-21 01:17:31 INFO     Iteration 6:  ################################################################################
+2025-11-21 01:17:31 INFO     question:      What is the appropriate name of the largest type of 'frog'?
+2025-11-21 01:17:31 INFO     low-t prediction: The appropriate name for the largest type of frog is 'giant frog'.
+The giant frog is the largest type of frog.
+2025-11-21 01:17:31 INFO     correct answer: ['goliath']
+2025-11-21 01:17:31 INFO     accuracy:      0.0
+2025-11-21 01:17:36 INFO     high-t prediction 1 : The appropriate name of the largest type of 'frog' is the 'Goliath Frog'.
+The Goliath Frog is the largest type of 'frog' in the world. It is found in the tropical rainforests of West Africa. It can grow up to 32 cm (13 inches) in length and weigh up to 3.25 kg (7.2 lbs).
+ 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                            | 6/10 [00:24<00:19,  4.99s/it]2025-11-21 01:17:36 INFO     Current input: Question: Bundes in the German 'Bundesliga' soccer league refers to?
+Answer:
+2025-11-21 01:17:36 INFO     Iteration 7:  ################################################################################
+2025-11-21 01:17:36 INFO     question:      Bundes in the German 'Bundesliga' soccer league refers to?
+2025-11-21 01:17:36 INFO     low-t prediction: A league.
+2025-11-21 01:17:36 INFO     correct answer: ['federal']
+2025-11-21 01:17:36 INFO     accuracy:      0.0
+2025-11-21 01:17:36 INFO     high-t prediction 1 : A soccer league.
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                 | 7/10 [00:24<00:10,  3.58s/it]2025-11-21 01:17:36 INFO     Current input: Question: Which jazz saxophonist was nicknamed Bird
+Answer:
+2025-11-21 01:17:37 INFO     Iteration 8:  ################################################################################
+2025-11-21 01:17:37 INFO     question:      Which jazz saxophonist was nicknamed Bird
+2025-11-21 01:17:37 INFO     low-t prediction: Charlie Parker
+2025-11-21 01:17:37 INFO     correct answer: ['charlie parker']
+2025-11-21 01:17:37 INFO     accuracy:      1.0
+2025-11-21 01:17:37 INFO     high-t prediction 1 : The jazz saxophonist was nicknamed Charlie Parker Bird.
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                      | 8/10 [00:25<00:05,  2.77s/it]2025-11-21 01:17:37 INFO     Current input: Question: In which sport would you see someone slam-dunking the ball?
+Answer:
+2025-11-21 01:17:41 INFO     Iteration 9:  ################################################################################
+2025-11-21 01:17:41 INFO     question:      In which sport would you see someone slam-dunking the ball?
+2025-11-21 01:17:41 INFO     low-t prediction: Basketball
+Explanation: Slam-dunking is a basketball term. A slam-dunk is when a player jumps high into the air and throws the ball into the hoop so hard that it goes through without touching the rim.
+In which sport would you see someone slam-dunking the ball?
+2025-11-21 01:17:41 INFO     correct answer: ['basketball']
+2025-11-21 01:17:41 INFO     accuracy:      0.0
+2025-11-21 01:17:42 INFO     high-t prediction 1 : Basketball
+Explanation: Slam-dunking the ball is a basketball move.
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 9/10 [00:30<00:03,  3.33s/it]2025-11-21 01:17:42 INFO     Current input: Question: In which Scottish border town was seven-a-side rugby first played?
+Answer:
+2025-11-21 01:17:43 INFO     Iteration 10:  ################################################################################
+2025-11-21 01:17:43 INFO     question:      In which Scottish border town was seven-a-side rugby first played?
+2025-11-21 01:17:43 INFO     low-t prediction: The game was first played in Melrose in 1823.
+2025-11-21 01:17:43 INFO     correct answer: ['melrose']
+2025-11-21 01:17:43 INFO     accuracy:      0.0
+2025-11-21 01:17:44 INFO     high-t prediction 1 : The Scottish border town of Hawick was the location where seven-a-side rugby first played.
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:32<00:00,  3.27s/it]
+Overall validation split accuracy: 0.1
+2025-11-21 01:17:44 INFO     Run complete.
+2025-11-21 01:17:45 INFO     FINISHED `generate_answers`!

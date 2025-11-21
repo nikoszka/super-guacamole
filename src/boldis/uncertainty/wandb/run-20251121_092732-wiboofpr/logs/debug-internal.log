@@ -1,0 +1,11 @@
+{"time":"2025-11-21T09:27:32.96971671+01:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2025-11-21T09:27:33.29493744+01:00","level":"INFO","msg":"stream: created new stream","id":"wiboofpr"}
+{"time":"2025-11-21T09:27:33.294991961+01:00","level":"INFO","msg":"handler: started","stream_id":"wiboofpr"}
+{"time":"2025-11-21T09:27:33.298024437+01:00","level":"INFO","msg":"stream: started","id":"wiboofpr"}
+{"time":"2025-11-21T09:27:33.298074096+01:00","level":"INFO","msg":"writer: started","stream_id":"wiboofpr"}
+{"time":"2025-11-21T09:27:33.298117159+01:00","level":"INFO","msg":"sender: started","stream_id":"wiboofpr"}
+{"time":"2025-11-21T10:08:15.254897539+01:00","level":"INFO","msg":"stream: closing","id":"wiboofpr"}
+{"time":"2025-11-21T10:08:17.161503343+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-11-21T10:08:17.427257027+01:00","level":"INFO","msg":"handler: closed","stream_id":"wiboofpr"}
+{"time":"2025-11-21T10:08:17.429600111+01:00","level":"INFO","msg":"sender: closed","stream_id":"wiboofpr"}
+{"time":"2025-11-21T10:08:17.429638904+01:00","level":"INFO","msg":"stream: closed","id":"wiboofpr"}

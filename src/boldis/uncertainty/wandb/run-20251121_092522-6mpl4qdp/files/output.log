@@ -1,0 +1,194 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-21 09:25:25 INFO     Finished wandb init.
+2025-11-21 09:25:29 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2025-11-21 09:25:31 INFO     Prompt is: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+
+2025-11-21 09:25:31 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+2025-11-21 09:25:32 INFO     Detected model size: 8b
+Initializing model:  Llama-3.1-8B and base: meta-llama
+2025-11-21 09:25:32 INFO     Using device_map="auto" - will distribute across 4 GPU(s)
+2025-11-21 09:25:32 INFO     Max memory per GPU: {0: '11GiB', 1: '11GiB', 2: '11GiB', 3: '11GiB'}
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:08<00:00,  2.04s/it]
+2025-11-21 09:25:42 INFO     ================================================================================
+2025-11-21 09:25:42 INFO     Generating answers:
+2025-11-21 09:25:42 INFO     ================================================================================
+2025-11-21 09:25:42 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2025-11-21 09:25:42 INFO     Starting with dataset_split train.
+2025-11-21 09:25:42 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                                                                                                                                                       | 0/10 [00:00<?, ?it/s]2025-11-21 09:25:42 INFO     Current input: Question: In April, which sportsman married his childhood sweetheart Kim Sears?
+Answer:
+2025-11-21 09:25:44 INFO     Iteration 1:  ################################################################################
+2025-11-21 09:25:44 INFO     question:      In April, which sportsman married his childhood sweetheart Kim Sears?
+2025-11-21 09:25:44 INFO     low-t prediction: In April 2018, Andy Murray married his childhood sweetheart Kim Sears, who he had been dating for over a decade.
+2025-11-21 09:25:44 INFO     correct answer: ['andy murray']
+2025-11-21 09:25:44 INFO     accuracy:      0.0
+ 10%|███████████████████████████                                                                                                                                                                                                                                                    | 1/10 [00:02<00:22,  2.47s/it]2025-11-21 09:25:44 INFO     Current input: Question: From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+Answer:
+2025-11-21 09:25:46 INFO     Iteration 2:  ################################################################################
+2025-11-21 09:25:46 INFO     question:      From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+2025-11-21 09:25:46 INFO     low-t prediction: The element with the atomic number 47 and the symbol Ag is silver, which is derived from the Latin word argentum.
+2025-11-21 09:25:46 INFO     correct answer: ['silver']
+2025-11-21 09:25:46 INFO     accuracy:      0.0
+ 20%|██████████████████████████████████████████████████████▏                                                                                                                                                                                                                        | 2/10 [00:04<00:17,  2.24s/it]2025-11-21 09:25:46 INFO     Current input: Question: In which English city will you find the Ashmolean museum?
+Answer:
+2025-11-21 09:25:48 INFO     Iteration 3:  ################################################################################
+2025-11-21 09:25:48 INFO     question:      In which English city will you find the Ashmolean museum?
+2025-11-21 09:25:48 INFO     low-t prediction: The Ashmolean Museum is located in Oxford, a city in the south of England.
+2025-11-21 09:25:48 INFO     correct answer: ['oxford']
+2025-11-21 09:25:48 INFO     accuracy:      0.0
+ 30%|█████████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                             | 3/10 [00:06<00:13,  1.97s/it]2025-11-21 09:25:48 INFO     Current input: Question: In which city was John Lennon murdered?
+Answer:
+2025-11-21 09:25:50 INFO     Iteration 4:  ################################################################################
+2025-11-21 09:25:50 INFO     question:      In which city was John Lennon murdered?
+2025-11-21 09:25:50 INFO     low-t prediction: John Lennon, a former member of the Beatles, was murdered in New York City on 8 December 1980 by Mark David Chapman.
+2025-11-21 09:25:50 INFO     correct answer: ['new york']
+2025-11-21 09:25:50 INFO     accuracy:      0.0
+ 40%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                                                                                  | 4/10 [00:08<00:12,  2.12s/it]2025-11-21 09:25:50 INFO     Current input: Question: What was Groucho Marx's real first name?
+Answer:
+2025-11-21 09:25:52 INFO     Iteration 5:  ################################################################################
+2025-11-21 09:25:52 INFO     question:      What was Groucho Marx's real first name?
+2025-11-21 09:25:52 INFO     low-t prediction: Groucho Marx's real first name was Julius Henry Marx.
+2025-11-21 09:25:52 INFO     correct answer: ['julius']
+2025-11-21 09:25:52 INFO     accuracy:      0.0
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                       | 5/10 [00:09<00:09,  1.83s/it]2025-11-21 09:25:52 INFO     Current input: Question: "Who said ""we're more popular than Jesus now"", in 1966?"
+Answer:
+2025-11-21 09:25:53 INFO     Iteration 6:  ################################################################################
+2025-11-21 09:25:53 INFO     question:      "Who said ""we're more popular than Jesus now"", in 1966?"
+2025-11-21 09:25:53 INFO     low-t prediction: The Beatles said "we're more popular than Jesus now", in 1966.
+2025-11-21 09:25:53 INFO     correct answer: ['john lennon']
+2025-11-21 09:25:53 INFO     accuracy:      0.0
+ 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                            | 6/10 [00:11<00:07,  1.75s/it]2025-11-21 09:25:53 INFO     Current input: Question: Anchored by the star Polaris, the constellation ursa minor represents what animal?
+Answer:
+2025-11-21 09:25:55 INFO     Iteration 7:  ################################################################################
+2025-11-21 09:25:55 INFO     question:      Anchored by the star Polaris, the constellation ursa minor represents what animal?
+2025-11-21 09:25:55 INFO     low-t prediction: The constellation Ursa Minor represents the Little Bear or Little Dipper.
+2025-11-21 09:25:55 INFO     correct answer: ['bear']
+2025-11-21 09:25:55 INFO     accuracy:      0.0
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                 | 7/10 [00:12<00:04,  1.66s/it]2025-11-21 09:25:55 INFO     Current input: Question: What was the profession of Paul Strand (1890 - 1976)?
+Answer:
+2025-11-21 09:25:58 INFO     Iteration 8:  ################################################################################
+2025-11-21 09:25:58 INFO     question:      What was the profession of Paul Strand (1890 - 1976)?
+2025-11-21 09:25:58 INFO     low-t prediction: Paul Strand was a renowned American photographer, filmmaker, and photographer. He is best known for his black-and-white photography, which captured the essence of American life in the 20th century.
+2025-11-21 09:25:58 INFO     correct answer: ['photographer']
+2025-11-21 09:25:58 INFO     accuracy:      0.0
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                      | 8/10 [00:15<00:04,  2.05s/it]2025-11-21 09:25:58 INFO     Current input: Question: Ingvar Kamprad, one of the world's richest men, founded which company in the 1940's?
+Answer:
+2025-11-21 09:26:00 INFO     Iteration 9:  ################################################################################
+2025-11-21 09:26:00 INFO     question:      Ingvar Kamprad, one of the world's richest men, founded which company in the 1940's?
+2025-11-21 09:26:00 INFO     low-t prediction: Ingvar Kamprad, one of the world's richest men, founded IKEA in the 1940's.
+2025-11-21 09:26:00 INFO     correct answer: ['ikea']
+2025-11-21 09:26:00 INFO     accuracy:      0.0
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 9/10 [00:17<00:02,  2.04s/it]2025-11-21 09:26:00 INFO     Current input: Question: Which year saw the assassination of US President James Garfield?
+Answer:
+2025-11-21 09:26:02 INFO     Iteration 10:  ################################################################################
+2025-11-21 09:26:02 INFO     question:      Which year saw the assassination of US President James Garfield?
+2025-11-21 09:26:02 INFO     low-t prediction: James Garfield, the 20th President of the United States, was assassinated in 1881.
+2025-11-21 09:26:02 INFO     correct answer: ['1881']
+2025-11-21 09:26:02 INFO     accuracy:      0.0
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:19<00:00,  2.00s/it]
+Overall train split accuracy: 0.0
+2025-11-21 09:26:02 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2025-11-21 09:26:02 INFO     Starting with dataset_split validation.
+2025-11-21 09:26:02 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                                                                                                                                                       | 0/10 [00:00<?, ?it/s]2025-11-21 09:26:02 INFO     Current input: Question: What is the common name of the laryngeal prominence?
+Answer:
+2025-11-21 09:26:05 INFO     Iteration 1:  ################################################################################
+2025-11-21 09:26:05 INFO     question:      What is the common name of the laryngeal prominence?
+2025-11-21 09:26:05 INFO     low-t prediction: The laryngeal prominence, often referred to as the Adam's apple, is a visible bump on the neck that is caused by the prominence of the thyroid cartilage. It is more prominent in males than in females.
+2025-11-21 09:26:05 INFO     correct answer: ['laryngeal prominence']
+2025-11-21 09:26:05 INFO     accuracy:      0.0
+2025-11-21 09:26:08 INFO     high-t prediction 1 : The laryngeal prominence, commonly known as the Adam's apple, is a protrusion in the neck formed by the thyroid cartilage. It is typically more prominent in males than in females.
+ 10%|███████████████████████████                                                                                                                                                                                                                                                    | 1/10 [00:06<00:56,  6.29s/it]2025-11-21 09:26:08 INFO     Current input: Question: In 1818, British obstetrician James Blundell performed the first successful human what?
+Answer:
+2025-11-21 09:26:10 INFO     Iteration 2:  ################################################################################
+2025-11-21 09:26:10 INFO     question:      In 1818, British obstetrician James Blundell performed the first successful human what?
+2025-11-21 09:26:10 INFO     low-t prediction: In 1818, British obstetrician James Blundell performed the first successful human blood transfusion using blood taken from a horse.
+2025-11-21 09:26:10 INFO     correct answer: ['transfusions']
+2025-11-21 09:26:10 INFO     accuracy:      0.0
+2025-11-21 09:26:12 INFO     high-t prediction 1 : In 1818, British obstetrician James Blundell performed the first successful human blood transfusion.
+ 20%|██████████████████████████████████████████████████████▏                                                                                                                                                                                                                        | 2/10 [00:10<00:40,  5.04s/it]2025-11-21 09:26:12 INFO     Current input: Question: "Who said, To err is human but it feels divine?"""
+Answer:
+2025-11-21 09:26:14 INFO     Iteration 3:  ################################################################################
+2025-11-21 09:26:14 INFO     question:      "Who said, To err is human but it feels divine?"""
+2025-11-21 09:26:14 INFO     low-t prediction: William Cowper said, “To err is human but it feels divine.”
+2025-11-21 09:26:14 INFO     correct answer: ['mae west']
+2025-11-21 09:26:14 INFO     accuracy:      0.0
+2025-11-21 09:26:15 INFO     high-t prediction 1 : The phrase "To err is human but it feels divine?" is attributed to Lord Byron.
+ 30%|█████████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                             | 3/10 [00:13<00:29,  4.14s/it]2025-11-21 09:26:15 INFO     Current input: Question: Which ship did Drake command against the Spanish Armada?
+Answer:
+2025-11-21 09:26:18 INFO     Iteration 4:  ################################################################################
+2025-11-21 09:26:18 INFO     question:      Which ship did Drake command against the Spanish Armada?
+2025-11-21 09:26:18 INFO     low-t prediction: Sir Francis Drake commanded the Revenge, a ship of the English fleet, in the battle against the Spanish Armada in 1588.
+2025-11-21 09:26:18 INFO     correct answer: ['revenge']
+2025-11-21 09:26:18 INFO     accuracy:      0.0
+2025-11-21 09:26:20 INFO     high-t prediction 1 : Drake commanded the Golden Hind against the Spanish Armada, which was a fleet of ships sent by King Philip II of Spain to invade England in 1588.
+ 40%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                                                                                  | 4/10 [00:18<00:26,  4.37s/it]2025-11-21 09:26:20 INFO     Current input: Question: What animal is the Scandinavian Christmas Julbock symbol?
+Answer:
+2025-11-21 09:26:21 INFO     Iteration 5:  ################################################################################
+2025-11-21 09:26:21 INFO     question:      What animal is the Scandinavian Christmas Julbock symbol?
+2025-11-21 09:26:21 INFO     low-t prediction: The Scandinavian Christmas Julbock symbol is a reindeer.
+2025-11-21 09:26:21 INFO     correct answer: ['goat']
+2025-11-21 09:26:21 INFO     accuracy:      0.0
+2025-11-21 09:26:23 INFO     high-t prediction 1 : The Scandinavian Christmas Julbock symbol is the goat.
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                       | 5/10 [00:20<00:18,  3.71s/it]2025-11-21 09:26:23 INFO     Current input: Question: What is the appropriate name of the largest type of 'frog'?
+Answer:
+2025-11-21 09:26:25 INFO     Iteration 6:  ################################################################################
+2025-11-21 09:26:25 INFO     question:      What is the appropriate name of the largest type of 'frog'?
+2025-11-21 09:26:25 INFO     low-t prediction: The largest type of frog is called a goliath frog. It is native to the tropical rainforests of West and Central Africa.
+2025-11-21 09:26:25 INFO     correct answer: ['goliath']
+2025-11-21 09:26:25 INFO     accuracy:      0.0
+2025-11-21 09:26:28 INFO     high-t prediction 1 : The largest type of 'frog' is the Goliath frog, which can grow up to 32 cm in length and weigh up to 3.3 kg. It is found in West and Central Africa.
+ 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                            | 6/10 [00:26<00:17,  4.30s/it]2025-11-21 09:26:28 INFO     Current input: Question: Bundes in the German 'Bundesliga' soccer league refers to?
+Answer:
+2025-11-21 09:26:30 INFO     Iteration 7:  ################################################################################
+2025-11-21 09:26:30 INFO     question:      Bundes in the German 'Bundesliga' soccer league refers to?
+2025-11-21 09:26:30 INFO     low-t prediction: Bundes in the German 'Bundesliga' soccer league refers to the Federal Republic of Germany, the official name of the country.
+2025-11-21 09:26:30 INFO     correct answer: ['federal']
+2025-11-21 09:26:30 INFO     accuracy:      0.0
+2025-11-21 09:26:33 INFO     high-t prediction 1 : The German Bundesliga is a professional soccer league, and 'Bundes' refers to the federal nature of the league, which includes teams from different states in Germany.
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                 | 7/10 [00:30<00:13,  4.44s/it]2025-11-21 09:26:33 INFO     Current input: Question: Which jazz saxophonist was nicknamed Bird
+Answer:
+2025-11-21 09:26:34 INFO     Iteration 8:  ################################################################################
+2025-11-21 09:26:34 INFO     question:      Which jazz saxophonist was nicknamed Bird
+2025-11-21 09:26:34 INFO     low-t prediction: Charlie Parker was nicknamed Bird because of his distinctive sound on the saxophone.
+2025-11-21 09:26:34 INFO     correct answer: ['charlie parker']
+2025-11-21 09:26:34 INFO     accuracy:      0.0
+2025-11-21 09:26:35 INFO     high-t prediction 1 : Charlie Parker was nicknamed Bird.
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                      | 8/10 [00:33<00:07,  3.77s/it]2025-11-21 09:26:35 INFO     Current input: Question: In which sport would you see someone slam-dunking the ball?
+Answer:
+2025-11-21 09:26:37 INFO     Iteration 9:  ################################################################################
+2025-11-21 09:26:37 INFO     question:      In which sport would you see someone slam-dunking the ball?
+2025-11-21 09:26:37 INFO     low-t prediction: Slam-dunking is a move commonly seen in basketball, where a player jumps in the air and forcefully throws the ball through the basket.
+2025-11-21 09:26:37 INFO     correct answer: ['basketball']
+2025-11-21 09:26:37 INFO     accuracy:      0.0
+2025-11-21 09:26:40 INFO     high-t prediction 1 : Slam-dunking is a move in basketball where a player jumps high into the air and throws the ball forcefully downwards through the basket, usually from above the rim. Therefore, the answer is basketball.
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 9/10 [00:38<00:04,  4.23s/it]2025-11-21 09:26:41 INFO     Current input: Question: In which Scottish border town was seven-a-side rugby first played?
+Answer:
+2025-11-21 09:26:43 INFO     Iteration 10:  ################################################################################
+2025-11-21 09:26:43 INFO     question:      In which Scottish border town was seven-a-side rugby first played?
+2025-11-21 09:26:43 INFO     low-t prediction: The original game of rugby was played in a seven-a-side format in the Scottish border town of Melrose in the 16th century.
+2025-11-21 09:26:43 INFO     correct answer: ['melrose']
+2025-11-21 09:26:43 INFO     accuracy:      0.0
+2025-11-21 09:26:45 INFO     high-t prediction 1 : Melrose, in the Scottish Borders, is where the sport of rugby was first played in 1823, using seven players on each side.
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:43<00:00,  4.34s/it]
+Overall validation split accuracy: 0.0
+2025-11-21 09:26:45 INFO     Run complete.
+2025-11-21 09:26:45 INFO     FINISHED `generate_answers`!

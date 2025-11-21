@@ -1,0 +1,44 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-21 00:13:06 INFO     Finished wandb init.
+2025-11-21 00:13:10 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2025-11-21 00:13:12 INFO     Prompt is: Provide a detailed, well-structured answer to the following question. Write your response as a complete sentence that thoroughly addresses the question.
+Context: [DOC] [TLE] Childhood Sweetheart : Read Childhood Sweetheart Latest ...Childhood Sweetheart : Read Childhood Sweetheart Latest News, Photos, Videos Online on Midday [PAR] Argentina's football star Carlos Tevez gets married to childhood sweetheart [PAR] 23-Dec-2016 [PAR] Argentine veteran footballer Carlos Tevez married childhood girlfriend Vanesa Mansilla in the Argentine city of San Isidro, and the couple headed out for a four-day celebration in the Uruguayan city of Carmelo with 260 guests [PAR] Rio 2016: Canada's childhood sweethearts are now medal-winners [PAR] 22-Aug-2016 [PAR] Ashton Eaton and Brianne Theisen-Eaton are the power couple of the Olympics, a gold and bronze medal to their names, but they have little to talk about. American star Eaton, who retained his decathlon crown in Rio, and his Canadian heptathlon bronze medallist wife, married in 2013 [PAR] 5 romantic web series for different kinds of couples [PAR] 14-Jul-2016 [PAR] The beautiful weather also brings along that time of the year when the romantic side of you comes out. From the freshly washed earth to the radiant green plants and trees, everything around you looks dreamy [PAR] Guy Pearce splits from wife of 18 years [PAR] 15-Oct-2015 [PAR] 'Iron Man 3' actor Guy Pearce, who married his childhood sweetheart Kate Mestitz in 1997, has confirmed their split after 18 years of marriage [PAR] Andy Murray catches up on some football [PAR] 23-
+Question: In April, which sportsman married his childhood sweetheart Kim Sears?
+Answer: andy murray
+
+Context: [DOC] [TLE] It's Elemental - The Element SilverIt's Elemental - The Element Silver [PAR] It's Elemental [PAR] Melting Point: 1234.93 K (961.78°C or 1763.20°F) [PAR] Boiling Point: 2435 K (2162°C or 3924°F) [PAR] Density: 10.501 grams per cubic centimeter [PAR] Phase at Room Temperature: Solid [PAR] Element Classification: Metal [PAR] Period Number: 5    Group Number: 11    Group Name: none [PAR] What's in a name? From the Anglo-Saxon word seolfor. Silver's chemical symbol comes from the Latin word for silver, argentum. [PAR] Say what? Silver is pronounced as SIL-ver. [PAR] History and Uses: [PAR] Archaeological evidence suggests that people have been using silver for at least 5000 years. Silver can be obtained from pure deposits, from silver ores such as argentite (Ag2S) and horn silver (AgCl), and in conjunction with deposits of ores containing lead , gold or copper . [PAR] Silver and silver compounds have many uses. Pure silver is the best conductor of heat and electricity of all known metals, so it is sometimes used in making solder, electrical contacts and printed circuit boards. Silver is also the best reflector of visible light known, but silver mirrors must be given a protective coating to prevent them from tarnishing.
+Question: From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+Answer: silver
+
+Context: [PAR] Secret Warhol art set for show [PAR] The answer, we are led to believe, is the lantern currently on display at Auckland Castle and on loan from the Ashmolean Museum in Oxford. [PAR] GET AWAY ON A U.K. CITY BREAK; THE LOWDOWN...expert advice, news and money-saving tips; TRAVEL INSIDERS [PAR] uk SOUTH & LONDON SOUTH & LONDON 19ENJOY 19 ENJOY a series of free summer events at the Ashmolean Museum of Art and Archaeology in Oxford, including a Tutankhamun day. [PAR] United Kingdom : BAM to build Au33m residential care facility in Oxfordshire [PAR] uk SOUTH & LONDON 19 ENJOY a series of free summer events at the Ashmolean Museum of Art and Archaeology in Oxford, including a Tutankhamun day. [PAR] Copyright © 2003-2017 Farlex, Inc [PAR] Disclaimer [PAR] All content on this website, including dictionary, thesaurus, literature, geography, and other reference data is for informational purposes only. This information should not be considered complete, up to date, and is not intended to be used in place of a visit, consultation, or advice of a legal, medical, or any other professional. [PAR]  [DOC] [TLE] Ashmolean Museum of Art and Archaeology , OxfordVisit Ashmolean Museum of Art and Archaeology on your trip to Oxford [PAR] Click here for promotion tips.
+Question: In which English city will you find the Ashmolean museum?
+Answer: oxford
+
+Context: ” [PAR] John Lennon and his wife, Yoko Ono, were returning home from a transfer session at a midtown Manhattan recording studio at approximately 10:50 p.m. on this day in 1980, when they exited their limousine onto the West 72nd Street sidewalk just outside their apartment building, the now-famous Dakota. On nearly the same spot some six hours earlier, Lennon had signed his autograph on a copy of his new album, Double Fantasy, for the man who would soon shoot him dead: Mark David Chapman. In his statement to the authorities later that evening, the 25-year-old Chapman, whom police took into custody peaceably after finding him reading a copy of The Catcher in the Rye at the site of the shooting, said, “I’m sure the large part of me is Holden Caulfield, who is the main person in the book. The small part of me must be the Devil.” [PAR] A worldwide outpouring of grief and tribute followed John Lennon’s assassination, culminating in a 10-minute silent vigil on December 14 that saw some 100,000 people gather in New York’s Central Park and tens of thousands of others in cities around the world. Of Chapman, who pled guilty to Lennon’s killing and was sentenced to 20 years to life in prison, Yoko Ono would later say, “I don’t even want to think about him, and I usually don’t.
+Question: In which city was John Lennon murdered?
+Answer: new york
+
+Context: According to Groucho, when Shean visited he would throw the local waifs a few coins so that when he knocked at the door, he would be surrounded by adoring fans. Marx and his brothers respected his opinions and asked him on several occasions to write some material for them. [PAR] Minnie Marx did not have an entertainment industry career, but had intense ambition for her sons to go on stage like their uncle. While pushing her career eldest son (Chico Marx) in piano lessons, she found that Julius had a pleasant soprano voice and the ability to remain on key. Even though Julius's early career goal was to be a doctor, the family's need for income forced Julius out of school at the age of twelve. By that time, Julius had become a voracious reader, particularly fond of Horatio Algar. Throughout the rest of his life, Marx would overcome his lack of formal education by becoming a very well-read. [PAR] After a few unsuccessful stabs at entry-level office work and other jobs suitable for adolescents. Julius took to the stage as a boy singer in 1905. Though he reputedly claimed that as a vaudevillian he was "hopelessly average" it was merely a wisecrack. By 1909, Minnie Marx successfully in Nacogdoches, Texas, Julius, Milton and Arthur began cracking jokes onstage for their own amusement. Much to their surprise, the audience liked them better as comedians than as singers.
+Question: What was Groucho Marx's real first name?
+Answer: julius
+
+
+2025-11-21 00:13:12 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+Initializing model:  Llama-3.1-8B-Instruct and base: meta-llama
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 290, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 95, in main
+    model = utils.init_model(args)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/utils/utils.py", line 355, in init_model
+    model = HuggingfaceModel(
+            ^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 286, in __init__
+    raise ValueError
+ValueError

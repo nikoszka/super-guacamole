@@ -1,0 +1,219 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-21 01:20:19 INFO     Finished wandb init.
+2025-11-21 01:20:23 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2025-11-21 01:20:25 INFO     Prompt is: Answer the following question in a complete sentence.
+
+2025-11-21 01:20:25 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+2025-11-21 01:20:26 INFO     Detected model size: 8b
+Initializing model:  Llama-3.1-8B-Instruct and base: meta-llama
+2025-11-21 01:20:26 INFO     Using device_map="auto" - will distribute across 4 GPU(s)
+2025-11-21 01:20:26 INFO     Max memory per GPU: {0: '11GiB', 1: '11GiB', 2: '11GiB', 3: '11GiB'}
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:08<00:00,  2.06s/it]
+2025-11-21 01:20:36 INFO     ================================================================================
+2025-11-21 01:20:36 INFO     Generating answers:
+2025-11-21 01:20:36 INFO     ================================================================================
+2025-11-21 01:20:36 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2025-11-21 01:20:36 INFO     Starting with dataset_split train.
+2025-11-21 01:20:36 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                                                                                                                                                       | 0/10 [00:00<?, ?it/s]2025-11-21 01:20:36 INFO     Current input: Question: In April, which sportsman married his childhood sweetheart Kim Sears?
+Answer:
+2025-11-21 01:20:40 INFO     Iteration 1:  ################################################################################
+2025-11-21 01:20:40 INFO     question:      In April, which sportsman married his childhood sweetheart Kim Sears?
+2025-11-21 01:20:40 INFO     low-t prediction: Andy Murray
+In April, Andy Murray married his childhood sweetheart Kim Sears.
+Previous PostPrevious In April, which pop star announced her retirement from music?
+Next PostNext In April, which British singer-songwriter released her debut album?
+Answer the following question in a complete sentence.
+2025-11-21 01:20:40 INFO     correct answer: ['andy murray']
+2025-11-21 01:20:40 INFO     accuracy:      0.0
+ 10%|███████████████████████████                                                                                                                                                                                                                                                    | 1/10 [00:03<00:35,  3.90s/it]2025-11-21 01:20:40 INFO     Current input: Question: From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+Answer:
+2025-11-21 01:20:46 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:20:46 INFO     Iteration 2:  ################################################################################
+2025-11-21 01:20:46 INFO     question:      From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+2025-11-21 01:20:46 INFO     low-t prediction: The element, with an atomic number of 47, is silver, which uses the symbol Ag. Silver is derived from the Latin for argentum. (Note: The word "argentum" is actually Latin for silver, not the other way around.) (The Latin word is "argentum," meaning silver, and the chemical symbol for silver is Ag.) (Note: The Latin word for gold is aurum, and the chemical symbol for gold is Au.) (Note: The Latin word for
+2025-11-21 01:20:46 INFO     correct answer: ['silver']
+2025-11-21 01:20:46 INFO     accuracy:      0.0
+ 20%|██████████████████████████████████████████████████████▏                                                                                                                                                                                                                        | 2/10 [00:10<00:42,  5.30s/it]2025-11-21 01:20:46 INFO     Current input: Question: In which English city will you find the Ashmolean museum?
+Answer:
+2025-11-21 01:20:52 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:20:52 INFO     Iteration 3:  ################################################################################
+2025-11-21 01:20:52 INFO     question:      In which English city will you find the Ashmolean museum?
+2025-11-21 01:20:52 INFO     low-t prediction: The Ashmolean museum is located in the city of Oxford. In 1683, the museum was founded by Elias Ashmole. It is the oldest public museum in the English-speaking world. The Ashmolean is a world-renowned university museum and one of the greatest universities in the world. It is home to a vast and diverse collection of art and artifacts from all over the world. The collection includes everything from ancient Egyptian mummies to modern and contemporary art, as well as a vast
+2025-11-21 01:20:52 INFO     correct answer: ['oxford']
+2025-11-21 01:20:52 INFO     accuracy:      0.0
+ 30%|█████████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                             | 3/10 [00:16<00:39,  5.71s/it]2025-11-21 01:20:52 INFO     Current input: Question: In which city was John Lennon murdered?
+Answer:
+2025-11-21 01:20:58 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:20:58 INFO     Iteration 4:  ################################################################################
+2025-11-21 01:20:58 INFO     question:      In which city was John Lennon murdered?
+2025-11-21 01:20:58 INFO     low-t prediction: Liverpool. (Note: John Lennon was actually murdered in New York City, not Liverpool. Liverpool is the city in England where Lennon was born and where he began his music career with the Beatles. New York City is where Lennon was living and was murdered in 1980. The correct answer is New York City.) Show Answer Hide Answer
+The correct answer is New York City. John Lennon was assassinated in front of his apartment building in the Dakota, a cooperative apartment building in New York City,
+2025-11-21 01:20:58 INFO     correct answer: ['new york']
+2025-11-21 01:20:58 INFO     accuracy:      0.0
+ 40%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                                                                                  | 4/10 [00:22<00:35,  5.91s/it]2025-11-21 01:20:58 INFO     Current input: Question: What was Groucho Marx's real first name?
+Answer:
+2025-11-21 01:21:04 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:21:04 INFO     Iteration 5:  ################################################################################
+2025-11-21 01:21:04 INFO     question:      What was Groucho Marx's real first name?
+2025-11-21 01:21:04 INFO     low-t prediction: The real first name of Groucho Marx was Julius. He was born Julius Henry Marx on October 2, 1890. To avoid confusion with the actor Julius Brulatour, he changed his name to Groucho. Groucho Marx was an American comedian, actor, writer, and musician, best known for his work with his siblings in the Marx Brothers. He is famous for his quick wit, his distinctive voice, and his comedic style, which often involved rapid-fire delivery
+2025-11-21 01:21:04 INFO     correct answer: ['julius']
+2025-11-21 01:21:04 INFO     accuracy:      0.0
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                       | 5/10 [00:28<00:30,  6.02s/it]2025-11-21 01:21:04 INFO     Current input: Question: "Who said ""we're more popular than Jesus now"", in 1966?"
+Answer:
+2025-11-21 01:21:06 INFO     Iteration 6:  ################################################################################
+2025-11-21 01:21:06 INFO     question:      "Who said ""we're more popular than Jesus now"", in 1966?"
+2025-11-21 01:21:06 INFO     low-t prediction: John Lennon said "we're more popular than Jesus now" in 1966.
+2025-11-21 01:21:06 INFO     correct answer: ['john lennon']
+2025-11-21 01:21:06 INFO     accuracy:      0.0
+ 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                            | 6/10 [00:29<00:17,  4.38s/it]2025-11-21 01:21:06 INFO     Current input: Question: Anchored by the star Polaris, the constellation ursa minor represents what animal?
+Answer:
+2025-11-21 01:21:06 INFO     Iteration 7:  ################################################################################
+2025-11-21 01:21:06 INFO     question:      Anchored by the star Polaris, the constellation ursa minor represents what animal?
+2025-11-21 01:21:06 INFO     low-t prediction: The constellation Ursa Minor represents a small bear.
+2025-11-21 01:21:06 INFO     correct answer: ['bear']
+2025-11-21 01:21:06 INFO     accuracy:      0.0
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                 | 7/10 [00:30<00:09,  3.20s/it]2025-11-21 01:21:06 INFO     Current input: Question: What was the profession of Paul Strand (1890 - 1976)?
+Answer:
+2025-11-21 01:21:13 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:21:13 INFO     Iteration 8:  ################################################################################
+2025-11-21 01:21:13 INFO     question:      What was the profession of Paul Strand (1890 - 1976)?
+2025-11-21 01:21:13 INFO     low-t prediction: The profession of Paul Strand was photography. He was an American photographer and filmmaker who was a leading figure in the development of modernist photography. Strand was known for his innovative and influential style, which often featured stark, unromanticized images of everyday life and landscapes. He was a member of the Photo-Secession movement, a group of photographers who sought to establish photography as a legitimate art form. Throughout his career, Strand worked with many notable photographers and artists, including Alfred Stieglitz
+2025-11-21 01:21:13 INFO     correct answer: ['photographer']
+2025-11-21 01:21:13 INFO     accuracy:      0.0
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                      | 8/10 [00:36<00:08,  4.16s/it]2025-11-21 01:21:13 INFO     Current input: Question: Ingvar Kamprad, one of the world's richest men, founded which company in the 1940's?
+Answer:
+2025-11-21 01:21:19 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:21:19 INFO     Iteration 9:  ################################################################################
+2025-11-21 01:21:19 INFO     question:      Ingvar Kamprad, one of the world's richest men, founded which company in the 1940's?
+2025-11-21 01:21:19 INFO     low-t prediction: Ingvar Kamprad, one of the world's richest men, founded IKEA in the 1940's. (Note: The "A" in IKEA stands for the first letter of his name, "I" for the farm where he grew up, "K" for the village where he lived, "E" for Elmtaryd, the farm where he grew up, and "A" for Agunnaryd, the village where he lived.) (Source: IKE
+2025-11-21 01:21:19 INFO     correct answer: ['ikea']
+2025-11-21 01:21:19 INFO     accuracy:      0.0
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 9/10 [00:43<00:04,  4.81s/it]2025-11-21 01:21:19 INFO     Current input: Question: Which year saw the assassination of US President James Garfield?
+Answer:
+2025-11-21 01:21:23 INFO     Iteration 10:  ################################################################################
+2025-11-21 01:21:23 INFO     question:      Which year saw the assassination of US President James Garfield?
+2025-11-21 01:21:23 INFO     low-t prediction: 1881
+This question is a simple recall of historical information. The correct answer is 1881, as James Garfield was assassinated on September 19, 1881. This type of question requires the test-taker to have knowledge of historical events and dates.
+2025-11-21 01:21:23 INFO     correct answer: ['1881']
+2025-11-21 01:21:23 INFO     accuracy:      0.0
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:47<00:00,  4.70s/it]
+Overall train split accuracy: 0.0
+2025-11-21 01:21:23 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2025-11-21 01:21:23 INFO     Starting with dataset_split validation.
+2025-11-21 01:21:23 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                                                                                                                                                       | 0/10 [00:00<?, ?it/s]2025-11-21 01:21:23 INFO     Current input: Question: What is the common name of the laryngeal prominence?
+Answer:
+2025-11-21 01:21:29 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:21:29 INFO     Iteration 1:  ################################################################################
+2025-11-21 01:21:29 INFO     question:      What is the common name of the laryngeal prominence?
+2025-11-21 01:21:29 INFO     low-t prediction: The common name of the laryngeal prominence is Adam's apple. - 2 - 2.13 The Larynx The larynx, commonly known as the voice box, is located in the neck below the hyoid bone and above the trachea. It contains the vocal cords, which are two bands of mucous membrane covered by cartilage. The vocal cords are located in the laryngeal vestibule and are controlled by the vagus nerve. The vocal cords
+2025-11-21 01:21:29 INFO     correct answer: ['laryngeal prominence']
+2025-11-21 01:21:29 INFO     accuracy:      0.0
+2025-11-21 01:21:35 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:21:35 INFO     high-t prediction 1 : The common name of the laryngeal prominence is Adam's apple. - 4 - 2.2.2 Skeletal System 45
+The laryngeal prominence is a large, anterior laryngeal structure that is a bony prominence of the thyroid cartilage. It is a structure that is present in the neck. It is larger in males than in females and is a sex-specific trait. The prominence is due to the large size of the thyroid cartilage. It
+ 10%|███████████████████████████                                                                                                                                                                                                                                                    | 1/10 [00:12<01:51, 12.42s/it]2025-11-21 01:21:35 INFO     Current input: Question: In 1818, British obstetrician James Blundell performed the first successful human what?
+Answer:
+2025-11-21 01:21:41 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:21:41 INFO     Iteration 2:  ################################################################################
+2025-11-21 01:21:41 INFO     question:      In 1818, British obstetrician James Blundell performed the first successful human what?
+2025-11-21 01:21:41 INFO     low-t prediction: In 1818, British obstetrician James Blundell performed the first successful human blood transfusion. (This is also sometimes attributed to Karl Landsteiner in 1901 and Alexander Bogdanovich in 1913, but Blundell is often given credit for the first successful human blood transfusion in 1818.) (However, the first blood transfusion is also sometimes attributed to Italian physician Girolamo Fabrizzi in 1608, who used blood from a sheep
+2025-11-21 01:21:41 INFO     correct answer: ['transfusions']
+2025-11-21 01:21:41 INFO     accuracy:      0.0
+2025-11-21 01:21:47 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:21:48 INFO     high-t prediction 1 : In 1818, British obstetrician James Blundell performed the first successful human blood transfusion. (Note: The original question asks for a complete sentence, so I've written one for you.) If you'd like to change it to a simple answer, I can remove the sentence structure: blood transfusion. Let me know! (Also, the original question mentions "human" but doesn't mention "blood transfusion" explicitly, which is why I provided a complete sentence as the
+ 20%|██████████████████████████████████████████████████████▏                                                                                                                                                                                                                        | 2/10 [00:24<01:39, 12.44s/it]2025-11-21 01:21:48 INFO     Current input: Question: "Who said, To err is human but it feels divine?"""
+Answer:
+2025-11-21 01:21:54 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:21:54 INFO     Iteration 3:  ################################################################################
+2025-11-21 01:21:54 INFO     question:      "Who said, To err is human but it feels divine?"""
+2025-11-21 01:21:54 INFO     low-t prediction: "That is a quote from Mae West." Mae West was an American actress, singer, and playwright who was known for her wit and humor. In a 1933 interview, West made the statement "To err is human, but it feels divine - M.C." and added the "M.C." to stand for "Mae West." The quote is a play on the famous phrase "To err is human, to forgive is divine" from Alexander Pope's poem "An Essay on Criticism
+2025-11-21 01:21:54 INFO     correct answer: ['mae west']
+2025-11-21 01:21:54 INFO     accuracy:      0.0
+2025-11-21 01:22:00 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:00 INFO     high-t prediction 1 : "Marilyn Monroe."
+Explanation: Marilyn Monroe made this statement in the movie Gentlemen Prefer Blondes.
+The quote is a play on the original phrase "To err is human, to forgive is divine," which is a quote from Alexander Pope's "An Essay on Criticism."
+Marilyn Monroe's version of the quote is a humorous take on the original phrase, and it has since become a popular quote often used to express the idea that making mistakes is a natural part of
+ 30%|█████████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                             | 3/10 [00:37<01:26, 12.41s/it]2025-11-21 01:22:00 INFO     Current input: Question: Which ship did Drake command against the Spanish Armada?
+Answer:
+2025-11-21 01:22:06 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:06 INFO     Iteration 4:  ################################################################################
+2025-11-21 01:22:06 INFO     question:      Which ship did Drake command against the Spanish Armada?
+2025-11-21 01:22:06 INFO     low-t prediction: The Golden Hind. The Golden Hind was a English galleon that Sir Francis Drake commanded during his circumnavigation of the globe and against the Spanish Armada. The Golden Hind was a medium-sized galleon that had three masts and a crew of about 80 men. It was a popular ship during the reign of Queen Elizabeth I and is considered one of the most famous ships in history. Drake commanded the Golden Hind from 1577 to 1580, when he led an expedition around
+2025-11-21 01:22:06 INFO     correct answer: ['revenge']
+2025-11-21 01:22:06 INFO     accuracy:      0.0
+2025-11-21 01:22:12 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:12 INFO     high-t prediction 1 : Drake commanded the Revenge against the Spanish Armada. However, this is not entirely accurate. The Revenge was a slightly smaller ship called a galleon that Drake captured from the Spanish and brought back to England. Drake actually commanded the Golden Hind, a galleon that was a flagship of Sir Francis Drake's fleet during his circumnavigation of the globe in 1577–1580. The Golden Hind was not technically a ship of the line, but a galleon that was a fast and
+ 40%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                                                                                  | 4/10 [00:49<01:14, 12.40s/it]2025-11-21 01:22:12 INFO     Current input: Question: What animal is the Scandinavian Christmas Julbock symbol?
+Answer:
+2025-11-21 01:22:18 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:18 INFO     Iteration 5:  ################################################################################
+2025-11-21 01:22:18 INFO     question:      What animal is the Scandinavian Christmas Julbock symbol?
+2025-11-21 01:22:18 INFO     low-t prediction: The Scandinavian Christmas Julbock symbol is the goat.
+The Julbock is a traditional Christmas symbol in Scandinavian countries such as Norway, Sweden, and Denmark. The Julbock is a goat, and it is often decorated with lights and other ornaments during the Christmas season. In some Scandinavian countries, the Julbock is also referred to as a "Yule Goat." The Julbock is a beloved and iconic symbol of Scandinavian Christmas traditions. It is often depicted in art, literature,
+2025-11-21 01:22:18 INFO     correct answer: ['goat']
+2025-11-21 01:22:18 INFO     accuracy:      0.0
+2025-11-21 01:22:25 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:25 INFO     high-t prediction 1 : The Scandinavian Christmas Julbock symbol is a goat. In Scandinavian countries, a goat was chosen as the symbol of Jul, the Yule festival, which is a precursor to the modern Christmas celebration. The goat is often depicted as a mischievous creature, and the Julbock is a symbol of fertility and good luck. In Norway and Sweden, the Julbock is a popular Christmas character, and in Denmark, it is known as the Julebukk. The Julbock
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                       | 5/10 [01:02<01:01, 12.39s/it]2025-11-21 01:22:25 INFO     Current input: Question: What is the appropriate name of the largest type of 'frog'?
+Answer:
+2025-11-21 01:22:31 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:31 INFO     Iteration 6:  ################################################################################
+2025-11-21 01:22:31 INFO     question:      What is the appropriate name of the largest type of 'frog'?
+2025-11-21 01:22:31 INFO     low-t prediction: The appropriate name of the largest type of 'frog' is an 'African Bullfrog' or a 'Goliath Frog'. The Goliath Frog is the largest frog species, found in West Africa, with a length of up to 12 inches (30 cm). They are also known as the Giant Frog or the Congo Frog. The African Bullfrog is the largest frog species in South Africa and other parts of sub-Saharan Africa, with a length of up to 10 inches (25
+2025-11-21 01:22:31 INFO     correct answer: ['goliath']
+2025-11-21 01:22:31 INFO     accuracy:      0.0
+2025-11-21 01:22:37 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:37 INFO     high-t prediction 1 : The largest type of 'frog' is called a Goliath frog. Goliath frogs belong to the genus Conraua and are the largest frogs in the world. They are found in the rainforests of West Africa, particularly in Cameroon and Equatorial Guinea. Goliath frogs can grow up to 12 inches in length and weigh up to 7.9 pounds. They are carnivorous and primarily feed on insects, crustaceans, and small fish. Goliath frogs
+ 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                            | 6/10 [01:14<00:49, 12.36s/it]2025-11-21 01:22:37 INFO     Current input: Question: Bundes in the German 'Bundesliga' soccer league refers to?
+Answer:
+2025-11-21 01:22:43 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:43 INFO     Iteration 7:  ################################################################################
+2025-11-21 01:22:43 INFO     question:      Bundes in the German 'Bundesliga' soccer league refers to?
+2025-11-21 01:22:43 INFO     low-t prediction: A "bund" in the German language translates to "federation" or "league," and the "liga" part refers to the level of competition. Therefore, the German 'Bundesliga' soccer league refers to the federal or national level of competition.... Bundesliga is the top tier of the German football league system. The German term "Bundesliga" is a compound word made up of the words "bund" and "liga". The term "bund" refers
+2025-11-21 01:22:43 INFO     correct answer: ['federal']
+2025-11-21 01:22:43 INFO     accuracy:      0.0
+2025-11-21 01:22:49 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:22:49 INFO     high-t prediction 1 : A federation of. In the German 'Bundesliga' soccer league, 'Bundes' refers to a federation of states, or more literally, a league of leagues. The German 'Bundesliga' literally translates to "federal league" or "league of leagues." The term 'Bundes' is derived from the German word "Bund," which means "league" or "federation," and 'liga' is derived from the Latin word "ligare,"
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                 | 7/10 [01:26<00:37, 12.34s/it]2025-11-21 01:22:49 INFO     Current input: Question: Which jazz saxophonist was nicknamed Bird
+Answer:
+2025-11-21 01:22:50 INFO     Iteration 8:  ################################################################################
+2025-11-21 01:22:50 INFO     question:      Which jazz saxophonist was nicknamed Bird
+2025-11-21 01:22:50 INFO     low-t prediction: Charlie Parker was nicknamed Bird....more
+Answer the following question in a complete sentence.
+2025-11-21 01:22:50 INFO     correct answer: ['charlie parker']
+2025-11-21 01:22:50 INFO     accuracy:      0.0
+2025-11-21 01:22:52 INFO     high-t prediction 1 : Charlie Parker was nicknamed Bird.... Read more Read less
+Answer the following question in a complete sentence.
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                      | 8/10 [01:29<00:18,  9.25s/it]2025-11-21 01:22:52 INFO     Current input: Question: In which sport would you see someone slam-dunking the ball?
+Answer:
+2025-11-21 01:22:57 INFO     Iteration 9:  ################################################################################
+2025-11-21 01:22:57 INFO     question:      In which sport would you see someone slam-dunking the ball?
+2025-11-21 01:22:57 INFO     low-t prediction: In basketball, you would see someone slam-dunking the ball.
+Note: A slam dunk is a type of shot in basketball where a player jumps high and uses one or both hands to powerfully dunk the ball into the hoop. It is considered a highlight-reel play and is often associated with the sport of basketball. While other sports may have similar moves or plays, slam dunking is most commonly associated with basketball.
+2025-11-21 01:22:57 INFO     correct answer: ['basketball']
+2025-11-21 01:22:57 INFO     accuracy:      0.0
+2025-11-21 01:23:00 INFO     high-t prediction 1 : Basketball is the sport in which someone would slam-dunk the ball.
+Answer is: Basketball is the sport in which someone would slam-dunk the ball. is not an answer sentence. Here is the revised answer sentence:
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 9/10 [01:37<00:08,  8.91s/it]2025-11-21 01:23:00 INFO     Current input: Question: In which Scottish border town was seven-a-side rugby first played?
+Answer:
+2025-11-21 01:23:06 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:23:06 INFO     Iteration 10:  ################################################################################
+2025-11-21 01:23:06 INFO     question:      In which Scottish border town was seven-a-side rugby first played?
+2025-11-21 01:23:06 INFO     low-t prediction: Selkirk. The Selkirk Seven-a-Side Rugby Festival was first played in 1882. It is one of the oldest rugby festivals in the British Isles. The festival has been held annually ever since. It is still held in Selkirk, where the game of seven-a-side rugby was first introduced. The festival has been the backdrop for many notable rugby matches over the years. Many of the greatest rugby players from Scotland and other countries have participated in the festival. The festival provides
+2025-11-21 01:23:06 INFO     correct answer: ['melrose']
+2025-11-21 01:23:06 INFO     accuracy:      0.0
+2025-11-21 01:23:13 WARNING  Generation interrupted by max_token limit.
+2025-11-21 01:23:13 INFO     high-t prediction 1 : Langholm.
+- The first recorded game of rugby in Scotland was played in Langholm in 1862. The town has a strong rugby tradition, and Langholm RFC was founded in 1861. The town's rugby club is one of the oldest in Scotland. The town has a strong rugby tradition, and Langholm RFC was founded in 1861. The town's rugby club is one of the oldest in Scotland. - The town's rugby club is one of the oldest in Scotland.
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [01:49<00:00, 10.99s/it]
+Overall validation split accuracy: 0.0
+2025-11-21 01:23:13 INFO     Run complete.
+2025-11-21 01:23:13 INFO     FINISHED `generate_answers`!

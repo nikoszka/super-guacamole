@@ -1,0 +1,199 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-21 09:19:44 INFO     Finished wandb init.
+2025-11-21 09:19:48 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2025-11-21 09:19:50 INFO     Prompt is: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+
+2025-11-21 09:19:50 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+2025-11-21 09:19:51 INFO     Detected model size: 8b
+Initializing model:  Llama-3.1-8B-Instruct and base: meta-llama
+2025-11-21 09:19:51 INFO     Using device_map="auto" - will distribute across 4 GPU(s)
+2025-11-21 09:19:51 INFO     Max memory per GPU: {0: '11GiB', 1: '11GiB', 2: '11GiB', 3: '11GiB'}
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:08<00:00,  2.04s/it]
+2025-11-21 09:20:01 INFO     ================================================================================
+2025-11-21 09:20:01 INFO     Generating answers:
+2025-11-21 09:20:01 INFO     ================================================================================
+2025-11-21 09:20:01 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2025-11-21 09:20:01 INFO     Starting with dataset_split train.
+2025-11-21 09:20:01 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                                                                                                                                                       | 0/10 [00:00<?, ?it/s]2025-11-21 09:20:01 INFO     Current input: Question: In April, which sportsman married his childhood sweetheart Kim Sears?
+Answer:
+2025-11-21 09:20:03 INFO     Iteration 1:  ################################################################################
+2025-11-21 09:20:03 INFO     question:      In April, which sportsman married his childhood sweetheart Kim Sears?
+2025-11-21 09:20:03 INFO     low-t prediction: In April 2016, Andy Murray married his childhood sweetheart Kim Sears.
+2025-11-21 09:20:03 INFO     correct answer: ['andy murray']
+2025-11-21 09:20:03 INFO     accuracy:      0.0
+ 10%|███████████████████████████                                                                                                                                                                                                                                                    | 1/10 [00:01<00:17,  1.97s/it]2025-11-21 09:20:03 INFO     Current input: Question: From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+Answer:
+2025-11-21 09:20:04 INFO     Iteration 2:  ################################################################################
+2025-11-21 09:20:04 INFO     question:      From the Latin for argentum, which element, with an atomic number of 47, uses the symbol Ag?
+2025-11-21 09:20:04 INFO     low-t prediction: The element silver, with an atomic number of 47, uses the symbol Ag.
+2025-11-21 09:20:04 INFO     correct answer: ['silver']
+2025-11-21 09:20:04 INFO     accuracy:      0.0
+ 20%|██████████████████████████████████████████████████████▏                                                                                                                                                                                                                        | 2/10 [00:03<00:14,  1.76s/it]2025-11-21 09:20:04 INFO     Current input: Question: In which English city will you find the Ashmolean museum?
+Answer:
+2025-11-21 09:20:06 INFO     Iteration 3:  ################################################################################
+2025-11-21 09:20:06 INFO     question:      In which English city will you find the Ashmolean museum?
+2025-11-21 09:20:06 INFO     low-t prediction: The Ashmolean Museum is located in the English city of Oxford.
+2025-11-21 09:20:06 INFO     correct answer: ['oxford']
+2025-11-21 09:20:06 INFO     accuracy:      0.0
+ 30%|█████████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                             | 3/10 [00:05<00:11,  1.61s/it]2025-11-21 09:20:06 INFO     Current input: Question: In which city was John Lennon murdered?
+Answer:
+2025-11-21 09:20:07 INFO     Iteration 4:  ################################################################################
+2025-11-21 09:20:07 INFO     question:      In which city was John Lennon murdered?
+2025-11-21 09:20:07 INFO     low-t prediction: John Lennon was murdered in New York City in 1980.
+2025-11-21 09:20:07 INFO     correct answer: ['new york']
+2025-11-21 09:20:07 INFO     accuracy:      0.0
+ 40%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                                                                                  | 4/10 [00:06<00:09,  1.51s/it]2025-11-21 09:20:07 INFO     Current input: Question: What was Groucho Marx's real first name?
+Answer:
+2025-11-21 09:20:08 INFO     Iteration 5:  ################################################################################
+2025-11-21 09:20:08 INFO     question:      What was Groucho Marx's real first name?
+2025-11-21 09:20:08 INFO     low-t prediction: Groucho Marx's real first name was Julius.
+2025-11-21 09:20:08 INFO     correct answer: ['julius']
+2025-11-21 09:20:08 INFO     accuracy:      0.0
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                       | 5/10 [00:07<00:07,  1.41s/it]2025-11-21 09:20:08 INFO     Current input: Question: "Who said ""we're more popular than Jesus now"", in 1966?"
+Answer:
+2025-11-21 09:20:12 INFO     Iteration 6:  ################################################################################
+2025-11-21 09:20:12 INFO     question:      "Who said ""we're more popular than Jesus now"", in 1966?"
+2025-11-21 09:20:12 INFO     low-t prediction: John Lennon said "we're more popular than Jesus now" in 1966. (Note: This quote was a statement made in an interview and not a claim of being more popular than Jesus, the religious figure.)
+2025-11-21 09:20:12 INFO     correct answer: ['john lennon']
+2025-11-21 09:20:12 INFO     accuracy:      0.0
+ 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                            | 6/10 [00:10<00:08,  2.04s/it]2025-11-21 09:20:12 INFO     Current input: Question: Anchored by the star Polaris, the constellation ursa minor represents what animal?
+Answer:
+2025-11-21 09:20:13 INFO     Iteration 7:  ################################################################################
+2025-11-21 09:20:13 INFO     question:      Anchored by the star Polaris, the constellation ursa minor represents what animal?
+2025-11-21 09:20:13 INFO     low-t prediction: The constellation Ursa Minor represents the Little Bear.
+2025-11-21 09:20:13 INFO     correct answer: ['bear']
+2025-11-21 09:20:13 INFO     accuracy:      0.0
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                 | 7/10 [00:12<00:05,  1.76s/it]2025-11-21 09:20:13 INFO     Current input: Question: What was the profession of Paul Strand (1890 - 1976)?
+Answer:
+2025-11-21 09:20:14 INFO     Iteration 8:  ################################################################################
+2025-11-21 09:20:14 INFO     question:      What was the profession of Paul Strand (1890 - 1976)?
+2025-11-21 09:20:14 INFO     low-t prediction: Paul Strand was a photographer.
+2025-11-21 09:20:14 INFO     correct answer: ['photographer']
+2025-11-21 09:20:14 INFO     accuracy:      0.0
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                      | 8/10 [00:12<00:02,  1.50s/it]2025-11-21 09:20:14 INFO     Current input: Question: Ingvar Kamprad, one of the world's richest men, founded which company in the 1940's?
+Answer:
+2025-11-21 09:20:21 WARNING  Generation interrupted by max_token limit.
+2025-11-21 09:20:21 INFO     Iteration 9:  ################################################################################
+2025-11-21 09:20:21 INFO     question:      Ingvar Kamprad, one of the world's richest men, founded which company in the 1940's?
+2025-11-21 09:20:21 INFO     low-t prediction: Ingvar Kamprad founded IKEA in the 1940s.  IKEA is a Swedish company that designs and sells ready-to-assemble furniture. The name IKEA is a combination of the founder's initials, the farm where he grew up, and the first letters of the farm's location, Elmtaryd and Agunnaryd. IKEA has become one of the world's largest furniture retailers and is recognized for its modern, affordable furniture designs.  IKEA operates over
+2025-11-21 09:20:21 INFO     correct answer: ['ikea']
+2025-11-21 09:20:21 INFO     accuracy:      0.0
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 9/10 [00:19<00:03,  3.15s/it]2025-11-21 09:20:21 INFO     Current input: Question: Which year saw the assassination of US President James Garfield?
+Answer:
+2025-11-21 09:20:22 INFO     Iteration 10:  ################################################################################
+2025-11-21 09:20:22 INFO     question:      Which year saw the assassination of US President James Garfield?
+2025-11-21 09:20:22 INFO     low-t prediction: The year 1881 saw the assassination of US President James Garfield.
+2025-11-21 09:20:22 INFO     correct answer: ['1881']
+2025-11-21 09:20:22 INFO     accuracy:      0.0
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:21<00:00,  2.15s/it]
+Overall train split accuracy: 0.0
+2025-11-21 09:20:22 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2025-11-21 09:20:22 INFO     Starting with dataset_split validation.
+2025-11-21 09:20:22 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                                                                                                                                                       | 0/10 [00:00<?, ?it/s]2025-11-21 09:20:22 INFO     Current input: Question: What is the common name of the laryngeal prominence?
+Answer:
+2025-11-21 09:20:24 INFO     Iteration 1:  ################################################################################
+2025-11-21 09:20:24 INFO     question:      What is the common name of the laryngeal prominence?
+2025-11-21 09:20:24 INFO     low-t prediction: The common name of the laryngeal prominence is the Adam's apple.
+2025-11-21 09:20:24 INFO     correct answer: ['laryngeal prominence']
+2025-11-21 09:20:24 INFO     accuracy:      0.0
+2025-11-21 09:20:25 INFO     high-t prediction 1 : The laryngeal prominence is commonly known as the Adam's apple.
+ 10%|███████████████████████████                                                                                                                                                                                                                                                    | 1/10 [00:03<00:27,  3.08s/it]2025-11-21 09:20:25 INFO     Current input: Question: In 1818, British obstetrician James Blundell performed the first successful human what?
+Answer:
+2025-11-21 09:20:27 INFO     Iteration 2:  ################################################################################
+2025-11-21 09:20:27 INFO     question:      In 1818, British obstetrician James Blundell performed the first successful human what?
+2025-11-21 09:20:27 INFO     low-t prediction: In 1818, James Blundell performed the first successful human blood transfusion.
+2025-11-21 09:20:27 INFO     correct answer: ['transfusions']
+2025-11-21 09:20:27 INFO     accuracy:      0.0
+2025-11-21 09:20:30 INFO     high-t prediction 1 : The first successful human blood transfusion was performed by James Blundell in 1818. (This is a short answer. You can be creative with your response. One or two sentences are enough.)
+ 20%|██████████████████████████████████████████████████████▏                                                                                                                                                                                                                        | 2/10 [00:07<00:32,  4.08s/it]2025-11-21 09:20:30 INFO     Current input: Question: "Who said, To err is human but it feels divine?"""
+Answer:
+2025-11-21 09:20:37 WARNING  Generation interrupted by max_token limit.
+2025-11-21 09:20:37 INFO     Iteration 3:  ################################################################################
+2025-11-21 09:20:37 INFO     question:      "Who said, To err is human but it feels divine?"""
+2025-11-21 09:20:37 INFO     low-t prediction: "To err is human but it feels divine" is a quote from a song sung by Cher. The song is called "Believe".  The lyrics were written by Brian Higgins and Stuart McLennan, and the song was released in 1998.  The quote is a play on the well-known phrase "To err is human, to forgive is divine," which is a phrase from Alexander Pope's poem "An Essay on Criticism" published in 1711.  Pope's phrase
+2025-11-21 09:20:37 INFO     correct answer: ['mae west']
+2025-11-21 09:20:37 INFO     accuracy:      0.0
+2025-11-21 09:20:39 INFO     high-t prediction 1 : "This quote, To err is human but it feels divine, is attributed to Mae West."
+ 30%|█████████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                             | 3/10 [00:16<00:42,  6.10s/it]2025-11-21 09:20:39 INFO     Current input: Question: Which ship did Drake command against the Spanish Armada?
+Answer:
+2025-11-21 09:20:45 WARNING  Generation interrupted by max_token limit.
+2025-11-21 09:20:45 INFO     Iteration 4:  ################################################################################
+2025-11-21 09:20:45 INFO     question:      Which ship did Drake command against the Spanish Armada?
+2025-11-21 09:20:45 INFO     low-t prediction: Drake commanded the Golden Hind against the Spanish Armada.  The Golden Hind was a small English galleon captained by Sir Francis Drake during his circumnavigation of the globe between 1577 and 1580. It was the ship that made the first English voyage that sailed from Plymouth, England and circumnavigated the globe. It was originally called the Pelican but was renamed the Golden Hind by Drake. It is a replica of the Golden Hind that is now a museum ship in London
+2025-11-21 09:20:45 INFO     correct answer: ['revenge']
+2025-11-21 09:20:45 INFO     accuracy:      0.0
+2025-11-21 09:20:47 INFO     high-t prediction 1 : Drake commanded the Golden Hind against the Spanish Armada.
+ 40%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                                                                                                                  | 4/10 [00:24<00:41,  6.86s/it]2025-11-21 09:20:47 INFO     Current input: Question: What animal is the Scandinavian Christmas Julbock symbol?
+Answer:
+2025-11-21 09:20:48 INFO     Iteration 5:  ################################################################################
+2025-11-21 09:20:48 INFO     question:      What animal is the Scandinavian Christmas Julbock symbol?
+2025-11-21 09:20:48 INFO     low-t prediction: The Scandinavian Christmas Julbock symbol is the Goat.
+2025-11-21 09:20:48 INFO     correct answer: ['goat']
+2025-11-21 09:20:48 INFO     accuracy:      0.0
+2025-11-21 09:20:49 INFO     high-t prediction 1 : The Julbock is a goat symbol.
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                       | 5/10 [00:26<00:26,  5.25s/it]2025-11-21 09:20:49 INFO     Current input: Question: What is the appropriate name of the largest type of 'frog'?
+Answer:
+2025-11-21 09:20:51 INFO     Iteration 6:  ################################################################################
+2025-11-21 09:20:51 INFO     question:      What is the appropriate name of the largest type of 'frog'?
+2025-11-21 09:20:51 INFO     low-t prediction: The largest type of frog is commonly referred to as the Goliath frog.
+2025-11-21 09:20:51 INFO     correct answer: ['goliath']
+2025-11-21 09:20:51 INFO     accuracy:      0.0
+2025-11-21 09:20:57 WARNING  Generation interrupted by max_token limit.
+2025-11-21 09:20:57 INFO     high-t prediction 1 : The largest type of 'frog' is appropriately named as a Goliath frog. The Goliath frog is a large species of frog found in West Africa. It is the largest true frog in the world, and can weigh up to 7.9 pounds (3.6 kg). The largest species of frog is the Goliath frog (Conraua goliath), which is a large species of frog found in West Africa. It is the largest true frog in the world and
+ 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                            | 6/10 [00:35<00:25,  6.30s/it]2025-11-21 09:20:57 INFO     Current input: Question: Bundes in the German 'Bundesliga' soccer league refers to?
+Answer:
+2025-11-21 09:21:04 WARNING  Generation interrupted by max_token limit.
+2025-11-21 09:21:04 INFO     Iteration 7:  ################################################################################
+2025-11-21 09:21:04 INFO     question:      Bundes in the German 'Bundesliga' soccer league refers to?
+2025-11-21 09:21:04 INFO     low-t prediction: Bundes in the German 'Bundesliga' soccer league refers to "federal". The name of the league reflects the fact that it is the top division of the German Football Association, which governs football in Germany at a national level and comprises 36 state associations. The name "Bundesliga" can be translated to English as "Federal League". The league was formed in 1963, and it is considered one of the most competitive and popular football leagues in the world. The
+2025-11-21 09:21:04 INFO     correct answer: ['federal']
+2025-11-21 09:21:04 INFO     accuracy:      0.0
+2025-11-21 09:21:07 INFO     high-t prediction 1 : In the German 'Bundesliga' soccer league, 'Bundes' refers to 'federal' or 'federation', indicating the league is the top division of the German federal soccer association.
+ 70%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                                 | 7/10 [00:45<00:22,  7.47s/it]2025-11-21 09:21:07 INFO     Current input: Question: Which jazz saxophonist was nicknamed Bird
+Answer:
+2025-11-21 09:21:08 INFO     Iteration 8:  ################################################################################
+2025-11-21 09:21:08 INFO     question:      Which jazz saxophonist was nicknamed Bird
+2025-11-21 09:21:08 INFO     low-t prediction: Charlie Parker was nicknamed Bird.
+2025-11-21 09:21:08 INFO     correct answer: ['charlie parker']
+2025-11-21 09:21:08 INFO     accuracy:      1.0
+2025-11-21 09:21:09 INFO     high-t prediction 1 : Charlie Parker was nicknamed Bird.
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                      | 8/10 [00:46<00:11,  5.70s/it]2025-11-21 09:21:09 INFO     Current input: Question: In which sport would you see someone slam-dunking the ball?
+Answer:
+2025-11-21 09:21:11 INFO     Iteration 9:  ################################################################################
+2025-11-21 09:21:11 INFO     question:      In which sport would you see someone slam-dunking the ball?
+2025-11-21 09:21:11 INFO     low-t prediction: You would see someone slam-dunking the ball in the sport of basketball.
+2025-11-21 09:21:11 INFO     correct answer: ['basketball']
+2025-11-21 09:21:11 INFO     accuracy:      0.0
+2025-11-21 09:21:12 INFO     high-t prediction 1 : You would see someone slam-dunking the ball in basketball.
+ 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                           | 9/10 [00:49<00:04,  4.83s/it]2025-11-21 09:21:12 INFO     Current input: Question: In which Scottish border town was seven-a-side rugby first played?
+Answer:
+2025-11-21 09:21:13 INFO     Iteration 10:  ################################################################################
+2025-11-21 09:21:13 INFO     question:      In which Scottish border town was seven-a-side rugby first played?
+2025-11-21 09:21:13 INFO     low-t prediction: Selkirk.
+2025-11-21 09:21:13 INFO     correct answer: ['melrose']
+2025-11-21 09:21:13 INFO     accuracy:      0.0
+2025-11-21 09:21:15 INFO     high-t prediction 1 : Langholm is the Scottish border town in which seven-a-side rugby was first played.
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:52<00:00,  5.26s/it]
+Overall validation split accuracy: 0.1
+2025-11-21 09:21:15 INFO     Run complete.
+2025-11-21 09:21:15 INFO     FINISHED `generate_answers`!

@@ -14,17 +14,17 @@ def main():
 
     cmd = [
         'python', 'generate_answers.py',
-        '--model_name', 'Llama-3.2-1B',
+        '--model_name', 'Llama-3.1-8B',
         '--dataset', 'trivia_qa',
         '--num_samples', '400',
         '--num_generations', '1',
         '--temperature', '0.0',
-        '--model_max_new_tokens', '200',
-        '--num_few_shot', '5',
-        '--brief_prompt', 'detailed',
+        '--model_max_new_tokens', '100',
+        '--num_few_shot', '0',
+        '--brief_prompt', 'manual',
         '--enable_brief',
         # '--metric', 'llm_llama-3-8b',
-        '--use_context',  # ← Enable context for long answers
+        '--no-use_context',  # ← Enable context for long answers
         '--answerable_only',
         '--get_training_set_generations',
         '--no-compute_p_true',

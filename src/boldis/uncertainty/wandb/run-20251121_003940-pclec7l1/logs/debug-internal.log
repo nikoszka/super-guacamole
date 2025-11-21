@@ -1,0 +1,7 @@
+{"time":"2025-11-21T00:39:40.362255155+01:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2025-11-21T00:39:40.688978184+01:00","level":"INFO","msg":"stream: created new stream","id":"pclec7l1"}
+{"time":"2025-11-21T00:39:40.689034629+01:00","level":"INFO","msg":"handler: started","stream_id":"pclec7l1"}
+{"time":"2025-11-21T00:39:40.691321595+01:00","level":"INFO","msg":"stream: started","id":"pclec7l1"}
+{"time":"2025-11-21T00:39:40.691334032+01:00","level":"INFO","msg":"writer: started","stream_id":"pclec7l1"}
+{"time":"2025-11-21T00:39:40.691349401+01:00","level":"INFO","msg":"sender: started","stream_id":"pclec7l1"}
+{"time":"2025-11-21T00:44:25.234671917+01:00","level":"INFO","msg":"stream: closing","id":"pclec7l1"}
