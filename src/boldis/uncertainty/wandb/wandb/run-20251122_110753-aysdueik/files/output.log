@@ -1,0 +1,1530 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-22 11:07:54 WARNING  Recompute accuracy enabled. This does not apply to precomputed p_true!
+2025-11-22 11:07:54 INFO     Initializing Llama judge model: Llama-3.1-8B
+2025-11-22 11:07:54 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+2025-11-22 11:07:56 INFO     Detected model size: 8b
+Initializing model:  Llama-3.1-8B and base: meta-llama
+2025-11-22 11:07:56 INFO     Using device_map="auto" - will distribute across 4 GPU(s)
+2025-11-22 11:07:56 INFO     Max memory per GPU: {0: '11GiB', 1: '11GiB', 2: '11GiB', 3: '11GiB'}
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:08<00:00,  2.08s/it]
+2025-11-22 11:08:06 INFO     Found uncertainty_measures.pkl locally at ./boldis/uncertainty/wandb/run-20251121_190025-5qvhbs97/files/uncertainty_measures.pkl
+2025-11-22 11:08:06 INFO     Found validation_generations.pkl locally at ./boldis/uncertainty/wandb/run-20251121_190025-5qvhbs97/files/validation_generations.pkl
+2025-11-22 11:08:06 INFO     Recomputing accuracy!
+2025-11-22 11:08:09 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:09 INFO     Recomputed accuracy!
+2025-11-22 11:08:09 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:09 INFO     Recomputing accuracy!
+2025-11-22 11:08:12 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:12 INFO     Recomputed accuracy!
+2025-11-22 11:08:12 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:12 INFO     Recomputing accuracy!
+2025-11-22 11:08:15 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:15 INFO     Recomputed accuracy!
+2025-11-22 11:08:15 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:15 INFO     Recomputing accuracy!
+2025-11-22 11:08:19 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:19 INFO     Recomputed accuracy!
+2025-11-22 11:08:19 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:19 INFO     Recomputing accuracy!
+2025-11-22 11:08:22 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:22 INFO     Recomputed accuracy!
+2025-11-22 11:08:22 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:22 INFO     Recomputing accuracy!
+2025-11-22 11:08:25 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:25 INFO     Recomputed accuracy!
+2025-11-22 11:08:25 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:25 INFO     Recomputing accuracy!
+2025-11-22 11:08:26 INFO     Recomputed accuracy!
+2025-11-22 11:08:26 INFO     validation_is_true: 0.000000
+2025-11-22 11:08:26 INFO     Recomputing accuracy!
+2025-11-22 11:08:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:29 INFO     Recomputed accuracy!
+2025-11-22 11:08:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:29 INFO     Recomputing accuracy!
+2025-11-22 11:08:31 INFO     Recomputed accuracy!
+2025-11-22 11:08:31 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:31 INFO     Recomputing accuracy!
+2025-11-22 11:08:34 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:34 INFO     Recomputed accuracy!
+2025-11-22 11:08:34 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:34 INFO     Recomputing accuracy!
+2025-11-22 11:08:37 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:37 INFO     Recomputed accuracy!
+2025-11-22 11:08:37 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:37 INFO     Recomputing accuracy!
+2025-11-22 11:08:40 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:40 INFO     Recomputed accuracy!
+2025-11-22 11:08:40 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:40 INFO     Recomputing accuracy!
+2025-11-22 11:08:42 INFO     Recomputed accuracy!
+2025-11-22 11:08:42 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:42 INFO     Recomputing accuracy!
+2025-11-22 11:08:45 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:45 INFO     Recomputed accuracy!
+2025-11-22 11:08:45 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:45 INFO     Recomputing accuracy!
+2025-11-22 11:08:48 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:48 INFO     Recomputed accuracy!
+2025-11-22 11:08:48 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:48 INFO     Recomputing accuracy!
+2025-11-22 11:08:51 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:51 INFO     Recomputed accuracy!
+2025-11-22 11:08:51 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:51 INFO     Recomputing accuracy!
+2025-11-22 11:08:54 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:54 INFO     Recomputed accuracy!
+2025-11-22 11:08:54 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:54 INFO     Recomputing accuracy!
+2025-11-22 11:08:57 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:08:57 INFO     Recomputed accuracy!
+2025-11-22 11:08:57 INFO     validation_is_true: 1.000000
+2025-11-22 11:08:57 INFO     Recomputing accuracy!
+2025-11-22 11:09:00 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:00 INFO     Recomputed accuracy!
+2025-11-22 11:09:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:00 INFO     Recomputing accuracy!
+2025-11-22 11:09:03 INFO     Recomputed accuracy!
+2025-11-22 11:09:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:03 INFO     Recomputing accuracy!
+2025-11-22 11:09:06 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:06 INFO     Recomputed accuracy!
+2025-11-22 11:09:06 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:06 INFO     Recomputing accuracy!
+2025-11-22 11:09:09 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:09 INFO     Recomputed accuracy!
+2025-11-22 11:09:09 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:09 INFO     Recomputing accuracy!
+2025-11-22 11:09:12 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:12 INFO     Recomputed accuracy!
+2025-11-22 11:09:12 INFO     validation_is_true: 0.000000
+2025-11-22 11:09:12 INFO     Recomputing accuracy!
+2025-11-22 11:09:15 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:15 INFO     Recomputed accuracy!
+2025-11-22 11:09:15 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:15 INFO     Recomputing accuracy!
+2025-11-22 11:09:18 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:18 INFO     Recomputed accuracy!
+2025-11-22 11:09:18 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:18 INFO     Recomputing accuracy!
+2025-11-22 11:09:21 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:21 INFO     Recomputed accuracy!
+2025-11-22 11:09:21 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:21 INFO     Recomputing accuracy!
+2025-11-22 11:09:25 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:25 INFO     Recomputed accuracy!
+2025-11-22 11:09:25 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:25 INFO     Recomputing accuracy!
+2025-11-22 11:09:28 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:28 INFO     Recomputed accuracy!
+2025-11-22 11:09:28 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:28 INFO     Recomputing accuracy!
+2025-11-22 11:09:31 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:31 INFO     Recomputed accuracy!
+2025-11-22 11:09:31 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:31 INFO     Recomputing accuracy!
+2025-11-22 11:09:32 INFO     Recomputed accuracy!
+2025-11-22 11:09:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:32 INFO     Recomputing accuracy!
+2025-11-22 11:09:33 INFO     Recomputed accuracy!
+2025-11-22 11:09:33 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:33 INFO     Recomputing accuracy!
+2025-11-22 11:09:36 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:36 INFO     Recomputed accuracy!
+2025-11-22 11:09:36 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:36 INFO     Recomputing accuracy!
+2025-11-22 11:09:39 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:39 INFO     Recomputed accuracy!
+2025-11-22 11:09:39 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:39 INFO     Recomputing accuracy!
+2025-11-22 11:09:42 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:42 INFO     Recomputed accuracy!
+2025-11-22 11:09:42 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:42 INFO     Recomputing accuracy!
+2025-11-22 11:09:45 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:45 INFO     Recomputed accuracy!
+2025-11-22 11:09:45 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:45 INFO     Recomputing accuracy!
+2025-11-22 11:09:48 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:48 INFO     Recomputed accuracy!
+2025-11-22 11:09:48 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:48 INFO     Recomputing accuracy!
+2025-11-22 11:09:51 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:51 INFO     Recomputed accuracy!
+2025-11-22 11:09:51 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:51 INFO     Recomputing accuracy!
+2025-11-22 11:09:54 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:54 INFO     Recomputed accuracy!
+2025-11-22 11:09:54 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:54 INFO     Recomputing accuracy!
+2025-11-22 11:09:58 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:09:58 INFO     Recomputed accuracy!
+2025-11-22 11:09:58 INFO     validation_is_true: 1.000000
+2025-11-22 11:09:58 INFO     Recomputing accuracy!
+2025-11-22 11:10:01 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:01 INFO     Recomputed accuracy!
+2025-11-22 11:10:01 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:01 INFO     Recomputing accuracy!
+2025-11-22 11:10:04 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:04 INFO     Recomputed accuracy!
+2025-11-22 11:10:04 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:04 INFO     Recomputing accuracy!
+2025-11-22 11:10:07 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:07 INFO     Recomputed accuracy!
+2025-11-22 11:10:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:07 INFO     Recomputing accuracy!
+2025-11-22 11:10:08 INFO     Recomputed accuracy!
+2025-11-22 11:10:08 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:08 INFO     Recomputing accuracy!
+2025-11-22 11:10:09 INFO     Recomputed accuracy!
+2025-11-22 11:10:09 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:09 INFO     Recomputing accuracy!
+2025-11-22 11:10:12 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:12 INFO     Recomputed accuracy!
+2025-11-22 11:10:12 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:12 INFO     Recomputing accuracy!
+2025-11-22 11:10:15 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:15 INFO     Recomputed accuracy!
+2025-11-22 11:10:15 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:15 INFO     Recomputing accuracy!
+2025-11-22 11:10:18 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:18 INFO     Recomputed accuracy!
+2025-11-22 11:10:18 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:18 INFO     Recomputing accuracy!
+2025-11-22 11:10:22 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:22 INFO     Recomputed accuracy!
+2025-11-22 11:10:22 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:22 INFO     Recomputing accuracy!
+2025-11-22 11:10:23 INFO     Recomputed accuracy!
+2025-11-22 11:10:23 INFO     validation_is_true: 0.000000
+2025-11-22 11:10:23 INFO     Recomputing accuracy!
+2025-11-22 11:10:26 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:26 INFO     Recomputed accuracy!
+2025-11-22 11:10:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:26 INFO     Recomputing accuracy!
+2025-11-22 11:10:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:29 INFO     Recomputed accuracy!
+2025-11-22 11:10:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:29 INFO     Recomputing accuracy!
+2025-11-22 11:10:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:32 INFO     Recomputed accuracy!
+2025-11-22 11:10:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:32 INFO     Recomputing accuracy!
+2025-11-22 11:10:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:35 INFO     Recomputed accuracy!
+2025-11-22 11:10:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:35 INFO     Recomputing accuracy!
+2025-11-22 11:10:38 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:38 INFO     Recomputed accuracy!
+2025-11-22 11:10:38 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:38 INFO     Recomputing accuracy!
+2025-11-22 11:10:42 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:42 INFO     Recomputed accuracy!
+2025-11-22 11:10:42 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:42 INFO     Recomputing accuracy!
+2025-11-22 11:10:45 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:45 INFO     Recomputed accuracy!
+2025-11-22 11:10:45 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:45 INFO     Recomputing accuracy!
+2025-11-22 11:10:46 INFO     Recomputed accuracy!
+2025-11-22 11:10:46 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:46 INFO     Recomputing accuracy!
+2025-11-22 11:10:49 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:49 INFO     Recomputed accuracy!
+2025-11-22 11:10:49 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:49 INFO     Recomputing accuracy!
+2025-11-22 11:10:52 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:52 INFO     Recomputed accuracy!
+2025-11-22 11:10:52 INFO     validation_is_true: 0.000000
+2025-11-22 11:10:52 INFO     Recomputing accuracy!
+2025-11-22 11:10:55 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:55 INFO     Recomputed accuracy!
+2025-11-22 11:10:55 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:55 INFO     Recomputing accuracy!
+2025-11-22 11:10:58 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:10:58 INFO     Recomputed accuracy!
+2025-11-22 11:10:58 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:58 INFO     Recomputing accuracy!
+2025-11-22 11:10:59 INFO     Recomputed accuracy!
+2025-11-22 11:10:59 INFO     validation_is_true: 1.000000
+2025-11-22 11:10:59 INFO     Recomputing accuracy!
+2025-11-22 11:11:02 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:02 INFO     Recomputed accuracy!
+2025-11-22 11:11:02 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:02 INFO     Recomputing accuracy!
+2025-11-22 11:11:05 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:05 INFO     Recomputed accuracy!
+2025-11-22 11:11:05 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:05 INFO     Recomputing accuracy!
+2025-11-22 11:11:09 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:09 INFO     Recomputed accuracy!
+2025-11-22 11:11:09 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:09 INFO     Recomputing accuracy!
+2025-11-22 11:11:12 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:12 INFO     Recomputed accuracy!
+2025-11-22 11:11:12 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:12 INFO     Recomputing accuracy!
+2025-11-22 11:11:15 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:15 INFO     Recomputed accuracy!
+2025-11-22 11:11:15 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:15 INFO     Recomputing accuracy!
+2025-11-22 11:11:17 INFO     Recomputed accuracy!
+2025-11-22 11:11:17 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:17 INFO     Recomputing accuracy!
+2025-11-22 11:11:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:20 INFO     Recomputed accuracy!
+2025-11-22 11:11:20 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:20 INFO     Recomputing accuracy!
+2025-11-22 11:11:21 INFO     Recomputed accuracy!
+2025-11-22 11:11:21 INFO     validation_is_true: 0.000000
+2025-11-22 11:11:21 INFO     Recomputing accuracy!
+2025-11-22 11:11:24 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:24 INFO     Recomputed accuracy!
+2025-11-22 11:11:24 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:24 INFO     Recomputing accuracy!
+2025-11-22 11:11:25 INFO     Recomputed accuracy!
+2025-11-22 11:11:25 INFO     validation_is_true: 0.000000
+2025-11-22 11:11:25 INFO     Recomputing accuracy!
+2025-11-22 11:11:28 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:28 INFO     Recomputed accuracy!
+2025-11-22 11:11:28 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:28 INFO     Recomputing accuracy!
+2025-11-22 11:11:31 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:31 INFO     Recomputed accuracy!
+2025-11-22 11:11:31 INFO     validation_is_true: 0.000000
+2025-11-22 11:11:31 INFO     Recomputing accuracy!
+2025-11-22 11:11:34 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:34 INFO     Recomputed accuracy!
+2025-11-22 11:11:34 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:34 INFO     Recomputing accuracy!
+2025-11-22 11:11:37 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:37 INFO     Recomputed accuracy!
+2025-11-22 11:11:37 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:37 INFO     Recomputing accuracy!
+2025-11-22 11:11:41 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:41 INFO     Recomputed accuracy!
+2025-11-22 11:11:41 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:41 INFO     Recomputing accuracy!
+2025-11-22 11:11:43 INFO     Recomputed accuracy!
+2025-11-22 11:11:43 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:43 INFO     Recomputing accuracy!
+2025-11-22 11:11:43 INFO     Recomputed accuracy!
+2025-11-22 11:11:43 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:43 INFO     Recomputing accuracy!
+2025-11-22 11:11:46 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:46 INFO     Recomputed accuracy!
+2025-11-22 11:11:46 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:46 INFO     Recomputing accuracy!
+2025-11-22 11:11:49 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:49 INFO     Recomputed accuracy!
+2025-11-22 11:11:49 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:49 INFO     Recomputing accuracy!
+2025-11-22 11:11:50 INFO     Recomputed accuracy!
+2025-11-22 11:11:50 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:50 INFO     Recomputing accuracy!
+2025-11-22 11:11:53 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:53 INFO     Recomputed accuracy!
+2025-11-22 11:11:53 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:53 INFO     Recomputing accuracy!
+2025-11-22 11:11:57 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:11:57 INFO     Recomputed accuracy!
+2025-11-22 11:11:57 INFO     validation_is_true: 1.000000
+2025-11-22 11:11:57 INFO     Recomputing accuracy!
+2025-11-22 11:12:00 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:00 INFO     Recomputed accuracy!
+2025-11-22 11:12:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:00 INFO     Recomputing accuracy!
+2025-11-22 11:12:03 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:03 INFO     Recomputed accuracy!
+2025-11-22 11:12:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:03 INFO     Recomputing accuracy!
+2025-11-22 11:12:04 INFO     Recomputed accuracy!
+2025-11-22 11:12:04 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:04 INFO     Recomputing accuracy!
+2025-11-22 11:12:07 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:07 INFO     Recomputed accuracy!
+2025-11-22 11:12:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:07 INFO     Recomputing accuracy!
+2025-11-22 11:12:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:10 INFO     Recomputed accuracy!
+2025-11-22 11:12:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:10 INFO     Recomputing accuracy!
+2025-11-22 11:12:13 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:13 INFO     Recomputed accuracy!
+2025-11-22 11:12:13 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:13 INFO     Recomputing accuracy!
+2025-11-22 11:12:16 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:16 INFO     Recomputed accuracy!
+2025-11-22 11:12:16 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:16 INFO     Recomputing accuracy!
+2025-11-22 11:12:19 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:19 INFO     Recomputed accuracy!
+2025-11-22 11:12:19 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:19 INFO     Recomputing accuracy!
+2025-11-22 11:12:22 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:22 INFO     Recomputed accuracy!
+2025-11-22 11:12:22 INFO     validation_is_true: 0.000000
+2025-11-22 11:12:22 INFO     Recomputing accuracy!
+2025-11-22 11:12:26 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:26 INFO     Recomputed accuracy!
+2025-11-22 11:12:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:26 INFO     Recomputing accuracy!
+2025-11-22 11:12:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:29 INFO     Recomputed accuracy!
+2025-11-22 11:12:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:29 INFO     Recomputing accuracy!
+2025-11-22 11:12:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:32 INFO     Recomputed accuracy!
+2025-11-22 11:12:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:32 INFO     Recomputing accuracy!
+2025-11-22 11:12:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:35 INFO     Recomputed accuracy!
+2025-11-22 11:12:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:35 INFO     Recomputing accuracy!
+2025-11-22 11:12:36 INFO     Recomputed accuracy!
+2025-11-22 11:12:36 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:36 INFO     Recomputing accuracy!
+2025-11-22 11:12:39 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:39 INFO     Recomputed accuracy!
+2025-11-22 11:12:39 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:39 INFO     Recomputing accuracy!
+2025-11-22 11:12:42 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:42 INFO     Recomputed accuracy!
+2025-11-22 11:12:42 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:42 INFO     Recomputing accuracy!
+2025-11-22 11:12:45 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:45 INFO     Recomputed accuracy!
+2025-11-22 11:12:45 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:45 INFO     Recomputing accuracy!
+2025-11-22 11:12:48 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:48 INFO     Recomputed accuracy!
+2025-11-22 11:12:48 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:48 INFO     Recomputing accuracy!
+2025-11-22 11:12:49 INFO     Recomputed accuracy!
+2025-11-22 11:12:49 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:49 INFO     Recomputing accuracy!
+2025-11-22 11:12:52 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:52 INFO     Recomputed accuracy!
+2025-11-22 11:12:52 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:52 INFO     Recomputing accuracy!
+2025-11-22 11:12:56 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:56 INFO     Recomputed accuracy!
+2025-11-22 11:12:56 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:56 INFO     Recomputing accuracy!
+2025-11-22 11:12:59 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:12:59 INFO     Recomputed accuracy!
+2025-11-22 11:12:59 INFO     validation_is_true: 1.000000
+2025-11-22 11:12:59 INFO     Recomputing accuracy!
+2025-11-22 11:13:02 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:02 INFO     Recomputed accuracy!
+2025-11-22 11:13:02 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:02 INFO     Recomputing accuracy!
+2025-11-22 11:13:05 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:05 INFO     Recomputed accuracy!
+2025-11-22 11:13:05 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:05 INFO     Recomputing accuracy!
+2025-11-22 11:13:06 INFO     Recomputed accuracy!
+2025-11-22 11:13:06 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:06 INFO     Recomputing accuracy!
+2025-11-22 11:13:07 INFO     Recomputed accuracy!
+2025-11-22 11:13:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:07 INFO     Recomputing accuracy!
+2025-11-22 11:13:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:10 INFO     Recomputed accuracy!
+2025-11-22 11:13:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:10 INFO     Recomputing accuracy!
+2025-11-22 11:13:13 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:13 INFO     Recomputed accuracy!
+2025-11-22 11:13:13 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:13 INFO     Recomputing accuracy!
+2025-11-22 11:13:16 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:16 INFO     Recomputed accuracy!
+2025-11-22 11:13:16 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:16 INFO     Recomputing accuracy!
+2025-11-22 11:13:17 INFO     Recomputed accuracy!
+2025-11-22 11:13:17 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:17 INFO     Recomputing accuracy!
+2025-11-22 11:13:21 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:21 INFO     Recomputed accuracy!
+2025-11-22 11:13:21 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:21 INFO     Recomputing accuracy!
+2025-11-22 11:13:22 INFO     Recomputed accuracy!
+2025-11-22 11:13:22 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:22 INFO     Recomputing accuracy!
+2025-11-22 11:13:25 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:25 INFO     Recomputed accuracy!
+2025-11-22 11:13:25 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:25 INFO     Recomputing accuracy!
+2025-11-22 11:13:28 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:28 INFO     Recomputed accuracy!
+2025-11-22 11:13:28 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:28 INFO     Recomputing accuracy!
+2025-11-22 11:13:29 INFO     Recomputed accuracy!
+2025-11-22 11:13:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:29 INFO     Recomputing accuracy!
+2025-11-22 11:13:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:32 INFO     Recomputed accuracy!
+2025-11-22 11:13:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:32 INFO     Recomputing accuracy!
+2025-11-22 11:13:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:35 INFO     Recomputed accuracy!
+2025-11-22 11:13:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:35 INFO     Recomputing accuracy!
+2025-11-22 11:13:38 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:38 INFO     Recomputed accuracy!
+2025-11-22 11:13:38 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:38 INFO     Recomputing accuracy!
+2025-11-22 11:13:41 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:41 INFO     Recomputed accuracy!
+2025-11-22 11:13:41 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:41 INFO     Recomputing accuracy!
+2025-11-22 11:13:44 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:44 INFO     Recomputed accuracy!
+2025-11-22 11:13:44 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:44 INFO     Recomputing accuracy!
+2025-11-22 11:13:48 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:48 INFO     Recomputed accuracy!
+2025-11-22 11:13:48 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:48 INFO     Recomputing accuracy!
+2025-11-22 11:13:51 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:51 INFO     Recomputed accuracy!
+2025-11-22 11:13:51 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:51 INFO     Recomputing accuracy!
+2025-11-22 11:13:52 INFO     Recomputed accuracy!
+2025-11-22 11:13:52 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:52 INFO     Recomputing accuracy!
+2025-11-22 11:13:52 INFO     Recomputed accuracy!
+2025-11-22 11:13:52 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:52 INFO     Recomputing accuracy!
+2025-11-22 11:13:55 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:55 INFO     Recomputed accuracy!
+2025-11-22 11:13:55 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:55 INFO     Recomputing accuracy!
+2025-11-22 11:13:58 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:13:58 INFO     Recomputed accuracy!
+2025-11-22 11:13:58 INFO     validation_is_true: 1.000000
+2025-11-22 11:13:58 INFO     Recomputing accuracy!
+2025-11-22 11:14:02 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:02 INFO     Recomputed accuracy!
+2025-11-22 11:14:02 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:02 INFO     Recomputing accuracy!
+2025-11-22 11:14:05 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:05 INFO     Recomputed accuracy!
+2025-11-22 11:14:05 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:05 INFO     Recomputing accuracy!
+2025-11-22 11:14:08 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:08 INFO     Recomputed accuracy!
+2025-11-22 11:14:08 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:08 INFO     Recomputing accuracy!
+2025-11-22 11:14:11 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:11 INFO     Recomputed accuracy!
+2025-11-22 11:14:11 INFO     validation_is_true: 0.000000
+2025-11-22 11:14:11 INFO     Recomputing accuracy!
+2025-11-22 11:14:14 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:14 INFO     Recomputed accuracy!
+2025-11-22 11:14:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:14 INFO     Recomputing accuracy!
+2025-11-22 11:14:15 INFO     Recomputed accuracy!
+2025-11-22 11:14:15 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:15 INFO     Recomputing accuracy!
+2025-11-22 11:14:18 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:18 INFO     Recomputed accuracy!
+2025-11-22 11:14:18 INFO     validation_is_true: 0.000000
+2025-11-22 11:14:18 INFO     Recomputing accuracy!
+2025-11-22 11:14:21 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:21 INFO     Recomputed accuracy!
+2025-11-22 11:14:21 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:21 INFO     Recomputing accuracy!
+2025-11-22 11:14:25 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:25 INFO     Recomputed accuracy!
+2025-11-22 11:14:25 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:25 INFO     Recomputing accuracy!
+2025-11-22 11:14:25 INFO     Recomputed accuracy!
+2025-11-22 11:14:25 INFO     validation_is_true: 0.000000
+2025-11-22 11:14:25 INFO     Recomputing accuracy!
+2025-11-22 11:14:26 INFO     Recomputed accuracy!
+2025-11-22 11:14:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:26 INFO     Recomputing accuracy!
+2025-11-22 11:14:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:29 INFO     Recomputed accuracy!
+2025-11-22 11:14:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:29 INFO     Recomputing accuracy!
+2025-11-22 11:14:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:32 INFO     Recomputed accuracy!
+2025-11-22 11:14:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:32 INFO     Recomputing accuracy!
+2025-11-22 11:14:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:35 INFO     Recomputed accuracy!
+2025-11-22 11:14:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:35 INFO     Recomputing accuracy!
+2025-11-22 11:14:38 INFO     Recomputed accuracy!
+2025-11-22 11:14:38 INFO     validation_is_true: 0.000000
+2025-11-22 11:14:38 INFO     Recomputing accuracy!
+2025-11-22 11:14:41 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:41 INFO     Recomputed accuracy!
+2025-11-22 11:14:41 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:41 INFO     Recomputing accuracy!
+2025-11-22 11:14:42 INFO     Recomputed accuracy!
+2025-11-22 11:14:42 INFO     validation_is_true: 0.000000
+2025-11-22 11:14:42 INFO     Recomputing accuracy!
+2025-11-22 11:14:45 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:45 INFO     Recomputed accuracy!
+2025-11-22 11:14:45 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:45 INFO     Recomputing accuracy!
+2025-11-22 11:14:46 INFO     Recomputed accuracy!
+2025-11-22 11:14:46 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:46 INFO     Recomputing accuracy!
+2025-11-22 11:14:49 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:49 INFO     Recomputed accuracy!
+2025-11-22 11:14:49 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:49 INFO     Recomputing accuracy!
+2025-11-22 11:14:50 INFO     Recomputed accuracy!
+2025-11-22 11:14:50 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:50 INFO     Recomputing accuracy!
+2025-11-22 11:14:52 INFO     Recomputed accuracy!
+2025-11-22 11:14:52 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:52 INFO     Recomputing accuracy!
+2025-11-22 11:14:55 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:55 INFO     Recomputed accuracy!
+2025-11-22 11:14:55 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:55 INFO     Recomputing accuracy!
+2025-11-22 11:14:56 INFO     Recomputed accuracy!
+2025-11-22 11:14:56 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:56 INFO     Recomputing accuracy!
+2025-11-22 11:14:59 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:14:59 INFO     Recomputed accuracy!
+2025-11-22 11:14:59 INFO     validation_is_true: 1.000000
+2025-11-22 11:14:59 INFO     Recomputing accuracy!
+2025-11-22 11:15:03 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:03 INFO     Recomputed accuracy!
+2025-11-22 11:15:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:03 INFO     Recomputing accuracy!
+2025-11-22 11:15:06 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:06 INFO     Recomputed accuracy!
+2025-11-22 11:15:06 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:06 INFO     Recomputing accuracy!
+2025-11-22 11:15:07 INFO     Recomputed accuracy!
+2025-11-22 11:15:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:07 INFO     Recomputing accuracy!
+2025-11-22 11:15:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:10 INFO     Recomputed accuracy!
+2025-11-22 11:15:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:10 INFO     Recomputing accuracy!
+2025-11-22 11:15:13 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:13 INFO     Recomputed accuracy!
+2025-11-22 11:15:13 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:13 INFO     Recomputing accuracy!
+2025-11-22 11:15:14 INFO     Recomputed accuracy!
+2025-11-22 11:15:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:14 INFO     Recomputing accuracy!
+2025-11-22 11:15:15 INFO     Recomputed accuracy!
+2025-11-22 11:15:15 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:15 INFO     Recomputing accuracy!
+2025-11-22 11:15:18 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:18 INFO     Recomputed accuracy!
+2025-11-22 11:15:18 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:18 INFO     Recomputing accuracy!
+2025-11-22 11:15:21 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:21 INFO     Recomputed accuracy!
+2025-11-22 11:15:21 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:21 INFO     Recomputing accuracy!
+2025-11-22 11:15:24 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:24 INFO     Recomputed accuracy!
+2025-11-22 11:15:24 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:24 INFO     Recomputing accuracy!
+2025-11-22 11:15:28 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:28 INFO     Recomputed accuracy!
+2025-11-22 11:15:28 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:28 INFO     Recomputing accuracy!
+2025-11-22 11:15:31 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:31 INFO     Recomputed accuracy!
+2025-11-22 11:15:31 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:31 INFO     Recomputing accuracy!
+2025-11-22 11:15:32 INFO     Recomputed accuracy!
+2025-11-22 11:15:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:32 INFO     Recomputing accuracy!
+2025-11-22 11:15:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:35 INFO     Recomputed accuracy!
+2025-11-22 11:15:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:35 INFO     Recomputing accuracy!
+2025-11-22 11:15:38 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:38 INFO     Recomputed accuracy!
+2025-11-22 11:15:38 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:38 INFO     Recomputing accuracy!
+2025-11-22 11:15:41 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:41 INFO     Recomputed accuracy!
+2025-11-22 11:15:41 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:41 INFO     Recomputing accuracy!
+2025-11-22 11:15:44 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:44 INFO     Recomputed accuracy!
+2025-11-22 11:15:44 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:44 INFO     Recomputing accuracy!
+2025-11-22 11:15:47 INFO     Recomputed accuracy!
+2025-11-22 11:15:47 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:47 INFO     Recomputing accuracy!
+2025-11-22 11:15:50 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:50 INFO     Recomputed accuracy!
+2025-11-22 11:15:50 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:50 INFO     Recomputing accuracy!
+2025-11-22 11:15:53 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:53 INFO     Recomputed accuracy!
+2025-11-22 11:15:53 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:53 INFO     Recomputing accuracy!
+2025-11-22 11:15:56 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:56 INFO     Recomputed accuracy!
+2025-11-22 11:15:56 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:56 INFO     Recomputing accuracy!
+2025-11-22 11:15:59 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:15:59 INFO     Recomputed accuracy!
+2025-11-22 11:15:59 INFO     validation_is_true: 1.000000
+2025-11-22 11:15:59 INFO     Recomputing accuracy!
+2025-11-22 11:16:02 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:02 INFO     Recomputed accuracy!
+2025-11-22 11:16:02 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:02 INFO     Recomputing accuracy!
+2025-11-22 11:16:06 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:06 INFO     Recomputed accuracy!
+2025-11-22 11:16:06 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:06 INFO     Recomputing accuracy!
+2025-11-22 11:16:09 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:09 INFO     Recomputed accuracy!
+2025-11-22 11:16:09 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:09 INFO     Recomputing accuracy!
+2025-11-22 11:16:12 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:12 INFO     Recomputed accuracy!
+2025-11-22 11:16:12 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:12 INFO     Recomputing accuracy!
+2025-11-22 11:16:15 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:15 INFO     Recomputed accuracy!
+2025-11-22 11:16:15 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:15 INFO     Recomputing accuracy!
+2025-11-22 11:16:18 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:18 INFO     Recomputed accuracy!
+2025-11-22 11:16:18 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:18 INFO     Recomputing accuracy!
+2025-11-22 11:16:21 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:21 INFO     Recomputed accuracy!
+2025-11-22 11:16:21 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:21 INFO     Recomputing accuracy!
+2025-11-22 11:16:23 INFO     Recomputed accuracy!
+2025-11-22 11:16:23 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:23 INFO     Recomputing accuracy!
+2025-11-22 11:16:24 INFO     Recomputed accuracy!
+2025-11-22 11:16:24 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:24 INFO     Recomputing accuracy!
+2025-11-22 11:16:27 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:27 INFO     Recomputed accuracy!
+2025-11-22 11:16:27 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:27 INFO     Recomputing accuracy!
+2025-11-22 11:16:30 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:30 INFO     Recomputed accuracy!
+2025-11-22 11:16:30 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:30 INFO     Recomputing accuracy!
+2025-11-22 11:16:31 INFO     Recomputed accuracy!
+2025-11-22 11:16:31 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:31 INFO     Recomputing accuracy!
+2025-11-22 11:16:32 INFO     Recomputed accuracy!
+2025-11-22 11:16:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:32 INFO     Recomputing accuracy!
+2025-11-22 11:16:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:35 INFO     Recomputed accuracy!
+2025-11-22 11:16:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:35 INFO     Recomputing accuracy!
+2025-11-22 11:16:38 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:38 INFO     Recomputed accuracy!
+2025-11-22 11:16:38 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:38 INFO     Recomputing accuracy!
+2025-11-22 11:16:41 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:41 INFO     Recomputed accuracy!
+2025-11-22 11:16:41 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:41 INFO     Recomputing accuracy!
+2025-11-22 11:16:45 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:45 INFO     Recomputed accuracy!
+2025-11-22 11:16:45 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:45 INFO     Recomputing accuracy!
+2025-11-22 11:16:47 INFO     Recomputed accuracy!
+2025-11-22 11:16:47 INFO     validation_is_true: 0.000000
+2025-11-22 11:16:47 INFO     Recomputing accuracy!
+2025-11-22 11:16:50 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:50 INFO     Recomputed accuracy!
+2025-11-22 11:16:50 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:50 INFO     Recomputing accuracy!
+2025-11-22 11:16:53 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:53 INFO     Recomputed accuracy!
+2025-11-22 11:16:53 INFO     validation_is_true: 1.000000
+2025-11-22 11:16:53 INFO     Recomputing accuracy!
+2025-11-22 11:16:56 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:16:56 INFO     Recomputed accuracy!
+2025-11-22 11:16:56 INFO     validation_is_true: 0.000000
+2025-11-22 11:16:56 INFO     Recomputing accuracy!
+2025-11-22 11:17:00 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:00 INFO     Recomputed accuracy!
+2025-11-22 11:17:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:00 INFO     Recomputing accuracy!
+2025-11-22 11:17:03 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:03 INFO     Recomputed accuracy!
+2025-11-22 11:17:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:03 INFO     Recomputing accuracy!
+2025-11-22 11:17:04 INFO     Recomputed accuracy!
+2025-11-22 11:17:04 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:04 INFO     Recomputing accuracy!
+2025-11-22 11:17:07 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:07 INFO     Recomputed accuracy!
+2025-11-22 11:17:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:07 INFO     Recomputing accuracy!
+2025-11-22 11:17:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:10 INFO     Recomputed accuracy!
+2025-11-22 11:17:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:10 INFO     Recomputing accuracy!
+2025-11-22 11:17:11 INFO     Recomputed accuracy!
+2025-11-22 11:17:11 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:11 INFO     Recomputing accuracy!
+2025-11-22 11:17:14 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:14 INFO     Recomputed accuracy!
+2025-11-22 11:17:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:14 INFO     Recomputing accuracy!
+2025-11-22 11:17:17 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:17 INFO     Recomputed accuracy!
+2025-11-22 11:17:17 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:17 INFO     Recomputing accuracy!
+2025-11-22 11:17:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:20 INFO     Recomputed accuracy!
+2025-11-22 11:17:20 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:20 INFO     Recomputing accuracy!
+2025-11-22 11:17:22 INFO     Recomputed accuracy!
+2025-11-22 11:17:22 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:22 INFO     Recomputing accuracy!
+2025-11-22 11:17:25 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:25 INFO     Recomputed accuracy!
+2025-11-22 11:17:25 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:25 INFO     Recomputing accuracy!
+2025-11-22 11:17:28 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:28 INFO     Recomputed accuracy!
+2025-11-22 11:17:28 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:28 INFO     Recomputing accuracy!
+2025-11-22 11:17:31 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:31 INFO     Recomputed accuracy!
+2025-11-22 11:17:31 INFO     validation_is_true: 0.000000
+2025-11-22 11:17:31 INFO     Recomputing accuracy!
+2025-11-22 11:17:34 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:34 INFO     Recomputed accuracy!
+2025-11-22 11:17:34 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:34 INFO     Recomputing accuracy!
+2025-11-22 11:17:37 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:37 INFO     Recomputed accuracy!
+2025-11-22 11:17:37 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:37 INFO     Recomputing accuracy!
+2025-11-22 11:17:40 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:40 INFO     Recomputed accuracy!
+2025-11-22 11:17:40 INFO     validation_is_true: 0.000000
+2025-11-22 11:17:40 INFO     Recomputing accuracy!
+2025-11-22 11:17:43 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:43 INFO     Recomputed accuracy!
+2025-11-22 11:17:43 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:43 INFO     Recomputing accuracy!
+2025-11-22 11:17:47 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:47 INFO     Recomputed accuracy!
+2025-11-22 11:17:47 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:47 INFO     Recomputing accuracy!
+2025-11-22 11:17:50 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:50 INFO     Recomputed accuracy!
+2025-11-22 11:17:50 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:50 INFO     Recomputing accuracy!
+2025-11-22 11:17:53 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:53 INFO     Recomputed accuracy!
+2025-11-22 11:17:53 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:53 INFO     Recomputing accuracy!
+2025-11-22 11:17:54 INFO     Recomputed accuracy!
+2025-11-22 11:17:54 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:54 INFO     Recomputing accuracy!
+2025-11-22 11:17:57 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:17:57 INFO     Recomputed accuracy!
+2025-11-22 11:17:57 INFO     validation_is_true: 1.000000
+2025-11-22 11:17:57 INFO     Recomputing accuracy!
+2025-11-22 11:18:00 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:00 INFO     Recomputed accuracy!
+2025-11-22 11:18:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:00 INFO     Recomputing accuracy!
+2025-11-22 11:18:03 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:03 INFO     Recomputed accuracy!
+2025-11-22 11:18:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:03 INFO     Recomputing accuracy!
+2025-11-22 11:18:06 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:06 INFO     Recomputed accuracy!
+2025-11-22 11:18:06 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:06 INFO     Recomputing accuracy!
+2025-11-22 11:18:07 INFO     Recomputed accuracy!
+2025-11-22 11:18:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:07 INFO     Recomputing accuracy!
+2025-11-22 11:18:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:10 INFO     Recomputed accuracy!
+2025-11-22 11:18:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:10 INFO     Recomputing accuracy!
+2025-11-22 11:18:13 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:13 INFO     Recomputed accuracy!
+2025-11-22 11:18:13 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:13 INFO     Recomputing accuracy!
+2025-11-22 11:18:16 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:16 INFO     Recomputed accuracy!
+2025-11-22 11:18:16 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:16 INFO     Recomputing accuracy!
+2025-11-22 11:18:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:20 INFO     Recomputed accuracy!
+2025-11-22 11:18:20 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:20 INFO     Recomputing accuracy!
+2025-11-22 11:18:23 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:23 INFO     Recomputed accuracy!
+2025-11-22 11:18:23 INFO     validation_is_true: 0.000000
+2025-11-22 11:18:23 INFO     Recomputing accuracy!
+2025-11-22 11:18:26 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:26 INFO     Recomputed accuracy!
+2025-11-22 11:18:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:26 INFO     Recomputing accuracy!
+2025-11-22 11:18:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:29 INFO     Recomputed accuracy!
+2025-11-22 11:18:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:29 INFO     Recomputing accuracy!
+2025-11-22 11:18:31 INFO     Recomputed accuracy!
+2025-11-22 11:18:31 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:31 INFO     Recomputing accuracy!
+2025-11-22 11:18:33 INFO     Recomputed accuracy!
+2025-11-22 11:18:33 INFO     validation_is_true: 0.000000
+2025-11-22 11:18:33 INFO     Recomputing accuracy!
+2025-11-22 11:18:36 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:36 INFO     Recomputed accuracy!
+2025-11-22 11:18:36 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:36 INFO     Recomputing accuracy!
+2025-11-22 11:18:39 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:39 INFO     Recomputed accuracy!
+2025-11-22 11:18:39 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:39 INFO     Recomputing accuracy!
+2025-11-22 11:18:39 INFO     Recomputed accuracy!
+2025-11-22 11:18:39 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:39 INFO     Recomputing accuracy!
+2025-11-22 11:18:40 INFO     Recomputed accuracy!
+2025-11-22 11:18:40 INFO     validation_is_true: 0.000000
+2025-11-22 11:18:40 INFO     Recomputing accuracy!
+2025-11-22 11:18:43 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:43 INFO     Recomputed accuracy!
+2025-11-22 11:18:43 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:43 INFO     Recomputing accuracy!
+2025-11-22 11:18:46 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:46 INFO     Recomputed accuracy!
+2025-11-22 11:18:46 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:46 INFO     Recomputing accuracy!
+2025-11-22 11:18:47 INFO     Recomputed accuracy!
+2025-11-22 11:18:47 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:47 INFO     Recomputing accuracy!
+2025-11-22 11:18:51 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:51 INFO     Recomputed accuracy!
+2025-11-22 11:18:51 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:51 INFO     Recomputing accuracy!
+2025-11-22 11:18:54 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:54 INFO     Recomputed accuracy!
+2025-11-22 11:18:54 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:54 INFO     Recomputing accuracy!
+2025-11-22 11:18:57 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:18:57 INFO     Recomputed accuracy!
+2025-11-22 11:18:57 INFO     validation_is_true: 1.000000
+2025-11-22 11:18:57 INFO     Recomputing accuracy!
+2025-11-22 11:19:00 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:00 INFO     Recomputed accuracy!
+2025-11-22 11:19:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:00 INFO     Recomputing accuracy!
+2025-11-22 11:19:00 INFO     Recomputed accuracy!
+2025-11-22 11:19:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:00 INFO     Recomputing accuracy!
+2025-11-22 11:19:04 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:04 INFO     Recomputed accuracy!
+2025-11-22 11:19:04 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:04 INFO     Recomputing accuracy!
+2025-11-22 11:19:07 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:07 INFO     Recomputed accuracy!
+2025-11-22 11:19:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:07 INFO     Recomputing accuracy!
+2025-11-22 11:19:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:10 INFO     Recomputed accuracy!
+2025-11-22 11:19:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:10 INFO     Recomputing accuracy!
+2025-11-22 11:19:13 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:13 INFO     Recomputed accuracy!
+2025-11-22 11:19:13 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:13 INFO     Recomputing accuracy!
+2025-11-22 11:19:16 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:16 INFO     Recomputed accuracy!
+2025-11-22 11:19:16 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:16 INFO     Recomputing accuracy!
+2025-11-22 11:19:19 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:19 INFO     Recomputed accuracy!
+2025-11-22 11:19:19 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:19 INFO     Recomputing accuracy!
+2025-11-22 11:19:22 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:22 INFO     Recomputed accuracy!
+2025-11-22 11:19:22 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:22 INFO     Recomputing accuracy!
+2025-11-22 11:19:25 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:25 INFO     Recomputed accuracy!
+2025-11-22 11:19:25 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:25 INFO     Recomputing accuracy!
+2025-11-22 11:19:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:29 INFO     Recomputed accuracy!
+2025-11-22 11:19:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:29 INFO     Recomputing accuracy!
+2025-11-22 11:19:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:32 INFO     Recomputed accuracy!
+2025-11-22 11:19:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:32 INFO     Recomputing accuracy!
+2025-11-22 11:19:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:35 INFO     Recomputed accuracy!
+2025-11-22 11:19:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:35 INFO     Recomputing accuracy!
+2025-11-22 11:19:38 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:38 INFO     Recomputed accuracy!
+2025-11-22 11:19:38 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:38 INFO     Recomputing accuracy!
+2025-11-22 11:19:39 INFO     Recomputed accuracy!
+2025-11-22 11:19:39 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:39 INFO     Recomputing accuracy!
+2025-11-22 11:19:40 INFO     Recomputed accuracy!
+2025-11-22 11:19:40 INFO     validation_is_true: 0.000000
+2025-11-22 11:19:40 INFO     Recomputing accuracy!
+2025-11-22 11:19:41 INFO     Recomputed accuracy!
+2025-11-22 11:19:41 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:41 INFO     Recomputing accuracy!
+2025-11-22 11:19:44 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:44 INFO     Recomputed accuracy!
+2025-11-22 11:19:44 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:44 INFO     Recomputing accuracy!
+2025-11-22 11:19:48 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:48 INFO     Recomputed accuracy!
+2025-11-22 11:19:48 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:48 INFO     Recomputing accuracy!
+2025-11-22 11:19:49 INFO     Recomputed accuracy!
+2025-11-22 11:19:49 INFO     validation_is_true: 0.000000
+2025-11-22 11:19:49 INFO     Recomputing accuracy!
+2025-11-22 11:19:52 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:52 INFO     Recomputed accuracy!
+2025-11-22 11:19:52 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:52 INFO     Recomputing accuracy!
+2025-11-22 11:19:53 INFO     Recomputed accuracy!
+2025-11-22 11:19:53 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:53 INFO     Recomputing accuracy!
+2025-11-22 11:19:57 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:19:57 INFO     Recomputed accuracy!
+2025-11-22 11:19:57 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:57 INFO     Recomputing accuracy!
+2025-11-22 11:19:58 INFO     Recomputed accuracy!
+2025-11-22 11:19:58 INFO     validation_is_true: 1.000000
+2025-11-22 11:19:58 INFO     Recomputing accuracy!
+2025-11-22 11:20:00 INFO     Recomputed accuracy!
+2025-11-22 11:20:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:00 INFO     Recomputing accuracy!
+2025-11-22 11:20:03 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:03 INFO     Recomputed accuracy!
+2025-11-22 11:20:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:03 INFO     Recomputing accuracy!
+2025-11-22 11:20:06 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:06 INFO     Recomputed accuracy!
+2025-11-22 11:20:06 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:06 INFO     Recomputing accuracy!
+2025-11-22 11:20:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:10 INFO     Recomputed accuracy!
+2025-11-22 11:20:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:10 INFO     Recomputing accuracy!
+2025-11-22 11:20:11 INFO     Recomputed accuracy!
+2025-11-22 11:20:11 INFO     validation_is_true: 0.000000
+2025-11-22 11:20:11 INFO     Recomputing accuracy!
+2025-11-22 11:20:14 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:14 INFO     Recomputed accuracy!
+2025-11-22 11:20:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:14 INFO     Recomputing accuracy!
+2025-11-22 11:20:17 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:17 INFO     Recomputed accuracy!
+2025-11-22 11:20:17 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:17 INFO     Recomputing accuracy!
+2025-11-22 11:20:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:20 INFO     Recomputed accuracy!
+2025-11-22 11:20:20 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:20 INFO     Recomputing accuracy!
+2025-11-22 11:20:21 INFO     Recomputed accuracy!
+2025-11-22 11:20:21 INFO     validation_is_true: 0.000000
+2025-11-22 11:20:21 INFO     Recomputing accuracy!
+2025-11-22 11:20:22 INFO     Recomputed accuracy!
+2025-11-22 11:20:22 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:22 INFO     Recomputing accuracy!
+2025-11-22 11:20:25 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:25 INFO     Recomputed accuracy!
+2025-11-22 11:20:25 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:25 INFO     Recomputing accuracy!
+2025-11-22 11:20:28 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:28 INFO     Recomputed accuracy!
+2025-11-22 11:20:28 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:28 INFO     Recomputing accuracy!
+2025-11-22 11:20:31 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:31 INFO     Recomputed accuracy!
+2025-11-22 11:20:31 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:31 INFO     Recomputing accuracy!
+2025-11-22 11:20:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:35 INFO     Recomputed accuracy!
+2025-11-22 11:20:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:35 INFO     Recomputing accuracy!
+2025-11-22 11:20:38 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:38 INFO     Recomputed accuracy!
+2025-11-22 11:20:38 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:38 INFO     Recomputing accuracy!
+2025-11-22 11:20:41 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:41 INFO     Recomputed accuracy!
+2025-11-22 11:20:41 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:41 INFO     Recomputing accuracy!
+2025-11-22 11:20:44 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:44 INFO     Recomputed accuracy!
+2025-11-22 11:20:44 INFO     validation_is_true: 0.000000
+2025-11-22 11:20:44 INFO     Recomputing accuracy!
+2025-11-22 11:20:47 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:47 INFO     Recomputed accuracy!
+2025-11-22 11:20:47 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:47 INFO     Recomputing accuracy!
+2025-11-22 11:20:50 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:50 INFO     Recomputed accuracy!
+2025-11-22 11:20:50 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:50 INFO     Recomputing accuracy!
+2025-11-22 11:20:54 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:54 INFO     Recomputed accuracy!
+2025-11-22 11:20:54 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:54 INFO     Recomputing accuracy!
+2025-11-22 11:20:57 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:20:57 INFO     Recomputed accuracy!
+2025-11-22 11:20:57 INFO     validation_is_true: 1.000000
+2025-11-22 11:20:57 INFO     Recomputing accuracy!
+2025-11-22 11:21:00 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:00 INFO     Recomputed accuracy!
+2025-11-22 11:21:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:00 INFO     Recomputing accuracy!
+2025-11-22 11:21:03 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:03 INFO     Recomputed accuracy!
+2025-11-22 11:21:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:03 INFO     Recomputing accuracy!
+2025-11-22 11:21:04 INFO     Recomputed accuracy!
+2025-11-22 11:21:04 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:04 INFO     Recomputing accuracy!
+2025-11-22 11:21:08 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:08 INFO     Recomputed accuracy!
+2025-11-22 11:21:08 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:08 INFO     Recomputing accuracy!
+2025-11-22 11:21:11 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:11 INFO     Recomputed accuracy!
+2025-11-22 11:21:11 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:11 INFO     Recomputing accuracy!
+2025-11-22 11:21:12 INFO     Recomputed accuracy!
+2025-11-22 11:21:12 INFO     validation_is_true: 0.000000
+2025-11-22 11:21:12 INFO     Recomputing accuracy!
+2025-11-22 11:21:14 INFO     Recomputed accuracy!
+2025-11-22 11:21:14 INFO     validation_is_true: 0.000000
+2025-11-22 11:21:14 INFO     Recomputing accuracy!
+2025-11-22 11:21:17 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:17 INFO     Recomputed accuracy!
+2025-11-22 11:21:17 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:17 INFO     Recomputing accuracy!
+2025-11-22 11:21:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:20 INFO     Recomputed accuracy!
+2025-11-22 11:21:20 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:20 INFO     Recomputing accuracy!
+2025-11-22 11:21:23 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:23 INFO     Recomputed accuracy!
+2025-11-22 11:21:23 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:23 INFO     Recomputing accuracy!
+2025-11-22 11:21:25 INFO     Recomputed accuracy!
+2025-11-22 11:21:25 INFO     validation_is_true: 0.000000
+2025-11-22 11:21:25 INFO     Recomputing accuracy!
+2025-11-22 11:21:26 INFO     Recomputed accuracy!
+2025-11-22 11:21:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:26 INFO     Recomputing accuracy!
+2025-11-22 11:21:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:29 INFO     Recomputed accuracy!
+2025-11-22 11:21:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:29 INFO     Recomputing accuracy!
+2025-11-22 11:21:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:32 INFO     Recomputed accuracy!
+2025-11-22 11:21:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:32 INFO     Recomputing accuracy!
+2025-11-22 11:21:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:35 INFO     Recomputed accuracy!
+2025-11-22 11:21:35 INFO     validation_is_true: 0.000000
+2025-11-22 11:21:35 INFO     Recomputing accuracy!
+2025-11-22 11:21:38 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:38 INFO     Recomputed accuracy!
+2025-11-22 11:21:38 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:38 INFO     Recomputing accuracy!
+2025-11-22 11:21:39 INFO     Recomputed accuracy!
+2025-11-22 11:21:39 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:39 INFO     Recomputing accuracy!
+2025-11-22 11:21:42 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:42 INFO     Recomputed accuracy!
+2025-11-22 11:21:42 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:42 INFO     Recomputing accuracy!
+2025-11-22 11:21:46 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:46 INFO     Recomputed accuracy!
+2025-11-22 11:21:46 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:46 INFO     Recomputing accuracy!
+2025-11-22 11:21:49 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:49 INFO     Recomputed accuracy!
+2025-11-22 11:21:49 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:49 INFO     Recomputing accuracy!
+2025-11-22 11:21:52 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:52 INFO     Recomputed accuracy!
+2025-11-22 11:21:52 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:52 INFO     Recomputing accuracy!
+2025-11-22 11:21:54 INFO     Recomputed accuracy!
+2025-11-22 11:21:54 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:54 INFO     Recomputing accuracy!
+2025-11-22 11:21:57 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:21:57 INFO     Recomputed accuracy!
+2025-11-22 11:21:57 INFO     validation_is_true: 1.000000
+2025-11-22 11:21:57 INFO     Recomputing accuracy!
+2025-11-22 11:22:01 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:01 INFO     Recomputed accuracy!
+2025-11-22 11:22:01 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:01 INFO     Recomputing accuracy!
+2025-11-22 11:22:04 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:04 INFO     Recomputed accuracy!
+2025-11-22 11:22:04 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:04 INFO     Recomputing accuracy!
+2025-11-22 11:22:07 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:07 INFO     Recomputed accuracy!
+2025-11-22 11:22:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:07 INFO     Recomputing accuracy!
+2025-11-22 11:22:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:10 INFO     Recomputed accuracy!
+2025-11-22 11:22:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:10 INFO     Recomputing accuracy!
+2025-11-22 11:22:13 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:13 INFO     Recomputed accuracy!
+2025-11-22 11:22:13 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:13 INFO     Recomputing accuracy!
+2025-11-22 11:22:16 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:16 INFO     Recomputed accuracy!
+2025-11-22 11:22:16 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:16 INFO     Recomputing accuracy!
+2025-11-22 11:22:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:20 INFO     Recomputed accuracy!
+2025-11-22 11:22:20 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:20 INFO     Recomputing accuracy!
+2025-11-22 11:22:23 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:23 INFO     Recomputed accuracy!
+2025-11-22 11:22:23 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:23 INFO     Recomputing accuracy!
+2025-11-22 11:22:26 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:26 INFO     Recomputed accuracy!
+2025-11-22 11:22:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:26 INFO     Recomputing accuracy!
+2025-11-22 11:22:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:29 INFO     Recomputed accuracy!
+2025-11-22 11:22:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:29 INFO     Recomputing accuracy!
+2025-11-22 11:22:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:32 INFO     Recomputed accuracy!
+2025-11-22 11:22:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:32 INFO     Recomputing accuracy!
+2025-11-22 11:22:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:35 INFO     Recomputed accuracy!
+2025-11-22 11:22:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:35 INFO     Recomputing accuracy!
+2025-11-22 11:22:36 INFO     Recomputed accuracy!
+2025-11-22 11:22:36 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:36 INFO     Recomputing accuracy!
+2025-11-22 11:22:40 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:40 INFO     Recomputed accuracy!
+2025-11-22 11:22:40 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:40 INFO     Recomputing accuracy!
+2025-11-22 11:22:43 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:43 INFO     Recomputed accuracy!
+2025-11-22 11:22:43 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:43 INFO     Recomputing accuracy!
+2025-11-22 11:22:46 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:46 INFO     Recomputed accuracy!
+2025-11-22 11:22:46 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:46 INFO     Recomputing accuracy!
+2025-11-22 11:22:49 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:49 INFO     Recomputed accuracy!
+2025-11-22 11:22:49 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:49 INFO     Recomputing accuracy!
+2025-11-22 11:22:52 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:52 INFO     Recomputed accuracy!
+2025-11-22 11:22:52 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:52 INFO     Recomputing accuracy!
+2025-11-22 11:22:53 INFO     Recomputed accuracy!
+2025-11-22 11:22:53 INFO     validation_is_true: 0.000000
+2025-11-22 11:22:53 INFO     Recomputing accuracy!
+2025-11-22 11:22:54 INFO     Recomputed accuracy!
+2025-11-22 11:22:54 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:54 INFO     Recomputing accuracy!
+2025-11-22 11:22:57 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:22:57 INFO     Recomputed accuracy!
+2025-11-22 11:22:57 INFO     validation_is_true: 1.000000
+2025-11-22 11:22:57 INFO     Recomputing accuracy!
+2025-11-22 11:23:00 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:00 INFO     Recomputed accuracy!
+2025-11-22 11:23:00 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:00 INFO     Recomputing accuracy!
+2025-11-22 11:23:03 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:03 INFO     Recomputed accuracy!
+2025-11-22 11:23:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:03 INFO     Recomputing accuracy!
+2025-11-22 11:23:06 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:06 INFO     Recomputed accuracy!
+2025-11-22 11:23:06 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:06 INFO     Recomputing accuracy!
+2025-11-22 11:23:07 INFO     Recomputed accuracy!
+2025-11-22 11:23:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:07 INFO     Recomputing accuracy!
+2025-11-22 11:23:11 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:11 INFO     Recomputed accuracy!
+2025-11-22 11:23:11 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:11 INFO     Recomputing accuracy!
+2025-11-22 11:23:14 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:14 INFO     Recomputed accuracy!
+2025-11-22 11:23:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:14 INFO     Recomputing accuracy!
+2025-11-22 11:23:17 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:17 INFO     Recomputed accuracy!
+2025-11-22 11:23:17 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:17 INFO     Recomputing accuracy!
+2025-11-22 11:23:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:20 INFO     Recomputed accuracy!
+2025-11-22 11:23:20 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:20 INFO     Recomputing accuracy!
+2025-11-22 11:23:23 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:23 INFO     Recomputed accuracy!
+2025-11-22 11:23:23 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:23 INFO     Recomputing accuracy!
+2025-11-22 11:23:26 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:26 INFO     Recomputed accuracy!
+2025-11-22 11:23:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:26 INFO     Recomputing accuracy!
+2025-11-22 11:23:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:29 INFO     Recomputed accuracy!
+2025-11-22 11:23:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:29 INFO     Recomputing accuracy!
+2025-11-22 11:23:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:32 INFO     Recomputed accuracy!
+2025-11-22 11:23:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:32 INFO     Recomputing accuracy!
+2025-11-22 11:23:36 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:36 INFO     Recomputed accuracy!
+2025-11-22 11:23:36 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:36 INFO     Recomputing accuracy!
+2025-11-22 11:23:39 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:39 INFO     Recomputed accuracy!
+2025-11-22 11:23:39 INFO     validation_is_true: 0.000000
+2025-11-22 11:23:39 INFO     Recomputing accuracy!
+2025-11-22 11:23:42 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:42 INFO     Recomputed accuracy!
+2025-11-22 11:23:42 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:42 INFO     Recomputing accuracy!
+2025-11-22 11:23:43 INFO     Recomputed accuracy!
+2025-11-22 11:23:43 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:43 INFO     Recomputing accuracy!
+2025-11-22 11:23:46 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:46 INFO     Recomputed accuracy!
+2025-11-22 11:23:46 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:46 INFO     Recomputing accuracy!
+2025-11-22 11:23:49 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:49 INFO     Recomputed accuracy!
+2025-11-22 11:23:49 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:49 INFO     Recomputing accuracy!
+2025-11-22 11:23:52 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:52 INFO     Recomputed accuracy!
+2025-11-22 11:23:52 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:52 INFO     Recomputing accuracy!
+2025-11-22 11:23:55 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:55 INFO     Recomputed accuracy!
+2025-11-22 11:23:55 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:55 INFO     Recomputing accuracy!
+2025-11-22 11:23:59 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:23:59 INFO     Recomputed accuracy!
+2025-11-22 11:23:59 INFO     validation_is_true: 1.000000
+2025-11-22 11:23:59 INFO     Recomputing accuracy!
+2025-11-22 11:24:02 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:02 INFO     Recomputed accuracy!
+2025-11-22 11:24:02 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:02 INFO     Recomputing accuracy!
+2025-11-22 11:24:05 INFO     Recomputed accuracy!
+2025-11-22 11:24:05 INFO     validation_is_true: 0.000000
+2025-11-22 11:24:05 INFO     Recomputing accuracy!
+2025-11-22 11:24:08 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:08 INFO     Recomputed accuracy!
+2025-11-22 11:24:08 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:08 INFO     Recomputing accuracy!
+2025-11-22 11:24:11 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:11 INFO     Recomputed accuracy!
+2025-11-22 11:24:11 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:11 INFO     Recomputing accuracy!
+2025-11-22 11:24:14 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:14 INFO     Recomputed accuracy!
+2025-11-22 11:24:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:14 INFO     Recomputing accuracy!
+2025-11-22 11:24:15 INFO     Recomputed accuracy!
+2025-11-22 11:24:15 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:15 INFO     Recomputing accuracy!
+2025-11-22 11:24:16 INFO     Recomputed accuracy!
+2025-11-22 11:24:16 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:16 INFO     Recomputing accuracy!
+2025-11-22 11:24:17 WARNING  Redo llm check.
+2025-11-22 11:24:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:20 INFO     Recomputed accuracy!
+2025-11-22 11:24:20 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:20 INFO     Recomputing accuracy!
+2025-11-22 11:24:23 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:23 INFO     Recomputed accuracy!
+2025-11-22 11:24:23 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:23 INFO     Recomputing accuracy!
+2025-11-22 11:24:26 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:26 INFO     Recomputed accuracy!
+2025-11-22 11:24:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:26 INFO     Recomputing accuracy!
+2025-11-22 11:24:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:29 INFO     Recomputed accuracy!
+2025-11-22 11:24:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:29 INFO     Recomputing accuracy!
+2025-11-22 11:24:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:32 INFO     Recomputed accuracy!
+2025-11-22 11:24:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:32 INFO     Recomputing accuracy!
+2025-11-22 11:24:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:35 INFO     Recomputed accuracy!
+2025-11-22 11:24:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:35 INFO     Recomputing accuracy!
+2025-11-22 11:24:39 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:39 INFO     Recomputed accuracy!
+2025-11-22 11:24:39 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:39 INFO     Recomputing accuracy!
+2025-11-22 11:24:42 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:42 INFO     Recomputed accuracy!
+2025-11-22 11:24:42 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:42 INFO     Recomputing accuracy!
+2025-11-22 11:24:45 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:45 INFO     Recomputed accuracy!
+2025-11-22 11:24:45 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:45 INFO     Recomputing accuracy!
+2025-11-22 11:24:48 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:48 INFO     Recomputed accuracy!
+2025-11-22 11:24:48 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:48 INFO     Recomputing accuracy!
+2025-11-22 11:24:51 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:51 INFO     Recomputed accuracy!
+2025-11-22 11:24:51 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:51 INFO     Recomputing accuracy!
+2025-11-22 11:24:54 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:54 INFO     Recomputed accuracy!
+2025-11-22 11:24:54 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:54 INFO     Recomputing accuracy!
+2025-11-22 11:24:55 INFO     Recomputed accuracy!
+2025-11-22 11:24:55 INFO     validation_is_true: 0.000000
+2025-11-22 11:24:55 INFO     Recomputing accuracy!
+2025-11-22 11:24:58 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:24:58 INFO     Recomputed accuracy!
+2025-11-22 11:24:58 INFO     validation_is_true: 1.000000
+2025-11-22 11:24:58 INFO     Recomputing accuracy!
+2025-11-22 11:25:02 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:02 INFO     Recomputed accuracy!
+2025-11-22 11:25:02 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:02 INFO     Recomputing accuracy!
+2025-11-22 11:25:03 INFO     Recomputed accuracy!
+2025-11-22 11:25:03 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:03 INFO     Recomputing accuracy!
+2025-11-22 11:25:06 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:06 INFO     Recomputed accuracy!
+2025-11-22 11:25:06 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:06 INFO     Recomputing accuracy!
+2025-11-22 11:25:07 INFO     Recomputed accuracy!
+2025-11-22 11:25:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:07 INFO     Recomputing accuracy!
+2025-11-22 11:25:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:10 INFO     Recomputed accuracy!
+2025-11-22 11:25:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:10 INFO     Recomputing accuracy!
+2025-11-22 11:25:14 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:14 INFO     Recomputed accuracy!
+2025-11-22 11:25:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:14 INFO     Recomputing accuracy!
+2025-11-22 11:25:17 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:17 INFO     Recomputed accuracy!
+2025-11-22 11:25:17 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:17 INFO     Recomputing accuracy!
+2025-11-22 11:25:20 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:20 INFO     Recomputed accuracy!
+2025-11-22 11:25:20 INFO     validation_is_true: 0.000000
+2025-11-22 11:25:20 INFO     Recomputing accuracy!
+2025-11-22 11:25:23 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:23 INFO     Recomputed accuracy!
+2025-11-22 11:25:23 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:23 INFO     Recomputing accuracy!
+2025-11-22 11:25:26 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:26 INFO     Recomputed accuracy!
+2025-11-22 11:25:26 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:26 INFO     Recomputing accuracy!
+2025-11-22 11:25:29 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:29 INFO     Recomputed accuracy!
+2025-11-22 11:25:29 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:29 INFO     Recomputing accuracy!
+2025-11-22 11:25:32 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:32 INFO     Recomputed accuracy!
+2025-11-22 11:25:32 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:32 INFO     Recomputing accuracy!
+2025-11-22 11:25:35 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:35 INFO     Recomputed accuracy!
+2025-11-22 11:25:35 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:35 INFO     Recomputing accuracy!
+2025-11-22 11:25:39 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:39 INFO     Recomputed accuracy!
+2025-11-22 11:25:39 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:39 INFO     Recomputing accuracy!
+2025-11-22 11:25:42 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:42 INFO     Recomputed accuracy!
+2025-11-22 11:25:42 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:42 INFO     Recomputing accuracy!
+2025-11-22 11:25:45 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:45 INFO     Recomputed accuracy!
+2025-11-22 11:25:45 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:45 INFO     Recomputing accuracy!
+2025-11-22 11:25:48 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:48 INFO     Recomputed accuracy!
+2025-11-22 11:25:48 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:48 INFO     Recomputing accuracy!
+2025-11-22 11:25:51 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:51 INFO     Recomputed accuracy!
+2025-11-22 11:25:51 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:51 INFO     Recomputing accuracy!
+2025-11-22 11:25:55 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:55 INFO     Recomputed accuracy!
+2025-11-22 11:25:55 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:55 INFO     Recomputing accuracy!
+2025-11-22 11:25:58 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:25:58 INFO     Recomputed accuracy!
+2025-11-22 11:25:58 INFO     validation_is_true: 1.000000
+2025-11-22 11:25:58 INFO     Recomputing accuracy!
+2025-11-22 11:26:01 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:26:01 INFO     Recomputed accuracy!
+2025-11-22 11:26:01 INFO     validation_is_true: 1.000000
+2025-11-22 11:26:01 INFO     Recomputing accuracy!
+2025-11-22 11:26:04 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:26:04 INFO     Recomputed accuracy!
+2025-11-22 11:26:04 INFO     validation_is_true: 1.000000
+2025-11-22 11:26:04 INFO     Recomputing accuracy!
+2025-11-22 11:26:07 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:26:07 INFO     Recomputed accuracy!
+2025-11-22 11:26:07 INFO     validation_is_true: 1.000000
+2025-11-22 11:26:07 INFO     Recomputing accuracy!
+2025-11-22 11:26:10 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:26:10 INFO     Recomputed accuracy!
+2025-11-22 11:26:10 INFO     validation_is_true: 1.000000
+2025-11-22 11:26:10 INFO     Recomputing accuracy!
+2025-11-22 11:26:14 WARNING  Generation interrupted by max_token limit.
+2025-11-22 11:26:14 INFO     Recomputed accuracy!
+2025-11-22 11:26:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:26:14 INFO     Recomputing accuracy!
+2025-11-22 11:26:14 INFO     Recomputed accuracy!
+2025-11-22 11:26:14 INFO     validation_is_true: 1.000000
+2025-11-22 11:26:14 INFO     Accuracy on original task: 0.915000
+2025-11-22 11:26:14 INFO     Unanswerable prop on validation: 0.000000

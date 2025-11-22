@@ -1,0 +1,78 @@
+{
+  "os":  "Linux-5.14.0-570.55.1.el9_6.x86_64-x86_64-with-glibc2.34",
+  "python":  "CPython 3.11.14",
+  "startedAt":  "2025-11-22T10:07:53.099367Z",
+  "args":  [
+    "--eval_wandb_runid",
+    "5qvhbs97",
+    "--metric",
+    "llm_llama-3.1-8b",
+    "--recompute_accuracy",
+    "--no-compute_predictive_entropy",
+    "--no-compute_p_ik",
+    "--no-compute_context_entails_response",
+    "--no-analyze_run",
+    "--entity",
+    "nikosteam",
+    "--project",
+    "super_guacamole",
+    "--restore_entity_eval",
+    "nikosteam"
+  ],
+  "program":  "/system/user/studentwork/boldis/super-guacamole/src/compute_uncertainty_measures.py",
+  "codePath":  "src/compute_uncertainty_measures.py",
+  "codePathLocal":  "compute_uncertainty_measures.py",
+  "git":  {
+    "remote":  "git@github.com:nikoszka/super-guacamole.git",
+    "commit":  "d439c334b5b342c1975c6333a8488f2fe98c706e"
+  },
+  "email":  "nikosz@hotmail.sk",
+  "root":  "./boldis/uncertainty/wandb",
+  "host":  "student02",
+  "executable":  "/system/user/studentwork/boldis/nllSAR/bin/python",
+  "cpu_count":  24,
+  "cpu_count_logical":  48,
+  "gpu":  "NVIDIA TITAN V",
+  "gpu_count":  4,
+  "disk":  {
+    "/":  {
+      "total":  "200492560384",
+      "used":  "16613597184"
+    }
+  },
+  "memory":  {
+    "total":  "403759579136"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-38c9f8cb-6f53-580c-e483-28ee83a55b2f"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-e47fc508-4725-3969-157c-8cb2214b1d31"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-3b65c462-039a-c95a-b94b-8c380fc4887d"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-b79bba9d-bc83-74d1-aa8c-33e0625285b7"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "writerId":  "kth06w4cizd29pqvxux5d3qbq6yhhk3d"
+}
