@@ -226,20 +226,74 @@ def model_based_metric(predicted_answer, example, model):
     else:
         raise ValueError
 
-    prompt = f'We are assessing the quality of answers to the following question: {example["question"]}\n'
-    if len(correct_answers) == 1:
-        prompt += f"The expected answer is: {correct_answers[0]}.\n"
-    else:
-        prompt += f"The following are expected answers to this question: {correct_answers}.\n"
+    # Check if this is an instruct model that should use chat formatting
+    use_chat_format = (
+        'instruct' in model.model_name.lower() or 
+        'chat' in model.model_name.lower() or
+        'llama-3' in model.model_name.lower()  # Llama 3/3.1 models use chat format
+    )
+    
+    if use_chat_format and hasattr(model, 'tokenizer') and hasattr(model.tokenizer, 'apply_chat_template'):
+        # Use chat template for instruct models (more robust)
+        system_message = """You are an expert evaluator assessing whether a proposed answer correctly answers a given question.
 
-    prompt += f"The proposed answer is: {predicted_answer}\n"
+Your task:
+1. Compare the proposed answer to the expected answer(s)
+2. Determine if they convey the same core information
+3. Ignore minor differences in wording, but be strict about factual accuracy
+4. If the proposed answer is nonsensical, incomplete, or factually incorrect, respond "no"
+5. Only respond "yes" if the proposed answer correctly and clearly answers the question
 
-    if len(correct_answers) == 1:
-        prompt += "Within the context of the question, does the proposed answer mean the same as the expected answer?"
-    else:
-        prompt += "Within the context of the question, does the proposed answer mean the same as any of the expected answers?"
+Respond with ONLY "yes" or "no"."""
 
-    prompt += " Respond only with yes or no.\nResponse:"
+        if len(correct_answers) == 1:
+            user_message = f"""Question: {example["question"]}
+
+Expected answer: {correct_answers[0]}
+
+Proposed answer: {predicted_answer}
+
+Does the proposed answer correctly answer the question with the same meaning as the expected answer?"""
+        else:
+            user_message = f"""Question: {example["question"]}
+
+Expected answers: {', '.join(correct_answers)}
+
+Proposed answer: {predicted_answer}
+
+Does the proposed answer correctly answer the question with the same meaning as any of the expected answers?"""
+
+        messages = [
+            {"role": "system", "content": system_message},
+            {"role": "user", "content": user_message}
+        ]
+        
+        try:
+            prompt = model.tokenizer.apply_chat_template(
+                messages, 
+                tokenize=False, 
+                add_generation_prompt=True
+            )
+        except Exception as e:
+            logging.warning(f'Failed to apply chat template: {e}. Falling back to simple prompt.')
+            use_chat_format = False
+    
+    if not use_chat_format:
+        # Original prompt format for non-instruct models or if chat template fails
+        prompt = f'We are assessing the quality of answers to the following question: {example["question"]}\n'
+        if len(correct_answers) == 1:
+            prompt += f"The expected answer is: {correct_answers[0]}.\n"
+        else:
+            prompt += f"The following are expected answers to this question: {correct_answers}.\n"
+
+        prompt += f"The proposed answer is: {predicted_answer}\n"
+
+        if len(correct_answers) == 1:
+            prompt += "Within the context of the question, does the proposed answer mean the same as the expected answer?"
+        else:
+            prompt += "Within the context of the question, does the proposed answer mean the same as any of the expected answers?"
+
+        prompt += " Respond only with yes or no.\nResponse:"
 
     if 'gpt' in model.model_name.lower():
         predicted_answer = model.predict(prompt, 0.01)
