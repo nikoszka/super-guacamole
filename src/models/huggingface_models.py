@@ -232,11 +232,9 @@ class HuggingfaceModel(BaseModel):
             llama65b = '65b' in model_name and base == 'huggyllama'
             llama70b = '70b' in model_name.lower() and base == 'meta-llama'
             print("Initializing model: ", model_name + " and base:", base)
-            if model_size in ['1b', '7b','8b', '13b'] or eightbit or fourbit:
+            if model_size in ['1b', '7b','8b', '13b'] or eightbit:
                 # Use device_map="auto" which automatically distributes across all available GPUs
                 # accelerate library will handle multi-GPU distribution automatically
-                import torch
-                num_gpus = torch.cuda.device_count()
                 
                 # Get max_memory for all GPUs to enable proper multi-GPU distribution
                 max_memory_dict = get_gpu_memory_dict()
@@ -271,7 +269,7 @@ class HuggingfaceModel(BaseModel):
                     )
                 else:
                     # Multi-GPU loading path (automatically uses all available GPUs)
-                    import torch
+                    
                     num_gpus = torch.cuda.device_count()
                     logging.info(f'Detected {num_gpus} GPU(s) for model loading')
                     
