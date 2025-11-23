@@ -1,0 +1,19 @@
+{
+  "short": {
+    "min": 1,
+    "mean": 2.7275,
+    "max": 14,
+    "std": 1.4809604147309272,
+    "median": 2.0,
+    "total_examples": 400,
+    "examples_with_tokens": 400,
+    "percentiles": {
+      "p25": 2.0,
+      "p50": 2.0,
+      "p75": 3.0,
+      "p90": 4.0,
+      "p95": 5.0,
+      "p99": 8.0
+    }
+  }
+}

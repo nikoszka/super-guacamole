@@ -1,0 +1,36 @@
+{
+  "total_tokens_analyzed": 447,
+  "position_correlation": -8.700380766287255e-16,
+  "nll_correlation": 0.050902481541429595,
+  "mean_relevance_weight": 0.8350642832200266,
+  "std_relevance_weight": 0.012496590397791357,
+  "mean_nll": 0.6158226739078667,
+  "std_nll": 1.0179225497661364,
+  "pos_tag_statistics": {
+    "NUM": {
+      "mean_relevance": 0.8313361704349518,
+      "std_relevance": NaN,
+      "count": 1
+    },
+    "PART": {
+      "mean_relevance": 0.8396197706460953,
+      "std_relevance": NaN,
+      "count": 1
+    },
+    "PROPN": {
+      "mean_relevance": 0.8283345997333527,
+      "std_relevance": NaN,
+      "count": 1
+    },
+    "PUNCT": {
+      "mean_relevance": 0.8355833479651699,
+      "std_relevance": 0.011862359256957923,
+      "count": 27
+    },
+    "UNKNOWN": {
+      "mean_relevance": 0.8350448289292036,
+      "std_relevance": 0.012586576245681522,
+      "count": 417
+    }
+  }
+}

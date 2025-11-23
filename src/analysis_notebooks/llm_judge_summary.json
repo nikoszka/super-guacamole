@@ -1,9 +1,0 @@
-{
-  "correlation": 0.38113622979677153,
-  "best_threshold": 0.9,
-  "best_accuracy": 0.7725,
-  "model_name": "meta-llama/Llama-2-7b-chat-hf",
-  "total_examples": 400,
-  "average_judge_probability": 0.7859999999999999,
-  "average_true_accuracy": 0.32
-}

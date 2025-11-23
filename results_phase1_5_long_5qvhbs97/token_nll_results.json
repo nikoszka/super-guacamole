@@ -1,0 +1,2396 @@
+[
+  {
+    "example_id": "sfq_80--166/166_2439219.txt#0_0",
+    "sequence_length": 30,
+    "mean_nll": 0.7671190833754281,
+    "std_nll": 1.6740492013856463
+  },
+  {
+    "example_id": "sfq_6611--38/38_1616659.txt#0_0",
+    "sequence_length": 23,
+    "mean_nll": 0.608204261297082,
+    "std_nll": 1.185744658119354
+  },
+  {
+    "example_id": "qg_2646--198/198_2188674.txt#0_0",
+    "sequence_length": 25,
+    "mean_nll": 0.7362819636209857,
+    "std_nll": 1.441329650973102
+  },
+  {
+    "example_id": "odql_8597--105/105_3212945.txt#0_0",
+    "sequence_length": 19,
+    "mean_nll": 0.24308605791386048,
+    "std_nll": 0.5544468206915215
+  },
+  {
+    "example_id": "qg_1091--8/8_3215147.txt#0_2",
+    "sequence_length": 36,
+    "mean_nll": 0.46077403882191625,
+    "std_nll": 0.803549260939483
+  },
+  {
+    "example_id": "wh_1864--103/103_769441.txt#0_0",
+    "sequence_length": 15,
+    "mean_nll": 0.47828127144506044,
+    "std_nll": 0.6403763720209128
+  },
+  {
+    "example_id": "sfq_3826--197/197_1325980.txt#0_0",
+    "sequence_length": 53,
+    "mean_nll": 1.0431654810223647,
+    "std_nll": 1.3159342602033168
+  },
+  {
+    "example_id": "qb_1253--27/27_299742.txt#0_0",
+    "sequence_length": 25,
+    "mean_nll": 0.6965336262336018,
+    "std_nll": 1.310881580789661
+  },
+  {
+    "example_id": "dpql_3121--176/176_546993.txt#0_1",
+    "sequence_length": 26,
+    "mean_nll": 0.3423479955795301,
+    "std_nll": 0.9058956797923406
+  },
+  {
+    "example_id": "bb_7851--165/165_1006156.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.6715735409533531,
+    "std_nll": 1.1117009798433528
+  },
+  {
+    "example_id": "qw_5335--185/185_1151387.txt#0_1",
+    "sequence_length": 28,
+    "mean_nll": 0.15206656106929017,
+    "std_nll": 0.334775398887106
+  },
+  {
+    "example_id": "odql_13192--6/6_701893.txt#0_1",
+    "sequence_length": 40,
+    "mean_nll": 0.2853874903972766,
+    "std_nll": 0.4778937882293111
+  },
+  {
+    "example_id": "sfq_20420--125/125_1922602.txt#0_1",
+    "sequence_length": 22,
+    "mean_nll": 0.42700277727660496,
+    "std_nll": 1.1752977379771856
+  },
+  {
+    "example_id": "bb_9374--54/54_2690886.txt#0_2",
+    "sequence_length": 23,
+    "mean_nll": 0.6885987281601037,
+    "std_nll": 0.7849567592903763
+  },
+  {
+    "example_id": "odql_11679--16/16_33164.txt#0_0",
+    "sequence_length": 40,
+    "mean_nll": 0.5428276413202013,
+    "std_nll": 1.0308680910333348
+  },
+  {
+    "example_id": "odql_11538--73/73_1736878.txt#0_0",
+    "sequence_length": 29,
+    "mean_nll": 0.5799792578960588,
+    "std_nll": 1.1475270455989965
+  },
+  {
+    "example_id": "qw_8762--197/197_3207893.txt#0_1",
+    "sequence_length": 17,
+    "mean_nll": 0.2244791054009805,
+    "std_nll": 0.43949472369269704
+  },
+  {
+    "example_id": "bb_439--197/197_197490.txt#0_0",
+    "sequence_length": 29,
+    "mean_nll": 0.1076345941400244,
+    "std_nll": 0.32674003300777993
+  },
+  {
+    "example_id": "bb_7724--184/184_1002731.txt#0_0",
+    "sequence_length": 57,
+    "mean_nll": 0.7295036823709663,
+    "std_nll": 1.0237140434415177
+  },
+  {
+    "example_id": "qw_439--187/187_1058077.txt#0_2",
+    "sequence_length": 50,
+    "mean_nll": 1.0068814299572568,
+    "std_nll": 1.277813828330888
+  },
+  {
+    "example_id": "qw_9384--195/195_1224988.txt#0_1",
+    "sequence_length": 17,
+    "mean_nll": 0.3107189820734006,
+    "std_nll": 0.642339834816537
+  },
+  {
+    "example_id": "sfq_21423--144/144_2788272.txt#0_0",
+    "sequence_length": 47,
+    "mean_nll": 0.6411622475230867,
+    "std_nll": 1.0069839714979054
+  },
+  {
+    "example_id": "sfq_25451--37/37_2031222.txt#0_1",
+    "sequence_length": 20,
+    "mean_nll": 0.8619523982328247,
+    "std_nll": 1.1941855340001142
+  },
+  {
+    "example_id": "qf_545--48/48_2849118.txt#0_1",
+    "sequence_length": 43,
+    "mean_nll": 0.4483124926979054,
+    "std_nll": 0.6322018662631996
+  },
+  {
+    "example_id": "sfq_668--20/20_1363097.txt#0_1",
+    "sequence_length": 27,
+    "mean_nll": 0.3977372725388751,
+    "std_nll": 0.5664578821265481
+  },
+  {
+    "example_id": "qw_8999--56/56_1218189.txt#0_2",
+    "sequence_length": 33,
+    "mean_nll": 0.9001822940807126,
+    "std_nll": 1.297857131980885
+  },
+  {
+    "example_id": "sfq_1377--91/91_1497797.txt#0_1",
+    "sequence_length": 29,
+    "mean_nll": 0.5183166503570803,
+    "std_nll": 1.093587381861476
+  },
+  {
+    "example_id": "wh_4269--173/173_235742.txt#0_0",
+    "sequence_length": 11,
+    "mean_nll": 0.20551738743845568,
+    "std_nll": 0.5050429951796671
+  },
+  {
+    "example_id": "sfq_15401--88/88_1813633.txt#0_1",
+    "sequence_length": 28,
+    "mean_nll": 0.6603461707322508,
+    "std_nll": 1.4915028289066643
+  },
+  {
+    "example_id": "sfq_3917--169/169_1555303.txt#0_0",
+    "sequence_length": 19,
+    "mean_nll": 0.431636511755474,
+    "std_nll": 0.5598603196808236
+  },
+  {
+    "example_id": "wh_2414--73/73_48566.txt#0_0",
+    "sequence_length": 4,
+    "mean_nll": 0.9886891022324562,
+    "std_nll": 0.7789809686434969
+  },
+  {
+    "example_id": "sfq_11783--191/191_1732943.txt#0_1",
+    "sequence_length": 44,
+    "mean_nll": 0.2964593687213642,
+    "std_nll": 0.4147053260388777
+  },
+  {
+    "example_id": "qg_2887--Lacrosse.txt#0_0",
+    "sequence_length": 32,
+    "mean_nll": 0.6782320301317417,
+    "std_nll": 1.3440285611220724
+  },
+  {
+    "example_id": "sfq_16267--E._L._James.txt#0_2",
+    "sequence_length": 22,
+    "mean_nll": 0.7949482086443657,
+    "std_nll": 1.118555617452073
+  },
+  {
+    "example_id": "jp_2940--195/195_1424532.txt#0_1",
+    "sequence_length": 24,
+    "mean_nll": 0.8875678286022719,
+    "std_nll": 1.2436806814894006
+  },
+  {
+    "example_id": "qb_5499--156/156_419027.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.45348928503514424,
+    "std_nll": 0.8083856575477116
+  },
+  {
+    "example_id": "sfq_9644--123/123_186355.txt#0_2",
+    "sequence_length": 14,
+    "mean_nll": 0.7478832581850108,
+    "std_nll": 1.0814031282136742
+  },
+  {
+    "example_id": "qb_637--10/10_282457.txt#0_0",
+    "sequence_length": 11,
+    "mean_nll": 0.5687975112245609,
+    "std_nll": 0.7425591552594613
+  },
+  {
+    "example_id": "qw_11443--84/84_2975478.txt#0_0",
+    "sequence_length": 37,
+    "mean_nll": 0.5884398962520642,
+    "std_nll": 0.8318260153089375
+  },
+  {
+    "example_id": "jp_742--32/32_1368333.txt#0_2",
+    "sequence_length": 4,
+    "mean_nll": 2.553237944841385,
+    "std_nll": 1.8171347580047537
+  },
+  {
+    "example_id": "wh_3212--72/72_800524.txt#0_2",
+    "sequence_length": 28,
+    "mean_nll": 0.316854145345498,
+    "std_nll": 0.6073174934239502
+  },
+  {
+    "example_id": "qb_1502--134/134_2618044.txt#0_0",
+    "sequence_length": 16,
+    "mean_nll": 0.202683938531095,
+    "std_nll": 0.49574977051113955
+  },
+  {
+    "example_id": "qb_2774--81/81_303935.txt#0_0",
+    "sequence_length": 18,
+    "mean_nll": 0.5599886147711004,
+    "std_nll": 1.1061668717201323
+  },
+  {
+    "example_id": "bb_1997--80/80_876537.txt#0_1",
+    "sequence_length": 24,
+    "mean_nll": 0.6818263330402866,
+    "std_nll": 0.6945722280602228
+  },
+  {
+    "example_id": "bt_1811--193/193_2452704.txt#0_1",
+    "sequence_length": 20,
+    "mean_nll": 0.49704759572159674,
+    "std_nll": 0.7704642978497901
+  },
+  {
+    "example_id": "sfq_5662--54/54_415167.txt#0_2",
+    "sequence_length": 51,
+    "mean_nll": 0.5065721016683077,
+    "std_nll": 0.6318275661384065
+  },
+  {
+    "example_id": "odql_4122--97/97_2155160.txt#0_1",
+    "sequence_length": 37,
+    "mean_nll": 0.45544320515292946,
+    "std_nll": 0.7479240812439816
+  },
+  {
+    "example_id": "sfq_16378--17/17_461209.txt#0_0",
+    "sequence_length": 25,
+    "mean_nll": 1.0152120729442686,
+    "std_nll": 1.5939767755430077
+  },
+  {
+    "example_id": "qz_4241--129/129_203139.txt#0_0",
+    "sequence_length": 26,
+    "mean_nll": 0.2009375175115425,
+    "std_nll": 0.3688442070345735
+  },
+  {
+    "example_id": "sfq_9677--35/35_1731921.txt#0_0",
+    "sequence_length": 21,
+    "mean_nll": 0.6564685746368952,
+    "std_nll": 1.6690168953036149
+  },
+  {
+    "example_id": "sfq_11145--8/8_2764204.txt#0_0",
+    "sequence_length": 15,
+    "mean_nll": 0.23753317017494738,
+    "std_nll": 0.5433431909001711
+  },
+  {
+    "example_id": "sfq_13406--148/148_983957.txt#0_0",
+    "sequence_length": 33,
+    "mean_nll": 0.5386705171352978,
+    "std_nll": 1.1410282111036305
+  },
+  {
+    "example_id": "sfq_2528--156/156_1523996.txt#0_1",
+    "sequence_length": 11,
+    "mean_nll": 0.1061512156981156,
+    "std_nll": 0.2229961802709289
+  },
+  {
+    "example_id": "qf_2575--20/20_3214656.txt#0_0",
+    "sequence_length": 46,
+    "mean_nll": 0.5443671673038392,
+    "std_nll": 1.2783956191040071
+  },
+  {
+    "example_id": "qf_478--194/194_393733.txt#0_1",
+    "sequence_length": 100,
+    "mean_nll": 0.3028845758979972,
+    "std_nll": 0.8895028611623648
+  },
+  {
+    "example_id": "qf_3745--59/59_2512300.txt#0_2",
+    "sequence_length": 12,
+    "mean_nll": 0.3532599137039725,
+    "std_nll": 0.9773255744826453
+  },
+  {
+    "example_id": "qf_1492--14/14_2475412.txt#0_0",
+    "sequence_length": 18,
+    "mean_nll": 0.22431766870863612,
+    "std_nll": 0.46027462816011855
+  },
+  {
+    "example_id": "jp_1391--61/61_1385217.txt#0_1",
+    "sequence_length": 52,
+    "mean_nll": 0.6765630200393312,
+    "std_nll": 1.1276745736034202
+  },
+  {
+    "example_id": "qz_2787--60/60_167773.txt#0_2",
+    "sequence_length": 14,
+    "mean_nll": 0.17790185605586625,
+    "std_nll": 0.23881893899592194
+  },
+  {
+    "example_id": "qw_9299--131/131_1223632.txt#0_1",
+    "sequence_length": 19,
+    "mean_nll": 0.6451504572875197,
+    "std_nll": 0.7809171388047451
+  },
+  {
+    "example_id": "bb_6957--37/37_265768.txt#0_0",
+    "sequence_length": 11,
+    "mean_nll": 0.11777112780096517,
+    "std_nll": 0.2784535453665934
+  },
+  {
+    "example_id": "bt_1811--193/193_2452704.txt#0_2",
+    "sequence_length": 18,
+    "mean_nll": 0.7499513641313469,
+    "std_nll": 0.6963687936431086
+  },
+  {
+    "example_id": "qg_3088--142/142_2565750.txt#0_1",
+    "sequence_length": 61,
+    "mean_nll": 0.7000413772087191,
+    "std_nll": 1.2531731412690392
+  },
+  {
+    "example_id": "tc_3129--45/45_95047.txt#0_1",
+    "sequence_length": 10,
+    "mean_nll": 0.1331957279280914,
+    "std_nll": 0.27393751528031424
+  },
+  {
+    "example_id": "qb_9469--195/195_527460.txt#0_2",
+    "sequence_length": 18,
+    "mean_nll": 1.0368071660973834,
+    "std_nll": 1.7691756980928621
+  },
+  {
+    "example_id": "jp_1414--178/178_269111.txt#0_1",
+    "sequence_length": 22,
+    "mean_nll": 0.9674648747973978,
+    "std_nll": 1.6431942298983466
+  },
+  {
+    "example_id": "qb_8182--60/60_558286.txt#0_0",
+    "sequence_length": 58,
+    "mean_nll": 0.8822119676240281,
+    "std_nll": 1.2981544360023523
+  },
+  {
+    "example_id": "qw_5549--67/67_1155062.txt#0_1",
+    "sequence_length": 15,
+    "mean_nll": 0.3710154453989162,
+    "std_nll": 1.008087401248771
+  },
+  {
+    "example_id": "qw_1265--47/47_2693885.txt#0_1",
+    "sequence_length": 41,
+    "mean_nll": 0.45579701267404316,
+    "std_nll": 0.8101121879654647
+  },
+  {
+    "example_id": "dpql_3600--123/123_649287.txt#0_1",
+    "sequence_length": 49,
+    "mean_nll": 0.902746351442901,
+    "std_nll": 1.3633117279033682
+  },
+  {
+    "example_id": "qz_5877--148/148_240409.txt#0_2",
+    "sequence_length": 33,
+    "mean_nll": 0.6036523306666326,
+    "std_nll": 0.8041868506298314
+  },
+  {
+    "example_id": "qw_15440--126/126_2983047.txt#0_0",
+    "sequence_length": 40,
+    "mean_nll": 0.47385217437688426,
+    "std_nll": 0.7898226668494783
+  },
+  {
+    "example_id": "qf_3129--69/69_2501904.txt#0_0",
+    "sequence_length": 18,
+    "mean_nll": 0.3242746431254962,
+    "std_nll": 0.6001359061768428
+  },
+  {
+    "example_id": "bt_615--93/93_253274.txt#0_1",
+    "sequence_length": 32,
+    "mean_nll": 1.1409490551204726,
+    "std_nll": 1.4344418739893063
+  },
+  {
+    "example_id": "qb_7241--59/59_280648.txt#0_2",
+    "sequence_length": 32,
+    "mean_nll": 0.7492680148988846,
+    "std_nll": 1.215549566527095
+  },
+  {
+    "example_id": "sfq_18907--144/144_1890291.txt#0_2",
+    "sequence_length": 26,
+    "mean_nll": 0.291442883211477,
+    "std_nll": 0.5554557553272529
+  },
+  {
+    "example_id": "bt_1509--135/135_2390355.txt#0_0",
+    "sequence_length": 66,
+    "mean_nll": 0.8996868321737875,
+    "std_nll": 1.5646096108705516
+  },
+  {
+    "example_id": "bt_2235--118/118_319041.txt#0_0",
+    "sequence_length": 42,
+    "mean_nll": 0.8918382382865578,
+    "std_nll": 1.1830845547010964
+  },
+  {
+    "example_id": "qg_2063--191/191_3215408.txt#0_0",
+    "sequence_length": 26,
+    "mean_nll": 0.3667417504198144,
+    "std_nll": 0.5731571447655815
+  },
+  {
+    "example_id": "jp_3026--138/138_366909.txt#0_2",
+    "sequence_length": 26,
+    "mean_nll": 0.6422607053441249,
+    "std_nll": 1.1867492919727471
+  },
+  {
+    "example_id": "bb_200--50/50_834132.txt#0_2",
+    "sequence_length": 23,
+    "mean_nll": 0.528977476900766,
+    "std_nll": 0.9859549544230899
+  },
+  {
+    "example_id": "sfq_2820--42/42_1531177.txt#0_1",
+    "sequence_length": 32,
+    "mean_nll": 0.6703237948579144,
+    "std_nll": 1.7009324833609871
+  },
+  {
+    "example_id": "odql_7759--63/63_1347430.txt#0_0",
+    "sequence_length": 23,
+    "mean_nll": 0.6833167646599003,
+    "std_nll": 1.1931978576547426
+  },
+  {
+    "example_id": "qw_2021--84/84_31075.txt#0_1",
+    "sequence_length": 17,
+    "mean_nll": 0.34386704460559264,
+    "std_nll": 0.5819022854726017
+  },
+  {
+    "example_id": "qf_1103--13/13_2468995.txt#0_2",
+    "sequence_length": 9,
+    "mean_nll": 0.3865731648272938,
+    "std_nll": 0.5818458174573932
+  },
+  {
+    "example_id": "qw_7276--142/142_1187158.txt#0_1",
+    "sequence_length": 26,
+    "mean_nll": 0.9382166868633178,
+    "std_nll": 1.844476668551179
+  },
+  {
+    "example_id": "wh_1706--59/59_2662426.txt#0_0",
+    "sequence_length": 71,
+    "mean_nll": 0.6303414802955974,
+    "std_nll": 0.9785415719576565
+  },
+  {
+    "example_id": "qb_5952--33/33_419470.txt#0_1",
+    "sequence_length": 27,
+    "mean_nll": 0.5859485846329217,
+    "std_nll": 1.102917372944796
+  },
+  {
+    "example_id": "sfq_4557--72/72_1569959.txt#0_0",
+    "sequence_length": 17,
+    "mean_nll": 0.3083512082071673,
+    "std_nll": 0.571808911289992
+  },
+  {
+    "example_id": "sfq_26163--17/17_422703.txt#0_0",
+    "sequence_length": 29,
+    "mean_nll": 0.9112074869342097,
+    "std_nll": 1.1626994292949946
+  },
+  {
+    "example_id": "sfq_5913--103/103_1600716.txt#0_1",
+    "sequence_length": 43,
+    "mean_nll": 0.8387272664628896,
+    "std_nll": 1.0739832813403392
+  },
+  {
+    "example_id": "odql_1809--193/193_609132.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.4803484983668358,
+    "std_nll": 0.636557798396417
+  },
+  {
+    "example_id": "sfq_22957--6/6_1623582.txt#0_1",
+    "sequence_length": 33,
+    "mean_nll": 0.627265227310427,
+    "std_nll": 1.0368476227869894
+  },
+  {
+    "example_id": "bt_1031--61/61_537330.txt#0_0",
+    "sequence_length": 21,
+    "mean_nll": 0.32615806286308463,
+    "std_nll": 0.47321353488165563
+  },
+  {
+    "example_id": "odql_8256--23/23_225768.txt#0_0",
+    "sequence_length": 37,
+    "mean_nll": 0.4798802679330619,
+    "std_nll": 0.9724103311003965
+  },
+  {
+    "example_id": "jp_1299--110/110_771432.txt#0_1",
+    "sequence_length": 20,
+    "mean_nll": 0.45338120752057876,
+    "std_nll": 0.8860849792717599
+  },
+  {
+    "example_id": "qf_2195--13/13_325145.txt#0_2",
+    "sequence_length": 3,
+    "mean_nll": 1.7672821669111727,
+    "std_nll": 1.2504100719302842
+  },
+  {
+    "example_id": "jp_1022--144/144_7564.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.456069286117922,
+    "std_nll": 0.8165150506160466
+  },
+  {
+    "example_id": "sfq_24400--153/153_1526690.txt#0_0",
+    "sequence_length": 25,
+    "mean_nll": 1.6467727695405483,
+    "std_nll": 1.6076859404177424
+  },
+  {
+    "example_id": "odql_9310--183/183_763371.txt#0_0",
+    "sequence_length": 51,
+    "mean_nll": 0.5598872983644371,
+    "std_nll": 0.8066985770651947
+  },
+  {
+    "example_id": "dpql_3467--85/85_645957.txt#0_1",
+    "sequence_length": 24,
+    "mean_nll": 0.43234664643488446,
+    "std_nll": 0.6941266651998556
+  },
+  {
+    "example_id": "tb_1113--48/48_567125.txt#0_1",
+    "sequence_length": 37,
+    "mean_nll": 0.6667661576013717,
+    "std_nll": 1.0414283102136868
+  },
+  {
+    "example_id": "sfq_18732--23/23_1886509.txt#0_0",
+    "sequence_length": 19,
+    "mean_nll": 0.12129122461171069,
+    "std_nll": 0.34852898902174023
+  },
+  {
+    "example_id": "bb_5507--150/150_954054.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.7730101327528716,
+    "std_nll": 1.4165212034389372
+  },
+  {
+    "example_id": "odql_12482--151/151_684649.txt#0_2",
+    "sequence_length": 69,
+    "mean_nll": 0.6382069992303647,
+    "std_nll": 0.7751844061325468
+  },
+  {
+    "example_id": "qb_7146--4/4_464898.txt#0_0",
+    "sequence_length": 20,
+    "mean_nll": 0.18595139470347136,
+    "std_nll": 0.3758343725649057
+  },
+  {
+    "example_id": "qb_8955--114/114_513485.txt#0_0",
+    "sequence_length": 17,
+    "mean_nll": 0.0967393146478678,
+    "std_nll": 0.1398020688462887
+  },
+  {
+    "example_id": "jp_1630--10/10_1391268.txt#0_1",
+    "sequence_length": 39,
+    "mean_nll": 1.2110355994765227,
+    "std_nll": 2.116509553033587
+  },
+  {
+    "example_id": "bb_5116--124/124_2680471.txt#0_0",
+    "sequence_length": 30,
+    "mean_nll": 0.6931837485170111,
+    "std_nll": 0.8826140616139894
+  },
+  {
+    "example_id": "odql_7016--55/55_1322268.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.06005374797424478,
+    "std_nll": 0.1317140224644222
+  },
+  {
+    "example_id": "bb_3301--62/62_294292.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.6347624634968416,
+    "std_nll": 0.808146210370864
+  },
+  {
+    "example_id": "sfq_22949--160/160_1977438.txt#0_1",
+    "sequence_length": 48,
+    "mean_nll": 0.93760910672168,
+    "std_nll": 1.2306589196574547
+  },
+  {
+    "example_id": "qz_1958--123/123_146775.txt#0_1",
+    "sequence_length": 9,
+    "mean_nll": 1.37726601475798,
+    "std_nll": 1.887754486535618
+  },
+  {
+    "example_id": "dpql_2287--128/128_614230.txt#0_0",
+    "sequence_length": 29,
+    "mean_nll": 0.578250618132862,
+    "std_nll": 0.6518773873911242
+  },
+  {
+    "example_id": "odql_4611--0/0_1366344.txt#0_0",
+    "sequence_length": 68,
+    "mean_nll": 0.7268980213909209,
+    "std_nll": 1.0330423787704555
+  },
+  {
+    "example_id": "jp_3304--119/119_1433184.txt#0_0",
+    "sequence_length": 12,
+    "mean_nll": 0.19428644767655534,
+    "std_nll": 0.457064264329795
+  },
+  {
+    "example_id": "odql_6502--195/195_349954.txt#0_0",
+    "sequence_length": 30,
+    "mean_nll": 0.7305737201480534,
+    "std_nll": 0.9235779754578771
+  },
+  {
+    "example_id": "jp_2490--7/7_1413067.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.8997154310385027,
+    "std_nll": 1.355049641269876
+  },
+  {
+    "example_id": "qw_5145--123/123_1138870.txt#0_1",
+    "sequence_length": 22,
+    "mean_nll": 0.4340424606871135,
+    "std_nll": 0.8062637552878115
+  },
+  {
+    "example_id": "bb_3805--121/121_2943039.txt#0_2",
+    "sequence_length": 9,
+    "mean_nll": 1.1908009024842714,
+    "std_nll": 1.8137402256063782
+  },
+  {
+    "example_id": "tc_1968--49/49_57917.txt#0_2",
+    "sequence_length": 22,
+    "mean_nll": 0.3278941909995035,
+    "std_nll": 0.4617751862626965
+  },
+  {
+    "example_id": "bb_1080--112/112_854470.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.6197647461806318,
+    "std_nll": 0.9373674528217761
+  },
+  {
+    "example_id": "qw_597--13/13_1061577.txt#0_2",
+    "sequence_length": 38,
+    "mean_nll": 0.6323392913107778,
+    "std_nll": 1.3526795867613424
+  },
+  {
+    "example_id": "qb_2850--83/83_346130.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.6988124880143118,
+    "std_nll": 1.1505941527181283
+  },
+  {
+    "example_id": "qw_4081--32/32_1128800.txt#0_0",
+    "sequence_length": 35,
+    "mean_nll": 0.29115552708446524,
+    "std_nll": 0.5599165021580186
+  },
+  {
+    "example_id": "bt_2066--111/111_2841537.txt#0_2",
+    "sequence_length": 27,
+    "mean_nll": 0.30447431173562717,
+    "std_nll": 1.1452634979650738
+  },
+  {
+    "example_id": "qz_5143--23/23_1663094.txt#0_1",
+    "sequence_length": 9,
+    "mean_nll": 0.19198787505774817,
+    "std_nll": 0.31570080838809805
+  },
+  {
+    "example_id": "bb_3732--157/157_915760.txt#0_0",
+    "sequence_length": 15,
+    "mean_nll": 0.6282872031032942,
+    "std_nll": 1.165833375817811
+  },
+  {
+    "example_id": "qg_2413--135/135_2861641.txt#0_1",
+    "sequence_length": 37,
+    "mean_nll": 0.18097040880143297,
+    "std_nll": 0.5464184052890299
+  },
+  {
+    "example_id": "wh_2204--68/68_777602.txt#0_0",
+    "sequence_length": 68,
+    "mean_nll": 0.48387933828970586,
+    "std_nll": 0.7641467580597816
+  },
+  {
+    "example_id": "sfq_10516--89/89_1704034.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.542123105453253,
+    "std_nll": 1.0443347256238424
+  },
+  {
+    "example_id": "dpql_3579--194/194_311741.txt#0_1",
+    "sequence_length": 26,
+    "mean_nll": 0.6739412971973462,
+    "std_nll": 1.0384733077736057
+  },
+  {
+    "example_id": "dpql_5497--118/118_700447.txt#0_0",
+    "sequence_length": 29,
+    "mean_nll": 0.9183762483767952,
+    "std_nll": 1.388811230029178
+  },
+  {
+    "example_id": "sfq_8507--177/177_73240.txt#0_0",
+    "sequence_length": 59,
+    "mean_nll": 0.7577314188515782,
+    "std_nll": 0.8364237627160895
+  },
+  {
+    "example_id": "qg_4076--107/107_3215880.txt#0_2",
+    "sequence_length": 38,
+    "mean_nll": 0.4698389196158754,
+    "std_nll": 0.8713206265001245
+  },
+  {
+    "example_id": "qb_8140--128/128_491508.txt#0_1",
+    "sequence_length": 26,
+    "mean_nll": 0.6296832617949454,
+    "std_nll": 1.2355270292035143
+  },
+  {
+    "example_id": "odql_4941--169/169_781368.txt#0_2",
+    "sequence_length": 33,
+    "mean_nll": 0.430673446406996,
+    "std_nll": 1.1632890008550167
+  },
+  {
+    "example_id": "qf_1776--73/73_1938527.txt#0_2",
+    "sequence_length": 19,
+    "mean_nll": 0.6868200779043898,
+    "std_nll": 0.9640940755608985
+  },
+  {
+    "example_id": "sfq_19473--126/126_273221.txt#0_0",
+    "sequence_length": 24,
+    "mean_nll": 0.17181334426212658,
+    "std_nll": 0.565014914736176
+  },
+  {
+    "example_id": "qb_8937--45/45_513006.txt#0_0",
+    "sequence_length": 45,
+    "mean_nll": 0.5174030145888335,
+    "std_nll": 0.8529966423316869
+  },
+  {
+    "example_id": "dpql_3949--142/142_1672963.txt#0_1",
+    "sequence_length": 25,
+    "mean_nll": 0.25577811462920946,
+    "std_nll": 0.8121332418092077
+  },
+  {
+    "example_id": "qw_2956--145/145_1107670.txt#0_1",
+    "sequence_length": 3,
+    "mean_nll": 0.0514337071023571,
+    "std_nll": 0.06682409211241044
+  },
+  {
+    "example_id": "tc_2506--24/24_75775.txt#0_0",
+    "sequence_length": 12,
+    "mean_nll": 0.03664736090521122,
+    "std_nll": 0.0615854243612077
+  },
+  {
+    "example_id": "sfq_22883--94/94_491081.txt#0_2",
+    "sequence_length": 19,
+    "mean_nll": 0.1883834386114903,
+    "std_nll": 0.5181326084671247
+  },
+  {
+    "example_id": "dpql_5156--28/28_691416.txt#0_2",
+    "sequence_length": 9,
+    "mean_nll": 0.17350709186391416,
+    "std_nll": 0.19253076893252882
+  },
+  {
+    "example_id": "wh_1415--64/64_759730.txt#0_0",
+    "sequence_length": 30,
+    "mean_nll": 0.38200405941263754,
+    "std_nll": 0.7507597078684486
+  },
+  {
+    "example_id": "wh_2443--99/99_783232.txt#0_2",
+    "sequence_length": 13,
+    "mean_nll": 0.3176908924338285,
+    "std_nll": 0.5269865947312427
+  },
+  {
+    "example_id": "qf_1367--129/129_1561991.txt#0_0",
+    "sequence_length": 4,
+    "mean_nll": 2.6902016699314117,
+    "std_nll": 2.467046790831074
+  },
+  {
+    "example_id": "qb_7238--11/11_75755.txt#0_0",
+    "sequence_length": 45,
+    "mean_nll": 0.7275269705114978,
+    "std_nll": 1.0391193029654362
+  },
+  {
+    "example_id": "sfq_18399--42/42_156375.txt#0_0",
+    "sequence_length": 28,
+    "mean_nll": 0.5156680983462493,
+    "std_nll": 0.7347832430564479
+  },
+  {
+    "example_id": "qw_8714--28/28_287982.txt#0_0",
+    "sequence_length": 29,
+    "mean_nll": 0.4193154329461228,
+    "std_nll": 0.7486118508541777
+  },
+  {
+    "example_id": "qb_3427--81/81_362513.txt#0_3",
+    "sequence_length": 62,
+    "mean_nll": 0.8050333003068609,
+    "std_nll": 1.3733625794198947
+  },
+  {
+    "example_id": "bt_2892--150/150_2107251.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.19685951734889456,
+    "std_nll": 0.3807795442903461
+  },
+  {
+    "example_id": "qf_1386--60/60_3214498.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.2671853927077756,
+    "std_nll": 0.5416640851286804
+  },
+  {
+    "example_id": "wh_1046--61/61_640960.txt#0_0",
+    "sequence_length": 26,
+    "mean_nll": 0.19859994467279746,
+    "std_nll": 0.5674558018723836
+  },
+  {
+    "example_id": "qb_9573--143/143_499089.txt#0_0",
+    "sequence_length": 17,
+    "mean_nll": 0.48569111853130914,
+    "std_nll": 1.076647173765901
+  },
+  {
+    "example_id": "sfq_901--24/24_504588.txt#0_1",
+    "sequence_length": 3,
+    "mean_nll": 0.23295527529019702,
+    "std_nll": 0.32937754054062507
+  },
+  {
+    "example_id": "bb_9204--170/170_1040261.txt#0_2",
+    "sequence_length": 36,
+    "mean_nll": 0.6878833873909045,
+    "std_nll": 0.9614193515337472
+  },
+  {
+    "example_id": "tc_1250--67/67_36879.txt#0_0",
+    "sequence_length": 15,
+    "mean_nll": 0.7485232543534343,
+    "std_nll": 1.2685808371686722
+  },
+  {
+    "example_id": "sfq_16328--35/35_1834766.txt#0_0",
+    "sequence_length": 55,
+    "mean_nll": 0.5151876954686755,
+    "std_nll": 1.0160356666550674
+  },
+  {
+    "example_id": "qz_3456--13/13_2880285.txt#0_1",
+    "sequence_length": 19,
+    "mean_nll": 0.1455764862500565,
+    "std_nll": 0.2848614206254957
+  },
+  {
+    "example_id": "bb_1194--11/11_846390.txt#0_1",
+    "sequence_length": 19,
+    "mean_nll": 0.3159143262498913,
+    "std_nll": 0.8593431046644969
+  },
+  {
+    "example_id": "sfq_24600--154/154_2012736.txt#0_1",
+    "sequence_length": 17,
+    "mean_nll": 0.45808101558775527,
+    "std_nll": 1.341713569624432
+  },
+  {
+    "example_id": "qg_2790--167/167_3215631.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.04415568892928208,
+    "std_nll": 0.2060684751872197
+  },
+  {
+    "example_id": "qw_1239--16/16_1074565.txt#0_2",
+    "sequence_length": 23,
+    "mean_nll": 0.4386434028882061,
+    "std_nll": 0.8401895827644811
+  },
+  {
+    "example_id": "qw_11125--81/81_1257240.txt#0_1",
+    "sequence_length": 28,
+    "mean_nll": 0.34820512752075367,
+    "std_nll": 1.0185116951703408
+  },
+  {
+    "example_id": "sfq_11236--88/88_1721040.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.45177692459590335,
+    "std_nll": 1.0379257859040003
+  },
+  {
+    "example_id": "qw_12653--136/136_1283549.txt#0_1",
+    "sequence_length": 14,
+    "mean_nll": 0.740875676738921,
+    "std_nll": 1.2189477705264706
+  },
+  {
+    "example_id": "qb_8836--4/4_176289.txt#0_1",
+    "sequence_length": 15,
+    "mean_nll": 1.5748031568698935,
+    "std_nll": 2.035477463006066
+  },
+  {
+    "example_id": "sfq_16447--2/2_201163.txt#0_1",
+    "sequence_length": 48,
+    "mean_nll": 0.4724563563738246,
+    "std_nll": 0.7341107733742996
+  },
+  {
+    "example_id": "sfq_14271--117/117_152714.txt#0_1",
+    "sequence_length": 33,
+    "mean_nll": 0.7276767593230031,
+    "std_nll": 1.2568225953429624
+  },
+  {
+    "example_id": "qz_2423--179/179_157731.txt#0_0",
+    "sequence_length": 61,
+    "mean_nll": 0.7016911029457884,
+    "std_nll": 1.1160031523053466
+  },
+  {
+    "example_id": "qb_482--134/134_278266.txt#0_0",
+    "sequence_length": 21,
+    "mean_nll": 0.5641854473474025,
+    "std_nll": 0.8395646973795249
+  },
+  {
+    "example_id": "sfq_12025--58/58_1700414.txt#0_2",
+    "sequence_length": 26,
+    "mean_nll": 0.9923403127656146,
+    "std_nll": 1.226426360266001
+  },
+  {
+    "example_id": "qw_3080--104/104_1110125.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.3046485222466066,
+    "std_nll": 0.5338807344931746
+  },
+  {
+    "example_id": "bb_1614--48/48_867787.txt#0_1",
+    "sequence_length": 15,
+    "mean_nll": 0.6044777440845792,
+    "std_nll": 1.1739654780062463
+  },
+  {
+    "example_id": "qg_248--100/100_282206.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.587227789841653,
+    "std_nll": 1.272651703771602
+  },
+  {
+    "example_id": "odql_1018--140/140_2097132.txt#0_0",
+    "sequence_length": 20,
+    "mean_nll": 1.0763294685166325,
+    "std_nll": 1.4979372329429521
+  },
+  {
+    "example_id": "sfq_21930--191/191_1362130.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.19554435814788204,
+    "std_nll": 0.5092199042646722
+  },
+  {
+    "example_id": "tc_2250--43/43_67037.txt#0_0",
+    "sequence_length": 62,
+    "mean_nll": 0.4240449496052307,
+    "std_nll": 1.0278237923114142
+  },
+  {
+    "example_id": "sfq_2901--81/81_239948.txt#0_2",
+    "sequence_length": 34,
+    "mean_nll": 0.8963948604158498,
+    "std_nll": 1.1688243734947315
+  },
+  {
+    "example_id": "sfq_2300--133/133_1682374.txt#0_0",
+    "sequence_length": 12,
+    "mean_nll": 0.054028203630878124,
+    "std_nll": 0.09782670681558003
+  },
+  {
+    "example_id": "sfq_9920--21/21_331455.txt#0_0",
+    "sequence_length": 69,
+    "mean_nll": 0.5868768849273619,
+    "std_nll": 1.0243771588619432
+  },
+  {
+    "example_id": "qg_2116--1/1_3114498.txt#0_0",
+    "sequence_length": 6,
+    "mean_nll": 0.4424840034916997,
+    "std_nll": 0.5020068946705744
+  },
+  {
+    "example_id": "jp_3234--33/33_1767595.txt#0_0",
+    "sequence_length": 1,
+    "mean_nll": 2.875863552093506,
+    "std_nll": 0.0
+  },
+  {
+    "example_id": "wh_3117--141/141_2931217.txt#0_0",
+    "sequence_length": 17,
+    "mean_nll": 0.15732266829705607,
+    "std_nll": 0.3652279273605396
+  },
+  {
+    "example_id": "sfq_7345--158/158_612044.txt#0_2",
+    "sequence_length": 21,
+    "mean_nll": 0.5660025142535089,
+    "std_nll": 1.2450908473225955
+  },
+  {
+    "example_id": "odql_548--127/127_413228.txt#0_1",
+    "sequence_length": 16,
+    "mean_nll": 0.020825147953459577,
+    "std_nll": 0.026890848767494445
+  },
+  {
+    "example_id": "odql_206--73/73_813141.txt#0_1",
+    "sequence_length": 28,
+    "mean_nll": 0.8497481295860122,
+    "std_nll": 1.0808967778443834
+  },
+  {
+    "example_id": "sfq_5388--155/155_1723803.txt#0_0",
+    "sequence_length": 76,
+    "mean_nll": 0.8693380843534045,
+    "std_nll": 1.1934757082094616
+  },
+  {
+    "example_id": "bt_1833--26/26_2841025.txt#0_0",
+    "sequence_length": 62,
+    "mean_nll": 0.8618290002797481,
+    "std_nll": 1.3202972716600159
+  },
+  {
+    "example_id": "qz_6268--46/46_250126.txt#0_1",
+    "sequence_length": 20,
+    "mean_nll": 0.40189181200948954,
+    "std_nll": 0.6521867697399297
+  },
+  {
+    "example_id": "odql_5984--118/118_142159.txt#0_0",
+    "sequence_length": 28,
+    "mean_nll": 0.4942195776483394,
+    "std_nll": 0.900646218766057
+  },
+  {
+    "example_id": "sfq_3072--53/53_1526395.txt#0_2",
+    "sequence_length": 22,
+    "mean_nll": 0.3380321647585069,
+    "std_nll": 0.5967161702420725
+  },
+  {
+    "example_id": "qb_2271--145/145_2891786.txt#0_1",
+    "sequence_length": 15,
+    "mean_nll": 0.2522461521231662,
+    "std_nll": 0.47989497285741856
+  },
+  {
+    "example_id": "qw_3199--48/48_2960705.txt#0_2",
+    "sequence_length": 9,
+    "mean_nll": 0.24275250614543134,
+    "std_nll": 0.4953183284946803
+  },
+  {
+    "example_id": "sfq_13847--137/137_1778867.txt#0_1",
+    "sequence_length": 21,
+    "mean_nll": 0.4263659434882776,
+    "std_nll": 0.7590094299721368
+  },
+  {
+    "example_id": "sfq_1224--17/17_461209.txt#0_1",
+    "sequence_length": 17,
+    "mean_nll": 0.2332777840028053,
+    "std_nll": 0.5142220257714026
+  },
+  {
+    "example_id": "odql_9366--146/146_2252652.txt#0_0",
+    "sequence_length": 23,
+    "mean_nll": 0.5123158627067587,
+    "std_nll": 0.9115932346360122
+  },
+  {
+    "example_id": "bt_496--75/75_2370697.txt#0_2",
+    "sequence_length": 17,
+    "mean_nll": 0.2121976038811494,
+    "std_nll": 0.6401158815209823
+  },
+  {
+    "example_id": "odql_12424--70/70_2829432.txt#0_0",
+    "sequence_length": 35,
+    "mean_nll": 0.990544067204184,
+    "std_nll": 1.8425317790453775
+  },
+  {
+    "example_id": "qb_404--89/89_2634070.txt#0_2",
+    "sequence_length": 25,
+    "mean_nll": 0.5535212843087354,
+    "std_nll": 1.4774937796626357
+  },
+  {
+    "example_id": "bb_1626--74/74_774368.txt#0_0",
+    "sequence_length": 27,
+    "mean_nll": 0.6201893570240515,
+    "std_nll": 0.9826499587551707
+  },
+  {
+    "example_id": "odql_11066--48/48_1410700.txt#0_2",
+    "sequence_length": 16,
+    "mean_nll": 0.5337634025005382,
+    "std_nll": 1.0557743295047335
+  },
+  {
+    "example_id": "bb_320--142/142_2934494.txt#0_0",
+    "sequence_length": 17,
+    "mean_nll": 0.5252971865565361,
+    "std_nll": 1.2221978045839623
+  },
+  {
+    "example_id": "sfq_901--24/24_504588.txt#0_0",
+    "sequence_length": 15,
+    "mean_nll": 0.500999403847222,
+    "std_nll": 1.0121299100813994
+  },
+  {
+    "example_id": "dpql_376--165/165_2911834.txt#0_2",
+    "sequence_length": 17,
+    "mean_nll": 0.2692888224790638,
+    "std_nll": 0.5982430486354035
+  },
+  {
+    "example_id": "odql_8725--117/117_1962716.txt#0_0",
+    "sequence_length": 36,
+    "mean_nll": 0.7689255447934707,
+    "std_nll": 1.1390603450356012
+  },
+  {
+    "example_id": "dpql_2064--32/32_2647072.txt#0_0",
+    "sequence_length": 17,
+    "mean_nll": 0.3280642093004644,
+    "std_nll": 1.0245182635117547
+  },
+  {
+    "example_id": "bb_6913--109/109_984790.txt#0_0",
+    "sequence_length": 38,
+    "mean_nll": 0.28859883656111723,
+    "std_nll": 0.372981683069908
+  },
+  {
+    "example_id": "odql_13282--196/196_2145719.txt#0_2",
+    "sequence_length": 27,
+    "mean_nll": 0.611685371282428,
+    "std_nll": 1.12636589576573
+  },
+  {
+    "example_id": "qw_6502--97/97_1172999.txt#0_0",
+    "sequence_length": 8,
+    "mean_nll": 0.3730596744414356,
+    "std_nll": 0.553738715907396
+  },
+  {
+    "example_id": "wh_495--37/37_2926588.txt#0_1",
+    "sequence_length": 21,
+    "mean_nll": 0.31938933129557273,
+    "std_nll": 0.4309517370409701
+  },
+  {
+    "example_id": "jp_1058--65/65_66511.txt#0_2",
+    "sequence_length": 13,
+    "mean_nll": 0.7001005521293476,
+    "std_nll": 1.480143851722981
+  },
+  {
+    "example_id": "odql_2399--38/38_2808267.txt#0_0",
+    "sequence_length": 37,
+    "mean_nll": 0.2288493886884403,
+    "std_nll": 0.7305361666173589
+  },
+  {
+    "example_id": "qz_5580--182/182_233604.txt#0_1",
+    "sequence_length": 45,
+    "mean_nll": 0.6451853218582528,
+    "std_nll": 1.0291234674255452
+  },
+  {
+    "example_id": "odql_12354--Lord_Snooty.txt#0_1",
+    "sequence_length": 52,
+    "mean_nll": 1.0821001848365812,
+    "std_nll": 1.3789810183704476
+  },
+  {
+    "example_id": "qw_1849--186/186_2958618.txt#0_0",
+    "sequence_length": 32,
+    "mean_nll": 0.7452699529635538,
+    "std_nll": 0.7846362100737005
+  },
+  {
+    "example_id": "tb_83--165/165_2048554.txt#0_0",
+    "sequence_length": 48,
+    "mean_nll": 0.9067629843081305,
+    "std_nll": 1.1395475113881488
+  },
+  {
+    "example_id": "sfq_13030--New_York_Stadium.txt#0_0",
+    "sequence_length": 24,
+    "mean_nll": 0.7675793974049157,
+    "std_nll": 1.4879314491895095
+  },
+  {
+    "example_id": "qw_8760--191/191_551701.txt#0_1",
+    "sequence_length": 37,
+    "mean_nll": 0.1452064319713254,
+    "std_nll": 0.4631551978956155
+  },
+  {
+    "example_id": "sfq_9896--145/145_1575967.txt#0_1",
+    "sequence_length": 66,
+    "mean_nll": 0.8839304549894746,
+    "std_nll": 1.5909177936203678
+  },
+  {
+    "example_id": "sfq_9525--59/59_129915.txt#0_1",
+    "sequence_length": 21,
+    "mean_nll": 0.349634378496159,
+    "std_nll": 0.8010811028118399
+  },
+  {
+    "example_id": "odql_3814--123/123_2148942.txt#0_1",
+    "sequence_length": 29,
+    "mean_nll": 0.7799105838577213,
+    "std_nll": 0.892252557150072
+  },
+  {
+    "example_id": "qz_2223--157/157_12133.txt#0_0",
+    "sequence_length": 42,
+    "mean_nll": 0.8601551055660691,
+    "std_nll": 1.1508662668248495
+  },
+  {
+    "example_id": "qz_5877--148/148_240409.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.4905691540541568,
+    "std_nll": 0.7974015682239214
+  },
+  {
+    "example_id": "qw_11886--United_Nations_peacekeeping.txt#0_0",
+    "sequence_length": 14,
+    "mean_nll": 0.7805783484031313,
+    "std_nll": 0.8933655749768882
+  },
+  {
+    "example_id": "sfq_2928--187/187_1533599.txt#0_0",
+    "sequence_length": 15,
+    "mean_nll": 0.3993350164396058,
+    "std_nll": 0.808570915087162
+  },
+  {
+    "example_id": "odql_12631--117/117_2313442.txt#0_0",
+    "sequence_length": 33,
+    "mean_nll": 0.6310842381771729,
+    "std_nll": 0.8531281763044731
+  },
+  {
+    "example_id": "qf_3656--12/12_934124.txt#0_1",
+    "sequence_length": 32,
+    "mean_nll": 0.47089932674094115,
+    "std_nll": 0.9765897329635158
+  },
+  {
+    "example_id": "qf_3202--166/166_863009.txt#0_0",
+    "sequence_length": 9,
+    "mean_nll": 0.261056902151419,
+    "std_nll": 0.5428881664559052
+  },
+  {
+    "example_id": "sfq_893--144/144_1486574.txt#0_1",
+    "sequence_length": 29,
+    "mean_nll": 0.48300549039002516,
+    "std_nll": 0.5861057974924414
+  },
+  {
+    "example_id": "bb_7225--113/113_991549.txt#0_0",
+    "sequence_length": 14,
+    "mean_nll": 0.177081671354147,
+    "std_nll": 0.47824604410681937
+  },
+  {
+    "example_id": "qb_5053--95/95_407079.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.7082762088541366,
+    "std_nll": 1.2592901236398384
+  },
+  {
+    "example_id": "odql_12695--170/170_2314497.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.10740159405048735,
+    "std_nll": 0.2545136936905331
+  },
+  {
+    "example_id": "qg_2657--70/70_2513609.txt#0_0",
+    "sequence_length": 12,
+    "mean_nll": 0.360940122550043,
+    "std_nll": 0.5703607329235308
+  },
+  {
+    "example_id": "qg_3271--66/66_2533261.txt#0_0",
+    "sequence_length": 41,
+    "mean_nll": 0.3254575407321814,
+    "std_nll": 0.6681614203717351
+  },
+  {
+    "example_id": "qb_7619--126/126_478143.txt#0_0",
+    "sequence_length": 12,
+    "mean_nll": 0.1709166441914931,
+    "std_nll": 0.366715775198556
+  },
+  {
+    "example_id": "qb_84--151/151_266387.txt#0_0",
+    "sequence_length": 11,
+    "mean_nll": 0.07103161792867302,
+    "std_nll": 0.1298460137364033
+  },
+  {
+    "example_id": "dpql_4205--53/53_60605.txt#0_0",
+    "sequence_length": 25,
+    "mean_nll": 0.38956593452752714,
+    "std_nll": 0.5172947588037711
+  },
+  {
+    "example_id": "sfq_19313--55/55_1898648.txt#0_1",
+    "sequence_length": 21,
+    "mean_nll": 0.21922679096054967,
+    "std_nll": 0.4113446466907328
+  },
+  {
+    "example_id": "sfq_25425--97/97_2030678.txt#0_2",
+    "sequence_length": 65,
+    "mean_nll": 0.4705570122606734,
+    "std_nll": 0.8319761123396908
+  },
+  {
+    "example_id": "qb_9568--153/153_530377.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.4540405330678078,
+    "std_nll": 0.7154813415929384
+  },
+  {
+    "example_id": "tb_2199--49/49_2803159.txt#0_2",
+    "sequence_length": 14,
+    "mean_nll": 0.41750111613977686,
+    "std_nll": 0.6923056909388928
+  },
+  {
+    "example_id": "dpql_971--13/13_577956.txt#0_0",
+    "sequence_length": 25,
+    "mean_nll": 0.8217949652500193,
+    "std_nll": 1.1943778388774569
+  },
+  {
+    "example_id": "sfq_8322--184/184_1656059.txt#0_0",
+    "sequence_length": 20,
+    "mean_nll": 0.17022264012476568,
+    "std_nll": 0.43094172970121253
+  },
+  {
+    "example_id": "qb_388--149/149_18617.txt#0_2",
+    "sequence_length": 3,
+    "mean_nll": 0.06041134560655337,
+    "std_nll": 0.0838690124335849
+  },
+  {
+    "example_id": "qb_1227--60/60_298938.txt#0_0",
+    "sequence_length": 20,
+    "mean_nll": 0.5377157920727654,
+    "std_nll": 1.0850182947111207
+  },
+  {
+    "example_id": "qw_5900--159/159_1161564.txt#0_0",
+    "sequence_length": 12,
+    "mean_nll": 0.3332535516747157,
+    "std_nll": 0.46678150569377097
+  },
+  {
+    "example_id": "bb_1106--42/42_855085.txt#0_0",
+    "sequence_length": 20,
+    "mean_nll": 0.48735390764441033,
+    "std_nll": 1.2142765139656422
+  },
+  {
+    "example_id": "sfq_5173--26/26_1584174.txt#0_2",
+    "sequence_length": 33,
+    "mean_nll": 0.42595636009163057,
+    "std_nll": 0.9328109755135184
+  },
+  {
+    "example_id": "dpql_2287--128/128_614230.txt#0_1",
+    "sequence_length": 52,
+    "mean_nll": 0.8672345044480821,
+    "std_nll": 0.9931287867188194
+  },
+  {
+    "example_id": "qf_1987--51/51_2483683.txt#0_0",
+    "sequence_length": 18,
+    "mean_nll": 0.7394012150504763,
+    "std_nll": 1.0194105530235094
+  },
+  {
+    "example_id": "sfq_25263--68/68_2027371.txt#0_0",
+    "sequence_length": 15,
+    "mean_nll": 0.3572974001303616,
+    "std_nll": 0.7594948557502542
+  },
+  {
+    "example_id": "sfq_14642--115/115_2771986.txt#0_1",
+    "sequence_length": 19,
+    "mean_nll": 0.3646521775767006,
+    "std_nll": 0.7765013551916605
+  },
+  {
+    "example_id": "dpql_1122--112/112_553537.txt#0_3",
+    "sequence_length": 24,
+    "mean_nll": 0.29515522914088405,
+    "std_nll": 0.5430877082832498
+  },
+  {
+    "example_id": "dpql_2291--49/49_614335.txt#0_0",
+    "sequence_length": 16,
+    "mean_nll": 0.6485552558447623,
+    "std_nll": 1.0689619055521387
+  },
+  {
+    "example_id": "qw_15997--140/140_2983879.txt#0_1",
+    "sequence_length": 50,
+    "mean_nll": 0.5986085940052167,
+    "std_nll": 0.8629635987855871
+  },
+  {
+    "example_id": "odql_9298--52/52_868598.txt#0_0",
+    "sequence_length": 24,
+    "mean_nll": 0.9614288666549934,
+    "std_nll": 1.108944487260378
+  },
+  {
+    "example_id": "sfq_11961--3/3_2765982.txt#0_1",
+    "sequence_length": 40,
+    "mean_nll": 0.8568274560565101,
+    "std_nll": 1.585052019812016
+  },
+  {
+    "example_id": "sfq_1626--73/73_1503331.txt#0_1",
+    "sequence_length": 38,
+    "mean_nll": 0.6485475740532342,
+    "std_nll": 1.0164790815542264
+  },
+  {
+    "example_id": "odql_5527--13/13_90964.txt#0_1",
+    "sequence_length": 35,
+    "mean_nll": 0.5848711565585063,
+    "std_nll": 0.8312594275345168
+  },
+  {
+    "example_id": "sfq_1192--97/97_1493497.txt#0_2",
+    "sequence_length": 35,
+    "mean_nll": 0.4265580387623816,
+    "std_nll": 1.0355179616988468
+  },
+  {
+    "example_id": "qw_4782--187/187_1142011.txt#0_1",
+    "sequence_length": 11,
+    "mean_nll": 0.5820073823794122,
+    "std_nll": 0.7311988760830508
+  },
+  {
+    "example_id": "bt_1538--42/42_1542499.txt#0_1",
+    "sequence_length": 29,
+    "mean_nll": 0.8205832653960062,
+    "std_nll": 1.364911181518622
+  },
+  {
+    "example_id": "bt_3044--15/15_470066.txt#0_1",
+    "sequence_length": 20,
+    "mean_nll": 1.3556370415721404,
+    "std_nll": 2.4908979152710646
+  },
+  {
+    "example_id": "qw_16785--192/192_1349169.txt#0_1",
+    "sequence_length": 36,
+    "mean_nll": 0.8690505566505381,
+    "std_nll": 1.325677085878441
+  },
+  {
+    "example_id": "jp_3059--26/26_1399947.txt#0_1",
+    "sequence_length": 48,
+    "mean_nll": 0.5484101743099604,
+    "std_nll": 0.9299398268968776
+  },
+  {
+    "example_id": "qf_3128--50/50_3337.txt#0_0",
+    "sequence_length": 17,
+    "mean_nll": 0.34852725212904795,
+    "std_nll": 0.7435233973340437
+  },
+  {
+    "example_id": "dpql_455--142/142_545804.txt#0_0",
+    "sequence_length": 18,
+    "mean_nll": 0.49954891967917686,
+    "std_nll": 1.0706783040755063
+  },
+  {
+    "example_id": "odql_7977--27/27_2226595.txt#0_0",
+    "sequence_length": 48,
+    "mean_nll": 0.9047773037019246,
+    "std_nll": 1.330267116897176
+  },
+  {
+    "example_id": "bb_618--61/61_2669551.txt#0_1",
+    "sequence_length": 34,
+    "mean_nll": 0.9942382627109109,
+    "std_nll": 1.3100903137621438
+  },
+  {
+    "example_id": "odql_14838--54/54_107845.txt#0_2",
+    "sequence_length": 24,
+    "mean_nll": 1.3670003041333132,
+    "std_nll": 2.3091379634157105
+  },
+  {
+    "example_id": "qb_6250--52/52_439893.txt#0_0",
+    "sequence_length": 39,
+    "mean_nll": 0.6704245195595808,
+    "std_nll": 1.1505772785046866
+  },
+  {
+    "example_id": "tc_2359--127/127_71063.txt#0_0",
+    "sequence_length": 45,
+    "mean_nll": 0.409788721812944,
+    "std_nll": 0.7607729381393796
+  },
+  {
+    "example_id": "bb_9139--113/113_1038621.txt#0_1",
+    "sequence_length": 60,
+    "mean_nll": 0.6114435286067399,
+    "std_nll": 0.9884406022859824
+  },
+  {
+    "example_id": "qw_1719--97/97_1084406.txt#0_1",
+    "sequence_length": 11,
+    "mean_nll": 0.04864955388617628,
+    "std_nll": 0.08204455899620117
+  },
+  {
+    "example_id": "qb_2899--155/155_2893117.txt#0_2",
+    "sequence_length": 21,
+    "mean_nll": 0.24656277998527576,
+    "std_nll": 0.5160547771621908
+  },
+  {
+    "example_id": "bt_2646--138/138_2413763.txt#0_2",
+    "sequence_length": 13,
+    "mean_nll": 0.04235668214823818,
+    "std_nll": 0.07061261570013266
+  },
+  {
+    "example_id": "sfq_17367--193/193_1858126.txt#0_0",
+    "sequence_length": 18,
+    "mean_nll": 0.3830526679899372,
+    "std_nll": 0.6129289579329288
+  },
+  {
+    "example_id": "dpql_151--178/178_231745.txt#0_2",
+    "sequence_length": 28,
+    "mean_nll": 0.5534786614196278,
+    "std_nll": 1.404287114406698
+  },
+  {
+    "example_id": "sfq_2345--98/98_1465999.txt#0_0",
+    "sequence_length": 84,
+    "mean_nll": 0.8257936839197115,
+    "std_nll": 1.30070653309972
+  },
+  {
+    "example_id": "odql_11051--136/136_235136.txt#0_2",
+    "sequence_length": 26,
+    "mean_nll": 1.072385326456452,
+    "std_nll": 1.956015030872204
+  },
+  {
+    "example_id": "tb_47--Hansel_and_Gretel.txt#0_0",
+    "sequence_length": 40,
+    "mean_nll": 0.6348114094798689,
+    "std_nll": 1.1057400226365666
+  },
+  {
+    "example_id": "qb_7858--119/119_484438.txt#0_2",
+    "sequence_length": 32,
+    "mean_nll": 0.2786756736327014,
+    "std_nll": 0.6133377226652138
+  },
+  {
+    "example_id": "qg_1094--4/4_3215155.txt#0_0",
+    "sequence_length": 19,
+    "mean_nll": 0.1938280341932365,
+    "std_nll": 0.410738686639433
+  },
+  {
+    "example_id": "bb_1960--194/194_648540.txt#0_1",
+    "sequence_length": 35,
+    "mean_nll": 1.1835424134291574,
+    "std_nll": 1.2071470808652949
+  },
+  {
+    "example_id": "odql_11893--64/64_768.txt#0_0",
+    "sequence_length": 26,
+    "mean_nll": 0.004963773870284281,
+    "std_nll": 0.015536426770232094
+  },
+  {
+    "example_id": "jp_4375--83/83_2736108.txt#0_0",
+    "sequence_length": 53,
+    "mean_nll": 0.7978949540631031,
+    "std_nll": 1.4215475916652944
+  },
+  {
+    "example_id": "jp_553--17/17_1364047.txt#0_2",
+    "sequence_length": 14,
+    "mean_nll": 0.14393818845298614,
+    "std_nll": 0.29595060738774626
+  },
+  {
+    "example_id": "sfq_14830--197/197_1800498.txt#0_1",
+    "sequence_length": 25,
+    "mean_nll": 0.4984264361053647,
+    "std_nll": 0.8422767061774605
+  },
+  {
+    "example_id": "sfq_2452--77/77_2081353.txt#0_2",
+    "sequence_length": 38,
+    "mean_nll": 0.574772037111978,
+    "std_nll": 0.796219319798728
+  },
+  {
+    "example_id": "qw_1155--186/186_1072791.txt#0_0",
+    "sequence_length": 20,
+    "mean_nll": 0.41892203757445257,
+    "std_nll": 1.0635891407990328
+  },
+  {
+    "example_id": "qb_250--Peter_Blake_(artist).txt#0_0",
+    "sequence_length": 33,
+    "mean_nll": 0.8929193184331973,
+    "std_nll": 1.0718329564595235
+  },
+  {
+    "example_id": "sfq_23994--31/31_726041.txt#0_0",
+    "sequence_length": 27,
+    "mean_nll": 0.8344058768862784,
+    "std_nll": 1.4241615214973782
+  },
+  {
+    "example_id": "qw_12027--75/75_2714729.txt#0_0",
+    "sequence_length": 28,
+    "mean_nll": 0.07849738577545347,
+    "std_nll": 0.20523310759502364
+  },
+  {
+    "example_id": "qb_7632--22/22_167620.txt#0_1",
+    "sequence_length": 7,
+    "mean_nll": 0.8936856853865071,
+    "std_nll": 1.4374523445175673
+  },
+  {
+    "example_id": "qz_2001--6/6_147605.txt#0_1",
+    "sequence_length": 22,
+    "mean_nll": 0.5050909942004748,
+    "std_nll": 0.6254404321940548
+  },
+  {
+    "example_id": "qw_2616--7/7_311565.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.5163542125467963,
+    "std_nll": 0.7499792687802334
+  },
+  {
+    "example_id": "jp_2085--58/58_325202.txt#0_1",
+    "sequence_length": 52,
+    "mean_nll": 0.5483515680697687,
+    "std_nll": 0.9193088592941616
+  },
+  {
+    "example_id": "qb_6583--36/36_449032.txt#0_2",
+    "sequence_length": 16,
+    "mean_nll": 0.48577592130389924,
+    "std_nll": 1.2658297878732871
+  },
+  {
+    "example_id": "bb_8929--172/172_1033394.txt#0_0",
+    "sequence_length": 29,
+    "mean_nll": 0.9896977849615849,
+    "std_nll": 1.4943834314474096
+  },
+  {
+    "example_id": "dpql_1783--160/160_2646247.txt#0_0",
+    "sequence_length": 23,
+    "mean_nll": 0.48151781096619883,
+    "std_nll": 0.7908547998929629
+  },
+  {
+    "example_id": "qb_3092--129/129_139741.txt#0_0",
+    "sequence_length": 12,
+    "mean_nll": 0.40048352649985947,
+    "std_nll": 0.849846828741706
+  },
+  {
+    "example_id": "sfq_20082--77/77_957747.txt#0_1",
+    "sequence_length": 12,
+    "mean_nll": 0.7757698764811115,
+    "std_nll": 1.4483641736355468
+  },
+  {
+    "example_id": "qf_183--127/127_2454253.txt#0_0",
+    "sequence_length": 16,
+    "mean_nll": 0.46294166983534524,
+    "std_nll": 0.5358469632426968
+  },
+  {
+    "example_id": "qz_1046--164/164_37682.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.17609753474961176,
+    "std_nll": 0.40283113139174115
+  },
+  {
+    "example_id": "odql_3698--78/78_264520.txt#0_1",
+    "sequence_length": 24,
+    "mean_nll": 0.58024339474188,
+    "std_nll": 1.0739748088811478
+  },
+  {
+    "example_id": "sfq_1807--198/198_1507629.txt#0_1",
+    "sequence_length": 41,
+    "mean_nll": 0.5325164352510501,
+    "std_nll": 0.7679919671504678
+  },
+  {
+    "example_id": "sfq_20006--59/59_2784672.txt#0_0",
+    "sequence_length": 46,
+    "mean_nll": 0.926176515335679,
+    "std_nll": 1.125110925752816
+  },
+  {
+    "example_id": "bb_9463--32/32_2691228.txt#0_2",
+    "sequence_length": 12,
+    "mean_nll": 0.7785431666103856,
+    "std_nll": 1.1306421790034638
+  },
+  {
+    "example_id": "bb_2276--42/42_883302.txt#0_1",
+    "sequence_length": 31,
+    "mean_nll": 0.770663423457387,
+    "std_nll": 1.400002240832169
+  },
+  {
+    "example_id": "sfq_25007--68/68_2021815.txt#0_1",
+    "sequence_length": 65,
+    "mean_nll": 0.51604125358354,
+    "std_nll": 0.9397362713718901
+  },
+  {
+    "example_id": "qw_6881--133/133_2704872.txt#0_2",
+    "sequence_length": 22,
+    "mean_nll": 0.34682908134908014,
+    "std_nll": 0.895918268996291
+  },
+  {
+    "example_id": "bb_7700--19/19_416201.txt#0_1",
+    "sequence_length": 17,
+    "mean_nll": 0.14615105043224516,
+    "std_nll": 0.4115225234512796
+  },
+  {
+    "example_id": "qb_3569--170/170_366697.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.604856035297332,
+    "std_nll": 1.0468845875928579
+  },
+  {
+    "example_id": "sfq_8812--24/24_1020332.txt#0_0",
+    "sequence_length": 21,
+    "mean_nll": 0.6402999943155042,
+    "std_nll": 1.4580511216690388
+  },
+  {
+    "example_id": "qw_597--13/13_1061577.txt#0_1",
+    "sequence_length": 87,
+    "mean_nll": 0.4934479138601365,
+    "std_nll": 0.7755380909048816
+  },
+  {
+    "example_id": "sfq_16522--56/56_1003309.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.8441419470894359,
+    "std_nll": 1.4442075146150353
+  },
+  {
+    "example_id": "jp_3307--148/148_1403703.txt#0_0",
+    "sequence_length": 67,
+    "mean_nll": 0.5913892963582644,
+    "std_nll": 0.8003615921000897
+  },
+  {
+    "example_id": "sfq_10250--131/131_472528.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.5496264398024499,
+    "std_nll": 1.0163048593734705
+  },
+  {
+    "example_id": "jp_2971--96/96_2731987.txt#0_0",
+    "sequence_length": 21,
+    "mean_nll": 0.36578266805117027,
+    "std_nll": 0.7576483434474497
+  },
+  {
+    "example_id": "tc_69--158/158_2486.txt#0_1",
+    "sequence_length": 21,
+    "mean_nll": 0.42577085063110837,
+    "std_nll": 0.6296499995293003
+  },
+  {
+    "example_id": "qb_8861--190/190_510847.txt#0_1",
+    "sequence_length": 11,
+    "mean_nll": 0.4083377090441409,
+    "std_nll": 0.980066434861903
+  },
+  {
+    "example_id": "qf_530--164/164_2459775.txt#0_0",
+    "sequence_length": 25,
+    "mean_nll": 0.8129280836550242,
+    "std_nll": 1.0857051248227128
+  },
+  {
+    "example_id": "wh_299--Pocketful_of_Miracles.txt#0_1",
+    "sequence_length": 16,
+    "mean_nll": 1.348018595987405,
+    "std_nll": 1.6514230275675548
+  },
+  {
+    "example_id": "sfq_22936--27/27_1976951.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.760431360876018,
+    "std_nll": 1.5350123875601223
+  },
+  {
+    "example_id": "dpql_4975--25/25_686725.txt#0_0",
+    "sequence_length": 18,
+    "mean_nll": 0.4675369755349045,
+    "std_nll": 0.8065487694579979
+  },
+  {
+    "example_id": "odql_7656--38/38_144986.txt#0_0",
+    "sequence_length": 26,
+    "mean_nll": 0.40043836035335273,
+    "std_nll": 1.1185553998456403
+  },
+  {
+    "example_id": "dpql_5542--101/101_701718.txt#0_2",
+    "sequence_length": 29,
+    "mean_nll": 0.6165994673429176,
+    "std_nll": 0.945095491926685
+  },
+  {
+    "example_id": "qg_1795--111/111_375646.txt#0_1",
+    "sequence_length": 22,
+    "mean_nll": 0.043579325689085575,
+    "std_nll": 0.11939669835461562
+  },
+  {
+    "example_id": "qw_13284--106/106_96340.txt#0_1",
+    "sequence_length": 19,
+    "mean_nll": 0.7854396578701007,
+    "std_nll": 1.4399408225396355
+  },
+  {
+    "example_id": "qw_11437--137/137_654439.txt#0_0",
+    "sequence_length": 85,
+    "mean_nll": 0.7271411199187214,
+    "std_nll": 0.9791178525603076
+  },
+  {
+    "example_id": "jp_2683--186/186_1418025.txt#0_2",
+    "sequence_length": 24,
+    "mean_nll": 1.4955948518666748,
+    "std_nll": 1.22185003692047
+  },
+  {
+    "example_id": "bt_1265--Alan_Lake.txt#0_0",
+    "sequence_length": 12,
+    "mean_nll": 0.9047890529703485,
+    "std_nll": 1.5918928379475352
+  },
+  {
+    "example_id": "sfq_18204--53/53_1875473.txt#0_1",
+    "sequence_length": 26,
+    "mean_nll": 0.3139446287209499,
+    "std_nll": 0.67379058258636
+  },
+  {
+    "example_id": "qz_3752--50/50_191237.txt#0_0",
+    "sequence_length": 28,
+    "mean_nll": 0.5716593483671305,
+    "std_nll": 1.0139750887570467
+  },
+  {
+    "example_id": "dpql_1447--149/149_591689.txt#0_0",
+    "sequence_length": 3,
+    "mean_nll": 2.1157838503519693,
+    "std_nll": 0.5372559882882557
+  },
+  {
+    "example_id": "qf_3026--170/170_1354094.txt#0_0",
+    "sequence_length": 37,
+    "mean_nll": 0.7896182828722836,
+    "std_nll": 0.9211502503392982
+  },
+  {
+    "example_id": "qf_220--100/100_733704.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.6683934321910204,
+    "std_nll": 1.2037907622578454
+  },
+  {
+    "example_id": "qb_804--33/33_287054.txt#0_0",
+    "sequence_length": 17,
+    "mean_nll": 0.3467571218561883,
+    "std_nll": 0.6805548433144893
+  },
+  {
+    "example_id": "odql_12312--173/173_2307375.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.4526648951194895,
+    "std_nll": 0.690623964860847
+  },
+  {
+    "example_id": "bb_7976--4/4_843121.txt#0_0",
+    "sequence_length": 28,
+    "mean_nll": 0.43148626334383217,
+    "std_nll": 0.9889684852535444
+  },
+  {
+    "example_id": "sfq_13707--150/150_14358.txt#0_0",
+    "sequence_length": 23,
+    "mean_nll": 0.441050146220742,
+    "std_nll": 0.807815247909959
+  },
+  {
+    "example_id": "odql_12262--143/143_282014.txt#0_1",
+    "sequence_length": 100,
+    "mean_nll": 0.4785220028036494,
+    "std_nll": 0.9668970635573118
+  },
+  {
+    "example_id": "qb_8177--179/179_12992.txt#0_1",
+    "sequence_length": 13,
+    "mean_nll": 0.4246408527125403,
+    "std_nll": 0.966734999992375
+  },
+  {
+    "example_id": "sfq_24363--72/72_2007380.txt#0_0",
+    "sequence_length": 39,
+    "mean_nll": 0.7745533543505493,
+    "std_nll": 1.0931901914642288
+  },
+  {
+    "example_id": "odql_4497--97/97_2162315.txt#0_1",
+    "sequence_length": 11,
+    "mean_nll": 0.4510530809109861,
+    "std_nll": 0.5491663682766387
+  },
+  {
+    "example_id": "odql_1097--173/173_3062526.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.4982279930031165,
+    "std_nll": 0.9166541623886928
+  },
+  {
+    "example_id": "sfq_2358--33/33_1520459.txt#0_0",
+    "sequence_length": 42,
+    "mean_nll": 0.4159431155874813,
+    "std_nll": 0.63749287970407
+  },
+  {
+    "example_id": "qb_4017--123/123_379315.txt#0_2",
+    "sequence_length": 22,
+    "mean_nll": 0.3902173200718421,
+    "std_nll": 0.47376463028615173
+  },
+  {
+    "example_id": "qg_3182--3/3_2567423.txt#0_0",
+    "sequence_length": 16,
+    "mean_nll": 0.982790287161599,
+    "std_nll": 1.615493497360056
+  },
+  {
+    "example_id": "jp_1819--183/183_300683.txt#0_0",
+    "sequence_length": 15,
+    "mean_nll": 0.4548853056347525,
+    "std_nll": 0.6632233190812011
+  },
+  {
+    "example_id": "bb_3277--172/172_905779.txt#0_0",
+    "sequence_length": 44,
+    "mean_nll": 0.7035914437704608,
+    "std_nll": 1.2944795973403764
+  },
+  {
+    "example_id": "qb_8920--2/2_512523.txt#0_0",
+    "sequence_length": 21,
+    "mean_nll": 0.7609574172583962,
+    "std_nll": 2.1101748554233786
+  },
+  {
+    "example_id": "jp_1511--132/132_1375093.txt#0_0",
+    "sequence_length": 13,
+    "mean_nll": 0.5124944740368409,
+    "std_nll": 0.8521464146469523
+  },
+  {
+    "example_id": "qz_127--19/19_99793.txt#0_2",
+    "sequence_length": 50,
+    "mean_nll": 0.5828995922739341,
+    "std_nll": 0.868310122526859
+  },
+  {
+    "example_id": "qb_5539--18/18_3229.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.573160582853058,
+    "std_nll": 0.7863267136599617
+  },
+  {
+    "example_id": "odql_10409--184/184_5652.txt#0",
+    "sequence_length": 16,
+    "mean_nll": 0.9097175475421864,
+    "std_nll": 1.7381058661918187
+  },
+  {
+    "example_id": "bb_1013--62/62_852710.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.47571730712621546,
+    "std_nll": 0.7359004500544533
+  },
+  {
+    "example_id": "odql_2420--173/173_2123595.txt#0_1",
+    "sequence_length": 41,
+    "mean_nll": 0.8719711848727371,
+    "std_nll": 1.2105899847722967
+  },
+  {
+    "example_id": "dpql_5351--130/130_201583.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.5879617532771575,
+    "std_nll": 1.0818029419466701
+  },
+  {
+    "example_id": "odql_4457--196/196_990714.txt#0_1",
+    "sequence_length": 57,
+    "mean_nll": 0.7640057482394774,
+    "std_nll": 1.4617087436041303
+  },
+  {
+    "example_id": "qg_2992--93/93_3215677.txt#0_1",
+    "sequence_length": 14,
+    "mean_nll": 0.41515755161318524,
+    "std_nll": 0.6486060512949187
+  },
+  {
+    "example_id": "qg_2077--57/57_1351839.txt#0_1",
+    "sequence_length": 21,
+    "mean_nll": 0.3558234664833811,
+    "std_nll": 0.5843591418020312
+  },
+  {
+    "example_id": "sfq_20482--146/146_2385490.txt#0_0",
+    "sequence_length": 36,
+    "mean_nll": 0.6677933363860183,
+    "std_nll": 1.393627375564697
+  },
+  {
+    "example_id": "odql_8247--176/176_1183968.txt#0_0",
+    "sequence_length": 31,
+    "mean_nll": 0.3831565670527423,
+    "std_nll": 0.7978414335426988
+  },
+  {
+    "example_id": "qw_6676--48/48_65422.txt#0_1",
+    "sequence_length": 21,
+    "mean_nll": 0.46066118056659533,
+    "std_nll": 1.3191089906924545
+  },
+  {
+    "example_id": "odql_8017--6/6_2227411.txt#0_1",
+    "sequence_length": 17,
+    "mean_nll": 0.22396056369242412,
+    "std_nll": 0.48065387461309617
+  },
+  {
+    "example_id": "sfq_24528--186/186_2010986.txt#0_0",
+    "sequence_length": 14,
+    "mean_nll": 0.6292551832771746,
+    "std_nll": 0.9218545166490352
+  },
+  {
+    "example_id": "sfq_14796--60/60_1860775.txt#0_1",
+    "sequence_length": 17,
+    "mean_nll": 0.15353683623369066,
+    "std_nll": 0.3169186281903948
+  },
+  {
+    "example_id": "sfq_7117--62/62_1628292.txt#0_0",
+    "sequence_length": 51,
+    "mean_nll": 0.9508129780350311,
+    "std_nll": 1.1466404884673638
+  },
+  {
+    "example_id": "odql_8059--174/174_3212822.txt#0_1",
+    "sequence_length": 25,
+    "mean_nll": 0.48435890706569806,
+    "std_nll": 1.1570408709170314
+  },
+  {
+    "example_id": "dpql_4709--117/117_679477.txt#0_0",
+    "sequence_length": 10,
+    "mean_nll": 0.9969911162334029,
+    "std_nll": 1.1499600795054987
+  },
+  {
+    "example_id": "qw_11850--49/49_1269426.txt#0_0",
+    "sequence_length": 33,
+    "mean_nll": 0.631307415446992,
+    "std_nll": 1.1643637699154272
+  },
+  {
+    "example_id": "qg_1429--123/123_375481.txt#0_2",
+    "sequence_length": 38,
+    "mean_nll": 0.5184475186253478,
+    "std_nll": 0.7479371311162287
+  },
+  {
+    "example_id": "qw_10270--138/138_49533.txt#0_0",
+    "sequence_length": 4,
+    "mean_nll": 1.2288382221013308,
+    "std_nll": 0.6536508443614482
+  },
+  {
+    "example_id": "tc_2833--59/59_86475.txt#0_0",
+    "sequence_length": 21,
+    "mean_nll": 0.10722721351182718,
+    "std_nll": 0.23150882496777028
+  },
+  {
+    "example_id": "qb_9685--66/66_533419.txt#0_1",
+    "sequence_length": 15,
+    "mean_nll": 0.7798316213273211,
+    "std_nll": 1.7013127608589578
+  },
+  {
+    "example_id": "odql_6714--124/124_3212527.txt#0_0",
+    "sequence_length": 23,
+    "mean_nll": 0.07002162174074146,
+    "std_nll": 0.1832862928636258
+  },
+  {
+    "example_id": "qw_15940--120/120_2983777.txt#0_0",
+    "sequence_length": 4,
+    "mean_nll": 1.0669882298388984,
+    "std_nll": 1.043588291759757
+  },
+  {
+    "example_id": "sfq_25100--63/63_2797462.txt#0_0",
+    "sequence_length": 40,
+    "mean_nll": 1.040632241227763,
+    "std_nll": 1.4739414536552484
+  },
+  {
+    "example_id": "qb_2710--0/0_341544.txt#0_2",
+    "sequence_length": 17,
+    "mean_nll": 0.36098734677451505,
+    "std_nll": 0.6571468207128178
+  },
+  {
+    "example_id": "dpql_5912--30/30_711491.txt#0_0",
+    "sequence_length": 27,
+    "mean_nll": 0.504750639156378,
+    "std_nll": 0.7615739983355844
+  },
+  {
+    "example_id": "jp_2368--22/22_1179904.txt#0_1",
+    "sequence_length": 27,
+    "mean_nll": 0.3637279886336018,
+    "std_nll": 0.7670359353786815
+  },
+  {
+    "example_id": "dpql_2455--24/24_81962.txt#0_0",
+    "sequence_length": 20,
+    "mean_nll": 0.747473636811867,
+    "std_nll": 1.4842908915262008
+  },
+  {
+    "example_id": "wh_1013--32/32_749045.txt#0_1",
+    "sequence_length": 45,
+    "mean_nll": 0.8403814142367183,
+    "std_nll": 1.3524357061559196
+  },
+  {
+    "example_id": "sfq_12851--98/98_131425.txt#0_0",
+    "sequence_length": 27,
+    "mean_nll": 0.7013856221164537,
+    "std_nll": 0.9239327213339419
+  },
+  {
+    "example_id": "sfq_12855--189/189_1756387.txt#0_1",
+    "sequence_length": 22,
+    "mean_nll": 0.6305574661354153,
+    "std_nll": 1.316458132424809
+  },
+  {
+    "example_id": "jp_3645--146/146_1169963.txt#0_0",
+    "sequence_length": 26,
+    "mean_nll": 0.5132367734745272,
+    "std_nll": 0.6823635686465868
+  },
+  {
+    "example_id": "odql_12368--150/150_2308380.txt#0_0",
+    "sequence_length": 22,
+    "mean_nll": 0.5728350642628005,
+    "std_nll": 0.9149727248835441
+  },
+  {
+    "example_id": "qb_6543--195/195_826037.txt#0_0",
+    "sequence_length": 35,
+    "mean_nll": 0.7268222403272505,
+    "std_nll": 0.9177720608539743
+  },
+  {
+    "example_id": "odql_6620--156/156_349458.txt#0_0",
+    "sequence_length": 45,
+    "mean_nll": 0.8839345082904793,
+    "std_nll": 1.281572175216554
+  },
+  {
+    "example_id": "jp_3697--38/38_1394540.txt#0_1",
+    "sequence_length": 55,
+    "mean_nll": 0.5682285600860268,
+    "std_nll": 0.7885731078545343
+  },
+  {
+    "example_id": "wh_585--16/16_792479.txt#0_1",
+    "sequence_length": 37,
+    "mean_nll": 1.0827931452159536,
+    "std_nll": 1.7990298069508968
+  },
+  {
+    "example_id": "bt_2178--180/180_535996.txt#0_2",
+    "sequence_length": 16,
+    "mean_nll": 0.5704747137151571,
+    "std_nll": 1.1060244838086875
+  },
+  {
+    "example_id": "qw_3601--112/112_1120431.txt#0_3",
+    "sequence_length": 42,
+    "mean_nll": 0.6817869448660445,
+    "std_nll": 0.9060322049646661
+  },
+  {
+    "example_id": "bb_3892--168/168_918990.txt#0_0",
+    "sequence_length": 72,
+    "mean_nll": 0.8992066837354948,
+    "std_nll": 1.2145800782181777
+  },
+  {
+    "example_id": "odql_2538--189/189_425837.txt#0_1",
+    "sequence_length": 24,
+    "mean_nll": 0.46454710856626963,
+    "std_nll": 0.6505631929629051
+  }
+]

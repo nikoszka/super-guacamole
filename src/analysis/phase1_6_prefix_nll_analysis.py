@@ -220,8 +220,8 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="results/phase1_6",
-        help="Output directory for results (default: results/phase1_6)",
+        default=None,
+        help="Output directory for results (if not provided, will be auto-generated from wandb-run-id and context-type)",
     )
     parser.add_argument(
         "--use-rouge",
@@ -247,8 +247,31 @@ def main() -> None:
         default=[1, 3, 5],
         help="Prefix lengths (k) for early-token AUROC analysis (default: 1 3 5)",
     )
+    parser.add_argument(
+        "--wandb-run-id",
+        type=str,
+        default=None,
+        help="WandB run ID to include in output folder name",
+    )
+    parser.add_argument(
+        "--context-type",
+        type=str,
+        choices=["short", "long"],
+        default=None,
+        help="Context type: short or long (used in output folder naming)",
+    )
 
     args = parser.parse_args()
+    
+    # Auto-generate output directory if not provided
+    if args.output_dir is None:
+        dir_parts = ["results", "phase1_6"]
+        if args.context_type:
+            dir_parts.append(args.context_type)
+        if args.wandb_run_id:
+            dir_parts.append(args.wandb_run_id)
+        args.output_dir = "_".join(dir_parts)
+        logger.info(f"Auto-generated output directory: {args.output_dir}")
     os.makedirs(args.output_dir, exist_ok=True)
 
     # Load data and labels

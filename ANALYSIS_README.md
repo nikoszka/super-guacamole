@@ -11,6 +11,20 @@ This guide explains how to run the new analysis tools we added on top of the G�
 
 All commands below assume you run them **from the repo root** (the directory containing `src/`).
 
+### 🆕 Folder Naming Convention
+
+All phase analysis scripts now support **automatic folder naming** based on:
+- **Context type**: `short` or `long` (use `--context-type` parameter)
+- **WandB run ID**: from your generation run (use `--wandb-run-id` parameter)
+
+**Auto-generated folder pattern**: `results/phase{X}_{context_type}_{wandb_run_id}`
+
+Example: `results/phase1_6_long_wiboofpr`
+
+This helps organize results from multiple runs and makes it easy to track which results correspond to which WandB run.
+
+You can still override this with a custom `--output-dir` if needed.
+
 ---
 
 ## Prerequisites
@@ -40,23 +54,34 @@ This script computes:
   - Perplexity
   - Average token probability
 
+**New Parameters:**
+- `--wandb-run-id`: WandB run ID to include in output folder name
+- `--context-type`: Context type (short or long) for output folder naming
+- `--output-dir`: Custom output directory (optional - if not provided, auto-generated from wandb-run-id and context-type)
+
 **Short answers (ROUGE correctness):**
 
 ```bash
 python -m src.analysis.phase1_baseline_metrics \
-  --short-pickle PATH_TO_SHORT_PKL \
-  --output-dir results/phase1_short
+  --short-pickle "C:\Users\nikos\PycharmProjects\nllSAR\src\boldis\uncertainty\wandb\run-20251121_142824-wo7cdccl\files\validation_generations.pkl" \
+  --context-type short \
+  --wandb-run-id wo7cdccl
 ```
+
+This will auto-generate output directory: `results/phase1_short_yhxde999`
 
 **Long answers (LLM judge correctness):**
 
 ```bash
-python -m src.analysis.phase1_baseline_metrics \
-  --long-pickle PATH_TO_LONG_PKL \
-  --output-dir results/phase1_long
+python -m src.analysis.phase1_baseline_metrics 
+  --long-pickle "C:\Users\nikos\PycharmProjects\nllSAR\src\boldis\uncertainty\wandb\run-20251121_092732-wiboofpr\files\validation_generations.pkl" 
+  --context-type long \
+  --wandb-run-id wiboofpr
 ```
 
-**Outputs (per `--output-dir`):**
+This will auto-generate output directory: `results/phase1_long_wiboofpr`
+
+**Outputs (per output directory):**
 
 - `token_statistics.json`: token stats (min/mean/max, percentiles, counts)
 - `baseline_metrics_short.csv` / `baseline_metrics_long.csv`: per-example metrics
@@ -68,22 +93,30 @@ python -m src.analysis.phase1_baseline_metrics \
 
 **Script**: `src/analysis/phase1_5_token_nll_analysis.py`
 
-This treats **per-token NLL from G‑NLL** as a raw “importance” signal and analyzes:
+This treats **per-token NLL from G‑NLL** as a raw "importance" signal and analyzes:
 
 - NLL vs position
 - NLL distributions
 - NLL vs POS tags
 - Sentence-level token NLLs
 
+**New Parameters:**
+- `--wandb-run-id`: WandB run ID to include in output folder name
+- `--context-type`: Context type (short or long) for output folder naming
+- `--output-dir`: Custom output directory (optional - if not provided, auto-generated)
+
 **Example (long answers):**
 
 ```bash
 python -m src.analysis.phase1_5_token_nll_analysis \
-  --pickle-path PATH_TO_LONG_PKL \
+  --pickle-path "C:\Users\nikos\PycharmProjects\nllSAR\src\boldis\uncertainty\wandb\run-20251121_092732-wiboofpr\files\validation_generations.pkl"  \
   --model-name Llama-3.2-1B \
   --sample-size 100 \
-  --output-dir results/phase1_5_long
+  --context-type long \
+  --wandb-run-id wiboofpr
 ```
+
+This will auto-generate output directory: `results/phase1_5_long_wiboofpr`
 
 Add `--no-pos-tagging` to skip POS analysis if spaCy/NLTK are not available.
 
@@ -111,26 +144,37 @@ This analyzes how confidence evolves as the answer is generated:
   - First token NLL
   - Mean NLL of first *k* tokens (configurable)
 
+**New Parameters:**
+- `--wandb-run-id`: WandB run ID to include in output folder name
+- `--context-type`: Context type (short or long) for output folder naming
+- `--output-dir`: Custom output directory (optional - if not provided, auto-generated)
+
 **Long answers (LLM judge correctness):**
 
 ```bash
 python -m src.analysis.phase1_6_prefix_nll_analysis \
-  --pickle-path PATH_TO_LONG_PKL \
-  --output-dir results/phase1_6_long \
+  --pickle-path "C:\Users\nikos\PycharmProjects\nllSAR\src\boldis\uncertainty\wandb\run-20251121_092732-wiboofpr\files\validation_generations.pkl" \
+  --context-type long \
+  --wandb-run-id wiboofpr \
   --max-prefix-len 50 \
   --ks 1 3 5
 ```
+
+This will auto-generate output directory: `results/phase1_6_long_wiboofpr`
 
 **Short answers (ROUGE correctness):**
 
 ```bash
 python -m src.analysis.phase1_6_prefix_nll_analysis \
   --pickle-path PATH_TO_SHORT_PKL \
-  --output-dir results/phase1_6_short \
+  --context-type short \
+  --wandb-run-id yhxde999 \
   --use-rouge --rouge-threshold 0.3 \
   --max-prefix-len 50 \
   --ks 1 3 5
 ```
+
+This will auto-generate output directory: `results/phase1_6_short_yhxde999`
 
 **Key outputs:**
 
@@ -155,6 +199,11 @@ This computes **token relevance scores** \(R_T\) using the SAR-style ablation:
   - Analyzes correlations with position, NLL, POS tags
   - Prepares data for visualization
 
+**New Parameters:**
+- `--wandb-run-id`: WandB run ID to include in output folder name
+- `--context-type`: Context type (short or long) for output folder naming
+- `--output-dir`: Custom output directory (optional - if not provided, auto-generated)
+
 **Example (long answers):**
 
 ```bash
@@ -163,8 +212,11 @@ python -m src.analysis.phase2_token_importance \
   --model-name Llama-3.2-1B \
   --similarity-model cross-encoder/stsb-roberta-large \
   --sample-size 50 \
-  --output-dir results/phase2_long
+  --context-type long \
+  --wandb-run-id wiboofpr
 ```
+
+This will auto-generate output directory: `results/phase2_long_wiboofpr`
 
 Add `--no-pos-tagging` to skip POS analysis.
 
@@ -198,6 +250,11 @@ And produces:
 - Cost vs performance plot (M vs AUROC)
 - ROC curves for all metrics
 
+**New Parameters:**
+- `--wandb-run-id`: WandB run ID to include in output folder name
+- `--context-type`: Context type (short or long) for output folder naming
+- `--output-dir`: Custom output directory (optional - if not provided, auto-generated)
+
 **Example (long answers, using LLM judge accuracy):**
 
 ```bash
@@ -205,8 +262,11 @@ python -m src.analysis.phase5_comparative_analysis \
   --pickle-path PATH_TO_LONG_PKL \
   --model-name Llama-3.2-1B \
   --similarity-model cross-encoder/stsb-roberta-large \
-  --output-dir results/phase5_long
+  --context-type long \
+  --wandb-run-id wiboofpr
 ```
+
+This will auto-generate output directory: `results/phase5_long_wiboofpr`
 
 Options:
 
@@ -225,47 +285,80 @@ Options:
 
 ## Interactive Token-Level Visualization App
 
-**Script**: `src/analysis/token_visualization_app.py`
+**Script**: `src/analysis/token_visualization_app.py`  
+**Launcher**: `run_token_viz_app.py`  
+**Guide**: `TOKEN_VIZ_APP_GUIDE.md`
 
-This Streamlit app visualizes tokens with colored backgrounds:
+This **upgraded** Streamlit app now loads directly from validation pickle files and provides:
 
-- **Mode 1: Raw NLL (Phase 1.5)**  
-  - Uses `sentence_level_nll_examples.json`
-  - Shows tokens colored by NLL (red = higher NLL / more uncertain)
+- **Probability Visualization** (NEW!)
+  - Green colormap: darker = more confident
+  - Shows token-level model confidence (`exp(log_likelihood)`)
+  
+- **NLL Visualization**
+  - Red colormap: darker = more uncertain
+  - Shows negative log-likelihood per token
 
-- **Mode 2: Relevance-weighted (Phase 2)**  
-  - Uses `token_importance_examples.json`
-  - Lets you choose:
-    - Relevance \(R_T\)
-    - NLL
-    - Relevance × NLL (per-token contribution to RW‑G‑NLL)
+- **Full Context Display** (NEW!)
+  - Original question from dataset
+  - Correct answer(s) (ground truth)
+  - Model response with accuracy indicator
+  
+- **Answer Type Support** (NEW!)
+  - Toggle between short and long answers
+  - Pre-configured paths for both types
+  - Custom pickle file support
+
+- **Statistics Panel** (NEW!)
+  - Mean, min, max, standard deviation
+  - Adapts to score type (probability vs NLL)
 
 ### Running the app
 
 From the repo root:
 
 ```bash
+# Easy launcher (recommended)
+python run_token_viz_app.py
+
+# Or directly with streamlit
 streamlit run src/analysis/token_visualization_app.py
 ```
 
+**New Features:**
+- 🟢 **Probability visualization** (green colormap) - toggle between probability and NLL
+- 📝 **Question & correct answer** displayed alongside model response
+- 🔄 **Short & long answer support** with pre-configured paths
+- 📊 **Statistics panel** showing mean, min, max, std dev
+- ✅ **Accuracy indicators** for each example
+
 In the browser:
 
-- Select **“Raw NLL (Phase 1.5)”** and set the path to:
-  - `results/phase1_5_long/sentence_level_nll_examples.json` (or the short version)
-- Or select **“Relevance-weighted (Phase 2)”** and set the path to:
-  - `results/phase2_long/token_importance_examples.json`
+1. Select **"Long Answers"** or **"Short Answers"**
+   - Pre-filled paths to judge-corrected (long) or standard (short) pickles
+   - Or enter custom path to any `validation_generations.pkl` file
 
-You’ll see the full answer text with token backgrounds colored according to:
+2. Browse examples with the slider (1 to N)
 
-- NLL (uncertainty),
-- Relevance (importance),
-- Relevance × NLL (RW‑G‑NLL-style contribution) depending on the chosen view.
+3. Toggle between **"Probability"** (green) or **"NLL"** (red) visualization
 
-This app can be reused for:
+You'll see:
+- The original **question** from the dataset
+- The **correct answer(s)** (ground truth)
+- The **model's response** with accuracy indicator (✅/❌)
+- Token-level visualization with color intensity showing:
+  - **Probability**: Darker green = more confident
+  - **NLL**: Darker red = more uncertain
 
-- Short vs long answers,
-- Different runs / models (just point it to different JSONs),
-- Comparing raw NLL vs relevance-weighted views side by side.
+**See `TOKEN_VIZ_APP_GUIDE.md` for detailed usage instructions.**
+
+This app can be used for:
+
+- Comparing short vs long answer confidence patterns
+- Identifying where the model is uncertain
+- Debugging incorrect predictions
+- Understanding token-level model behavior
+- Analyzing first-token probabilities
 
 ---
 
@@ -277,7 +370,11 @@ For a new model + dataset:
 2. **Run Phase 1.5** to understand raw token-level uncertainty patterns.
 3. **Run Phase 1.6** to see if early prefixes already separate correct vs incorrect.
 4. **Run Phase 2** on long answers to get SAR-style token relevance.
-5. **Explore `token_visualization_app.py`** to inspect individual answers (NLL, relevance, relevance × NLL).
+5. **Explore `token_visualization_app.py`** (launch with `python run_token_viz_app.py`) to:
+   - Inspect individual answers with full question/answer context
+   - Visualize token-level probabilities (confidence) and NLL (uncertainty)
+   - Compare short vs long answer patterns
+   - Debug incorrect predictions
 6. **Run Phase 5** to compare AUROC and cost–performance for all metrics, including RW‑G‑NLL.
 
 
