@@ -326,11 +326,10 @@ def get_llama_metric(metric_name, max_new_tokens=50):
     # Auto-add quantization for large models (70B+) to fit in GPU memory
     if '70b' in model_name.lower():
         logging.warning(
-            f'70B models require significant GPU memory (~35GB with 8-bit quantization). '
-            f'If you have only 8GB GPU, consider using a smaller judge model like Llama-3-8B. '
-            f'Attempting to load {model_name} with 8-bit quantization...'
+            f'70B models require significant GPU memory (~35GB with 4-bit quantization). '
+            f'Attempting to load {model_name} with 4-bit quantization...'
         )
-        model_name_with_quant = f'{model_name}-8bit'
+        model_name_with_quant = f'{model_name}-4bit'
     else:
         logging.info(f'Initializing Llama judge model: {model_name}')
         model_name_with_quant = model_name

@@ -184,9 +184,21 @@ class HuggingfaceModel(BaseModel):
                     load_in_8bit=True,)}
                 model_name = model_name[:-len('-8bit')]
                 eightbit = True
+                fourbit = False
+            elif model_name.endswith('-4bit'):
+                kwargs = {'quantization_config': BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_compute_dtype=torch.float16,
+                    bnb_4bit_use_double_quant=True,
+                    bnb_4bit_quant_type="nf4"
+                )}
+                model_name = model_name[:-len('-4bit')]
+                eightbit = False
+                fourbit = True
             else:
                 kwargs = {}
                 eightbit = False
+                fourbit = False
 
             if 'Llama-3' in model_name or 'Llama-3.1' in model_name or 'Meta-Llama-3' in model_name or 'Llama-2' in model_name:
                 base = 'meta-llama'
@@ -220,7 +232,7 @@ class HuggingfaceModel(BaseModel):
             llama65b = '65b' in model_name and base == 'huggyllama'
             llama70b = '70b' in model_name.lower() and base == 'meta-llama'
             print("Initializing model: ", model_name + " and base:", base)
-            if model_size in ['1b', '7b','8b', '13b'] or eightbit:
+            if model_size in ['1b', '7b','8b', '13b'] or eightbit or fourbit:
                 # Use device_map="auto" which automatically distributes across all available GPUs
                 # accelerate library will handle multi-GPU distribution automatically
                 import torch
@@ -240,9 +252,9 @@ class HuggingfaceModel(BaseModel):
 
             elif llama70b or llama65b:
                 # For 70B models, use quantization if requested (via -8bit suffix)
-                if eightbit:
-                    # Load with 8-bit quantization for memory efficiency
-                    logging.warning('Loading 70B model with 8-bit quantization. This may still require significant GPU memory.')
+                if eightbit or fourbit:
+                    # Load with quantization for memory efficiency
+                    logging.warning('Loading 70B model with quantization. This may still require significant GPU memory.')
                     
                     # Get max_memory for all GPUs to enable proper multi-GPU distribution
                     max_memory_dict = get_gpu_memory_dict()
