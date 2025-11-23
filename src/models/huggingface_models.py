@@ -271,22 +271,23 @@ class HuggingfaceModel(BaseModel):
                     # Load with quantization for memory efficiency
                     logging.warning('Loading 70B model with quantization. This may still require significant GPU memory.')
                     
-                    # Get max_memory for all GPUs to enable proper multi-GPU distribution
-                    max_memory_dict = get_gpu_memory_dict()
-                    
-                    # Add CPU as fallback for offloading if needed (especially for pre-quantized models)
-                    if max_memory_dict and base == 'unsloth':
-                        max_memory_dict['cpu'] = '100GiB'  # Allow CPU offload if GPU is full
-                    
-                    if max_memory_dict:
-                        logging.info(f'Using max_memory per GPU for quantized model: {max_memory_dict}')
-                    
                     # Prepare kwargs for from_pretrained
                     load_kwargs = {
                         'device_map': 'auto',
-                        'max_memory': max_memory_dict if max_memory_dict else {0: '8GIB'},
                         'cache_dir': self.cache_dir,
+                        'low_cpu_mem_usage': True,  # Reduce CPU memory usage during loading
                     }
+                    
+                    # For pre-quantized unsloth models, don't specify max_memory
+                    # Let accelerate figure out the best distribution
+                    if base == 'unsloth':
+                        logging.info('Loading pre-quantized unsloth model with automatic memory management')
+                    else:
+                        # For models we're quantizing ourselves, specify max_memory
+                        max_memory_dict = get_gpu_memory_dict()
+                        if max_memory_dict:
+                            load_kwargs['max_memory'] = max_memory_dict
+                            logging.info(f'Using max_memory per GPU for quantized model: {max_memory_dict}')
                     
                     # Only add quantization_config if it exists (not for pre-quantized models)
                     if kwargs.get('quantization_config'):
