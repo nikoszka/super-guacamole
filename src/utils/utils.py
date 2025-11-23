@@ -48,7 +48,7 @@ def get_parser(stages=['generate', 'compute']):
     parser.add_argument('--random_seed', type=int, default=10)
     parser.add_argument(
         "--metric", type=str, default="squad",
-        choices=['squad', 'llm', 'llm_gpt-3.5', 'llm_gpt-4', 'llm_llama-3.1-70b', 'llm_llama-3-70b', 'llm_llama-3-8b', 'llm_llama-3.1-8b', 'llm_llama-2-70b', 'llm_llama-2-13b'],
+        choices=['squad', 'llm', 'llm_gpt-3.5', 'llm_gpt-4', 'llm_llama-3.1-70b', 'llm_llama-3-70b', 'llm_llama-3-8b', 'llm_llama-3.1-8b', 'llm_llama-2-70b', 'llm_llama-2-13b', 'llm_llama-3.1-8b-Instruct'],
         help="Metric to assign accuracy to generations. Supports OpenAI models (llm_gpt-*) and HuggingFace Llama models (llm_llama-*).")
     parser.add_argument(
         "--compute_accuracy_at_all_temps",
@@ -356,21 +356,33 @@ def get_llama_metric(metric_name, max_new_tokens=50):
     # 'Meta-Llama-3-70B' for Llama-3 (becomes meta-llama/Meta-Llama-3-70B)
     # 'Llama-2-70b-chat-hf' for Llama-2 (becomes meta-llama/Llama-2-70b-chat-hf)
     # Split by '-' and format appropriately
-    parts = model_name_str.split('-')  # ['llama', '3.1', '70b'] or ['llama', '3', '70b']
-    
+    # Split by '-' and format appropriately
+    parts = model_name_str.split('-')  # ['llama', '3.1', '8b'] or ['llama', '3.1', '8b', 'Instruct']
+
+    # Check if Instruct suffix is present
+    has_instruct = 'Instruct' in parts or 'instruct' in parts
+    if has_instruct:
+        # Remove Instruct from parts for parsing
+        parts = [p for p in parts if p.lower() != 'instruct']
+
     if len(parts) >= 3 and parts[0].lower() == 'llama':
         version_num = parts[1]  # '3.1', '3', or '2'
         size = parts[2]  # '70b', '8b', '13b', etc.
-        
+
         if version_num.startswith('3.1'):
-            # Format: 'Llama-3.1-70B' (for meta-llama/Llama-3.1-70B)
+            # Format: 'Llama-3.1-8B' or 'Llama-3.1-8B-Instruct'
             model_name = f'Llama-{version_num}-{size.upper()}'
+            if has_instruct:
+                model_name += '-Instruct'
         elif version_num == '3':
-            # Format: 'Meta-Llama-3-70B' (for meta-llama/Meta-Llama-3-70B)
+            # Format: 'Meta-Llama-3-8B' or 'Meta-Llama-3-8B-Instruct'
             model_name = f'Meta-Llama-{version_num}-{size.upper()}'
+            if has_instruct:
+                model_name += '-Instruct'
         else:
             # Format: 'Llama-2-70b-chat-hf' (for meta-llama/Llama-2-70b-chat-hf)
             model_name = f'Llama-{version_num}-{size.lower()}-chat-hf'
+
     elif len(parts) == 2:
         # Format: 'Llama-2-70b-chat-hf' (if someone uses 'llama-2-70b')
         model_name = f'Llama-{parts[1]}-{parts[0].lower()}-chat-hf'

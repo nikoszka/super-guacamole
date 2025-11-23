@@ -270,7 +270,8 @@ class HuggingfaceModel(BaseModel):
             if model_size in ['1b', '7b','8b', '13b'] or eightbit:
                 # Use device_map="auto" which automatically distributes across all available GPUs
                 # accelerate library will handle multi-GPU distribution automatically
-                
+                import torch
+                num_gpus = torch.cuda.device_count()
                 # Get max_memory for all GPUs to enable proper multi-GPU distribution
                 max_memory_dict = get_gpu_memory_dict()
                 if num_gpus > 1:

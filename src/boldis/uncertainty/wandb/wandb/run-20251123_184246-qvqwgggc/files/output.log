@@ -1,0 +1,22 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2025-11-23 18:42:47 WARNING  Recompute accuracy enabled. This does not apply to precomputed p_true!
+2025-11-23 18:42:47 WARNING  70B models require significant GPU memory (~35GB with 4-bit quantization). Attempting to load Llama-3.1-70B with 4-bit quantization...
+2025-11-23 18:42:47 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/src/compute_uncertainty_measures.py", line 397, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/compute_uncertainty_measures.py", line 197, in main
+    metric = utils.get_metric(args.metric)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/utils/utils.py", line 427, in get_metric
+    metric = get_llama_metric(metric, max_new_tokens=50)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/utils/utils.py", line 338, in get_llama_metric
+    judge_model = HuggingfaceModel(
+                  ^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 191, in __init__
+    bnb_4bit_compute_dtype=torch.float16,
+                           ^^^^^
+UnboundLocalError: cannot access local variable 'torch' where it is not associated with a value
