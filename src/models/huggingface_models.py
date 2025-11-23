@@ -232,6 +232,22 @@ class HuggingfaceModel(BaseModel):
             logging.info(f"Detected model size: {model_size}")
             llama65b = '65b' in model_name and base == 'huggyllama'
             llama70b = '70b' in model_name.lower() and base == 'meta-llama'
+
+            # AUTOMATIC REDIRECTION TO PRE-QUANTIZED MODEL FOR 70B
+            # This prevents downloading the massive 140GB checkpoint
+            if llama70b and fourbit:
+                logging.info("Redirecting to pre-quantized 4-bit model to save disk space...")
+                base = 'unsloth'
+                # unsloth names end in -bnb-4bit usually
+                # e.g. unsloth/Meta-Llama-3.1-70B-Instruct-bnb-4bit
+                if 'Llama-3.1' in model_name:
+                     model_name = 'Meta-Llama-3.1-70B-Instruct-bnb-4bit'
+                elif 'Llama-3' in model_name:
+                     model_name = 'Meta-Llama-3-70B-Instruct-bnb-4bit'
+                
+                # Clear quantization_config since unsloth models are pre-quantized
+                kwargs = {}
+            
             print("Initializing model: ", model_name + " and base:", base)
             if model_size in ['1b', '7b','8b', '13b'] or eightbit:
                 # Use device_map="auto" which automatically distributes across all available GPUs
@@ -257,13 +273,18 @@ class HuggingfaceModel(BaseModel):
                     
                     # Get max_memory for all GPUs to enable proper multi-GPU distribution
                     max_memory_dict = get_gpu_memory_dict()
+                    
+                    # Add CPU as fallback for offloading if needed (especially for pre-quantized models)
+                    if max_memory_dict and base == 'unsloth':
+                        max_memory_dict['cpu'] = '100GiB'  # Allow CPU offload if GPU is full
+                    
                     if max_memory_dict:
                         logging.info(f'Using max_memory per GPU for quantized model: {max_memory_dict}')
                     
                     self.model = AutoModelForCausalLM.from_pretrained(
                         f"{base}/{model_name}", 
                         device_map="auto",
-                        quantization_config=kwargs.get('quantization_config'),
+                        quantization_config=kwargs.get('quantization_config') if kwargs else None,
                         max_memory=max_memory_dict if max_memory_dict else {0: '8GIB'},  # Limit per GPU based on actual GPU capacity
                         cache_dir=self.cache_dir,
                         **{k: v for k, v in kwargs.items() if k != 'quantization_config'}
