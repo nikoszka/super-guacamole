@@ -345,7 +345,7 @@ def get_llama_metric(metric_name, max_new_tokens=50):
     
     Args:
         metric_name: Format like 'llm_llama-3-70b' or 'llm_llama-2-13b'
-        max_new_tokens: Maximum tokens for judge response
+        max_new_tokens: Maximum tokens for judge response (ignored, always set to 10 for yes/no answers)
     """
     
     # Extract model name (e.g., 'llm_llama-3.1-70b' -> 'llama-3.1-70b')
@@ -389,10 +389,11 @@ def get_llama_metric(metric_name, max_new_tokens=50):
         model_name_with_quant = model_name
     
     # Initialize the HuggingFace model for judging
+    # Use only 10 tokens since we only need "yes" or "no"
     judge_model = HuggingfaceModel(
         model_name_with_quant, 
         stop_sequences='default',
-        max_new_tokens=max_new_tokens
+        max_new_tokens=10
     )
     
     def llama_metric(predicted_answer, example, model):

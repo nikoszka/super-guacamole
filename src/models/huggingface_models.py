@@ -211,6 +211,24 @@ class HuggingfaceModel(BaseModel):
                 f"{base}/{model_name}", device_map="auto",
                 token_type_ids=None, cache_dir=self.cache_dir)
 
+            # For Llama-3/3.1-Instruct models, ensure chat template is set
+            if ('Instruct' in model_name or 'instruct' in model_name) and not self.tokenizer.chat_template:
+                logging.info("Setting Llama 3/3.1 chat template for instruct model")
+                # Llama 3/3.1 chat template
+                self.tokenizer.chat_template = (
+                    "{% set loop_messages = messages %}"
+                    "{% for message in loop_messages %}"
+                    "{% set content = '<|start_header_id|>' + message['role'] + '<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}"
+                    "{% if loop.index0 == 0 %}"
+                    "{% set content = bos_token + content %}"
+                    "{% endif %}"
+                    "{{ content }}"
+                    "{% endfor %}"
+                    "{% if add_generation_prompt %}"
+                    "{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}"
+                    "{% endif %}"
+                )
+
             # Extract model size, handling suffixes like -Instruct, -hf, etc.
             # Split model name and look for the size component (e.g., '8B', '1B', '7B', '70B')
             model_name_parts = model_name.replace('-hf', '').split('-')
