@@ -281,13 +281,20 @@ class HuggingfaceModel(BaseModel):
                     if max_memory_dict:
                         logging.info(f'Using max_memory per GPU for quantized model: {max_memory_dict}')
                     
+                    # Prepare kwargs for from_pretrained
+                    load_kwargs = {
+                        'device_map': 'auto',
+                        'max_memory': max_memory_dict if max_memory_dict else {0: '8GIB'},
+                        'cache_dir': self.cache_dir,
+                    }
+                    
+                    # Only add quantization_config if it exists (not for pre-quantized models)
+                    if kwargs.get('quantization_config'):
+                        load_kwargs['quantization_config'] = kwargs['quantization_config']
+                    
                     self.model = AutoModelForCausalLM.from_pretrained(
-                        f"{base}/{model_name}", 
-                        device_map="auto",
-                        quantization_config=kwargs.get('quantization_config') if kwargs else None,
-                        max_memory=max_memory_dict if max_memory_dict else {0: '8GIB'},  # Limit per GPU based on actual GPU capacity
-                        cache_dir=self.cache_dir,
-                        **{k: v for k, v in kwargs.items() if k != 'quantization_config'}
+                        f"{base}/{model_name}",
+                        **load_kwargs
                     )
                 else:
                     # Multi-GPU loading path (automatically uses all available GPUs)
