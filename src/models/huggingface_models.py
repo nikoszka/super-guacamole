@@ -453,7 +453,7 @@ class HuggingfaceModel(BaseModel):
         n_input_token = len(inputs['input_ids'][0])
         
         with torch.no_grad():
-            # For greedy decoding (temperature=0), use do_sample=True with top_p=1.0
+            # For greedy decoding (temperature=0), use do_sample=False
             if temperature == 0.0:
                 outputs = self.model.generate(
                     **inputs,
@@ -461,8 +461,7 @@ class HuggingfaceModel(BaseModel):
                     return_dict_in_generate=True,
                     output_scores=True,
                     output_hidden_states=True,
-                    do_sample=True,
-                    top_p=1.0,
+                    do_sample=False,
                     stopping_criteria=stopping_criteria,
                     pad_token_id=pad_token_id,
                 )
