@@ -384,6 +384,52 @@ class HuggingfaceModel(BaseModel):
                 **kwargs,
             )
 
+        elif 'qwen' in model_name.lower():
+
+            if model_name.endswith('-8bit'):
+                kwargs = {'quantization_config': BitsAndBytesConfig(
+                    load_in_8bit=True,)}
+                model_name = model_name[:-len('-8bit')]
+                eightbit = True
+                fourbit = False
+            elif model_name.endswith('-4bit'):
+                kwargs = {'quantization_config': BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_compute_dtype=torch.float16,
+                    bnb_4bit_use_double_quant=True,
+                    bnb_4bit_quant_type="nf4",
+                )}
+                model_name = model_name[:-len('-4bit')]
+                eightbit = False
+                fourbit = True
+            else:
+                kwargs = {}
+                eightbit = False
+                fourbit = False
+
+            # Qwen models from Qwen organization
+            model_id = f'Qwen/{model_name}'
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                model_id, device_map='auto', trust_remote_code=True,
+                cache_dir=self.cache_dir)
+
+            # Get max_memory for all GPUs to enable proper multi-GPU distribution
+            max_memory_dict = get_gpu_memory_dict()
+            
+            logging.info(f"Loading Qwen model: {model_id}")
+            if eightbit or fourbit:
+                quant_type = "8-bit" if eightbit else "4-bit"
+                logging.info(f"Using {quant_type} quantization for Qwen model")
+            
+            self.model = AutoModelForCausalLM.from_pretrained(
+                model_id,
+                device_map='auto',
+                trust_remote_code=True,
+                max_memory=max_memory_dict if max_memory_dict else {0: '40GiB'},
+                cache_dir=self.cache_dir,
+                **kwargs,
+            )
+
         elif 'falcon' in model_name:
             model_id = f'tiiuae/{model_name}'
             self.tokenizer = AutoTokenizer.from_pretrained(
@@ -411,6 +457,9 @@ class HuggingfaceModel(BaseModel):
         elif 'Llama-3' in model_name or 'Llama-3.1' in model_name or 'Meta-Llama-3' in model_name:
             # Llama-3 models support 8192 tokens, but use 4096 for safety
             self.token_limit = 4096
+        elif 'Qwen' in model_name or 'qwen' in model_name.lower():
+            # Qwen2.5 models support 32K context, use 4096 for safety/consistency
+            self.token_limit = 4096
         else:
             self.token_limit = 2048
 
@@ -433,7 +482,7 @@ class HuggingfaceModel(BaseModel):
         device = next(self.model.parameters()).device
         inputs = self.tokenizer(input_data, return_tensors="pt").to(device)
 
-        if 'llama' in self.model_name.lower() or 'falcon' in self.model_name or 'mistral' in self.model_name.lower():
+        if 'llama' in self.model_name.lower() or 'falcon' in self.model_name or 'mistral' in self.model_name.lower() or 'qwen' in self.model_name.lower():
             if 'token_type_ids' in inputs:  # Some HF models have changed.
                 del inputs['token_type_ids']
             pad_token_id = self.tokenizer.eos_token_id
