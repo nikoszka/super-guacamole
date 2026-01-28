@@ -1,0 +1,30 @@
+{
+  "aurocs": {
+    "uniform": 0.4967088607594937,
+    "linear_increasing": 0.4845569620253165,
+    "linear_decreasing": 0.4956962025316456,
+    "quadratic_increasing": 0.43544303797468353,
+    "quadratic_decreasing": 0.4465822784810127,
+    "exponential_increasing": 0.43240506329113926,
+    "exponential_decreasing": 0.45721518987341775,
+    "middle_peak": 0.6111392405063291,
+    "edges_peak": 0.3787341772151899,
+    "gaussian_middle": 0.5620253164556962,
+    "nll_proportional": 0.7240506329113925,
+    "confidence_proportional": 0.38430379746835447,
+    "surprisal": 0.5893670886075949,
+    "first_k": 0.4334177215189874,
+    "last_k": 0.3579746835443038,
+    "first_last_k": 0.369620253164557,
+    "recency_bias": 0.49063291139240506,
+    "high_uncertainty_only": 0.5326582278481014,
+    "low_uncertainty_only": 0.5012658227848101,
+    "sar_relevance": 0.5957446808510638,
+    "hybrid_middle_sar_50": 0.648936170212766,
+    "hybrid_gaussian_sar_50": 0.6276595744680851,
+    "hybrid_middle_sar_70": 0.6595744680851063,
+    "hybrid_gaussian_sar_70": 0.6170212765957447
+  },
+  "num_examples": 400,
+  "normalize": true
+}
