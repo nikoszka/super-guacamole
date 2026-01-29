@@ -426,7 +426,7 @@ def get_reference(example):
 
 def init_model(args):
     mn = args.model_name
-    if 'llama' in mn.lower() or 'falcon' in mn or 'mistral' in mn.lower():
+    if 'llama' in mn.lower() or 'falcon' in mn or 'mistral' in mn.lower() or 'qwen' in mn.lower():
         # Use relaxed stop sequences for detailed answers to allow multi-sentence responses
         # For detailed mode, we remove '\n\n' and '\n\n\n' to prevent premature stopping
         if args.brief_prompt == 'detailed':
