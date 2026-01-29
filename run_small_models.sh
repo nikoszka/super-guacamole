@@ -10,9 +10,9 @@ set -e
 ENTITY="${WANDB_ENTITY:-nikosteam}"
 PROJECT="${WANDB_PROJECT:-super_guacamole}"
 NUM_SAMPLES=400
-NUM_FEW_SHOT=5
+NUM_FEW_SHOT=0
 TEMPERATURE=0.0
-BRIEF_PROMPT="${BRIEF_PROMPT:-short}"
+BRIEF_PROMPT="${BRIEF_PROMPT:-manual}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 DATASETS=("trivia_qa" "squad")

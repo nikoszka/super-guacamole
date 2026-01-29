@@ -1,0 +1,40 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2026-01-29 11:07:32 INFO     Finished wandb init.
+2026-01-29 11:07:37 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2026-01-29 11:07:39 INFO     Prompt is:
+2026-01-29 11:07:39 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+tokenizer_config.json: 137kB [00:00, 93.0MB/s]
+tokenizer.model: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 587k/587k [00:00<00:00, 888kB/s]
+tokenizer.json: 1.96MB [00:00, 11.6MB/s]
+special_tokens_map.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 414/414 [00:00<00:00, 1.88MB/s]
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 290, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 95, in main
+    model = utils.init_model(args)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/utils/utils.py", line 437, in init_model
+    model = HuggingfaceModel(
+            ^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 373, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 1140, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2097, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 2343, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/llama/tokenization_llama_fast.py", line 154, in __init__
+    super().__init__(
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/tokenization_utils_fast.py", line 108, in __init__
+    raise ValueError(
+ValueError: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
