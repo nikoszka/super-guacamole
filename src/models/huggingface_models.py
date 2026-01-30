@@ -370,18 +370,34 @@ class HuggingfaceModel(BaseModel):
                 kwargs = {}
 
             model_id = f'mistralai/{model_name}'
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                model_id, device_map='auto', token_type_ids=None,
-                clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
+            
+            # Ministral models need trust_remote_code for newer tokenizer backend
+            if 'ministral' in model_name.lower():
+                self.tokenizer = AutoTokenizer.from_pretrained(
+                    model_id, device_map='auto', token_type_ids=None,
+                    trust_remote_code=True,
+                    clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
+            else:
+                self.tokenizer = AutoTokenizer.from_pretrained(
+                    model_id, device_map='auto', token_type_ids=None,
+                    clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
 
             # Get max_memory for all GPUs to enable proper multi-GPU distribution
             max_memory_dict = get_gpu_memory_dict()
+            
+            # Ministral models may need trust_remote_code
+            model_kwargs = {
+                'device_map': 'auto',
+                'max_memory': max_memory_dict if max_memory_dict else {0: '80GIB'},
+                'cache_dir': self.cache_dir,
+                **kwargs,
+            }
+            if 'ministral' in model_name.lower():
+                model_kwargs['trust_remote_code'] = True
+            
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_id,
-                device_map='auto',
-                max_memory=max_memory_dict if max_memory_dict else {0: '80GIB'},
-                cache_dir=self.cache_dir,
-                **kwargs,
+                **model_kwargs,
             )
 
         elif 'qwen' in model_name.lower():
