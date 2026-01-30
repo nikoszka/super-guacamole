@@ -356,7 +356,7 @@ class HuggingfaceModel(BaseModel):
             else:
                 raise ValueError
 
-        elif 'mistral' in model_name.lower():
+        elif 'mistral' in model_name.lower() or 'ministral' in model_name.lower():
 
             if model_name.endswith('-8bit'):
                 kwargs = {'quantization_config': BitsAndBytesConfig(
@@ -482,7 +482,7 @@ class HuggingfaceModel(BaseModel):
         device = next(self.model.parameters()).device
         inputs = self.tokenizer(input_data, return_tensors="pt").to(device)
 
-        if 'llama' in self.model_name.lower() or 'falcon' in self.model_name or 'mistral' in self.model_name.lower() or 'qwen' in self.model_name.lower():
+        if 'llama' in self.model_name.lower() or 'falcon' in self.model_name or 'mistral' in self.model_name.lower() or 'ministral' in self.model_name.lower() or 'qwen' in self.model_name.lower():
             if 'token_type_ids' in inputs:  # Some HF models have changed.
                 del inputs['token_type_ids']
             pad_token_id = self.tokenizer.eos_token_id

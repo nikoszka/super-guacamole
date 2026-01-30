@@ -17,15 +17,15 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 DATASETS=("trivia_qa" "squad")
 MODELS=(
-    "Llama-3.1-8B-8bit:Llama:Large"
-    "Qwen3-8B-8bit:Qwen:Large"
-    "Ministral-3-8B-Instruct-2512-8bit:Mistral:Large"
+    "Llama-3.1-8B:Llama:Large"
+    "Qwen3-8B:Qwen:Large"
+    "Ministral-3-8B-Instruct-2512:Mistral:Large"
 )
 
 echo "================================================================================"
 echo "Large Models Experiments"
 echo "================================================================================"
-echo "Models: Llama-3.1-8B-8bit, Qwen3-8B-8bit, Ministral-3-8B-Instruct-2512-8bit"
+echo "Models: Llama-3.1-8B, Qwen3-8B, Ministral-3-8B-Instruct-2512 (fp16, no quantization)"
 echo "Datasets: TriviaQA, SQuAD"
 echo "Total: ${#MODELS[@]} models × ${#DATASETS[@]} datasets = $((${#MODELS[@]} * ${#DATASETS[@]})) experiments"
 echo "================================================================================"
