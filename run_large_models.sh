@@ -19,13 +19,13 @@ DATASETS=("trivia_qa" "squad")
 MODELS=(
     "Llama-3.1-8B:Llama:Large"
     "Qwen3-8B:Qwen:Large"
-    "Ministral-3-8B-Instruct-2512:Mistral:Large"
+    "Mistral-7B-Instruct-v0.3:Mistral:Large"
 )
 
 echo "================================================================================"
 echo "Large Models Experiments"
 echo "================================================================================"
-echo "Models: Llama-3.1-8B, Qwen3-8B, Ministral-3-8B-Instruct-2512 (fp16, no quantization)"
+echo "Models: Llama-3.1-8B, Qwen3-8B, Mistral-7B-Instruct-v0.3 (fp16, no quantization)"
 echo "Datasets: TriviaQA, SQuAD"
 echo "Total: ${#MODELS[@]} models × ${#DATASETS[@]} datasets = $((${#MODELS[@]} * ${#DATASETS[@]})) experiments"
 echo "================================================================================"

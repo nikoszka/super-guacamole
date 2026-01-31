@@ -373,10 +373,21 @@ class HuggingfaceModel(BaseModel):
             
             # Ministral models need trust_remote_code for newer tokenizer backend
             if 'ministral' in model_name.lower():
-                self.tokenizer = AutoTokenizer.from_pretrained(
-                    model_id, device_map='auto', token_type_ids=None,
-                    trust_remote_code=True,
-                    clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
+                try:
+                    # Try with trust_remote_code first
+                    self.tokenizer = AutoTokenizer.from_pretrained(
+                        model_id, device_map='auto', token_type_ids=None,
+                        trust_remote_code=True,
+                        use_fast=True,
+                        clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
+                except (ValueError, ImportError) as e:
+                    # If that fails, try falling back to slow tokenizer
+                    logging.warning(f"Failed to load fast tokenizer: {e}. Trying slow tokenizer...")
+                    self.tokenizer = AutoTokenizer.from_pretrained(
+                        model_id, device_map='auto', token_type_ids=None,
+                        trust_remote_code=True,
+                        use_fast=False,
+                        clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
             else:
                 self.tokenizer = AutoTokenizer.from_pretrained(
                     model_id, device_map='auto', token_type_ids=None,
