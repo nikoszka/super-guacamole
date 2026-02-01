@@ -53,11 +53,15 @@ def get_hf_cache_dir():
     return cache_dir
 
 
-def get_gpu_memory_dict():
+def get_gpu_memory_dict(allow_cpu_offload=False):
     """Get max_memory dictionary for all available GPUs.
     
     Automatically detects GPU memory capacity and creates a max_memory dictionary
     that can be used with device_map="auto" to distribute models across all GPUs.
+    
+    Args:
+        allow_cpu_offload: If True, adds CPU memory to the dictionary for offloading.
+                          Useful for very large models that don't fit in GPU memory.
     
     Returns:
         dict: Dictionary mapping GPU index to available memory string (e.g., {0: '10GiB', 1: '10GiB'})
@@ -82,6 +86,11 @@ def get_gpu_memory_dict():
         # Use at least 1GB to avoid issues
         available_memory_gb = max(1, int(total_memory_gb - 0.5))
         max_memory[i] = f'{available_memory_gb}GiB'
+    
+    # Add CPU memory for offloading if requested
+    if allow_cpu_offload:
+        max_memory['cpu'] = '30GiB'  # Allow up to 30GB for CPU offloading
+        logging.info(f'CPU offloading enabled with max_memory: {max_memory}')
     
     return max_memory
 
@@ -302,8 +311,10 @@ class HuggingfaceModel(BaseModel):
                     if base == 'unsloth':
                         logging.info('Loading pre-quantized unsloth model with automatic memory management')
                     else:
-                        # For models we're quantizing ourselves, specify max_memory
-                        max_memory_dict = get_gpu_memory_dict()
+                        # For models we're quantizing ourselves, specify max_memory with CPU offload
+                        # 70B models with 4-bit quantization are ~35GB, should fit in 44GB
+                        # Enable CPU offload as a safety measure
+                        max_memory_dict = get_gpu_memory_dict(allow_cpu_offload=fourbit)
                         if max_memory_dict:
                             load_kwargs['max_memory'] = max_memory_dict
                             logging.info(f'Using max_memory per GPU for quantized model: {max_memory_dict}')
@@ -394,13 +405,19 @@ class HuggingfaceModel(BaseModel):
                     clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
 
             # Get max_memory for all GPUs to enable proper multi-GPU distribution
-            max_memory_dict = get_gpu_memory_dict()
+            # Enable CPU offloading for Mistral-Large models (123B params)
+            allow_cpu_offload = 'large' in model_name.lower() and '2407' in model_name.lower()
+            if allow_cpu_offload:
+                logging.info('Detected Mistral-Large-2 (123B) - enabling CPU offloading for memory efficiency')
+            
+            max_memory_dict = get_gpu_memory_dict(allow_cpu_offload=allow_cpu_offload)
             
             # Ministral models may need trust_remote_code
             model_kwargs = {
                 'device_map': 'auto',
                 'max_memory': max_memory_dict if max_memory_dict else {0: '80GIB'},
                 'cache_dir': self.cache_dir,
+                'low_cpu_mem_usage': True,  # Reduce CPU memory usage during loading
                 **kwargs,
             }
             if 'ministral' in model_name.lower():
@@ -441,7 +458,13 @@ class HuggingfaceModel(BaseModel):
                 cache_dir=self.cache_dir)
 
             # Get max_memory for all GPUs to enable proper multi-GPU distribution
-            max_memory_dict = get_gpu_memory_dict()
+            # Enable CPU offloading for 72B models with 4-bit quantization
+            is_72b = '72b' in model_name.lower()
+            allow_cpu_offload = is_72b and fourbit
+            if allow_cpu_offload:
+                logging.info('Detected Qwen2.5-72B with 4-bit - enabling CPU offloading for safety')
+            
+            max_memory_dict = get_gpu_memory_dict(allow_cpu_offload=allow_cpu_offload)
             
             logging.info(f"Loading Qwen model: {model_id}")
             if eightbit or fourbit:
@@ -452,6 +475,7 @@ class HuggingfaceModel(BaseModel):
                 model_id,
                 device_map='auto',
                 trust_remote_code=True,
+                low_cpu_mem_usage=True,
                 max_memory=max_memory_dict if max_memory_dict else {0: '40GiB'},
                 cache_dir=self.cache_dir,
                 **kwargs,

@@ -2,10 +2,10 @@
 
 ## Overview
 
-This guide covers running **ultra-large models** (70B+) on your **3×11GB GPUs** setup.
+This guide covers running **ultra-large models** (70B+) on your **4×11GB GPUs** setup.
 
-**Models**: 3 ultra-large models in the same weight class as Llama-3.1-70B  
-**Configuration**: 4-bit quantization + multi-GPU distribution  
+**Models**: 3 ultra-large models (70B-123B parameters)  
+**Configuration**: 4-bit quantization + multi-GPU distribution + CPU offloading  
 **Total**: 3 models × 2 datasets = 6 experiments  
 **Estimated Time**: 12-18 hours
 
@@ -15,39 +15,44 @@ This guide covers running **ultra-large models** (70B+) on your **3×11GB GPUs**
 
 | Model | Parameters | Quantization | Est. Memory | Distribution |
 |-------|------------|--------------|-------------|--------------|
-| Llama-3.1-70B-Instruct-4bit | 70B | 4-bit | ~35GB | 3 GPUs |
-| Qwen2.5-72B-4bit | 72B | 4-bit | ~36GB | 3 GPUs |
-| Mixtral-8x7B-Instruct-v0.1-4bit | 8×7B (56B) | 4-bit | ~24GB | 2-3 GPUs |
+| Llama-3.1-70B-Instruct-4bit | 70B | 4-bit | ~35GB | 4 GPUs |
+| Qwen2.5-72B-4bit | 72B | 4-bit | ~36GB | 4 GPUs |
+| Mistral-Large-2-4bit | 123B | 4-bit | ~62GB | 4 GPUs + CPU |
 
-All models use **4-bit quantization** (NF4) to fit in your 33GB total VRAM.
+All models use **4-bit quantization** (NF4) to fit in your 44GB total VRAM. Mistral-Large-2 also uses CPU offloading.
 
 ---
 
 ## Memory Strategy
 
 ### Your Setup
-- **3× GPUs**: 11GB each = **33GB total**
+- **4× GPUs**: 11GB each = **44GB total**
 - **Distribution**: Models will automatically spread across GPUs via `accelerate`
-- **Overhead**: ~2-3GB per GPU for system/CUDA
+- **CPU Offload**: Mistral-Large-2 uses CPU RAM for layers that don't fit in GPU
+- **Overhead**: ~500MB per GPU for system/CUDA
 
 ### Expected Distribution
 ```
 Llama-3.1-70B-4bit (~35GB):
-  GPU 0: ~11GB (layers 0-20)
-  GPU 1: ~11GB (layers 21-40)
-  GPU 2: ~11GB (layers 41-60)
-  CPU:   ~2GB  (some layers offloaded)
+  GPU 0: ~9GB (layers 0-17)
+  GPU 1: ~9GB (layers 18-35)
+  GPU 2: ~9GB (layers 36-53)
+  GPU 3: ~8GB (layers 54-70)
+  CPU:   minimal offload
 
 Qwen2.5-72B-4bit (~36GB):
-  GPU 0: ~11GB (layers 0-22)
-  GPU 1: ~11GB (layers 23-44)
-  GPU 2: ~11GB (layers 45-66)
-  CPU:   ~3GB  (some layers offloaded)
+  GPU 0: ~9GB (layers 0-18)
+  GPU 1: ~9GB (layers 19-36)
+  GPU 2: ~9GB (layers 37-54)
+  GPU 3: ~9GB (layers 55-72)
+  CPU:   minimal offload
 
-Mixtral-8x7B-4bit (~24GB):
-  GPU 0: ~11GB (experts 0-2)
-  GPU 1: ~11GB (experts 3-5)
-  GPU 2: ~2GB  (experts 6-7)
+Mistral-Large-2-4bit (~62GB):
+  GPU 0: ~10GB (layers 0-30)
+  GPU 1: ~10GB (layers 31-60)
+  GPU 2: ~10GB (layers 61-90)
+  GPU 3: ~10GB (layers 91-110)
+  CPU:   ~22GB (remaining layers)
 ```
 
 ---
@@ -57,12 +62,15 @@ Mixtral-8x7B-4bit (~24GB):
 ### 1. Pre-Flight Check
 
 ```bash
-# Verify 3 GPUs detected
+# Verify 4 GPUs detected
 python -c "import torch; print(f'GPUs: {torch.cuda.device_count()}')"
-# Should show: GPUs: 3
+# Should show: GPUs: 4
 
 # Check available memory
 nvidia-smi
+
+# Ensure you have at least 30GB free RAM for CPU offloading (Mistral-Large-2)
+free -h
 ```
 
 ### 2. Run Ultra-Large Models
@@ -80,7 +88,7 @@ Open a second terminal:
 watch -n 1 nvidia-smi
 ```
 
-You should see memory usage across **all 3 GPUs**.
+You should see memory usage across **all 4 GPUs**. For Mistral-Large-2, you'll also see CPU RAM usage.
 
 ---
 
@@ -91,17 +99,17 @@ You should see memory usage across **all 3 GPUs**.
 - **Subsequent runs**: 5-10 minutes per model (cached)
 
 ### Generation Speed
-- **Llama-3.1-70B**: ~5-8 tokens/sec (slower due to multi-GPU)
-- **Qwen2.5-72B**: ~4-7 tokens/sec
-- **Mixtral-8x7B**: ~8-12 tokens/sec (more efficient architecture)
+- **Llama-3.1-70B**: ~6-10 tokens/sec (4 GPUs faster than 3)
+- **Qwen2.5-72B**: ~5-9 tokens/sec
+- **Mistral-Large-2**: ~3-5 tokens/sec (slower due to CPU offload + larger size)
 
 ### Per Experiment Time
 - **400 samples** at ~50 tokens/answer
-- **Llama-3.1-70B**: ~90-120 minutes per dataset
-- **Qwen2.5-72B**: ~100-130 minutes per dataset
-- **Mixtral-8x7B**: ~60-80 minutes per dataset
+- **Llama-3.1-70B**: ~80-100 minutes per dataset
+- **Qwen2.5-72B**: ~90-110 minutes per dataset
+- **Mistral-Large-2**: ~150-200 minutes per dataset
 
-**Total**: ~12-18 hours for all 6 experiments
+**Total**: ~14-20 hours for all 6 experiments
 
 ---
 
@@ -146,13 +154,13 @@ This lets you verify everything works before committing to full runs.
 | Model Size | Memory (4-bit) | Speed | GPUs Used | Accuracy* |
 |------------|----------------|-------|-----------|-----------|
 | 1B-1.5B | ~2-3GB | Fast ✅ | 1 | Baseline |
-| 7B-8B (8-bit) | ~8-10GB | Medium | 1 | +10-15% |
-| 7B-8B (4-bit) | ~4-5GB | Medium | 1 | +8-12% |
-| 70B-72B (4-bit) | ~35-36GB | Slow ⚠️ | 3 | +20-30% |
+| 7B-8B (fp16) | ~16GB | Medium | 1 | +10-15% |
+| 70B-72B (4-bit) | ~35-36GB | Slow ⚠️ | 4 | +20-30% |
+| 123B (4-bit) | ~62GB | Very Slow ⚠️⚠️ | 4+CPU | +25-35% |
 
 *Relative to 1B baseline
 
-**Trade-off**: 70B models are ~3-5× slower but significantly more accurate.
+**Trade-off**: 70B models are ~3-5× slower, 123B models are ~6-8× slower but more accurate.
 
 ---
 
@@ -160,7 +168,7 @@ This lets you verify everything works before committing to full runs.
 
 ### Issue: "CUDA out of memory"
 
-**Cause**: Model doesn't fit even with 4-bit + 3 GPUs
+**Cause**: Model doesn't fit even with 4-bit + 4 GPUs + CPU offload
 
 **Solutions**:
 1. **Check no other processes using GPU**:
@@ -169,12 +177,15 @@ This lets you verify everything works before committing to full runs.
    # Kill other processes if needed
    ```
 
-2. **Try with CPU offloading** (edit huggingface_models.py):
-   ```python
-   max_memory = {0: '10GiB', 1: '10GiB', 2: '10GiB', 'cpu': '20GiB'}
+2. **Check available CPU RAM** (need 30GB+ for Mistral-Large-2):
+   ```bash
+   free -h
+   # Close other applications if needed
    ```
 
-3. **Reduce sample size** temporarily:
+3. **CPU offloading is already enabled** for Mistral-Large-2 (automatic)
+
+4. **Reduce sample size** temporarily to test:
    ```bash
    NUM_SAMPLES=50  # Test run
    ```
@@ -183,12 +194,12 @@ This lets you verify everything works before committing to full runs.
 
 **Expected**: 70B models are 3-5× slower than 7B models due to:
 - Multi-GPU communication overhead
-- 4× more parameters to compute
+- 10× more parameters to compute
 
 **Verify it's working**:
 ```bash
 watch -n 1 nvidia-smi
-# All 3 GPUs should show high utilization (>80%)
+# All 4 GPUs should show high utilization (>70%)
 ```
 
 If only 1-2 GPUs active → model might not be distributed properly.
@@ -199,9 +210,11 @@ If only 1-2 GPUs active → model might not be distributed properly.
 
 **Verify**: Check you're using the updated `huggingface_models.py` with Qwen support.
 
-### Issue: Mixtral-8x7B uses only 2 GPUs
+### Issue: Mistral-Large-2 is extremely slow
 
-**Normal**: Mixtral is more memory-efficient (~24GB), may not need all 3 GPUs.
+**Normal**: 123B model with CPU offloading will be slower than GPU-only models. 
+- Expect ~3-5 tokens/sec (vs 6-10 for pure GPU models)
+- CPU↔GPU communication adds latency
 
 ---
 
@@ -210,9 +223,9 @@ If only 1-2 GPUs active → model might not be distributed properly.
 ### If You Have Time Constraints
 
 **Priority Order** (best value):
-1. ✅ **Mixtral-8x7B-4bit**: Fastest, good quality, uses 2 GPUs
-2. ✅ **Llama-3.1-70B-4bit**: Balanced, most well-tested
-3. ⚠️ **Qwen2.5-72B-4bit**: Slowest, but potentially best quality
+1. ✅ **Llama-3.1-70B-4bit**: Fastest 70B, well-tested, balanced
+2. ✅ **Qwen2.5-72B-4bit**: Similar speed to Llama, excellent quality
+3. ⚠️ **Mistral-Large-2-4bit**: Slowest (123B + CPU), but highest quality
 
 ### If Memory is Tight
 

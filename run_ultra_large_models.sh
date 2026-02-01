@@ -4,7 +4,7 @@
 # Ultra-Large Models Experiment Runner
 # Runs ultra-large models (70B+ with 4-bit quantization) on both datasets
 #
-# Optimized for 3×11GB GPUs (33GB total)
+# Optimized for 4×11GB GPUs (44GB total)
 # All models use 4-bit quantization to fit in available memory
 ################################################################################
 
@@ -21,25 +21,26 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 DATASETS=("trivia_qa" "squad")
 
 # Ultra-large models with 4-bit quantization
-# These are in the same weight class as Llama-3.1-70B
+# These are in the 70B+ weight class
 MODELS=(
     "Llama-3.1-70B-Instruct-4bit:Llama:XLarge"
     "Qwen2.5-72B-4bit:Qwen:XLarge"
-    "Mixtral-8x7B-Instruct-v0.1-4bit:Mistral:XLarge"
+    "Mistral-Large-Instruct-2407-4bit:Mistral:XLarge"
 )
 
 echo "================================================================================"
 echo "Ultra-Large Models Experiments (70B+ Weight Class)"
 echo "================================================================================"
 echo "Models:"
-echo "  - Llama-3.1-70B-Instruct-4bit (~35GB with 4-bit)"
-echo "  - Qwen2.5-72B-4bit (~36GB with 4-bit)"
-echo "  - Mixtral-8x7B-Instruct-v0.1-4bit (~24GB with 4-bit)"
+echo "  - Llama-3.1-70B-Instruct-4bit (70B params, ~35GB with 4-bit)"
+echo "  - Qwen2.5-72B-4bit (72B params, ~36GB with 4-bit)"
+echo "  - Mistral-Large-2-4bit (123B params, ~62GB with 4-bit, may use CPU offload)"
 echo ""
 echo "Datasets: TriviaQA, SQuAD"
 echo "Total: ${#MODELS[@]} models × ${#DATASETS[@]} datasets = $((${#MODELS[@]} * ${#DATASETS[@]})) experiments"
 echo ""
-echo "⚠️  NOTE: These models use 4-bit quantization and may distribute across your 3 GPUs"
+echo "⚠️  NOTE: These models use 4-bit quantization and distribute across your 4 GPUs"
+echo "    Mistral Large 2 is 123B and may require CPU offloading"
 echo "    Monitor GPU memory with: watch -n 1 nvidia-smi"
 echo "================================================================================"
 
