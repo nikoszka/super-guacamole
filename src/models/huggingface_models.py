@@ -53,7 +53,7 @@ def get_hf_cache_dir():
     return cache_dir
 
 
-def get_gpu_memory_dict(allow_cpu_offload=False):
+def get_gpu_memory_dict(allow_cpu_offload=False, aggressive=False):
     """Get max_memory dictionary for all available GPUs.
     
     Automatically detects GPU memory capacity and creates a max_memory dictionary
@@ -62,6 +62,8 @@ def get_gpu_memory_dict(allow_cpu_offload=False):
     Args:
         allow_cpu_offload: If True, adds CPU memory to the dictionary for offloading.
                           Useful for very large models that don't fit in GPU memory.
+        aggressive: If True, uses minimal overhead (200MB) instead of conservative 500MB.
+                   Use for pre-quantized models that are known to fit.
     
     Returns:
         dict: Dictionary mapping GPU index to available memory string (e.g., {0: '10GiB', 1: '10GiB'})
@@ -77,14 +79,17 @@ def get_gpu_memory_dict(allow_cpu_offload=False):
     
     max_memory = {}
     
+    # Choose overhead based on mode
+    overhead_gb = 0.2 if aggressive else 0.5
+    
     for i in range(num_gpus):
         # Get GPU memory capacity in bytes
         total_memory_bytes = torch.cuda.get_device_properties(i).total_memory
         # Convert to GB
         total_memory_gb = total_memory_bytes / (1024**3)
-        # Reserve ~500MB for system overhead, use rest for model
+        # Reserve overhead for system, use rest for model
         # Use at least 1GB to avoid issues
-        available_memory_gb = max(1, int(total_memory_gb - 0.5))
+        available_memory_gb = max(1, int(total_memory_gb - overhead_gb))
         max_memory[i] = f'{available_memory_gb}GiB'
     
     # Add CPU memory for offloading if requested
@@ -260,26 +265,14 @@ class HuggingfaceModel(BaseModel):
             llama65b = '65b' in model_name and base == 'huggyllama'
             llama70b = '70b' in model_name.lower() and base == 'meta-llama'
 
-            # AUTOMATIC REDIRECTION TO PRE-QUANTIZED MODEL FOR 70B
-            # This prevents downloading the massive 140GB checkpoint
-            if llama70b and fourbit:
-                logging.info("Redirecting to pre-quantized 4-bit model to save disk space...")
-                base = 'unsloth'
-                # unsloth names end in -bnb-4bit usually
-                # e.g. unsloth/Meta-Llama-3.1-70B-Instruct-bnb-4bit
-                if 'Llama-3.1' in model_name:
-                     model_name = 'Meta-Llama-3.1-70B-Instruct-bnb-4bit'
-                elif 'Llama-3' in model_name:
-                     model_name = 'Meta-Llama-3-70B-Instruct-bnb-4bit'
-                
-                # Clear quantization_config since unsloth models are pre-quantized
-                kwargs = {}
+            # NOTE: We quantize 70B models ourselves rather than using pre-quantized versions
+            # This gives us full control over quantization config including CPU offload settings
+            # No redirect to unsloth needed - we'll load from meta-llama with our own quantization
             
             print("Initializing model: ", model_name + " and base:", base)
             if model_size in ['1b', '7b','8b', '13b'] or eightbit:
                 # Use device_map="auto" which automatically distributes across all available GPUs
                 # accelerate library will handle multi-GPU distribution automatically
-                import torch
                 num_gpus = torch.cuda.device_count()
                 # Get max_memory for all GPUs to enable proper multi-GPU distribution
                 max_memory_dict = get_gpu_memory_dict()
@@ -294,34 +287,26 @@ class HuggingfaceModel(BaseModel):
                     cache_dir=self.cache_dir, **kwargs,)
 
             elif llama70b or llama65b:
-                # For 70B models, use quantization if requested (via -8bit suffix)
+                # For 70B models, use quantization if requested (via -4bit or -8bit suffix)
                 if eightbit or fourbit:
                     # Load with quantization for memory efficiency
-                    logging.warning('Loading 70B model with quantization. This may still require significant GPU memory.')
+                    logging.info(f'Loading 70B model with {"4-bit" if fourbit else "8-bit"} quantization.')
+                    logging.info('Model will distribute across all GPUs with CPU offload enabled as safety.')
                     
-                    # Prepare kwargs for from_pretrained
+                    # Get max_memory with CPU offload enabled for quantized 70B models
+                    # 70B models with 4-bit quantization are ~35GB, should fit in 44GB GPU total
+                    # But we enable CPU offload with proper config as a safety measure
+                    max_memory_dict = get_gpu_memory_dict(allow_cpu_offload=True, aggressive=False)
+                    
                     load_kwargs = {
                         'device_map': 'auto',
                         'cache_dir': self.cache_dir,
-                        'low_cpu_mem_usage': True,  # Reduce CPU memory usage during loading
+                        'low_cpu_mem_usage': True,
+                        'max_memory': max_memory_dict,
+                        'quantization_config': kwargs['quantization_config'],
                     }
                     
-                    # For pre-quantized unsloth models, don't specify max_memory
-                    # Let accelerate figure out the best distribution
-                    if base == 'unsloth':
-                        logging.info('Loading pre-quantized unsloth model with automatic memory management')
-                    else:
-                        # For models we're quantizing ourselves, specify max_memory with CPU offload
-                        # 70B models with 4-bit quantization are ~35GB, should fit in 44GB
-                        # Enable CPU offload as a safety measure
-                        max_memory_dict = get_gpu_memory_dict(allow_cpu_offload=fourbit)
-                        if max_memory_dict:
-                            load_kwargs['max_memory'] = max_memory_dict
-                            logging.info(f'Using max_memory per GPU for quantized model: {max_memory_dict}')
-                    
-                    # Only add quantization_config if it exists (not for pre-quantized models)
-                    if kwargs.get('quantization_config'):
-                        load_kwargs['quantization_config'] = kwargs['quantization_config']
+                    logging.info(f'Loading with max_memory: {max_memory_dict}')
                     
                     self.model = AutoModelForCausalLM.from_pretrained(
                         f"{base}/{model_name}",
