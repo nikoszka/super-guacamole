@@ -29,6 +29,10 @@ def main(args):
         if not args.answerable_only:
             logging.info('Forcing `answerable_only=True` for squad dataset.')
             args.answerable_only = True
+    elif args.dataset == 'coqa':
+        if not args.use_context:
+            logging.info('Forcing `use_context=True` for CoQA dataset (conversational QA with context).')
+            args.use_context = True
 
     experiment_details = {'args': args}
     random.seed(args.random_seed)

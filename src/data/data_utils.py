@@ -49,6 +49,39 @@ def load_ds(dataset_name, seed, add_options=None):
         train_dataset = dataset['train']
         validation_dataset = dataset['test']
 
+    elif dataset_name == "coqa":
+        # CoQA: Conversational Question Answering
+        # Load from HuggingFace datasets
+        dataset = datasets.load_dataset('stanfordnlp/coqa')
+        train_raw = dataset["train"]
+        validation_raw = dataset["validation"]
+        
+        # Flatten conversational structure to individual Q&A pairs
+        # Each conversation has a story (context) and multiple Q&A pairs
+        def flatten_coqa(data):
+            flattened = []
+            for example in data:
+                story = example['story']
+                questions = example['questions']
+                answers = example['answers']
+                story_id = example['id']
+                
+                # Create one sample per Q&A pair in the conversation
+                for i, (question, answer_dict) in enumerate(zip(questions, answers)):
+                    flattened.append({
+                        'id': f"{story_id}_q{i}",
+                        'question': question,
+                        'context': story,
+                        'answers': {
+                            'text': [answer_dict['input_text']],
+                            'answer_start': [answer_dict.get('span_start', 0)]
+                        }
+                    })
+            return flattened
+        
+        train_dataset = flatten_coqa(train_raw)
+        validation_dataset = flatten_coqa(validation_raw)
+
     elif dataset_name == "bioasq":
         # http://participants-area.bioasq.org/datasets/ we are using training 11b
         # could also download from here https://zenodo.org/records/7655130

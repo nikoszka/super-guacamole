@@ -15,7 +15,7 @@ TEMPERATURE=0.0
 BRIEF_PROMPT="${BRIEF_PROMPT:-manual}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
-DATASETS=("trivia_qa" "squad")
+DATASETS=("trivia_qa" "squad" "coqa")
 MODELS=(
     "Llama-3.1-8B:Llama:Large"
     "Qwen3-8B:Qwen:Large"
@@ -26,7 +26,7 @@ echo "==========================================================================
 echo "Large Models Experiments"
 echo "================================================================================"
 echo "Models: Llama-3.1-8B, Qwen3-8B, Mistral-7B-Instruct-v0.3 (fp16, no quantization)"
-echo "Datasets: TriviaQA, SQuAD"
+echo "Datasets: TriviaQA, SQuAD, CoQA"
 echo "Total: ${#MODELS[@]} models × ${#DATASETS[@]} datasets = $((${#MODELS[@]} * ${#DATASETS[@]})) experiments"
 echo "================================================================================"
 
