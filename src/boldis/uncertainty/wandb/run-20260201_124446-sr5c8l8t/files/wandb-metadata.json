@@ -1,0 +1,89 @@
+{
+  "os":  "Linux-5.14.0-611.9.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "python":  "CPython 3.11.14",
+  "startedAt":  "2026-02-01T11:44:46.912176Z",
+  "args":  [
+    "--model_name",
+    "Llama-3.1-70B-Instruct-4bit",
+    "--dataset",
+    "trivia_qa",
+    "--num_samples",
+    "400",
+    "--num_few_shot",
+    "5",
+    "--temperature",
+    "0.0",
+    "--num_generations",
+    "1",
+    "--brief_prompt",
+    "short",
+    "--enable_brief",
+    "--brief_always",
+    "--no-compute_uncertainties",
+    "--no-compute_p_true",
+    "--no-get_training_set_generations",
+    "--use_context",
+    "--entity",
+    "nikosteam",
+    "--project",
+    "super_guacamole",
+    "--experiment_lot",
+    "ultra_large_Llama_XLarge_trivia_qa_20260201_124422"
+  ],
+  "program":  "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py",
+  "codePath":  "src/generate_answers.py",
+  "codePathLocal":  "generate_answers.py",
+  "git":  {
+    "remote":  "git@github.com:nikoszka/super-guacamole.git",
+    "commit":  "d83b45b0da43cea4e06a994fd0fd8caf7ffef8fa"
+  },
+  "email":  "nikosz@hotmail.sk",
+  "root":  "./boldis/uncertainty",
+  "host":  "student01",
+  "executable":  "/system/user/studentwork/boldis/nllSAR/bin/python",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "gpu":  "NVIDIA GeForce GTX 1080 Ti",
+  "gpu_count":  4,
+  "disk":  {
+    "/":  {
+      "total":  "144208859136",
+      "used":  "15367168000"
+    }
+  },
+  "memory":  {
+    "total":  "66789847040"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce GTX 1080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  3584,
+      "architecture":  "Pascal",
+      "uuid":  "GPU-d9c5fed3-cb5b-a851-7956-c16fb36d2249"
+    },
+    {
+      "name":  "NVIDIA GeForce GTX 1080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  3584,
+      "architecture":  "Pascal",
+      "uuid":  "GPU-c226cb77-a30d-4960-a433-c287ef9b66bb"
+    },
+    {
+      "name":  "NVIDIA GeForce GTX 1080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  3584,
+      "architecture":  "Pascal",
+      "uuid":  "GPU-352fd5d3-bbea-6939-14b8-5113586e7936"
+    },
+    {
+      "name":  "NVIDIA GeForce GTX 1080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  3584,
+      "architecture":  "Pascal",
+      "uuid":  "GPU-0cefea6d-fdf1-ba03-6451-057a717a9977"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "writerId":  "0qni3fmz0o79mmwqjn8n2b540nv45o73"
+}

@@ -23,7 +23,7 @@ DATASETS=("trivia_qa" "squad")
 # Ultra-large models with 4-bit quantization
 # These are in the 70B+ weight class
 MODELS=(
-    "Llama-3.1-70B-Instruct-4bit:Llama:XLarge"
+    "Llama-3.1-70B-4bit:Llama:XLarge"
     "Qwen2.5-72B-4bit:Qwen:XLarge"
     "Mistral-Large-Instruct-2407-4bit:Mistral:XLarge"
 )
@@ -32,7 +32,7 @@ echo "==========================================================================
 echo "Ultra-Large Models Experiments (70B+ Weight Class)"
 echo "================================================================================"
 echo "Models:"
-echo "  - Llama-3.1-70B-Instruct-4bit (70B params, ~35GB with 4-bit)"
+echo "  - Llama-3.1-70B-4bit (70B params, ~35GB with 4-bit)"
 echo "  - Qwen2.5-72B-4bit (72B params, ~36GB with 4-bit)"
 echo "  - Mistral-Large-2-4bit (123B params, ~62GB with 4-bit, may use CPU offload)"
 echo ""

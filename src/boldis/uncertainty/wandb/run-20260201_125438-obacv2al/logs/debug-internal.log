@@ -1,0 +1,6 @@
+{"time":"2026-02-01T12:54:38.727589872+01:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2026-02-01T12:54:39.046621392+01:00","level":"INFO","msg":"stream: created new stream","id":"obacv2al"}
+{"time":"2026-02-01T12:54:39.046699082+01:00","level":"INFO","msg":"handler: started","stream_id":"obacv2al"}
+{"time":"2026-02-01T12:54:39.049620032+01:00","level":"INFO","msg":"stream: started","id":"obacv2al"}
+{"time":"2026-02-01T12:54:39.049711781+01:00","level":"INFO","msg":"writer: started","stream_id":"obacv2al"}
+{"time":"2026-02-01T12:54:39.049720189+01:00","level":"INFO","msg":"sender: started","stream_id":"obacv2al"}

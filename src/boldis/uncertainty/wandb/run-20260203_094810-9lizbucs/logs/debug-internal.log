@@ -1,0 +1,6 @@
+{"time":"2026-02-03T09:48:10.46057074+01:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2026-02-03T09:48:10.781633852+01:00","level":"INFO","msg":"stream: created new stream","id":"9lizbucs"}
+{"time":"2026-02-03T09:48:10.781752322+01:00","level":"INFO","msg":"handler: started","stream_id":"9lizbucs"}
+{"time":"2026-02-03T09:48:10.784841701+01:00","level":"INFO","msg":"stream: started","id":"9lizbucs"}
+{"time":"2026-02-03T09:48:10.784912181+01:00","level":"INFO","msg":"sender: started","stream_id":"9lizbucs"}
+{"time":"2026-02-03T09:48:10.784912181+01:00","level":"INFO","msg":"writer: started","stream_id":"9lizbucs"}
