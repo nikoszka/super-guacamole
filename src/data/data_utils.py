@@ -60,21 +60,19 @@ def load_ds(dataset_name, seed, add_options=None):
         # Each conversation has a story (context) and multiple Q&A pairs
         def flatten_coqa(data):
             flattened = []
-            for example in data:
+            for idx, example in enumerate(data):
                 story = example['story']
                 questions = example['questions']
                 answers = example['answers']
-                story_id = example['id']
                 
-                # Create one sample per Q&A pair in the conversation
-                for i, (question, answer_dict) in enumerate(zip(questions, answers)):
+                for i, question in enumerate(questions):
                     flattened.append({
-                        'id': f"{story_id}_q{i}",
+                        'id': f"coqa_{idx}_q{i}",
                         'question': question,
                         'context': story,
                         'answers': {
-                            'text': [answer_dict['input_text']],
-                            'answer_start': [answer_dict.get('span_start', 0)]
+                            'text': [answers['input_text'][i]],
+                            'answer_start': [answers['answer_start'][i]]
                         }
                     })
             return flattened
