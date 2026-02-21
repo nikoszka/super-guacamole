@@ -1,0 +1,16 @@
+{"time":"2026-02-18T11:06:16.849690425+01:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2026-02-18T11:06:17.165094518+01:00","level":"INFO","msg":"stream: created new stream","id":"6tluhwfn"}
+{"time":"2026-02-18T11:06:17.165144258+01:00","level":"INFO","msg":"handler: started","stream_id":"6tluhwfn"}
+{"time":"2026-02-18T11:06:17.167247654+01:00","level":"INFO","msg":"stream: started","id":"6tluhwfn"}
+{"time":"2026-02-18T11:06:17.167260485+01:00","level":"INFO","msg":"writer: started","stream_id":"6tluhwfn"}
+{"time":"2026-02-18T11:06:17.167261785+01:00","level":"INFO","msg":"sender: started","stream_id":"6tluhwfn"}
+{"time":"2026-02-18T11:25:03.311932973+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2026-02-18T11:29:49.077859439+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/nikosteam/super_guacamole/6tluhwfn/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-02-18T11:32:06.156375445+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/nikosteam/super_guacamole/6tluhwfn/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-02-18T17:32:04.551153702+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2026-02-19T01:14:52.18951246+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/nikosteam/super_guacamole/6tluhwfn/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-02-19T02:34:27.176536865+01:00","level":"INFO","msg":"stream: closing","id":"6tluhwfn"}
+{"time":"2026-02-19T02:34:30.195355694+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-19T02:34:30.591516697+01:00","level":"INFO","msg":"handler: closed","stream_id":"6tluhwfn"}
+{"time":"2026-02-19T02:34:30.593915108+01:00","level":"INFO","msg":"sender: closed","stream_id":"6tluhwfn"}
+{"time":"2026-02-19T02:34:30.593934949+01:00","level":"INFO","msg":"stream: closed","id":"6tluhwfn"}

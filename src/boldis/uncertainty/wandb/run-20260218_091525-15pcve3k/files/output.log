@@ -1,0 +1,18 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2026-02-18 09:15:27 INFO     Finished wandb init.
+2026-02-18 09:15:31 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2026-02-18 09:15:33 INFO     Prompt is:
+2026-02-18 09:15:33 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+tokenizer_config.json: 7.23kB [00:00, 14.0MB/s]
+vocab.json: 2.78MB [00:00, 7.44MB/s]
+merges.txt: 1.67MB [00:00, 13.5MB/s]
+tokenizer.json: 7.03MB [00:00, 14.3MB/s]
+2026-02-18 09:15:38 INFO     Loading Qwen model: Qwen/Qwen2.5-1.5B
+config.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 684/684 [00:00<00:00, 4.96MB/s]
+/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/huggingface_hub/file_download.py:798: UserWarning: Not enough free disk space to download the file. The expected file size is: 3087.47 MB. The target location /system/user/studentwork/boldis/huggingface-cache/hub/models--Qwen--Qwen2.5-1.5B/blobs only has 1633.68 MB free disk space.
+  warnings.warn(

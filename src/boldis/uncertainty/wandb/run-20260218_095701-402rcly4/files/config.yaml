@@ -1,0 +1,209 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            6s8phzcdgrgyh2b6t7rowi2jf4104yfx:
+                args:
+                    - --model_name
+                    - Llama-3.2-1B
+                    - --dataset
+                    - squad
+                    - --num_samples
+                    - "400"
+                    - --num_few_shot
+                    - "0"
+                    - --temperature
+                    - "0.0"
+                    - --num_generations
+                    - "1"
+                    - --brief_prompt
+                    - manual
+                    - --enable_brief
+                    - --brief_always
+                    - --no-compute_uncertainties
+                    - --no-compute_p_true
+                    - --no-get_training_set_generations
+                    - --use_context
+                    - --entity
+                    - nikosteam
+                    - --project
+                    - super_guacamole
+                    - --experiment_lot
+                    - small_models_Llama_squad_20260218_094338
+                codePath: src/generate_answers.py
+                codePathLocal: generate_answers.py
+                cpu_count: 12
+                cpu_count_logical: 24
+                cudaVersion: "12.9"
+                disk:
+                    /:
+                        total: "180325625856"
+                        used: "14871007232"
+                email: nikosz@hotmail.sk
+                executable: /system/user/studentwork/boldis/nllSAR/bin/python
+                git:
+                    commit: 897355efd5685c9ea25b9bbcd8345e9d754ec9f0
+                    remote: git@github.com:nikoszka/super-guacamole.git
+                gpu: NVIDIA TITAN V
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "12884901888"
+                      name: NVIDIA TITAN V
+                      uuid: GPU-97bcd0b4-d5be-30bf-77e3-72e37d2ed812
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "12884901888"
+                      name: NVIDIA TITAN V
+                      uuid: GPU-d5a14ec3-9bdc-8678-b004-f4bbda608770
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "12884901888"
+                      name: NVIDIA TITAN V
+                      uuid: GPU-10c3d70a-57ad-07eb-ae2d-fad92bde9dba
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "12884901888"
+                      name: NVIDIA TITAN V
+                      uuid: GPU-76c92af4-8527-715d-2bd5-a2f20bb25018
+                host: student06
+                memory:
+                    total: "66491338752"
+                os: Linux-5.14.0-611.27.1.el9_7.x86_64-x86_64-with-glibc2.34
+                program: /system/user/studentwork/boldis/super-guacamole/src/generate_answers.py
+                python: CPython 3.11.14
+                root: ./boldis/uncertainty
+                startedAt: "2026-02-18T08:57:01.137862Z"
+                writerId: 6s8phzcdgrgyh2b6t7rowi2jf4104yfx
+        m: []
+        python_version: 3.11.14
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 95
+                - 100
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 95
+                - 100
+            "3":
+                - 3
+                - 16
+            "4": 3.11.14
+            "5": 0.22.3
+            "6": 4.57.1
+            "12": 0.22.3
+            "13": linux-x86_64
+analyze_run:
+    value: true
+answerable_only:
+    value: true
+assign_new_wandb_id:
+    value: true
+brief_always:
+    value: true
+brief_prompt:
+    value: manual
+compute_accuracy_at_all_temps:
+    value: true
+compute_context_entails_response:
+    value: false
+compute_p_ik:
+    value: true
+compute_p_ik_answerable:
+    value: false
+compute_p_true:
+    value: false
+compute_p_true_in_compute_stage:
+    value: false
+compute_predictive_entropy:
+    value: true
+compute_uncertainties:
+    value: false
+condition_on_question:
+    value: true
+dataset:
+    value: squad
+debug:
+    value: false
+enable_brief:
+    value: true
+entailment_cache_id:
+    value: null
+entailment_cache_only:
+    value: false
+entailment_model:
+    value: deberta
+entity:
+    value: nikosteam
+eval_wandb_runid:
+    value: null
+experiment_lot:
+    value: small_models_Llama_squad_20260218_094338
+get_training_set_generations:
+    value: false
+get_training_set_generations_most_likely_only:
+    value: true
+metric:
+    value: squad
+model_max_new_tokens:
+    value: 150
+model_name:
+    value: Llama-3.2-1B
+num_eval_samples:
+    value: 1e+19
+num_few_shot:
+    value: 0
+num_generations:
+    value: 1
+num_samples:
+    value: 400
+ood_train_dataset:
+    value: null
+p_true_hint:
+    value: false
+p_true_num_fewshot:
+    value: 20
+project:
+    value: super_guacamole
+prompt_type:
+    value: default
+random_seed:
+    value: 10
+recompute_accuracy:
+    value: false
+restore_entity_eval:
+    value: null
+restore_entity_train:
+    value: null
+reuse_entailment_model:
+    value: false
+strict_entailment:
+    value: true
+temperature:
+    value: 0
+train_wandb_runid:
+    value: null
+use_all_generations:
+    value: true
+use_context:
+    value: true
+use_mc_options:
+    value: true
+use_num_generations:
+    value: -1

@@ -7,7 +7,7 @@
 
 set -e
 
-export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
+#export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 ENTITY="${WANDB_ENTITY:-nikosteam}"
 PROJECT="${WANDB_PROJECT:-super_guacamole}"
 NUM_SAMPLES=400
@@ -18,8 +18,8 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 DATASETS=("trivia_qa" "squad" "coqa")
 MODELS=(
-    "Llama-3.2-1B:Llama:Small"
-    "Qwen2.5-1.5B:Qwen:Small"
+#    "Llama-3.2-1B:Llama:Small"
+#    "Qwen2.5-1.5B-Instruct:Qwen:Small"
     "Mistral-7B-v0.3-8bit:Mistral:Small"
 )
 

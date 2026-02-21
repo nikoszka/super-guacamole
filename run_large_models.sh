@@ -7,7 +7,6 @@
 
 set -e
 
-export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 ENTITY="${WANDB_ENTITY:-nikosteam}"
 PROJECT="${WANDB_PROJECT:-super_guacamole}"
 NUM_SAMPLES=400

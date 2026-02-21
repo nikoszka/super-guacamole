@@ -1,0 +1,385 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2026-02-19 16:40:58 INFO     Finished wandb init.
+2026-02-19 16:41:04 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2026-02-19 16:41:07 INFO     Prompt is:
+2026-02-19 16:41:07 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [02:07<00:00, 42.53s/it]
+2026-02-19 16:43:20 INFO     ================================================================================
+2026-02-19 16:43:20 INFO     Generating answers:
+2026-02-19 16:43:20 INFO     ================================================================================
+2026-02-19 16:43:20 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-19 16:43:20 INFO     Starting with dataset_split train.
+2026-02-19 16:43:20 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-19 16:43:20 INFO     Skip training data.
+2026-02-19 16:43:20 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-19 16:43:20 INFO     Starting with dataset_split validation.
+2026-02-19 16:43:20 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                        | 0/400 [00:00<?, ?it/s]2026-02-19 16:43:20 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [DOC] [TLE] International Bureau of Weights and MeasuresThe International Bureau of Weights and Measures (), is an international standards organisation, one of three such organisations established to maintain the International System of Units (SI) under the terms of the Metre Convention (Convention du Mètre). The organisation is usually referred to by its French initialism, BIPM. [PAR] The other organisations that maintain the SI system, also known by their French initialisms, are the General Conference on Weights and Measures () (CGPM) and the International Committee for Weights and Measures () (CIPM). [PAR] History [PAR] The BIPM was created on 20 May 1875, following the signing of the Metre Convention, a treaty among 51 nations ().  It is based at the Pavillon de Breteuil in Sèvres, France, a 4.35 ha site (originally 2.52 ha) granted to the Bureau by the French Government in 1876, where it enjoys extraterritorial status,  a status that was clarified by the French decree No 70-820 of 9 September 1970. [PAR] Function [PAR] Under the authority of the Metric Convention, the BIPM helps to ensure uniformity of SI weights and measures around the world.  It does so through a series of consultative committees, whose members are the national metrology laboratories of the Convention's member states, and through its own laboratory work. [PAR] The BIPM carries out measurement-related research. It takes part in and organises international comparisons of national measurement standards and performs calibrations for member states. [PAR] The BIPM has an important role in maintaining accurate worldwide time of day.
+Question: The International Bureau of Weights and Measures is based in which European country?
+Answer:
+2026-02-19 16:43:32 INFO     Iteration 1:  ################################################################################
+2026-02-19 16:43:32 INFO     context:       [DOC] [TLE] International Bureau of Weights and MeasuresThe International Bureau of Weights and Measures (), is an international standards organisation, one of three such organisations established to maintain the International System of Units (SI) under the terms of the Metre Convention (Convention du Mètre). The organisation is usually referred to by its French initialism, BIPM. [PAR] The other organisations that maintain the SI system, also known by their French initialisms, are the General Conference on Weights and Measures () (CGPM) and the International Committee for Weights and Measures () (CIPM). [PAR] History [PAR] The BIPM was created on 20 May 1875, following the signing of the Metre Convention, a treaty among 51 nations ().  It is based at the Pavillon de Breteuil in Sèvres, France, a 4.35 ha site (originally 2.52 ha) granted to the Bureau by the French Government in 1876, where it enjoys extraterritorial status,  a status that was clarified by the French decree No 70-820 of 9 September 1970. [PAR] Function [PAR] Under the authority of the Metric Convention, the BIPM helps to ensure uniformity of SI weights and measures around the world.  It does so through a series of consultative committees, whose members are the national metrology laboratories of the Convention's member states, and through its own laboratory work. [PAR] The BIPM carries out measurement-related research. It takes part in and organises international comparisons of national measurement standards and performs calibrations for member states. [PAR] The BIPM has an important role in maintaining accurate worldwide time of day.
+2026-02-19 16:43:32 INFO     question:      The International Bureau of Weights and Measures is based in which European country?
+2026-02-19 16:43:32 INFO     low-t prediction: The International Bureau of Weights and Measures is based in France.
+2026-02-19 16:43:32 INFO     correct answer: ['france']
+2026-02-19 16:43:32 INFO     accuracy:      0.0
+2026-02-19 16:43:35 INFO     high-t prediction 1 : The International Bureau of Weights and Measures is based in France.
+  0%|▎                                                                                                                                             | 1/400 [00:14<1:36:51, 14.56s/it]2026-02-19 16:43:35 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [DOC] [TLE] Driver Joe Duddington - downloadpvDriver Joe Duddington - downloadpv [PAR] downloadpv [PAR]   [PAR] LNER Class A4 4468 Mallard [PAR] View Joseph Duddington s business profile as Driver at Mallard and see work history, affiliations and more. [PAR] Trains - driver Joseph Duddington. Location of events unknown. M/S of a steam engine. L/S of retiring 67 year old driver Duddington climbing down from the Mallard. [PAR] Joe Duddington, was the Doncaster-born LNER engine driver that broke the world speed record in 1938 with Doncaster Train A4 Pacific No. 4468 Mallard. [PAR] On 3rd July 1938 driver Joe Duddington then aged 61 climbed into the cab of Mallard and booked its place in history by reaching a new world record for steam. [PAR] May 16, 2013 On that historic day in 1938, Mallard was driven by Joe Duddington, of Doncaster, who has since died. Nothing like steam The A4 Class Mallard was. [PAR] Watch the video Mallard driver Joseph Duddington retires on Yahoo UK. This newsreel shows Joseph Duddington making his final trip on the iconic Mallard, the train on. [PAR] Number 4468 Mallard is a London and North Eastern Railway Class A4 4-6-2 Pacific steam locomotive built at Doncaster, England in 1938.
+Question: What is the name of the steam locomotive which set the world speed record in July 1938 by reaching 126 mph on the East Coast Mainline  in England?
+Answer:
+2026-02-19 16:43:41 INFO     Iteration 2:  ################################################################################
+2026-02-19 16:43:41 INFO     context:       [DOC] [TLE] Driver Joe Duddington - downloadpvDriver Joe Duddington - downloadpv [PAR] downloadpv [PAR]   [PAR] LNER Class A4 4468 Mallard [PAR] View Joseph Duddington s business profile as Driver at Mallard and see work history, affiliations and more. [PAR] Trains - driver Joseph Duddington. Location of events unknown. M/S of a steam engine. L/S of retiring 67 year old driver Duddington climbing down from the Mallard. [PAR] Joe Duddington, was the Doncaster-born LNER engine driver that broke the world speed record in 1938 with Doncaster Train A4 Pacific No. 4468 Mallard. [PAR] On 3rd July 1938 driver Joe Duddington then aged 61 climbed into the cab of Mallard and booked its place in history by reaching a new world record for steam. [PAR] May 16, 2013 On that historic day in 1938, Mallard was driven by Joe Duddington, of Doncaster, who has since died. Nothing like steam The A4 Class Mallard was. [PAR] Watch the video Mallard driver Joseph Duddington retires on Yahoo UK. This newsreel shows Joseph Duddington making his final trip on the iconic Mallard, the train on. [PAR] Number 4468 Mallard is a London and North Eastern Railway Class A4 4-6-2 Pacific steam locomotive built at Doncaster, England in 1938.
+2026-02-19 16:43:41 INFO     question:      What is the name of the steam locomotive which set the world speed record in July 1938 by reaching 126 mph on the East Coast Mainline  in England?
+2026-02-19 16:43:41 INFO     low-t prediction: The steam locomotive which set the world speed record in July 1938 by reaching 126 mph on the East Coast Mainline in England was Mallard, driven by Joe Duddington.
+2026-02-19 16:43:41 INFO     correct answer: ['mallard']
+2026-02-19 16:43:41 INFO     accuracy:      0.0
+2026-02-19 16:43:46 INFO     high-t prediction 1 : The steam locomotive which set the world speed record in July 1938 by reaching 126 mph on the East Coast Mainline in England was Mallard, driven by Joe Duddington.
+  0%|▋                                                                                                                                             | 2/400 [00:26<1:25:11, 12.84s/it]2026-02-19 16:43:46 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [DOC] [TLE] Foinavon ~ The 1967 Grand National WinnerFoinavon ~ The 1967 Grand National Winner [PAR] News Foinavon ~ The 1967 Grand National Winner [PAR] Foinavon ~ The 1967 Grand National Winner [PAR] Foinavon was the shock winner of the 1967 National, when a mass pile-up at the 23rd fence meant that he was the only horse to come out well. On the day of the race he was a 100-1 outsider but the day before he had a 500-1 chance! In fact so bad were his chances that neither his owner or trainer actually attended Aintree on the day to see him race – and if the trainer and the owner don’t believe in you then who is going to? [PAR] The general consensus of Foinavon’s poor status was summed up by Daily Express tipster Charles Benson who said at the time: ‘Not the boldest of jumpers, he can be safely ignored, even in a race noted for shocks.’ You can imagine the payouts for those who were crazy (or inspired) enough to bet on him – coming home a winner by fifteen lengths, his success paid out a record 444-1 on the Tote. [PAR] Foinavon’s win was a prime example of how the Grand National can throw at you exactly what wasn’t expected.
+Question: In which year did Foinavon win the Grand National?
+Answer:
+2026-02-19 16:43:49 INFO     Iteration 3:  ################################################################################
+2026-02-19 16:43:49 INFO     context:       [DOC] [TLE] Foinavon ~ The 1967 Grand National WinnerFoinavon ~ The 1967 Grand National Winner [PAR] News Foinavon ~ The 1967 Grand National Winner [PAR] Foinavon ~ The 1967 Grand National Winner [PAR] Foinavon was the shock winner of the 1967 National, when a mass pile-up at the 23rd fence meant that he was the only horse to come out well. On the day of the race he was a 100-1 outsider but the day before he had a 500-1 chance! In fact so bad were his chances that neither his owner or trainer actually attended Aintree on the day to see him race – and if the trainer and the owner don’t believe in you then who is going to? [PAR] The general consensus of Foinavon’s poor status was summed up by Daily Express tipster Charles Benson who said at the time: ‘Not the boldest of jumpers, he can be safely ignored, even in a race noted for shocks.’ You can imagine the payouts for those who were crazy (or inspired) enough to bet on him – coming home a winner by fifteen lengths, his success paid out a record 444-1 on the Tote. [PAR] Foinavon’s win was a prime example of how the Grand National can throw at you exactly what wasn’t expected.
+2026-02-19 16:43:49 INFO     question:      In which year did Foinavon win the Grand National?
+2026-02-19 16:43:49 INFO     low-t prediction: Foinavon won the Grand National in 1967.
+2026-02-19 16:43:49 INFO     correct answer: ['1967']
+2026-02-19 16:43:49 INFO     accuracy:      0.0
+2026-02-19 16:43:52 INFO     high-t prediction 1 : Foinavon won the Grand National in 1967.
+  1%|█                                                                                                                                             | 3/400 [00:31<1:03:25,  9.59s/it]2026-02-19 16:43:52 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context:  He exhibited frequently and his work was and remains widely reproduced.  Opinions vary as to the quality of his later work; while some appreciate what they see as its moral and evocative qualities,"he continued to paint brilliantly almost until the end of his life" [1] and "A Piper and a Pair of Nutcrackers" (1864) revealed his old power….and with The Swannery invaded by Eagles (1869) he achieved his last triumph." [2] others feel it is excessively sentimental and anthropomorphic, lacking the realism of his earlier creations; some even feel his work was "marred" by this [3] . [PAR] Christopher Forbes, commenting on Queen Victoria's Favourite Dogs and Parrot, also known as The Royal Pets, said, "While Landseer has not endowed these creatures with specifically human characteristics, as he was to do in many of his most amous (sic) pictures, such as Dignity and Impudence exhibited at the British Institution in 1831 (Tate Gallery), there is a suggestion of the animals' mental activity which makes Landseer's painting quite different from, say, portraits of horses by George Stubbs (1724-1806). The dogs are not only beautiful, but also alert, sensitive, and intelligent; each is shown in a separate position and in an attitude that seems to reflect his own dividual state of mind. . . . The image of "Dash," regally perched on his stool, became a popular needlework subject throughout the balance of Queen Victoria's reign." [4] on 28 December 2008.
+Question: In Edwin Landseer's painting, 'Dignity and Impudence', what kind of creatures are depicted?
+Answer:
+2026-02-19 16:43:56 INFO     Iteration 4:  ################################################################################
+2026-02-19 16:43:56 INFO     context:        He exhibited frequently and his work was and remains widely reproduced.  Opinions vary as to the quality of his later work; while some appreciate what they see as its moral and evocative qualities,"he continued to paint brilliantly almost until the end of his life" [1] and "A Piper and a Pair of Nutcrackers" (1864) revealed his old power….and with The Swannery invaded by Eagles (1869) he achieved his last triumph." [2] others feel it is excessively sentimental and anthropomorphic, lacking the realism of his earlier creations; some even feel his work was "marred" by this [3] . [PAR] Christopher Forbes, commenting on Queen Victoria's Favourite Dogs and Parrot, also known as The Royal Pets, said, "While Landseer has not endowed these creatures with specifically human characteristics, as he was to do in many of his most amous (sic) pictures, such as Dignity and Impudence exhibited at the British Institution in 1831 (Tate Gallery), there is a suggestion of the animals' mental activity which makes Landseer's painting quite different from, say, portraits of horses by George Stubbs (1724-1806). The dogs are not only beautiful, but also alert, sensitive, and intelligent; each is shown in a separate position and in an attitude that seems to reflect his own dividual state of mind. . . . The image of "Dash," regally perched on his stool, became a popular needlework subject throughout the balance of Queen Victoria's reign." [4] on 28 December 2008.
+2026-02-19 16:43:56 INFO     question:      In Edwin Landseer's painting, 'Dignity and Impudence', what kind of creatures are depicted?
+2026-02-19 16:43:56 INFO     low-t prediction: In Edwin Landseer's painting, 'Dignity and Impudence', two dogs are depicted.
+2026-02-19 16:43:56 INFO     correct answer: ['dogs']
+2026-02-19 16:43:56 INFO     accuracy:      0.0
+2026-02-19 16:44:00 INFO     high-t prediction 1 : In Edwin Landseer's painting, 'Dignity and Impudence', two dogs are depicted.
+  1%|█▍                                                                                                                                              | 4/400 [00:39<57:53,  8.77s/it]2026-02-19 16:44:00 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [DOC] [TLE] River Thames - London Wiki - WikiaRiver Thames | London Wiki | Fandom powered by Wikia [PAR] Edit [PAR] The River Thames is the second longest river in the United Kingdom and the longest river entirely in England, rising at Thames Head in Gloucestershire, and flowing into the North Sea at the Thames Estuary. It has a special significance in flowing through London, the capital of the United Kingdom, although London only touches a short part of its course. The river is tidal in London with a rise and fall of 7 metres (23 ft) and becomes non-tidal at Teddington Lock . The catchment area covers a large part of South Eastern and Western England and the river is fed by over 20 tributaries. The river contains over 80 islands, and having both seawater and freshwater stretches supports a variety of wildlife. [PAR] The river has supported human activity from its source to its mouth for thousands of years providing habitation, water power, food and drink. It has also acted as a major highway both for international trade through the Port of London, and internally along its length and connecting to the British canal system. The river’s strategic position has seen it at the centre of many events and fashions in British history, earning it a description as “Liquid History”. It has been a physical and political boundary over the centuries and generated a range of river crossings.
+Question: The Isis is the upper reach of which British river?
+Answer:
+2026-02-19 16:44:02 INFO     Iteration 5:  ################################################################################
+2026-02-19 16:44:02 INFO     context:       [DOC] [TLE] River Thames - London Wiki - WikiaRiver Thames | London Wiki | Fandom powered by Wikia [PAR] Edit [PAR] The River Thames is the second longest river in the United Kingdom and the longest river entirely in England, rising at Thames Head in Gloucestershire, and flowing into the North Sea at the Thames Estuary. It has a special significance in flowing through London, the capital of the United Kingdom, although London only touches a short part of its course. The river is tidal in London with a rise and fall of 7 metres (23 ft) and becomes non-tidal at Teddington Lock . The catchment area covers a large part of South Eastern and Western England and the river is fed by over 20 tributaries. The river contains over 80 islands, and having both seawater and freshwater stretches supports a variety of wildlife. [PAR] The river has supported human activity from its source to its mouth for thousands of years providing habitation, water power, food and drink. It has also acted as a major highway both for international trade through the Port of London, and internally along its length and connecting to the British canal system. The river’s strategic position has seen it at the centre of many events and fashions in British history, earning it a description as “Liquid History”. It has been a physical and political boundary over the centuries and generated a range of river crossings.
+2026-02-19 16:44:02 INFO     question:      The Isis is the upper reach of which British river?
+2026-02-19 16:44:02 INFO     low-t prediction: The Isis is the upper reach of the River Thames.
+2026-02-19 16:44:02 INFO     correct answer: ['thames']
+2026-02-19 16:44:02 INFO     accuracy:      0.0
+2026-02-19 16:44:05 INFO     high-t prediction 1 : The Isis is the upper reach of the River Thames.
+  1%|█▊                                                                                                                                              | 5/400 [00:44<49:32,  7.53s/it]2026-02-19 16:44:05 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [PAR] "It was an opportunity, as far as I was concerned," Trump told golf.com. "Turnberry is considered one of the greatest courses in the world. It's a special place. It's an important place. [PAR] "This is a fabulous property in a great location. We're going to bring a new level of luxury to the hotel. Our aim is to make it the finest golf hotel in the world." [PAR] Trump was uncharacteristically coy when asked if one of the most famous venues in golf will bear his name. "Trump Turnberry' has a nice ring to it, doesn't it?" he said. "We'll make that decision fairly soon. In a couple of days." [PAR] Turnberry was restored to the Open Championship rota in 2009 after earlier concerns about the infrastructure around the venue. Attendances at Turnberry Opens also tend to be low in comparison to other Open venues. [PAR] Still, the Royal & Ancient's outgoing chief executive, Peter Dawson, offered a public welcome to Trump's latest golfing move. [PAR] "Turnberry is a great favourite among the players and it's on the Open rota for sure," Dawson said. "Donald Trump is investing in golf properties in Great Britain and Ireland. He must have great faith in the future of the game, which is very heartening from a businessman of his stature. [PAR] "I'm quite sure if he does buy Turnberry, he will be putting a lot of investment in." [PAR] Trump was similarly upbeat about his relationship with the R&A, which promises to be a source of intrigue. [PAR] "Some of the greatest championships in the history of golf have taken place
+Question: Which US property tycoon bought Turnberry Golf Course in April?
+Answer:
+2026-02-19 16:44:08 INFO     Iteration 6:  ################################################################################
+2026-02-19 16:44:08 INFO     context:       [PAR] "It was an opportunity, as far as I was concerned," Trump told golf.com. "Turnberry is considered one of the greatest courses in the world. It's a special place. It's an important place. [PAR] "This is a fabulous property in a great location. We're going to bring a new level of luxury to the hotel. Our aim is to make it the finest golf hotel in the world." [PAR] Trump was uncharacteristically coy when asked if one of the most famous venues in golf will bear his name. "Trump Turnberry' has a nice ring to it, doesn't it?" he said. "We'll make that decision fairly soon. In a couple of days." [PAR] Turnberry was restored to the Open Championship rota in 2009 after earlier concerns about the infrastructure around the venue. Attendances at Turnberry Opens also tend to be low in comparison to other Open venues. [PAR] Still, the Royal & Ancient's outgoing chief executive, Peter Dawson, offered a public welcome to Trump's latest golfing move. [PAR] "Turnberry is a great favourite among the players and it's on the Open rota for sure," Dawson said. "Donald Trump is investing in golf properties in Great Britain and Ireland. He must have great faith in the future of the game, which is very heartening from a businessman of his stature. [PAR] "I'm quite sure if he does buy Turnberry, he will be putting a lot of investment in." [PAR] Trump was similarly upbeat about his relationship with the R&A, which promises to be a source of intrigue. [PAR] "Some of the greatest championships in the history of golf have taken place
+2026-02-19 16:44:08 INFO     question:      Which US property tycoon bought Turnberry Golf Course in April?
+2026-02-19 16:44:08 INFO     low-t prediction: Donald Trump bought Turnberry Golf Course in April 2014.
+2026-02-19 16:44:08 INFO     correct answer: ['donald trump']
+2026-02-19 16:44:08 INFO     accuracy:      0.0
+2026-02-19 16:44:11 INFO     high-t prediction 1 : Donald Trump bought Turnberry Golf Course in April 2014.
+  2%|██▏                                                                                                                                             | 6/400 [00:50<45:40,  6.96s/it]2026-02-19 16:44:11 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: The states are required to give "full faith and credit" to the acts of each other's legislatures and courts, which is generally held to include the recognition of legal contracts, marriages, and criminal judgments. The states are guaranteed military and civil defense by the federal government, which is also obliged by Article IV, Section Four, to "guarantee to every state in this union a republican form of government". [PAR] Congress is a highly politicized body, and discussions about the admission of new states, which typically take years before approval, are invariably informed by the political concerns of Congress at the time the proposal is presented. These concerns include or included maintaining a balance between free and slave states, and which faction in Congress (Democrats or Republicans, conservatives or liberals, rural or urban blocks) would benefit, and which lose, if the proposed state were admitted. [PAR] Possible new states [PAR] By status changes of current or former U.S. territories [PAR] Puerto Rico [PAR] Puerto Rico has been discussed as a potential 51st state of the United States. In a 2012 status referendum a majority of voters, 54%, expressed dissatisfaction with the current political relationship.  In a separate question, 61% of voters supported statehood (excluding the 26% of voters who left this question blank).  On December 11, 2012, Puerto Rico's legislature resolved to request that the President and the U.S.
+Question: A second referendum is due to be held for which commonwealth to decide whether, among other options, to become the 51st state of the USA?
+Answer:
+2026-02-19 16:44:15 INFO     Iteration 7:  ################################################################################
+2026-02-19 16:44:15 INFO     context:       The states are required to give "full faith and credit" to the acts of each other's legislatures and courts, which is generally held to include the recognition of legal contracts, marriages, and criminal judgments. The states are guaranteed military and civil defense by the federal government, which is also obliged by Article IV, Section Four, to "guarantee to every state in this union a republican form of government". [PAR] Congress is a highly politicized body, and discussions about the admission of new states, which typically take years before approval, are invariably informed by the political concerns of Congress at the time the proposal is presented. These concerns include or included maintaining a balance between free and slave states, and which faction in Congress (Democrats or Republicans, conservatives or liberals, rural or urban blocks) would benefit, and which lose, if the proposed state were admitted. [PAR] Possible new states [PAR] By status changes of current or former U.S. territories [PAR] Puerto Rico [PAR] Puerto Rico has been discussed as a potential 51st state of the United States. In a 2012 status referendum a majority of voters, 54%, expressed dissatisfaction with the current political relationship.  In a separate question, 61% of voters supported statehood (excluding the 26% of voters who left this question blank).  On December 11, 2012, Puerto Rico's legislature resolved to request that the President and the U.S.
+2026-02-19 16:44:15 INFO     question:      A second referendum is due to be held for which commonwealth to decide whether, among other options, to become the 51st state of the USA?
+2026-02-19 16:44:15 INFO     low-t prediction: A second referendum is due to be held for Puerto Rico to decide whether, among other options, to become the 51st state of the USA.
+2026-02-19 16:44:15 INFO     correct answer: ['puerto rico']
+2026-02-19 16:44:15 INFO     accuracy:      0.0
+2026-02-19 16:44:20 INFO     high-t prediction 1 : A second referendum is due to be held for Puerto Rico to decide whether, among other options, to become the 51st state of the USA.
+  2%|██▌                                                                                                                                             | 7/400 [00:59<50:12,  7.66s/it]2026-02-19 16:44:20 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [PAR] The European Union has repeatedly called on Romania to put more effort into tackling corruption and enacting judicial reform. The country was blocked last year from joining the European Union's Schengen passport-free area as northern European countries expressed their concerns about Romania's level of corruption.[DOC] [TLE] Former-Romanian PM Nastase to serve prison term - YahooFormer-Romanian PM Nastase to serve prison term [PAR] Former-Romanian PM Nastase to serve prison term [PAR] ALISON MUTLER [PAR] Share [PAR] View photos [PAR] FILE - In this March 9, 2004, file picture former Romanian Premier Adrian Nastase wears a hat in Bucharest, Romania. Romania's highest court on Wednesday, June 20, 2012, sentenced Nastase to two years in prison after convicting him of illegally raising funds for a failed presidential campaign. The ruling is the first time a former Romanian premier has been sentenced to prison since communism ended in the country in 1989.(AP Photo/Vadim Ghirda, File) [PAR] More [PAR] BUCHAREST, Romania (AP) — Former Prime Minister Adrian Nastase is to be Romania's first leader to serve time in prison since the 1989 fall of communism, as the nation's highest court on Wednesday upheld his two-year sentence on corruption charges. [PAR] Nastase had appealed a March 30 court ruling that sentenced him to jail for illegally raising funds for a failed presidential campaign, but the high court ruled against him. [PAR] The decision is final, a rare conviction for a former
+Question: Of which country was Adrian Nastase Prime Minister from 2000 to 2004?
+Answer:
+2026-02-19 16:44:24 INFO     Iteration 8:  ################################################################################
+2026-02-19 16:44:24 INFO     context:       [PAR] The European Union has repeatedly called on Romania to put more effort into tackling corruption and enacting judicial reform. The country was blocked last year from joining the European Union's Schengen passport-free area as northern European countries expressed their concerns about Romania's level of corruption.[DOC] [TLE] Former-Romanian PM Nastase to serve prison term - YahooFormer-Romanian PM Nastase to serve prison term [PAR] Former-Romanian PM Nastase to serve prison term [PAR] ALISON MUTLER [PAR] Share [PAR] View photos [PAR] FILE - In this March 9, 2004, file picture former Romanian Premier Adrian Nastase wears a hat in Bucharest, Romania. Romania's highest court on Wednesday, June 20, 2012, sentenced Nastase to two years in prison after convicting him of illegally raising funds for a failed presidential campaign. The ruling is the first time a former Romanian premier has been sentenced to prison since communism ended in the country in 1989.(AP Photo/Vadim Ghirda, File) [PAR] More [PAR] BUCHAREST, Romania (AP) — Former Prime Minister Adrian Nastase is to be Romania's first leader to serve time in prison since the 1989 fall of communism, as the nation's highest court on Wednesday upheld his two-year sentence on corruption charges. [PAR] Nastase had appealed a March 30 court ruling that sentenced him to jail for illegally raising funds for a failed presidential campaign, but the high court ruled against him. [PAR] The decision is final, a rare conviction for a former
+2026-02-19 16:44:24 INFO     question:      Of which country was Adrian Nastase Prime Minister from 2000 to 2004?
+2026-02-19 16:44:24 INFO     low-t prediction: Adrian Nastase was Prime Minister of Romania from 2000 to 2004.
+2026-02-19 16:44:24 INFO     correct answer: ['romania']
+2026-02-19 16:44:24 INFO     accuracy:      0.0
+2026-02-19 16:44:28 INFO     high-t prediction 1 : Adrian Nastase was Prime Minister of Romania from 2000 to 2004.
+  2%|██▉                                                                                                                                             | 8/400 [01:07<50:08,  7.68s/it]2026-02-19 16:44:28 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context:  However the Germans dug themselves very deep, and when the artillery stopped the Germans came out of their trenches and served the British massive casualties using grenades and machine guns.  The British suffered 60,000 casualties including more then 20,000 deaths on July 1.  The battle ended on November 17, and the British had only captured six and a half miles of land; both sides suffered about a total of 1,000,000 casualties.  This battle shows how trench warfare is very devastating to both sides of the war. [PAR] February 29, 2012 at 7:30 PM [PAR] The British Fourth Army and the German Army fought The Battle of Somme from July 1st, 1916 to November 17th, 1916. The plan the British came up with was to first destroy German defenses with massive artillery bombardments on the East side of Germany. Second, 100,000 soldiers would invade the destroyed German positions. Third, two calvary divisions would be sent into Germany to finish them off. The British commander made the mistake of telling the people, "they could advance with sloped arms, smoking their pipes, and come to no harm" which made the British soldiers relax a little more. When the British were not expecting it and they thought all the Germans had been killed the Germans came out mowed down the approaching British. Just on the first day of the battle, July 1st, the British suffered about 60,000 casualties including more than 20,000 deaths.
+Question: Which 1st World War battle of 1916 saw 60,000 British casualties on the first day? The battle lasted from July to November, resulting in a British advance of 12 kilometres.
+Answer:
+2026-02-19 16:44:33 INFO     Iteration 9:  ################################################################################
+2026-02-19 16:44:33 INFO     context:        However the Germans dug themselves very deep, and when the artillery stopped the Germans came out of their trenches and served the British massive casualties using grenades and machine guns.  The British suffered 60,000 casualties including more then 20,000 deaths on July 1.  The battle ended on November 17, and the British had only captured six and a half miles of land; both sides suffered about a total of 1,000,000 casualties.  This battle shows how trench warfare is very devastating to both sides of the war. [PAR] February 29, 2012 at 7:30 PM [PAR] The British Fourth Army and the German Army fought The Battle of Somme from July 1st, 1916 to November 17th, 1916. The plan the British came up with was to first destroy German defenses with massive artillery bombardments on the East side of Germany. Second, 100,000 soldiers would invade the destroyed German positions. Third, two calvary divisions would be sent into Germany to finish them off. The British commander made the mistake of telling the people, "they could advance with sloped arms, smoking their pipes, and come to no harm" which made the British soldiers relax a little more. When the British were not expecting it and they thought all the Germans had been killed the Germans came out mowed down the approaching British. Just on the first day of the battle, July 1st, the British suffered about 60,000 casualties including more than 20,000 deaths.
+2026-02-19 16:44:33 INFO     question:      Which 1st World War battle of 1916 saw 60,000 British casualties on the first day? The battle lasted from July to November, resulting in a British advance of 12 kilometres.
+2026-02-19 16:44:33 INFO     low-t prediction: The Battle of the Somme saw 60,000 British casualties on the first day. The battle lasted from July to November, resulting in a British advance of 12 kilometres.
+2026-02-19 16:44:33 INFO     correct answer: ['somme']
+2026-02-19 16:44:33 INFO     accuracy:      0.0
+2026-02-19 16:44:38 INFO     high-t prediction 1 : The Battle of the Somme saw 60,000 British casualties on the first day. The battle lasted from July to November, resulting in a British advance of 12 kilometres.
+  2%|███▏                                                                                                                                            | 9/400 [01:18<56:11,  8.62s/it]2026-02-19 16:44:39 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [DOC] [TLE] actress dies history: Eastenders Actress Diesactress dies history: Eastenders Actress Dies [PAR] Eastenders Actress Dies [PAR] Eastenders Actress Dies Biography [PAR] Although Michelle Ryan may not be very well known in the United States, all of that is about to change as the actress best known in the UK as Zoe Slater on the hit BBC soap opera EastEnders has landed the lead role in the TV remake of The Bionic Woman. Hollywood Reporter reveals that 22 year old... [PAR] Although Michelle Ryan may not be very well known in the United States, all of that is about to change as the actress best known in the UK as Zoe Slater on the hit BBC soap opera EastEnders has landed the lead role in the TV remake of The Bionic Woman. Hollywood Reporter reveals that 22 year old British actress Michelle Ryan has snagged the lead role in an NBC remake of the classic 70's sci-fi TV hit The Bionic Woman. As reports further reveal, Michelle Ryan, who is best known in her native Britain as Zoe Slater on the long running BBC soap EastEnders will play Jaime Sommers, a woman who nearly dies in a fatal accident only to be reconstructed with $50 million dollars worth of high-tech parts.
+Question: Which actress left Eastenders for Hollywood only to flop as The Bionic Woman?
+Answer:
+2026-02-19 16:44:44 INFO     Iteration 10:  ################################################################################
+2026-02-19 16:44:44 INFO     context:       [DOC] [TLE] actress dies history: Eastenders Actress Diesactress dies history: Eastenders Actress Dies [PAR] Eastenders Actress Dies [PAR] Eastenders Actress Dies Biography [PAR] Although Michelle Ryan may not be very well known in the United States, all of that is about to change as the actress best known in the UK as Zoe Slater on the hit BBC soap opera EastEnders has landed the lead role in the TV remake of The Bionic Woman. Hollywood Reporter reveals that 22 year old... [PAR] Although Michelle Ryan may not be very well known in the United States, all of that is about to change as the actress best known in the UK as Zoe Slater on the hit BBC soap opera EastEnders has landed the lead role in the TV remake of The Bionic Woman. Hollywood Reporter reveals that 22 year old British actress Michelle Ryan has snagged the lead role in an NBC remake of the classic 70's sci-fi TV hit The Bionic Woman. As reports further reveal, Michelle Ryan, who is best known in her native Britain as Zoe Slater on the long running BBC soap EastEnders will play Jaime Sommers, a woman who nearly dies in a fatal accident only to be reconstructed with $50 million dollars worth of high-tech parts.
+2026-02-19 16:44:44 INFO     question:      Which actress left Eastenders for Hollywood only to flop as The Bionic Woman?
+2026-02-19 16:44:44 INFO     low-t prediction: Michelle Ryan, who is best known in her native Britain as Zoe Slater on the long running BBC soap EastEnders, left the show to play Jaime Sommers in the TV remake of The Bionic Woman.
+2026-02-19 16:44:44 INFO     correct answer: ['michelle ryan']
+2026-02-19 16:44:44 INFO     accuracy:      0.0
+2026-02-19 16:44:50 INFO     high-t prediction 1 : Michelle Ryan, who is best known in her native Britain as Zoe Slater on the long running BBC soap EastEnders, left the show to play Jaime Sommers in the TV remake of The Bionic Woman.
+  2%|███▌                                                                                                                                         | 10/400 [01:29<1:02:18,  9.59s/it]2026-02-19 16:44:50 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [PAR]  [DOC] [TLE] Laryngeal prominence | definition of laryngeal prominence ...Laryngeal prominence | definition of laryngeal prominence by Medical dictionary [PAR] Laryngeal prominence | definition of laryngeal prominence by Medical dictionary [PAR] http://medical-dictionary.thefreedictionary.com/laryngeal+prominence [PAR] Related to laryngeal prominence: Adam's apple [PAR] prominence [PAR]  [prom´ĭ-nens] [PAR] a protrusion or projection. [PAR] frontonasal prominence an expansive facial process in the embryo that develops into the forehead and bridge of the nose; called also frontonasal process . [PAR] laryngeal prominence a subcutaneous prominence at the front of the throat produced by the thyroid cartilage of the larynx; popularly known as Adam's apple . [PAR] mandibular prominence the ventral prominence formed by bifurcation of the first branchial arch (mandibular arch) in the embryo, which unites ventrally with its fellow to form the lower jaw; called also mandibular process . [PAR] maxillary prominence the dorsal process formed by bifurcation of the first branchial arch (mandibular arch) in the embryo, which joins with the ipsilateral median nasal process in the formation of the upper jaw. Called also maxillary process . [PAR] la·ryn·ge·al prom·i·nence [PAR] [TA] [PAR] the projection on the anterior portion of the neck formed by the thyroid cartilage of the larynx; serves as an external indication of the level of the fifth cervical vertebra. [PAR] Synonym(s): prominentia laryngea [TA], Adam's apple , protuberantia laryngea , thyroid eminence [PAR] laryngeal prominence [PAR] the bulge at the front of the neck produced
+Question: What is the common name of the laryngeal prominence?
+Answer:
+2026-02-19 16:44:54 INFO     Iteration 11:  ################################################################################
+2026-02-19 16:44:54 INFO     context:       [PAR]  [DOC] [TLE] Laryngeal prominence | definition of laryngeal prominence ...Laryngeal prominence | definition of laryngeal prominence by Medical dictionary [PAR] Laryngeal prominence | definition of laryngeal prominence by Medical dictionary [PAR] http://medical-dictionary.thefreedictionary.com/laryngeal+prominence [PAR] Related to laryngeal prominence: Adam's apple [PAR] prominence [PAR]  [prom´ĭ-nens] [PAR] a protrusion or projection. [PAR] frontonasal prominence an expansive facial process in the embryo that develops into the forehead and bridge of the nose; called also frontonasal process . [PAR] laryngeal prominence a subcutaneous prominence at the front of the throat produced by the thyroid cartilage of the larynx; popularly known as Adam's apple . [PAR] mandibular prominence the ventral prominence formed by bifurcation of the first branchial arch (mandibular arch) in the embryo, which unites ventrally with its fellow to form the lower jaw; called also mandibular process . [PAR] maxillary prominence the dorsal process formed by bifurcation of the first branchial arch (mandibular arch) in the embryo, which joins with the ipsilateral median nasal process in the formation of the upper jaw. Called also maxillary process . [PAR] la·ryn·ge·al prom·i·nence [PAR] [TA] [PAR] the projection on the anterior portion of the neck formed by the thyroid cartilage of the larynx; serves as an external indication of the level of the fifth cervical vertebra. [PAR] Synonym(s): prominentia laryngea [TA], Adam's apple , protuberantia laryngea , thyroid eminence [PAR] laryngeal prominence [PAR] the bulge at the front of the neck produced
+2026-02-19 16:44:54 INFO     question:      What is the common name of the laryngeal prominence?
+2026-02-19 16:44:54 INFO     low-t prediction: The laryngeal prominence is commonly known as the Adam's apple.
+2026-02-19 16:44:54 INFO     correct answer: ['laryngeal prominence']
+2026-02-19 16:44:54 INFO     accuracy:      0.0
+2026-02-19 16:44:57 INFO     high-t prediction 1 : The laryngeal prominence is commonly known as the Adam's apple.
+  3%|███▉                                                                                                                                           | 11/400 [01:36<56:50,  8.77s/it]2026-02-19 16:44:57 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: When it resumed in the nineteenth century, the first trials used human blood. They were conducted by the obstetrician James Blundell, who developed transfusion to treat women suffering from hemorrhage after childbirth. During the course of the century, transfusion was applied as a remedy to different kinds of sicknesses and injuries, and performed at different times with various fluids. By the 1880s, British doctors had abandoned transfusion with blood in favor of infusion with saline solution; the practice was only again resumed after the recognition of human blood types in the twentieth century. Developments in the practice of transfusion and infusion during the century reflect shifting views of how gender and species identity are embodied, and of relations of affinity and immunity between bodies of different kinds. They also reflect a shift from a vitalist to a mechanist understanding of blood and its function. [PAR] Download this page in PDF format [PAR] Blood transfusion as a medical practice dates to the seventeenth century; [1] > the first experiments were performed a few decades after William Harvey published his demonstration that blood circulates in the body in De Motu Cordis (1628).  Harvey’s discovery showed that blood circulated indefinitely, rather than being either consumed within the body or expelled from it. To cure pathologies of the blood was thus no longer exclusively a matter of stimulating or preventing its evacuation; now the goal was to affect blood’s circulation within the body and its interaction with other organs. The earliest blood transfusions involving human subjects were carried out almost simultaneously in France and England in 1667. Unlike modern transfusion, these first experiments
+Question: In 1818, British obstetrician James Blundell performed the first successful human what?
+Answer:
+2026-02-19 16:45:01 INFO     Iteration 12:  ################################################################################
+2026-02-19 16:45:01 INFO     context:       When it resumed in the nineteenth century, the first trials used human blood. They were conducted by the obstetrician James Blundell, who developed transfusion to treat women suffering from hemorrhage after childbirth. During the course of the century, transfusion was applied as a remedy to different kinds of sicknesses and injuries, and performed at different times with various fluids. By the 1880s, British doctors had abandoned transfusion with blood in favor of infusion with saline solution; the practice was only again resumed after the recognition of human blood types in the twentieth century. Developments in the practice of transfusion and infusion during the century reflect shifting views of how gender and species identity are embodied, and of relations of affinity and immunity between bodies of different kinds. They also reflect a shift from a vitalist to a mechanist understanding of blood and its function. [PAR] Download this page in PDF format [PAR] Blood transfusion as a medical practice dates to the seventeenth century; [1] > the first experiments were performed a few decades after William Harvey published his demonstration that blood circulates in the body in De Motu Cordis (1628).  Harvey’s discovery showed that blood circulated indefinitely, rather than being either consumed within the body or expelled from it. To cure pathologies of the blood was thus no longer exclusively a matter of stimulating or preventing its evacuation; now the goal was to affect blood’s circulation within the body and its interaction with other organs. The earliest blood transfusions involving human subjects were carried out almost simultaneously in France and England in 1667. Unlike modern transfusion, these first experiments
+2026-02-19 16:45:01 INFO     question:      In 1818, British obstetrician James Blundell performed the first successful human what?
+2026-02-19 16:45:01 INFO     low-t prediction: In 1818, British obstetrician James Blundell performed the first successful human blood transfusion.
+2026-02-19 16:45:01 INFO     correct answer: ['transfusions']
+2026-02-19 16:45:01 INFO     accuracy:      0.0
+2026-02-19 16:45:05 INFO     high-t prediction 1 : In 1818, British obstetrician James Blundell performed the first successful human blood transfusion.
+  3%|████▎                                                                                                                                          | 12/400 [01:44<54:39,  8.45s/it]2026-02-19 16:45:05 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: Immediately after the message the music director led the [PAR] hymn, "We Shall not be Moved." The next week the pastor preached on the [PAR] importance of everyone giving more money, and the music director followed it [PAR] with the hymn "Jesus Paid it All." The next week the pastor preached on the [PAR] dangers of gossip and the song that followed was "I Love to Tell the Story." [PAR] The pastor got so frustrated that Sunday night, he threatened to resign if [PAR] the music didn't change. The music director followed that with "O, Why not [PAR] Tonight?" Finally the pastor was so fed up that the next Sunday he said, "I've [PAR] had it with this church. Jesus is leading me to leave and go to another [PAR] church." And the minister of music stood and said, "Let's all sing 'What a [PAR] Friend We have in Jesus!'" [PAR] The first part of this adage was a common Latin proverb "errare humanum [PAR]  est." In 1711, the English Poet Alexander Pope wrote an "Essay on [PAR]  Criticism" in which he made the statement "Good nature and good sense must [PAR] ever join / To err is human; to forgive, divine." [PAR] Since that time there have been several interesting variations on Pope's [PAR] statement. Dog lovers claim: "To err is human; to forgive canine." Mae West [PAR] was once quoted as saying, "To err is human, but it feels divine." For [PAR] anyone who works with computers today
+Question: "Who said, To err is human but it feels divine?"""
+Answer:
+2026-02-19 16:45:08 INFO     Iteration 13:  ################################################################################
+2026-02-19 16:45:08 INFO     context:       Immediately after the message the music director led the [PAR] hymn, "We Shall not be Moved." The next week the pastor preached on the [PAR] importance of everyone giving more money, and the music director followed it [PAR] with the hymn "Jesus Paid it All." The next week the pastor preached on the [PAR] dangers of gossip and the song that followed was "I Love to Tell the Story." [PAR] The pastor got so frustrated that Sunday night, he threatened to resign if [PAR] the music didn't change. The music director followed that with "O, Why not [PAR] Tonight?" Finally the pastor was so fed up that the next Sunday he said, "I've [PAR] had it with this church. Jesus is leading me to leave and go to another [PAR] church." And the minister of music stood and said, "Let's all sing 'What a [PAR] Friend We have in Jesus!'" [PAR] The first part of this adage was a common Latin proverb "errare humanum [PAR]  est." In 1711, the English Poet Alexander Pope wrote an "Essay on [PAR]  Criticism" in which he made the statement "Good nature and good sense must [PAR] ever join / To err is human; to forgive, divine." [PAR] Since that time there have been several interesting variations on Pope's [PAR] statement. Dog lovers claim: "To err is human; to forgive canine." Mae West [PAR] was once quoted as saying, "To err is human, but it feels divine." For [PAR] anyone who works with computers today
+2026-02-19 16:45:08 INFO     question:      "Who said, To err is human but it feels divine?"""
+2026-02-19 16:45:08 INFO     low-t prediction: Mae West is credited with saying, "To err is human, but it feels divine."
+2026-02-19 16:45:08 INFO     correct answer: ['mae west']
+2026-02-19 16:45:08 INFO     accuracy:      0.0
+2026-02-19 16:45:12 INFO     high-t prediction 1 : Mae West is credited with saying, "To err is human, but it feels divine."
+  3%|████▋                                                                                                                                          | 13/400 [01:51<51:18,  7.96s/it]2026-02-19 16:45:12 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: Southey, Robert. (1897). English Seamen — Howard Clifford Hawkins Drake Cavendish, Methuen and Co. 36 Essex Street WC London Drake's father apprenticed Francis to his neighbour, the master of a barque used for coastal trade transporting merchandise to France. The ship master was so satisfied with the young Drake's conduct that, being unmarried and childless at his death, he bequeathed the barque to Drake. [PAR] Marriage and family [PAR] Francis Drake married Mary Newman in 1569.  She died 12 years later, in 1581.  In 1585, Drake married Elizabeth Sydenham—born circa 1562, the only child of Sir George Sydenham, of Combe Sydenham,  who was the High Sheriff of Somerset.  After Drake's death, the widow Elizabeth eventually married Sir William Courtenay of Powderham.  [PAR] Sailing career [PAR] At age 23, Drake made his first voyage to the Americas, sailing with his second cousin, Sir John Hawkins, on one of a fleet of ships owned by his relatives, the Hawkins family of Plymouth. In 1568 Drake was again with the Hawkins fleet when it was trapped by the Spaniards in the Mexican port of San Juan de Ulúa. He escaped along with Hawkins. [PAR] Following the defeat at San Juan de Ulúa, Drake vowed revenge.  He made two voyages to the West Indies, in 1570 and 1571, of which little is known. [PAR] In 1572, he embarked on his first major independent enterprise
+Question: Which ship did Drake command against the Spanish Armada?
+Answer:
+  3%|████▋                                                                                                                                          | 13/400 [01:52<55:59,  8.68s/it]
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 294, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 191, in main
+    predicted_answer, token_log_likelihoods, embedding, token_ids, tokens = model.predict(
+                                                                            ^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 543, in predict
+    outputs = self.model.generate(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/generation/utils.py", line 2564, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/generation/utils.py", line 2842, in _sample
+    unfinished_sequences = unfinished_sequences & ~stopping_criteria(input_ids, scores)
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/generation/stopping_criteria.py", line 502, in __call__
+    is_done = is_done | criteria(input_ids, scores, **kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 119, in __call__
+    generation = self.tokenizer.decode(input_ids[0][self.initial_length:], skip_special_tokens=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3922, in decode
+    token_ids = to_py_obj(token_ids)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/generic.py", line 273, in to_py_obj
+    return framework_to_py_obj[framework](obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/generic.py", line 263, in <lambda>
+    "pt": lambda obj: obj.tolist(),
+                      ^^^^^^^^^^^^
+KeyboardInterrupt

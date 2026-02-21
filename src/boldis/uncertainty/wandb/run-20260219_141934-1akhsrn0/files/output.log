@@ -1,0 +1,122 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2026-02-19 14:19:39 INFO     Finished wandb init.
+2026-02-19 14:19:46 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2026-02-19 14:19:48 INFO     Prompt is:
+2026-02-19 14:19:48 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+2026-02-19 14:19:49 INFO     Detected model size: 1b
+Initializing model:  Llama-3.2-1B and base: meta-llama
+2026-02-19 14:19:49 INFO     Using device_map="auto" - will distribute across 2 GPU(s)
+2026-02-19 14:19:49 INFO     Max memory per GPU: {0: '11GiB', 1: '11GiB'}
+2026-02-19 14:20:13 INFO     ================================================================================
+2026-02-19 14:20:13 INFO     Generating answers:
+2026-02-19 14:20:13 INFO     ================================================================================
+2026-02-19 14:20:13 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-19 14:20:13 INFO     Starting with dataset_split train.
+2026-02-19 14:20:13 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-19 14:20:13 INFO     Skip training data.
+2026-02-19 14:20:13 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-19 14:20:13 INFO     Starting with dataset_split validation.
+2026-02-19 14:20:13 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                                                                                                        | 0/400 [00:00<?, ?it/s]2026-02-19 14:20:13 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [DOC] [TLE] International Bureau of Weights and MeasuresThe International Bureau of Weights and Measures (), is an international standards organisation, one of three such organisations established to maintain the International System of Units (SI) under the terms of the Metre Convention (Convention du Mètre). The organisation is usually referred to by its French initialism, BIPM. [PAR] The other organisations that maintain the SI system, also known by their French initialisms, are the General Conference on Weights and Measures () (CGPM) and the International Committee for Weights and Measures () (CIPM). [PAR] History [PAR] The BIPM was created on 20 May 1875, following the signing of the Metre Convention, a treaty among 51 nations ().  It is based at the Pavillon de Breteuil in Sèvres, France, a 4.35 ha site (originally 2.52 ha) granted to the Bureau by the French Government in 1876, where it enjoys extraterritorial status,  a status that was clarified by the French decree No 70-820 of 9 September 1970. [PAR] Function [PAR] Under the authority of the Metric Convention, the BIPM helps to ensure uniformity of SI weights and measures around the world.  It does so through a series of consultative committees, whose members are the national metrology laboratories of the Convention's member states, and through its own laboratory work. [PAR] The BIPM carries out measurement-related research. It takes part in and organises international comparisons of national measurement standards and performs calibrations for member states. [PAR] The BIPM has an important role in maintaining accurate worldwide time of day.
+Question: The International Bureau of Weights and Measures is based in which European country?
+Answer:
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  0%|                                                                                                                                                        | 0/400 [00:02<?, ?it/s]
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 294, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 191, in main
+    predicted_answer, token_log_likelihoods, embedding, token_ids, tokens = model.predict(
+                                                                            ^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 543, in predict
+    outputs = self.model.generate(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/generation/utils.py", line 2564, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/generation/utils.py", line 2784, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 459, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/generic.py", line 1064, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 395, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/modeling_layers.py", line 94, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/generic.py", line 1023, in wrapped_forward
+    output = orig_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 292, in forward
+    hidden_states = self.input_layernorm(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/accelerate/hooks.py", line 175, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/llama/modeling_llama.py", line 65, in forward
+    variance = hidden_states.pow(2).mean(-1, keepdim=True)
+               ^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
