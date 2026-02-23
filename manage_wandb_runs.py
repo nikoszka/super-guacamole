@@ -48,7 +48,7 @@ def parse_model_info(model_name):
     else:
         family = "Other"
 
-    if "1b" in name_lower or "1.5b" in name_lower:
+    if "1b" in name_lower or "1.5b" in name_lower or "3b" in name_lower:
         size = "Small"
     elif "7b" in name_lower or "8b" in name_lower:
         size = "Large"

@@ -358,7 +358,7 @@ class HuggingfaceModel(BaseModel):
                 kwargs = {'quantization_config': BitsAndBytesConfig(
                     load_in_8bit=True,)}
                 model_name = model_name[:-len('-8bit')]
-            if model_name.endswith('-4bit'):
+            elif model_name.endswith('-4bit'):
                 kwargs = {'quantization_config': BitsAndBytesConfig(
                     load_in_4bit=True,)}
                 model_name = model_name[:-len('-4bit')]
