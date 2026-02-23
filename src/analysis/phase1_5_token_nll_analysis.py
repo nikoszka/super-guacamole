@@ -435,26 +435,9 @@ def main() -> None:
     example_ids = list(data.keys())[: args.sample_size]
     logger.info("Analyzing %d examples", len(example_ids))
 
-    # Initialize tokenizer
+    from analysis.utils import load_tokenizer
     logger.info("Loading tokenizer for model: %s", args.model_name)
-    cache_dir = get_hf_cache_dir()
-    if "llama" in args.model_name.lower():
-        if (
-            "Llama-3" in args.model_name
-            or "Llama-3.1" in args.model_name
-            or "Meta-Llama-3" in args.model_name
-            or "Llama-2" in args.model_name
-        ):
-            base = "meta-llama"
-        else:
-            base = "huggyllama"
-        tokenizer = AutoTokenizer.from_pretrained(
-            f"{base}/{args.model_name}",
-            token_type_ids=None,
-            cache_dir=cache_dir,
-        )
-    else:
-        raise ValueError(f"Unknown model type: {args.model_name}")
+    tokenizer = load_tokenizer(args.model_name)
 
     # Compute token-level NLL analysis
     results: List[Dict[str, Any]] = []

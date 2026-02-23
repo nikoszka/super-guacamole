@@ -1887,19 +1887,9 @@ def main():
     logger.info("Initializing similarity model for SAR weights...")
     similarity_model = initialize_similarity_model(args.similarity_model)
     
+    from analysis.utils import load_tokenizer
     logger.info(f"Loading tokenizer for {args.model_name}...")
-    cache_dir = get_hf_cache_dir()
-    if 'llama' in args.model_name.lower():
-        if 'Llama-3' in args.model_name or 'Llama-3.1' in args.model_name or 'Meta-Llama-3' in args.model_name:
-            base = 'meta-llama'
-        else:
-            base = 'huggyllama'
-        tokenizer = AutoTokenizer.from_pretrained(
-            f"{base}/{args.model_name}",
-            cache_dir=cache_dir
-        )
-    else:
-        raise ValueError(f"Unknown model: {args.model_name}")
+    tokenizer = load_tokenizer(args.model_name)
     
     # Compute all weighted NLLs
     results, weight_examples = compute_all_weighted_nlls(

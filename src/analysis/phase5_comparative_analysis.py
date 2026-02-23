@@ -524,20 +524,8 @@ def main():
     # Similarity model for RW-G-NLL and SAR
     similarity_model = initialize_similarity_model(args.similarity_model)
     
-    # Tokenizer
-    cache_dir = get_hf_cache_dir()
-    if 'llama' in args.model_name.lower():
-        if 'Llama-3' in args.model_name or 'Llama-3.1' in args.model_name or 'Meta-Llama-3' in args.model_name or 'Llama-2' in args.model_name:
-            base = 'meta-llama'
-        else:
-            base = 'huggyllama'
-        tokenizer = AutoTokenizer.from_pretrained(
-            f"{base}/{args.model_name}",
-            token_type_ids=None,
-            cache_dir=cache_dir
-        )
-    else:
-        raise ValueError(f"Unknown model type: {args.model_name}")
+    from analysis.utils import load_tokenizer
+    tokenizer = load_tokenizer(args.model_name)
     
     # Entailment model for Semantic Entropy
     entailment_model = EntailmentDeberta()

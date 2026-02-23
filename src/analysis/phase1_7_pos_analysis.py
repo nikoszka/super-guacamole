@@ -194,18 +194,9 @@ def main():
         download("en_core_web_sm")
         nlp = spacy.load("en_core_web_sm")
     
-    # Tokenizer
+    from analysis.utils import load_tokenizer
     logger.info(f"Loading tokenizer: {args.model_name}")
-    cache_dir = get_hf_cache_dir()
-    if 'llama' in args.model_name.lower():
-        if 'Llama-3' in args.model_name or 'Llama-3.1' in args.model_name or 'Meta-Llama-3' in args.model_name:
-            base = 'meta-llama'
-        else:
-            base = 'huggyllama'
-    else:
-        base = 'huggyllama' # Default assumption
-        
-    tokenizer = AutoTokenizer.from_pretrained(f"{base}/{args.model_name}", cache_dir=cache_dir)
+    tokenizer = load_tokenizer(args.model_name)
     
     data = load_pickle_data(args.pickle_path)
     example_ids = list(data.keys())[:args.sample_size]
