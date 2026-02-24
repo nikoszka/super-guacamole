@@ -124,23 +124,37 @@ def mark_done(state, key, step):
 # Step 1: LLM Judge Evaluation
 # ============================================================================
 
-def run_judge_step(runs, state):
-    """Evaluate all runs with llm_llama-3-8b judge, loading the model once."""
-    pending = [r for r in runs if not is_done(state, r["key"], "judge")]
+def run_judge_step(runs, state, force_rejudge=False):
+    """Evaluate all runs with llm_llama-3-8b judge (8-bit), loading the model once."""
+    if force_rejudge:
+        pending = runs
+        for r in runs:
+            state.setdefault(r["key"], {}).pop("judge", None)
+        save_state(state)
+    else:
+        pending = [r for r in runs if not is_done(state, r["key"], "judge")]
     if not pending:
         logger.info("Judge step: all %d runs already evaluated.", len(runs))
         return
 
     logger.info("Judge step: %d/%d runs need evaluation.", len(pending), len(runs))
-    logger.info("Loading LLM judge model (llm_llama-3-8b) — this may take a minute...")
+    logger.info("Loading LLM judge model (Meta-Llama-3-8B, 8-bit) — this may take a minute...")
 
     src_dir = os.path.join(os.getcwd(), "src")
     if src_dir not in sys.path:
         sys.path.insert(0, src_dir)
 
-    from utils.utils import get_metric
-    metric_fn = get_metric("llm_llama-3-8b")
-    logger.info("Judge model loaded.")
+    from models.huggingface_models import HuggingfaceModel
+    from utils.utils import model_based_metric
+
+    judge_model = HuggingfaceModel(
+        "Meta-Llama-3-8B-8bit", stop_sequences="default", max_new_tokens=10
+    )
+
+    def metric_fn(predicted_answer, example, _model):
+        return model_based_metric(predicted_answer, example, judge_model)
+
+    logger.info("Judge model loaded (8-bit, ~8GB VRAM).")
 
     for i, run in enumerate(pending, 1):
         logger.info(
@@ -157,7 +171,8 @@ def run_judge_step(runs, state):
             mla = entry.get("most_likely_answer")
             if mla is None:
                 continue
-            if mla.get("accuracy") is not None and mla["accuracy"] != 0.0:
+            existing = mla.get("accuracy")
+            if not force_rejudge and existing is not None and existing != 0.0:
                 skipped += 1
                 continue
             response = mla.get("response", "").strip()
@@ -442,6 +457,10 @@ def main():
     parser.add_argument("--dataset", help="Filter: trivia_qa, squad, coqa")
     parser.add_argument("--dry-run", action="store_true", help="Show runs, don't execute")
     parser.add_argument(
+        "--force-rejudge", action="store_true",
+        help="Re-evaluate all examples with the judge, even those already scored",
+    )
+    parser.add_argument(
         "--wandb-dir", type=str, default=str(WANDB_BASE),
         help=f"Local wandb directory (default: {WANDB_BASE})",
     )
@@ -470,7 +489,7 @@ def main():
     steps_to_run = [args.step] if args.step else STEPS
 
     if "judge" in steps_to_run:
-        run_judge_step(runs, state)
+        run_judge_step(runs, state, force_rejudge=args.force_rejudge)
 
     if "phase6" in steps_to_run:
         run_phase6_step(runs, state)
