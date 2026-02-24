@@ -28,6 +28,8 @@ import time
 from collections import defaultdict
 from pathlib import Path
 
+import wandb
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -39,6 +41,8 @@ WANDB_BASE = Path("src/boldis/uncertainty/wandb")
 RESULTS_BASE = Path("results/pipeline")
 STATE_FILE = RESULTS_BASE / "pipeline_state.json"
 VALID_SIZES = {"Small", "Large", "XLarge"}
+WANDB_PROJECT = "super_guacamole_pipeline"
+WANDB_ENTITY = "nikosteam"
 
 # ============================================================================
 # Run discovery
@@ -156,17 +160,20 @@ def run_judge_step(runs, state, force_rejudge=False):
 
     logger.info("Judge model loaded (8-bit, ~8GB VRAM).")
 
+    global_example_idx = 0
+    total_examples = len(pending) * 400  # approximate
+
     for i, run in enumerate(pending, 1):
-        logger.info(
-            "[%d/%d] Judging %s / %s / %s ...",
-            i, len(pending), run["size"], run["dataset"], run["model"],
-        )
+        run_label = f"{run['size']}/{run['dataset']}/{run['model']}"
+        logger.info("[%d/%d] Judging %s ...", i, len(pending), run_label)
         t0 = time.time()
         with open(run["pickle_path"], "rb") as f:
             data = pickle.load(f)
 
         evaluated = 0
         skipped = 0
+        correct = 0
+        errors = 0
         for _eid, entry in data.items():
             mla = entry.get("most_likely_answer")
             if mla is None:
@@ -174,6 +181,8 @@ def run_judge_step(runs, state, force_rejudge=False):
             existing = mla.get("accuracy")
             if not force_rejudge and existing is not None and existing != 0.0:
                 skipped += 1
+                if existing > 0.5:
+                    correct += 1
                 continue
             response = mla.get("response", "").strip()
             if not response:
@@ -182,19 +191,47 @@ def run_judge_step(runs, state, force_rejudge=False):
                 acc = metric_fn(response, entry, None)
                 mla["accuracy"] = float(acc)
                 evaluated += 1
+                if acc > 0.5:
+                    correct += 1
             except Exception as e:
                 logger.warning("Error evaluating example: %s", e)
                 mla["accuracy"] = 0.0
                 evaluated += 1
+                errors += 1
+
+            global_example_idx += 1
+            if wandb.run and global_example_idx % 10 == 0:
+                total_done = evaluated + skipped
+                wandb.log({
+                    "judge/global_example": global_example_idx,
+                    "judge/run_progress": i / len(pending),
+                    "judge/current_accuracy": correct / max(total_done, 1),
+                    "judge/examples_evaluated": evaluated,
+                    "judge/examples_skipped": skipped,
+                    "judge/errors": errors,
+                    "judge/current_run": run_label,
+                })
 
         with open(run["pickle_path"], "wb") as f:
             pickle.dump(data, f)
 
         elapsed = time.time() - t0
+        total_done = evaluated + skipped
+        run_accuracy = correct / max(total_done, 1)
         logger.info(
-            "  Done: %d evaluated, %d already had accuracy (%.1fs)",
-            evaluated, skipped, elapsed,
+            "  Done: %d evaluated, %d skipped, accuracy=%.1f%% (%.1fs)",
+            evaluated, skipped, run_accuracy * 100, elapsed,
         )
+        if wandb.run:
+            wandb.log({
+                "judge/run_completed": i,
+                "judge/run_accuracy": run_accuracy,
+                "judge/run_evaluated": evaluated,
+                "judge/run_skipped": skipped,
+                "judge/run_errors": errors,
+                "judge/run_time_s": elapsed,
+                "judge/run_label": run_label,
+            })
         mark_done(state, run["key"], "judge")
 
 
@@ -213,10 +250,9 @@ def run_phase6_step(runs, state):
 
     for i, run in enumerate(pending, 1):
         output_dir = RESULTS_BASE / run["size"] / run["dataset"] / run["model"] / "phase6"
-        logger.info(
-            "[%d/%d] Phase 6: %s / %s / %s ...",
-            i, len(pending), run["size"], run["dataset"], run["model"],
-        )
+        run_label = f"{run['size']}/{run['dataset']}/{run['model']}"
+        logger.info("[%d/%d] Phase 6: %s ...", i, len(pending), run_label)
+        t0 = time.time()
         cmd = [
             sys.executable,
             "src/analysis/phase6_weighting_schemes_comparison.py",
@@ -227,7 +263,34 @@ def run_phase6_step(runs, state):
         try:
             subprocess.run(cmd, check=True, timeout=3600)
             mark_done(state, run["key"], "phase6")
-            logger.info("  Phase 6 complete -> %s", output_dir)
+            elapsed = time.time() - t0
+            logger.info("  Phase 6 complete -> %s (%.1fs)", output_dir, elapsed)
+
+            # Log AUROC results to W&B
+            csv_path = output_dir / "weighting_schemes_auroc.csv"
+            if wandb.run and csv_path.exists():
+                import pandas as pd
+                df = pd.read_csv(csv_path)
+                top5 = df.nlargest(5, "AUROC")
+                log_data = {
+                    "phase6/run_completed": i,
+                    "phase6/run_time_s": elapsed,
+                    "phase6/run_label": run_label,
+                    "phase6/best_scheme": top5.iloc[0]["Scheme"],
+                    "phase6/best_auroc": top5.iloc[0]["AUROC"],
+                }
+                for _, row in top5.iterrows():
+                    log_data[f"phase6/auroc_{row['Scheme']}"] = row["AUROC"]
+                wandb.log(log_data)
+
+                # Log per-run AUROC plots as images
+                for img_name in ["auroc_comparison.png", "roc_curves_smooth.png"]:
+                    img_path = output_dir / img_name
+                    if img_path.exists():
+                        wandb.log({
+                            f"phase6/{run_label}/{img_name}": wandb.Image(str(img_path))
+                        })
+
         except subprocess.CalledProcessError as e:
             logger.error("  Phase 6 FAILED for %s: %s", run["key"], e)
         except subprocess.TimeoutExpired:
@@ -249,10 +312,9 @@ def run_pos_step(runs, state):
 
     for i, run in enumerate(pending, 1):
         output_dir = RESULTS_BASE / run["size"] / run["dataset"] / run["model"] / "pos"
-        logger.info(
-            "[%d/%d] POS: %s / %s / %s ...",
-            i, len(pending), run["size"], run["dataset"], run["model"],
-        )
+        run_label = f"{run['size']}/{run['dataset']}/{run['model']}"
+        logger.info("[%d/%d] POS: %s ...", i, len(pending), run_label)
+        t0 = time.time()
         cmd = [
             sys.executable,
             "src/analysis/phase1_7_pos_analysis.py",
@@ -263,7 +325,21 @@ def run_pos_step(runs, state):
         try:
             subprocess.run(cmd, check=True, timeout=1800)
             mark_done(state, run["key"], "pos")
-            logger.info("  POS complete -> %s", output_dir)
+            elapsed = time.time() - t0
+            logger.info("  POS complete -> %s (%.1fs)", output_dir, elapsed)
+
+            if wandb.run:
+                log_data = {
+                    "pos/run_completed": i,
+                    "pos/run_time_s": elapsed,
+                    "pos/run_label": run_label,
+                }
+                for img_name in ["pos_nll_boxplot_token.png", "pos_nll_boxplot_word.png"]:
+                    img_path = output_dir / img_name
+                    if img_path.exists():
+                        log_data[f"pos/{run_label}/{img_name}"] = wandb.Image(str(img_path))
+                wandb.log(log_data)
+
         except subprocess.CalledProcessError as e:
             logger.error("  POS FAILED for %s: %s", run["key"], e)
         except subprocess.TimeoutExpired:
@@ -438,6 +514,25 @@ def run_dashboard_step(runs):
         print(f"  {row['Scheme']:<35} {row['Mean_AUROC']:.4f}  (std={row['Std_AUROC']:.4f}, range=[{row['Min_AUROC']:.3f}, {row['Max_AUROC']:.3f}])")
     print(f"\n  Dashboard saved to: {dashboard_dir}/\n")
 
+    # Log dashboard artifacts and summary to W&B
+    if wandb.run:
+        for _, row in summary.head(10).iterrows():
+            wandb.run.summary[f"dashboard/mean_auroc/{row['Scheme']}"] = row["Mean_AUROC"]
+        wandb.run.summary["dashboard/best_scheme"] = summary.iloc[0]["Scheme"]
+        wandb.run.summary["dashboard/best_mean_auroc"] = summary.iloc[0]["Mean_AUROC"]
+        wandb.run.summary["dashboard/num_runs"] = len(all_rows)
+
+        wandb.log({"dashboard/scheme_summary": wandb.Table(dataframe=summary.head(20))})
+
+        for img_name in [
+            "auroc_heatmap.png", "best_scheme_consistency.png",
+            "model_family_comparison.png", "size_effect.png",
+            "dataset_effect.png", "per_model_auroc.png",
+        ]:
+            img_path = dashboard_dir / img_name
+            if img_path.exists():
+                wandb.log({f"dashboard/{img_name}": wandb.Image(str(img_path))})
+
 
 # ============================================================================
 # Main
@@ -459,6 +554,10 @@ def main():
     parser.add_argument(
         "--force-rejudge", action="store_true",
         help="Re-evaluate all examples with the judge, even those already scored",
+    )
+    parser.add_argument(
+        "--no-wandb", action="store_true",
+        help="Disable W&B tracking",
     )
     parser.add_argument(
         "--wandb-dir", type=str, default=str(WANDB_BASE),
@@ -485,6 +584,32 @@ def main():
             print(f"    done: {', '.join(done) or 'none'}  |  todo: {', '.join(todo)}")
         return
 
+    # Initialize W&B
+    if not args.no_wandb:
+        step_name = args.step or "full"
+        run_name = f"pipeline_{step_name}"
+        if args.size:
+            run_name += f"_{args.size}"
+        if args.dataset:
+            run_name += f"_{args.dataset}"
+
+        wandb.init(
+            entity=WANDB_ENTITY,
+            project=WANDB_PROJECT,
+            name=run_name,
+            config={
+                "step": args.step or "all",
+                "size_filter": args.size,
+                "dataset_filter": args.dataset,
+                "num_runs": len(runs),
+                "force_rejudge": args.force_rejudge,
+                "models": list({r["model"] for r in runs}),
+                "datasets": list({r["dataset"] for r in runs}),
+                "sizes": list({r["size"] for r in runs}),
+            },
+            tags=["pipeline", args.step or "full"],
+        )
+
     state = load_state()
     steps_to_run = [args.step] if args.step else STEPS
 
@@ -500,6 +625,8 @@ def main():
     if "dashboard" in steps_to_run:
         run_dashboard_step(runs)
 
+    if wandb.run:
+        wandb.finish()
     print("\nPipeline complete.")
 
 
