@@ -347,7 +347,164 @@ def run_pos_step(runs, state):
 
 
 # ============================================================================
-# Step 4: Cross-Model Dashboard
+# Step 4: Phase 5 — Comparative Analysis (vs SAR, SE, RW-G-NLL)
+# ============================================================================
+
+def run_phase5_step(runs, state):
+    """Run comparative analysis against established baselines for each run."""
+    pending = [r for r in runs if not is_done(state, r["key"], "phase5")]
+    if not pending:
+        logger.info("Phase 5 step: all %d runs already analysed.", len(runs))
+        return
+
+    logger.info("Phase 5 step: %d/%d runs need analysis.", len(pending), len(runs))
+
+    for i, run in enumerate(pending, 1):
+        output_dir = RESULTS_BASE / run["size"] / run["dataset"] / run["model"] / "phase5"
+        run_label = f"{run['size']}/{run['dataset']}/{run['model']}"
+        logger.info("[%d/%d] Phase 5: %s ...", i, len(pending), run_label)
+        t0 = time.time()
+        cmd = [
+            sys.executable,
+            "src/analysis/phase5_comparative_analysis.py",
+            "--pickle-path", run["pickle_path"],
+            "--model-name", run["model"],
+            "--output-dir", str(output_dir),
+        ]
+        try:
+            subprocess.run(cmd, check=True, timeout=7200)
+            mark_done(state, run["key"], "phase5")
+            elapsed = time.time() - t0
+            logger.info("  Phase 5 complete -> %s (%.1fs)", output_dir, elapsed)
+
+            csv_path = output_dir / "auroc_comparison.csv"
+            if wandb.run and csv_path.exists():
+                import pandas as pd
+                df = pd.read_csv(csv_path)
+                log_data = {
+                    "phase5/run_completed": i,
+                    "phase5/run_time_s": elapsed,
+                    "phase5/run_label": run_label,
+                }
+                for _, row in df.iterrows():
+                    log_data[f"phase5/auroc_{row['Metric']}"] = row["AUROC"]
+                wandb.log(log_data)
+
+                for img_name in ["cost_performance_plot.png", "roc_curves.png"]:
+                    img_path = output_dir / img_name
+                    if img_path.exists():
+                        wandb.log({
+                            f"phase5/{run_label}/{img_name}": wandb.Image(str(img_path))
+                        })
+
+        except subprocess.CalledProcessError as e:
+            logger.error("  Phase 5 FAILED for %s: %s", run["key"], e)
+        except subprocess.TimeoutExpired:
+            logger.error("  Phase 5 TIMEOUT for %s (>2h)", run["key"])
+
+
+# ============================================================================
+# Step 5: Phase 2 — Token Importance (relevance weights, position-POS heatmap)
+# ============================================================================
+
+def run_phase2_step(runs, state):
+    """Run token importance analysis for each run."""
+    pending = [r for r in runs if not is_done(state, r["key"], "phase2")]
+    if not pending:
+        logger.info("Phase 2 step: all %d runs already analysed.", len(runs))
+        return
+
+    logger.info("Phase 2 step: %d/%d runs need analysis.", len(pending), len(runs))
+
+    for i, run in enumerate(pending, 1):
+        output_dir = RESULTS_BASE / run["size"] / run["dataset"] / run["model"] / "phase2"
+        run_label = f"{run['size']}/{run['dataset']}/{run['model']}"
+        logger.info("[%d/%d] Phase 2: %s ...", i, len(pending), run_label)
+        t0 = time.time()
+        cmd = [
+            sys.executable,
+            "src/analysis/phase2_token_importance.py",
+            "--pickle-path", run["pickle_path"],
+            "--model-name", run["model"],
+            "--output-dir", str(output_dir),
+        ]
+        try:
+            subprocess.run(cmd, check=True, timeout=3600)
+            mark_done(state, run["key"], "phase2")
+            elapsed = time.time() - t0
+            logger.info("  Phase 2 complete -> %s (%.1fs)", output_dir, elapsed)
+
+            if wandb.run:
+                log_data = {
+                    "phase2/run_completed": i,
+                    "phase2/run_time_s": elapsed,
+                    "phase2/run_label": run_label,
+                }
+                for img_name in [
+                    "relevance_vs_nll.png", "relevance_vs_position.png",
+                    "position_pos_heatmap.png", "relevance_by_pos.png",
+                ]:
+                    img_path = output_dir / img_name
+                    if img_path.exists():
+                        log_data[f"phase2/{run_label}/{img_name}"] = wandb.Image(str(img_path))
+                wandb.log(log_data)
+
+        except subprocess.CalledProcessError as e:
+            logger.error("  Phase 2 FAILED for %s: %s", run["key"], e)
+        except subprocess.TimeoutExpired:
+            logger.error("  Phase 2 TIMEOUT for %s (>1h)", run["key"])
+
+
+# ============================================================================
+# Step 6: Phase 1.6 — Prefix NLL Analysis
+# ============================================================================
+
+def run_prefix_step(runs, state):
+    """Run prefix NLL analysis for each run."""
+    pending = [r for r in runs if not is_done(state, r["key"], "prefix")]
+    if not pending:
+        logger.info("Prefix step: all %d runs already analysed.", len(runs))
+        return
+
+    logger.info("Prefix step: %d/%d runs need analysis.", len(pending), len(runs))
+
+    for i, run in enumerate(pending, 1):
+        output_dir = RESULTS_BASE / run["size"] / run["dataset"] / run["model"] / "prefix"
+        run_label = f"{run['size']}/{run['dataset']}/{run['model']}"
+        logger.info("[%d/%d] Prefix NLL: %s ...", i, len(pending), run_label)
+        t0 = time.time()
+        cmd = [
+            sys.executable,
+            "src/analysis/phase1_6_prefix_nll_analysis.py",
+            "--pickle-path", run["pickle_path"],
+            "--output-dir", str(output_dir),
+        ]
+        try:
+            subprocess.run(cmd, check=True, timeout=1800)
+            mark_done(state, run["key"], "prefix")
+            elapsed = time.time() - t0
+            logger.info("  Prefix NLL complete -> %s (%.1fs)", output_dir, elapsed)
+
+            if wandb.run:
+                log_data = {
+                    "prefix/run_completed": i,
+                    "prefix/run_time_s": elapsed,
+                    "prefix/run_label": run_label,
+                }
+                for img_name in ["prefix_mean_nll_curves.png", "first_token_nll_boxplot.png"]:
+                    img_path = output_dir / img_name
+                    if img_path.exists():
+                        log_data[f"prefix/{run_label}/{img_name}"] = wandb.Image(str(img_path))
+                wandb.log(log_data)
+
+        except subprocess.CalledProcessError as e:
+            logger.error("  Prefix FAILED for %s: %s", run["key"], e)
+        except subprocess.TimeoutExpired:
+            logger.error("  Prefix TIMEOUT for %s (>30m)", run["key"])
+
+
+# ============================================================================
+# Step 7: Cross-Model Dashboard
 # ============================================================================
 
 def run_dashboard_step(runs):
@@ -538,7 +695,7 @@ def run_dashboard_step(runs):
 # Main
 # ============================================================================
 
-STEPS = ["judge", "phase6", "pos", "dashboard"]
+STEPS = ["judge", "phase6", "pos", "phase5", "phase2", "prefix", "dashboard"]
 
 
 def main():
@@ -621,6 +778,15 @@ def main():
 
     if "pos" in steps_to_run:
         run_pos_step(runs, state)
+
+    if "phase5" in steps_to_run:
+        run_phase5_step(runs, state)
+
+    if "phase2" in steps_to_run:
+        run_phase2_step(runs, state)
+
+    if "prefix" in steps_to_run:
+        run_prefix_step(runs, state)
 
     if "dashboard" in steps_to_run:
         run_dashboard_step(runs)
