@@ -129,12 +129,16 @@ def mark_done(state, key, step):
 # ============================================================================
 
 def run_judge_step(runs, state, force_rejudge=False):
-    """Evaluate all runs with llm_llama-3-8b judge (8-bit), loading the model once."""
+    """Evaluate all runs with Llama-3.1-8B-Instruct judge (8-bit), loading the model once."""
     if force_rejudge:
         pending = runs
         for r in runs:
-            state.setdefault(r["key"], {}).pop("judge", None)
+            s = state.setdefault(r["key"], {})
+            s.pop("judge", None)
+            s.pop("phase6", None)
+            s.pop("phase5", None)
         save_state(state)
+        logger.info("Cleared judge/phase6/phase5 state (labels changed, need recompute).")
     else:
         pending = [r for r in runs if not is_done(state, r["key"], "judge")]
     if not pending:
@@ -142,7 +146,7 @@ def run_judge_step(runs, state, force_rejudge=False):
         return
 
     logger.info("Judge step: %d/%d runs need evaluation.", len(pending), len(runs))
-    logger.info("Loading LLM judge model (Meta-Llama-3-8B, 8-bit) — this may take a minute...")
+    logger.info("Loading LLM judge model (Llama-3.1-8B-Instruct, 8-bit) — this may take a minute...")
 
     src_dir = os.path.join(os.getcwd(), "src")
     if src_dir not in sys.path:
@@ -152,13 +156,13 @@ def run_judge_step(runs, state, force_rejudge=False):
     from utils.utils import model_based_metric
 
     judge_model = HuggingfaceModel(
-        "Meta-Llama-3-8B-8bit", stop_sequences="default", max_new_tokens=10
+        "Llama-3.1-8B-Instruct-8bit", stop_sequences="default", max_new_tokens=10
     )
 
     def metric_fn(predicted_answer, example, _model):
         return model_based_metric(predicted_answer, example, judge_model)
 
-    logger.info("Judge model loaded (8-bit, ~8GB VRAM).")
+    logger.info("Judge model loaded (Llama-3.1-8B-Instruct, 8-bit, ~8GB VRAM).")
 
     global_example_idx = 0
     total_examples = len(pending) * 400  # approximate
