@@ -1,0 +1,24 @@
+10:59:28 [INFO] Combined 792 AUROC rows from 19 runs.
+10:59:30 [INFO] Saved auroc_heatmap.png
+10:59:31 [INFO] Saved best_scheme_consistency.png
+10:59:31 [INFO] Saved model_family_comparison.png
+10:59:31 [INFO] Saved size_effect.png
+10:59:32 [INFO] Saved dataset_effect.png
+10:59:32 [INFO] Saved per_model_auroc.png
+10:59:32 [INFO] Saved scheme_summary.csv
+
+================================================================================
+  Dashboard Summary — Top 10 Schemes (mean AUROC across all runs)
+================================================================================
+  nll_quintic                         0.6083  (std=0.0775, range=[0.444, 0.750])
+  nll_cubic_negate_end                0.6077  (std=0.0704, range=[0.477, 0.750])
+  nll_quartic                         0.6066  (std=0.0880, range=[0.459, 0.812])
+  nll_squared_negate_end              0.6050  (std=0.0655, range=[0.450, 0.688])
+  nll_cubic                           0.6045  (std=0.0822, range=[0.427, 0.750])
+  nll_proportional                    0.5988  (std=0.0664, range=[0.465, 0.750])
+  nll_cubic_middle_focus              0.5975  (std=0.0768, range=[0.457, 0.750])
+  nll_squared_middle_focus            0.5918  (std=0.0844, range=[0.465, 0.812])
+  high_uncertainty_only               0.5848  (std=0.1324, range=[0.278, 0.732])
+  surprisal                           0.5837  (std=0.1342, range=[0.278, 0.737])
+
+  Dashboard saved to: results/pipeline/dashboard/

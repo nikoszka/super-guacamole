@@ -1,0 +1,110 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            6m713p1j2lhi1lbv1nhfeliqfh2xlatg:
+                args:
+                    - --force-rejudge
+                codePath: run_full_pipeline.py
+                codePathLocal: run_full_pipeline.py
+                cpu_count: 36
+                cpu_count_logical: 72
+                cudaVersion: "12.9"
+                disk:
+                    /:
+                        total: "198524506112"
+                        used: "25395527680"
+                email: nikosz@hotmail.sk
+                executable: /system/user/studentwork/boldis/nllSAR/bin/python
+                git:
+                    commit: 38b8176c167aa53c4008adace1d1df129dd03c44
+                    remote: git@github.com:nikoszka/super-guacamole.git
+                gpu: Tesla P40
+                gpu_count: 5
+                gpu_nvidia:
+                    - architecture: Pascal
+                      cudaCores: 3840
+                      memoryTotal: "25769803776"
+                      name: Tesla P40
+                      uuid: GPU-008a95bc-805a-72a8-bbf2-a64cfe12d734
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "17179869184"
+                      name: Tesla V100-PCIE-16GB
+                      uuid: GPU-6e8efa60-31c4-954e-440f-f3d14e432472
+                    - architecture: Pascal
+                      cudaCores: 3840
+                      memoryTotal: "25769803776"
+                      name: Tesla P40
+                      uuid: GPU-6e555b6f-2be1-44df-ceaa-828b966741d9
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "12884901888"
+                      name: NVIDIA TITAN V
+                      uuid: GPU-342a189d-f792-733b-be7e-108c32a29267
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "12884901888"
+                      name: NVIDIA TITAN V
+                      uuid: GPU-2cbe56e0-d23c-b40c-b28b-d22a31ef298f
+                host: student10
+                memory:
+                    total: "404819050496"
+                os: Linux-5.14.0-611.24.1.el9_7.x86_64-x86_64-with-glibc2.34
+                program: /system/user/studentwork/boldis/super-guacamole/run_full_pipeline.py
+                python: CPython 3.11.14
+                root: /system/user/studentwork/boldis/super-guacamole
+                startedAt: "2026-02-25T18:05:07.433639Z"
+                writerId: 6m713p1j2lhi1lbv1nhfeliqfh2xlatg
+        m: []
+        python_version: 3.11.14
+        t:
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 95
+                - 100
+            "3":
+                - 2
+                - 13
+                - 15
+                - 16
+                - 62
+            "4": 3.11.14
+            "5": 0.22.3
+            "12": 0.22.3
+            "13": linux-x86_64
+dataset_filter:
+    value: null
+datasets:
+    value:
+        - squad
+        - coqa
+        - trivia_qa
+force_rejudge:
+    value: true
+models:
+    value:
+        - Llama-3.2-1B
+        - Qwen2.5-1.5B
+        - Qwen3-8B
+        - Llama-3.1-8B-Instruct
+        - Llama-3.1-8B
+        - Mistral-7B-Instruct-v0.3
+        - Mistral-7B-v0.3-8bit
+num_runs:
+    value: 19
+size_filter:
+    value: null
+sizes:
+    value:
+        - Small
+        - Large
+step:
+    value: all

@@ -1,0 +1,26 @@
+2026-02-24 17:57:18,863 INFO    MainThread:401985 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2026-02-24 17:57:18,863 INFO    MainThread:401985 [wandb_setup.py:_flush():81] Configure stats pid to 401985
+2026-02-24 17:57:18,863 INFO    MainThread:401985 [wandb_setup.py:_flush():81] Loading settings from /system/user/boldis/.config/wandb/settings
+2026-02-24 17:57:18,863 INFO    MainThread:401985 [wandb_setup.py:_flush():81] Loading settings from /system/user/studentwork/boldis/super-guacamole/wandb/settings
+2026-02-24 17:57:18,863 INFO    MainThread:401985 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-02-24 17:57:18,864 INFO    MainThread:401985 [wandb_init.py:setup_run_log_directory():706] Logging user logs to /system/user/studentwork/boldis/super-guacamole/wandb/run-20260224_175718-tg35y3ni/logs/debug.log
+2026-02-24 17:57:18,864 INFO    MainThread:401985 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to /system/user/studentwork/boldis/super-guacamole/wandb/run-20260224_175718-tg35y3ni/logs/debug-internal.log
+2026-02-24 17:57:18,864 INFO    MainThread:401985 [wandb_init.py:init():833] calling init triggers
+2026-02-24 17:57:18,864 INFO    MainThread:401985 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'step': 'phase6', 'size_filter': None, 'dataset_filter': None, 'num_runs': 19, 'force_rejudge': False, 'models': ['Mistral-7B-v0.3-8bit', 'Llama-3.1-8B-Instruct', 'Llama-3.1-8B', 'Qwen2.5-1.5B', 'Mistral-7B-Instruct-v0.3', 'Llama-3.2-1B', 'Qwen3-8B'], 'datasets': ['squad', 'coqa', 'trivia_qa'], 'sizes': ['Large', 'Small'], '_wandb': {}}
+2026-02-24 17:57:18,864 INFO    MainThread:401985 [wandb_init.py:init():881] starting backend
+2026-02-24 17:57:19,089 INFO    MainThread:401985 [wandb_init.py:init():884] sending inform_init request
+2026-02-24 17:57:19,098 INFO    MainThread:401985 [wandb_init.py:init():892] backend started and connected
+2026-02-24 17:57:19,098 INFO    MainThread:401985 [wandb_init.py:init():962] updated telemetry
+2026-02-24 17:57:19,128 INFO    MainThread:401985 [wandb_init.py:init():986] communicating run to backend with 90.0 second timeout
+2026-02-24 17:57:19,848 INFO    MainThread:401985 [wandb_init.py:init():1033] starting run threads in backend
+2026-02-24 17:57:20,481 INFO    MainThread:401985 [wandb_run.py:_console_start():2506] atexit reg
+2026-02-24 17:57:20,482 INFO    MainThread:401985 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2026-02-24 17:57:20,482 INFO    MainThread:401985 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2026-02-24 17:57:20,482 INFO    MainThread:401985 [wandb_run.py:_redirect():2446] Redirects installed.
+2026-02-24 17:57:20,495 INFO    MainThread:401985 [wandb_init.py:init():1073] run started, returning control to user process
+2026-02-24 18:01:29,705 INFO    MainThread:401985 [wandb_run.py:_finish():2272] finishing run nikosteam/super_guacamole_pipeline/tg35y3ni
+2026-02-24 18:01:29,706 INFO    MainThread:401985 [wandb_run.py:_atexit_cleanup():2471] got exitcode: 0
+2026-02-24 18:01:29,706 INFO    MainThread:401985 [wandb_run.py:_restore():2453] restore
+2026-02-24 18:01:29,706 INFO    MainThread:401985 [wandb_run.py:_restore():2459] restore done
+2026-02-24 18:01:30,800 INFO    MainThread:401985 [wandb_run.py:_footer_sync_info():3835] logging synced files

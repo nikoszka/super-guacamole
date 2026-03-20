@@ -1,0 +1,134 @@
+{
+  "Large/coqa/Llama-3.1-8B/run-20260219_220932-gzd96x23": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/coqa/Mistral-7B-Instruct-v0.3/run-20260220_033716-x00p5d3b": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/coqa/Mistral-7B-v0.3-8bit/run-20260219_182734-vt6x8213": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/coqa/Qwen3-8B/run-20260220_005256-c2u54fqi": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/squad/Llama-3.1-8B/run-20260219_212433-1a1pw3ee": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/squad/Mistral-7B-Instruct-v0.3/run-20260220_024520-o4aotsr2": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/squad/Mistral-7B-v0.3-8bit/run-20260219_173729-nqrlu9w1": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/squad/Qwen3-8B/run-20260219_235824-33kapjw7": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/trivia_qa/Llama-3.1-8B/run-20260219_203812-j3m4tzbm": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/trivia_qa/Llama-3.1-8B-Instruct/run-20251121_091943-uciwt9wn": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/trivia_qa/Mistral-7B-Instruct-v0.3/run-20260220_014823-13fttium": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/trivia_qa/Mistral-7B-v0.3-8bit/run-20260219_164634-ynd123jw": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Large/trivia_qa/Qwen3-8B/run-20260219_225746-mq4kegso": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/coqa/Llama-3.2-1B/run-20260218_101057-4cbvpdly": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/coqa/Qwen2.5-1.5B/run-20260218_104944-03t1d7ls": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/squad/Llama-3.2-1B/run-20260218_095701-402rcly4": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/squad/Qwen2.5-1.5B/run-20260218_103537-w6bvpulu": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/trivia_qa/Llama-3.2-1B/run-20260218_094406-mmkhunb6": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/trivia_qa/Qwen2.5-1.5B/run-20260218_102153-lz1oqkad": {
+    "pos": "done",
+    "judge": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/coqa/Ministral-3-3B-Instruct-2512-BF16/run-20260227_123557-dunbisw9": {
+    "judge": "done",
+    "pos": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/squad/Ministral-3-3B-Instruct-2512-BF16/run-20260227_120737-1thzlyh2": {
+    "judge": "done",
+    "pos": "done",
+    "phase2": "done",
+    "prefix": "done"
+  },
+  "Small/trivia_qa/Ministral-3-3B-Instruct-2512-BF16/run-20260227_113705-9ee7b4ys": {
+    "judge": "done",
+    "pos": "done",
+    "phase2": "done",
+    "prefix": "done"
+  }
+}

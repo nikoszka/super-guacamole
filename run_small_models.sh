@@ -21,7 +21,7 @@ MODELS=(
 #    "Llama-3.2-1B:Llama:Small"
 #    "Qwen2.5-1.5B-Instruct:Qwen:Small"
 #    "Mistral-7B-v0.3-8bit:Mistral:Small"
-    "Ministral-3-3B-Instruct-2512:Mistral:Small"
+    "Ministral-3-3B-Instruct-2512-BF16:Mistral:Small"
 )
 
 echo "================================================================================"

@@ -1,0 +1,37 @@
+2026-03-17 10:27:14,334 INFO    MainThread:1847404 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2026-03-17 10:27:14,334 INFO    MainThread:1847404 [wandb_setup.py:_flush():81] Configure stats pid to 1847404
+2026-03-17 10:27:14,334 INFO    MainThread:1847404 [wandb_setup.py:_flush():81] Loading settings from /system/user/boldis/.config/wandb/settings
+2026-03-17 10:27:14,335 INFO    MainThread:1847404 [wandb_setup.py:_flush():81] Loading settings from /system/user/studentwork/boldis/super-guacamole/wandb/settings
+2026-03-17 10:27:14,335 INFO    MainThread:1847404 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-03-17 10:27:14,335 INFO    MainThread:1847404 [wandb_init.py:setup_run_log_directory():706] Logging user logs to /system/user/studentwork/boldis/super-guacamole/wandb/run-20260317_102714-cg2wukfo/logs/debug.log
+2026-03-17 10:27:14,335 INFO    MainThread:1847404 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to /system/user/studentwork/boldis/super-guacamole/wandb/run-20260317_102714-cg2wukfo/logs/debug-internal.log
+2026-03-17 10:27:14,335 INFO    MainThread:1847404 [wandb_init.py:init():833] calling init triggers
+2026-03-17 10:27:14,335 INFO    MainThread:1847404 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'step': 'phase6', 'size_filter': None, 'dataset_filter': None, 'num_runs': 3, 'force_rejudge': False, 'models': ['Qwen3-8B'], 'datasets': ['coqa', 'squad', 'trivia_qa'], 'sizes': ['Large'], '_wandb': {}}
+2026-03-17 10:27:14,335 INFO    MainThread:1847404 [wandb_init.py:init():881] starting backend
+2026-03-17 10:27:14,592 WARNING MainThread:1847404 [wandb_init.py:init():1588] [no run ID] interrupted
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1579, in init
+    run = wi.init(run_settings, run_config, run_printer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 883, in init
+    service = self._wl.ensure_service()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/wandb_setup.py", line 401, in ensure_service
+    self._connection = service_connection.connect_to_service(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/lib/service/service_connection.py", line 39, in connect_to_service
+    return _start_and_connect_service(asyncer, settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/lib/service/service_connection.py", line 52, in _start_and_connect_service
+    proc = service_process.start(settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/lib/service/service_process.py", line 33, in start
+    return _launch_server(settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/lib/service/service_process.py", line 105, in _launch_server
+    token = service_port_file.poll_for_token(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/wandb/sdk/lib/service/service_port_file.py", line 61, in poll_for_token
+    _SLEEP(max(0, min(0.2, end_time - _MONOTONIC())))
+KeyboardInterrupt

@@ -270,7 +270,7 @@ def create_comparison_table(aurocs: Dict[str, float]) -> pd.DataFrame:
     ])
     
     # Sort by AUROC (descending)
-    df = df.sort_values('AUROC', ascending=False, na_last=True)
+    df = df.sort_values('AUROC', ascending=False, na_position='last')
     
     return df
 

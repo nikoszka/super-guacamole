@@ -1,0 +1,71 @@
+[
+  {
+    "example_id": "coqa_33_q13",
+    "response": "",
+    "tokens": [
+      " \n\n"
+    ],
+    "num_tokens": 1,
+    "uniform": [
+      1.0
+    ],
+    "linear_increasing": [
+      1.0
+    ],
+    "linear_decreasing": [
+      1.0
+    ],
+    "quadratic_increasing": [
+      1.0
+    ],
+    "exponential_increasing": [
+      1.0
+    ],
+    "middle_peak": [
+      1.0
+    ],
+    "gaussian_middle": [
+      1.0
+    ],
+    "nll_proportional": [
+      2.609328269958496
+    ],
+    "surprisal": [
+      1.0
+    ],
+    "first_k": [
+      1.0
+    ],
+    "last_k": [
+      1.0
+    ],
+    "recency_bias": [
+      1.0
+    ],
+    "nll_sqrt": [
+      1.0
+    ],
+    "nll_cubic": [
+      1.0
+    ],
+    "nll_quartic": [
+      1.0
+    ],
+    "only_beginning": [
+      1.0
+    ],
+    "only_middle": [
+      1.0
+    ],
+    "only_end": [
+      1.0
+    ],
+    "sar_relevance": null,
+    "hybrid_middle_sar_50": null,
+    "hybrid_gaussian_sar_50": null,
+    "token_log_likelihoods": [
+      -2.609328269958496
+    ],
+    "is_correct": 0
+  }
+]

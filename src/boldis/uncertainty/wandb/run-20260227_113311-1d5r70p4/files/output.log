@@ -1,0 +1,101 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+2026-02-27 11:33:13 INFO     Finished wandb init.
+2026-02-27 11:33:16 INFO     Train dataset: Dataset({
+    features: ['id', 'question', 'context', 'answers'],
+    num_rows: 12294
+})
+2026-02-27 11:33:18 INFO     Prompt is:
+2026-02-27 11:33:18 INFO     Using HuggingFace model cache directory: /system/user/studentwork/boldis/huggingface-cache/hub
+model.safetensors.index.json: 45.6kB [00:00, 86.4MB/s]
+model-00002-of-00002.safetensors: 100%|██████████████████████████████| 2.73G/2.73G [00:37<00:00, 72.2MB/s]
+model-00001-of-00002.safetensors: 100%|██████████████████████████████| 4.97G/4.97G [01:02<00:00, 79.9MB/s]
+Fetching 2 files: 100%|█████████████████████████████████████████████████████| 2/2 [01:02<00:00, 31.42s/it]
+Loading checkpoint shards: 100%|████████████████████████████████████████████| 2/2 [00:14<00:00,  7.42s/it]
+generation_config.json: 100%|████████████████████████████████████████████| 131/131 [00:00<00:00, 1.05MB/s]
+2026-02-27 11:34:40 INFO     ================================================================================
+2026-02-27 11:34:40 INFO     Generating answers:
+2026-02-27 11:34:40 INFO     ================================================================================
+2026-02-27 11:34:40 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-27 11:34:40 INFO     Starting with dataset_split train.
+2026-02-27 11:34:40 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-27 11:34:40 INFO     Skip training data.
+2026-02-27 11:34:40 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2026-02-27 11:34:40 INFO     Starting with dataset_split validation.
+2026-02-27 11:34:40 INFO     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  0%|                                                                             | 0/400 [00:00<?, ?it/s]2026-02-27 11:34:40 INFO     Current input: Answer the following question in one complete sentence.
+
+Context: The Battle of Waterloo was fought on Sunday, 18 June 1815 near Waterloo in present-day Belgium. A French army under Napoleon Bonaparte was defeated by two armies of the Seventh Coalition, including a British-led allied army under the Duke of Wellington.
+Question: Who commanded the British forces at the Battle of Waterloo?
+Answer: The Duke of Wellington commanded the British-led allied forces at the Battle of Waterloo in 1815.
+
+Context: The Mona Lisa is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as the best known, most visited, most written about, and most parodied work of art in the world.
+Question: Who painted the Mona Lisa?
+Answer: Leonardo da Vinci painted the Mona Lisa, which is considered a masterpiece of the Italian Renaissance.
+
+Context: Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities.
+Question: What is the height of Mount Everest?
+Answer: Mount Everest stands at an elevation of 8,848.86 meters above sea level, making it Earth's highest mountain.
+
+Context: [DOC] [TLE] International Bureau of Weights and MeasuresThe International Bureau of Weights and Measures (), is an international standards organisation, one of three such organisations established to maintain the International System of Units (SI) under the terms of the Metre Convention (Convention du Mètre). The organisation is usually referred to by its French initialism, BIPM. [PAR] The other organisations that maintain the SI system, also known by their French initialisms, are the General Conference on Weights and Measures () (CGPM) and the International Committee for Weights and Measures () (CIPM). [PAR] History [PAR] The BIPM was created on 20 May 1875, following the signing of the Metre Convention, a treaty among 51 nations ().  It is based at the Pavillon de Breteuil in Sèvres, France, a 4.35 ha site (originally 2.52 ha) granted to the Bureau by the French Government in 1876, where it enjoys extraterritorial status,  a status that was clarified by the French decree No 70-820 of 9 September 1970. [PAR] Function [PAR] Under the authority of the Metric Convention, the BIPM helps to ensure uniformity of SI weights and measures around the world.  It does so through a series of consultative committees, whose members are the national metrology laboratories of the Convention's member states, and through its own laboratory work. [PAR] The BIPM carries out measurement-related research. It takes part in and organises international comparisons of national measurement standards and performs calibrations for member states. [PAR] The BIPM has an important role in maintaining accurate worldwide time of day.
+Question: The International Bureau of Weights and Measures is based in which European country?
+Answer:
+  0%|                                                                             | 0/400 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 294, in <module>
+    main(args)
+  File "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py", line 191, in main
+    predicted_answer, token_log_likelihoods, embedding, token_ids, tokens = model.predict(
+                                                                            ^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/super-guacamole/src/models/huggingface_models.py", line 551, in predict
+    outputs = self.model.generate(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/generation/utils.py", line 2564, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/generation/utils.py", line 2784, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/mistral3/modeling_mistral3.py", line 469, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/mistral3/modeling_mistral3.py", line 332, in forward
+    outputs = self.language_model(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/utils/generic.py", line 1064, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/models/ministral/modeling_ministral.py", line 373, in forward
+    "sliding_attention": create_sliding_window_causal_mask(**mask_kwargs),
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/transformers/masking_utils.py", line 891, in create_sliding_window_causal_mask
+    raise ValueError("Could not find a `sliding_window` argument in the config, or it is not set")
+ValueError: Could not find a `sliding_window` argument in the config, or it is not set

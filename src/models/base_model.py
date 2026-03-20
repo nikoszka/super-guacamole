@@ -3,7 +3,8 @@ from typing import List, Text
 
 
 STOP_SEQUENCES = ['\n\n\n\n', '\n\n\n', '\n\n', 'Question:', 'Context:', 'Answer:']
-STOP_SEQUENCES_DETAILED = ['\n\n\n\n', 'Question:', 'Context:', 'Answer:']  # Relaxed for detailed answers
+# '\nAnswer ' catches prompt leakage where the model re-emits the BRIEF instruction
+STOP_SEQUENCES_DETAILED = ['\n\n\n\n', 'Question:', 'Context:', 'Answer:', '\nAnswer ']
 
 
 class BaseModel(ABC):

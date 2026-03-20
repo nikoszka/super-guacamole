@@ -131,7 +131,13 @@ def compute_sar_weights(
     tokenizer,
     cache: Optional[Dict] = None
 ) -> List[float]:
-    """SAR-style relevance weights using token ablation."""
+    """SAR-style relevance weights using token ablation.
+    
+    Handles the common case where re-tokenizing the response text gives a
+    different token count than the model's original generation.  When a
+    mismatch occurs, the raw weights are linearly interpolated / resampled
+    to match the expected ``num_tokens`` from the pickle.
+    """
     question = entry.get('question', '')
     context = entry.get('context', '')
     prompt_x = f"{context} {question}".strip() if context else question
@@ -142,10 +148,22 @@ def compute_sar_weights(
     if not response:
         return []
     
+    expected_n = len(mla.get('tokens', mla.get('token_log_likelihoods', [])))
+    
     relevance_weights = compute_token_relevance_weights(
         prompt_x, response, tokenizer, similarity_model,
         cache=cache, show_progress=False
     )
+    
+    if not relevance_weights:
+        return []
+    
+    # Resample to expected length when the tokenizer produces a different count
+    if len(relevance_weights) != expected_n and expected_n > 0:
+        raw = np.array(relevance_weights, dtype=float)
+        x_old = np.linspace(0, 1, len(raw))
+        x_new = np.linspace(0, 1, expected_n)
+        relevance_weights = list(np.interp(x_new, x_old, raw))
     
     return relevance_weights
 
@@ -1051,9 +1069,19 @@ def compute_all_weighted_nlls(
 
 def compute_aurocs(
     results: Dict[str, Dict[str, float]],
-    labels: Dict[str, int]
+    labels: Dict[str, int],
+    min_samples: int = 5
 ) -> Dict[str, float]:
-    """Compute AUROC for all weighting schemes."""
+    """Compute AUROC for all weighting schemes.
+    
+    Args:
+        results: {scheme_name: {example_id: weighted_nll_score}}
+        labels: {example_id: 1 if incorrect, 0 if correct}
+        min_samples: Minimum number of examples required per class.
+                     Schemes computed on fewer examples per class get
+                     their AUROC set to None (catches SAR token-mismatch
+                     cases where only 1-3 examples survive).
+    """
     aurocs = {}
     
     for scheme_name, scores in results.items():
@@ -1067,14 +1095,28 @@ def compute_aurocs(
         y_true = [labels[eid] for eid in common_ids]
         y_scores = [scores[eid] for eid in common_ids]
         
-        # Higher NLL = more uncertain = predicts incorrect
-        # So negate scores for AUROC computation
+        n_pos = sum(y_true)
+        n_neg = len(y_true) - n_pos
+        
+        if n_pos < min_samples or n_neg < min_samples:
+            logger.warning(
+                f"{scheme_name}: only {len(common_ids)} examples "
+                f"({n_neg} correct, {n_pos} incorrect) — below min_samples={min_samples}, "
+                f"AUROC unreliable, setting to None"
+            )
+            aurocs[scheme_name] = None
+            continue
+        
         y_scores_auc = [-s for s in y_scores]
         
         try:
             auroc = roc_auc_score(y_true, y_scores_auc)
-            aurocs[scheme_name] = auroc
-            logger.info(f"{scheme_name:25s}: AUROC = {auroc:.4f} (n={len(common_ids)})")
+            if not np.isfinite(auroc):
+                logger.warning(f"Non-finite AUROC for {scheme_name}, skipping")
+                aurocs[scheme_name] = None
+            else:
+                aurocs[scheme_name] = auroc
+                logger.info(f"{scheme_name:25s}: AUROC = {auroc:.4f} (n={len(common_ids)}, pos={n_pos}, neg={n_neg})")
         except ValueError as e:
             logger.warning(f"Error computing AUROC for {scheme_name}: {e}")
             aurocs[scheme_name] = None
@@ -1280,8 +1322,9 @@ def create_auroc_comparison_plot(
     output_dir: str
 ):
     """Create bar plot comparing AUROCs."""
-    # Filter out None values
-    valid_aurocs = {k: v for k, v in aurocs.items() if v is not None}
+    # Filter out None, NaN, and Inf values
+    valid_aurocs = {k: v for k, v in aurocs.items() 
+                    if v is not None and np.isfinite(v)}
     
     if not valid_aurocs:
         logger.warning("No valid AUROCs to plot")
@@ -1341,7 +1384,7 @@ def create_nll_power_comparison_plot(
     }
     
     # Filter and sort
-    valid = {k: aurocs.get(k) for k in nll_schemes if aurocs.get(k) is not None}
+    valid = {k: aurocs.get(k) for k in nll_schemes if aurocs.get(k) is not None and np.isfinite(aurocs.get(k))}
     if not valid:
         logger.warning("No NLL power schemes found")
         return
@@ -1424,7 +1467,7 @@ def create_position_analysis_plot(
     # Plot 1: Only X vs Uniform
     ax1 = axes[0]
     only_schemes = ['only_beginning', 'only_middle', 'only_end', 'uniform']
-    valid1 = {k: aurocs.get(k) for k in only_schemes if aurocs.get(k) is not None}
+    valid1 = {k: aurocs.get(k) for k in only_schemes if aurocs.get(k) is not None and np.isfinite(aurocs.get(k))}
     if valid1:
         labels = [position_schemes.get(k, (k, 'gray'))[0] for k in only_schemes if k in valid1]
         values = [valid1[k] for k in only_schemes if k in valid1]
@@ -1445,7 +1488,7 @@ def create_position_analysis_plot(
     # Plot 2: Without X vs Uniform
     ax2 = axes[1]
     unweight_schemes = ['unweight_beginning', 'unweight_middle', 'unweight_end', 'uniform']
-    valid2 = {k: aurocs.get(k) for k in unweight_schemes if aurocs.get(k) is not None}
+    valid2 = {k: aurocs.get(k) for k in unweight_schemes if aurocs.get(k) is not None and np.isfinite(aurocs.get(k))}
     if valid2:
         labels = [position_schemes.get(k, (k, 'gray'))[0] for k in unweight_schemes if k in valid2]
         values = [valid2[k] for k in unweight_schemes if k in valid2]
@@ -1466,7 +1509,7 @@ def create_position_analysis_plot(
     # Plot 3: Confidence Sinks Hypothesis (Negating End Tokens)
     ax3 = axes[2]
     negate_list = list(negate_schemes.keys()) + ['uniform']
-    valid3 = {k: aurocs.get(k) for k in negate_list if aurocs.get(k) is not None}
+    valid3 = {k: aurocs.get(k) for k in negate_list if aurocs.get(k) is not None and np.isfinite(aurocs.get(k))}
     if valid3:
         labels = []
         values = []
@@ -1730,7 +1773,7 @@ def create_roc_curves(
         'nll_cubic_middle_focus': 'NLL³ × Middle Focus',
     }
     
-    # Compute AUROCs first to filter top schemes
+    # Compute AUROCs first to filter top schemes (require min 5 per class)
     aurocs_for_filtering = {}
     for scheme_name, scores in results.items():
         if not scores:
@@ -1739,6 +1782,10 @@ def create_roc_curves(
         if len(common_ids) < 2:
             continue
         y_true = [labels[eid] for eid in common_ids]
+        n_pos = sum(y_true)
+        n_neg = len(y_true) - n_pos
+        if n_pos < 5 or n_neg < 5:
+            continue
         y_scores = [scores[eid] for eid in common_ids]
         y_scores_auc = [-s for s in y_scores]
         try:
@@ -1903,10 +1950,11 @@ def main():
     logger.info("="*80)
     aurocs = compute_aurocs(results, labels)
     
-    # Save results
+    # Save results — filter out None AUROCs so CSV only has valid rows
+    valid_aurocs = {k: v for k, v in aurocs.items() if v is not None}
     comparison_df = pd.DataFrame([
         {'Scheme': k, 'AUROC': v}
-        for k, v in sorted(aurocs.items(), key=lambda x: x[1] or 0, reverse=True)
+        for k, v in sorted(valid_aurocs.items(), key=lambda x: x[1], reverse=True)
     ])
     
     csv_path = os.path.join(args.output_dir, 'weighting_schemes_auroc.csv')

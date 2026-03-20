@@ -1,0 +1,12 @@
+{"time":"2026-02-27T12:35:57.76802983+01:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2026-02-27T12:35:58.096744817+01:00","level":"INFO","msg":"stream: created new stream","id":"dunbisw9"}
+{"time":"2026-02-27T12:35:58.096792423+01:00","level":"INFO","msg":"handler: started","stream_id":"dunbisw9"}
+{"time":"2026-02-27T12:35:58.09946067+01:00","level":"INFO","msg":"stream: started","id":"dunbisw9"}
+{"time":"2026-02-27T12:35:58.099542172+01:00","level":"INFO","msg":"writer: started","stream_id":"dunbisw9"}
+{"time":"2026-02-27T12:35:58.09957771+01:00","level":"INFO","msg":"sender: started","stream_id":"dunbisw9"}
+{"time":"2026-02-27T12:39:40.758848039+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/nikosteam/super_guacamole/dunbisw9/file_stream\": dial tcp 35.186.228.49:443: connect: connection timed out"}
+{"time":"2026-02-27T13:07:48.071372953+01:00","level":"INFO","msg":"stream: closing","id":"dunbisw9"}
+{"time":"2026-02-27T13:07:50.074091747+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-27T13:07:50.43131015+01:00","level":"INFO","msg":"handler: closed","stream_id":"dunbisw9"}
+{"time":"2026-02-27T13:07:50.433428759+01:00","level":"INFO","msg":"sender: closed","stream_id":"dunbisw9"}
+{"time":"2026-02-27T13:07:50.433470136+01:00","level":"INFO","msg":"stream: closed","id":"dunbisw9"}

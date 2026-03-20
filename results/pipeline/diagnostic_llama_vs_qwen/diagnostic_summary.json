@@ -1,0 +1,41 @@
+{
+  "common_examples": 400,
+  "llama": {
+    "total_examples": 400,
+    "accuracy": 0.685,
+    "mean_token_nll": 0.2694419798537764,
+    "std_token_nll": 0.4088379082798076,
+    "median_token_nll": 0.0479730311781168,
+    "mean_seq_len": 22.29,
+    "mean_intra_nll_std": 0.3481924151556131,
+    "mean_nll_cv": 1.3393367127980844,
+    "mean_nll_range": 1.164303811986749,
+    "mean_high_nll_frac": 0.07905287661469138
+  },
+  "qwen": {
+    "total_examples": 400,
+    "accuracy": 0.6875,
+    "mean_token_nll": 0.13198731617787052,
+    "std_token_nll": 0.25092290430343134,
+    "median_token_nll": 0.001499422185588628,
+    "mean_seq_len": 24.685,
+    "mean_intra_nll_std": 0.22872936350135412,
+    "mean_nll_cv": 1.9601430028952047,
+    "mean_nll_range": 0.8225606151951368,
+    "mean_high_nll_frac": 0.013684707095419942
+  },
+  "auroc_comparison": {
+    "Llama": {
+      "uniform": 0.6097787046692156,
+      "nll_proportional": 0.7234387672343877,
+      "linear_decreasing": 0.6301413509442706,
+      "first_last_k": 0.6032904646043333
+    },
+    "Qwen": {
+      "uniform": 0.6241454545454546,
+      "nll_proportional": 0.5427781818181818,
+      "linear_decreasing": 0.6438400000000001,
+      "first_last_k": 0.6561163636363636
+    }
+  }
+}

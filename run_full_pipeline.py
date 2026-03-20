@@ -48,7 +48,7 @@ WANDB_ENTITY = "nikosteam"
 # Run discovery
 # ============================================================================
 
-def discover_latest_runs(wandb_base, size_filter=None, dataset_filter=None):
+def discover_latest_runs(wandb_base, size_filter=None, dataset_filter=None, model_filter=None):
     """Walk Size/Dataset/Model/ tree and pick the latest run per combo."""
     runs = []
     for size_dir in sorted(wandb_base.iterdir()):
@@ -63,6 +63,8 @@ def discover_latest_runs(wandb_base, size_filter=None, dataset_filter=None):
                 continue
             for model_dir in sorted(ds_dir.iterdir()):
                 if not model_dir.is_dir():
+                    continue
+                if model_filter and model_filter.lower() not in model_dir.name.lower():
                     continue
                 run_dirs = sorted(
                     [d for d in model_dir.iterdir() if d.is_dir() and d.name.startswith("run-")]
@@ -272,20 +274,27 @@ def run_phase6_step(runs, state):
 
             # Log AUROC results to W&B
             csv_path = output_dir / "weighting_schemes_auroc.csv"
-            if wandb.run and csv_path.exists():
+            if wandb.run and csv_path.exists() and csv_path.stat().st_size > 10:
                 import pandas as pd
-                df = pd.read_csv(csv_path)
-                top5 = df.nlargest(5, "AUROC")
-                log_data = {
-                    "phase6/run_completed": i,
-                    "phase6/run_time_s": elapsed,
-                    "phase6/run_label": run_label,
-                    "phase6/best_scheme": top5.iloc[0]["Scheme"],
-                    "phase6/best_auroc": top5.iloc[0]["AUROC"],
-                }
-                for _, row in top5.iterrows():
-                    log_data[f"phase6/auroc_{row['Scheme']}"] = row["AUROC"]
-                wandb.log(log_data)
+                try:
+                    df = pd.read_csv(csv_path)
+                except pd.errors.EmptyDataError:
+                    logger.warning("  Empty AUROC CSV for %s (all schemes filtered?)", run_label)
+                    df = pd.DataFrame()
+                if not df.empty and "AUROC" in df.columns:
+                    df = df.dropna(subset=["AUROC"])
+                if not df.empty:
+                    top5 = df.nlargest(5, "AUROC")
+                    log_data = {
+                        "phase6/run_completed": i,
+                        "phase6/run_time_s": elapsed,
+                        "phase6/run_label": run_label,
+                        "phase6/best_scheme": top5.iloc[0]["Scheme"],
+                        "phase6/best_auroc": top5.iloc[0]["AUROC"],
+                    }
+                    for _, row in top5.iterrows():
+                        log_data[f"phase6/auroc_{row['Scheme']}"] = row["AUROC"]
+                    wandb.log(log_data)
 
                 # Log per-run AUROC plots as images
                 for img_name in ["auroc_comparison.png", "roc_curves_smooth.png"]:
@@ -711,6 +720,7 @@ def main():
     parser.add_argument("--step", choices=STEPS, help="Run only this step")
     parser.add_argument("--size", help="Filter: Small, Large, XLarge")
     parser.add_argument("--dataset", help="Filter: trivia_qa, squad, coqa")
+    parser.add_argument("--model", help="Filter by model name (substring match)")
     parser.add_argument("--dry-run", action="store_true", help="Show runs, don't execute")
     parser.add_argument(
         "--force-rejudge", action="store_true",
@@ -727,7 +737,7 @@ def main():
     args = parser.parse_args()
 
     wandb_base = Path(args.wandb_dir)
-    runs = discover_latest_runs(wandb_base, size_filter=args.size, dataset_filter=args.dataset)
+    runs = discover_latest_runs(wandb_base, size_filter=args.size, dataset_filter=args.dataset, model_filter=args.model)
 
     if not runs:
         logger.error("No runs found in %s", wandb_base)

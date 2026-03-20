@@ -1,0 +1,24 @@
+22:48:12 [INFO] Combined 921 AUROC rows from 22 runs.
+22:48:13 [INFO] Saved auroc_heatmap.png
+22:48:13 [INFO] Saved best_scheme_consistency.png
+22:48:13 [INFO] Saved model_family_comparison.png
+22:48:14 [INFO] Saved size_effect.png
+22:48:14 [INFO] Saved dataset_effect.png
+22:48:15 [INFO] Saved per_model_auroc.png
+22:48:15 [INFO] Saved scheme_summary.csv
+
+================================================================================
+  Dashboard Summary — Top 10 Schemes (mean AUROC across all runs)
+================================================================================
+  first_last_k                        0.6874  (std=0.1063, range=[0.505, 0.938])
+  linear_decreasing                   0.6867  (std=0.1052, range=[0.478, 0.938])
+  exponential_decreasing              0.6863  (std=0.0961, range=[0.546, 1.000])
+  edges_peak                          0.6859  (std=0.0940, range=[0.475, 0.832])
+  quadratic_decreasing                0.6852  (std=0.0919, range=[0.479, 0.938])
+  high_uncertainty_only               0.6844  (std=0.1023, range=[0.462, 0.938])
+  surprisal                           0.6833  (std=0.0833, range=[0.535, 0.812])
+  nll_proportional                    0.6822  (std=0.0906, range=[0.498, 0.875])
+  first_k                             0.6814  (std=0.2462, range=[0.000, 1.000])
+  unweight_end                        0.6803  (std=0.2455, range=[0.000, 1.000])
+
+  Dashboard saved to: results/pipeline/dashboard/

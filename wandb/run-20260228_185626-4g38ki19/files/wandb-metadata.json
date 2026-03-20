@@ -1,0 +1,72 @@
+{
+  "os":  "Linux-5.14.0-611.24.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "python":  "CPython 3.11.14",
+  "startedAt":  "2026-02-28T17:56:26.422213Z",
+  "args":  [
+    "--model",
+    "Ministral"
+  ],
+  "program":  "/system/user/studentwork/boldis/super-guacamole/run_full_pipeline.py",
+  "codePath":  "run_full_pipeline.py",
+  "codePathLocal":  "run_full_pipeline.py",
+  "git":  {
+    "remote":  "git@github.com:nikoszka/super-guacamole.git",
+    "commit":  "38b8176c167aa53c4008adace1d1df129dd03c44"
+  },
+  "email":  "nikosz@hotmail.sk",
+  "root":  "/system/user/studentwork/boldis/super-guacamole",
+  "host":  "student10",
+  "executable":  "/system/user/studentwork/boldis/nllSAR/bin/python",
+  "cpu_count":  36,
+  "cpu_count_logical":  72,
+  "gpu":  "Tesla P40",
+  "gpu_count":  5,
+  "disk":  {
+    "/":  {
+      "total":  "198524506112",
+      "used":  "25523761152"
+    }
+  },
+  "memory":  {
+    "total":  "404819050496"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla P40",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  3840,
+      "architecture":  "Pascal",
+      "uuid":  "GPU-008a95bc-805a-72a8-bbf2-a64cfe12d734"
+    },
+    {
+      "name":  "Tesla V100-PCIE-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-6e8efa60-31c4-954e-440f-f3d14e432472"
+    },
+    {
+      "name":  "Tesla P40",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  3840,
+      "architecture":  "Pascal",
+      "uuid":  "GPU-6e555b6f-2be1-44df-ceaa-828b966741d9"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-342a189d-f792-733b-be7e-108c32a29267"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-2cbe56e0-d23c-b40c-b28b-d22a31ef298f"
+    }
+  ],
+  "cudaVersion":  "12.9",
+  "writerId":  "irh6qsohjnd7ntixmffhys5ln2x4tjrm"
+}

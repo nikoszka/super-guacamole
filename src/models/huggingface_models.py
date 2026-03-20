@@ -367,22 +367,20 @@ class HuggingfaceModel(BaseModel):
 
             model_id = f'mistralai/{model_name}'
             
-            # Ministral models need trust_remote_code for newer tokenizer backend
+            # Ministral models use "TokenizersBackend" which AutoTokenizer can't resolve.
+            # Load directly with PreTrainedTokenizerFast to bypass class lookup.
             if 'ministral' in model_name.lower():
                 try:
-                    # Try with trust_remote_code first
                     self.tokenizer = AutoTokenizer.from_pretrained(
                         model_id, device_map='auto', token_type_ids=None,
                         trust_remote_code=True,
                         use_fast=True,
                         clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
                 except (ValueError, ImportError) as e:
-                    # If that fails, try falling back to slow tokenizer
-                    logging.warning(f"Failed to load fast tokenizer: {e}. Trying slow tokenizer...")
-                    self.tokenizer = AutoTokenizer.from_pretrained(
-                        model_id, device_map='auto', token_type_ids=None,
-                        trust_remote_code=True,
-                        use_fast=False,
+                    logging.warning(f"AutoTokenizer failed: {e}. Falling back to PreTrainedTokenizerFast...")
+                    from transformers import PreTrainedTokenizerFast
+                    self.tokenizer = PreTrainedTokenizerFast.from_pretrained(
+                        model_id, trust_remote_code=True,
                         clean_up_tokenization_spaces=False, cache_dir=self.cache_dir)
             else:
                 self.tokenizer = AutoTokenizer.from_pretrained(
@@ -397,21 +395,38 @@ class HuggingfaceModel(BaseModel):
             
             max_memory_dict = get_gpu_memory_dict(allow_cpu_offload=allow_cpu_offload)
             
-            # Ministral models may need trust_remote_code
             model_kwargs = {
                 'device_map': 'auto',
                 'max_memory': max_memory_dict if max_memory_dict else {0: '80GIB'},
                 'cache_dir': self.cache_dir,
-                'low_cpu_mem_usage': True,  # Reduce CPU memory usage during loading
+                'low_cpu_mem_usage': True,
                 **kwargs,
             }
+            
+            # Ministral uses Mistral3ForConditionalGeneration (multimodal arch)
+            # which isn't in AutoModelForCausalLM's registry.
+            # The config uses "ministral3" text model_type which doesn't exist
+            # in transformers 4.x — patch it to "ministral" before loading.
             if 'ministral' in model_name.lower():
                 model_kwargs['trust_remote_code'] = True
-            
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_id,
-                **model_kwargs,
-            )
+                from transformers import Mistral3ForConditionalGeneration, Mistral3Config
+                from transformers.models.auto.configuration_auto import CONFIG_MAPPING
+                from transformers.models.ministral.configuration_ministral import MinistralConfig
+                CONFIG_MAPPING.register('ministral3', MinistralConfig)
+                self.model = Mistral3ForConditionalGeneration.from_pretrained(
+                    model_id, **model_kwargs,
+                )
+                # The ministral3 text config has sliding_window=null, but
+                # MinistralModel.forward eagerly creates sliding window masks.
+                # Set a dummy value so mask creation doesn't crash — all layers
+                # are "full_attention" anyway when sliding_window was null.
+                text_cfg = self.model.config.text_config
+                if getattr(text_cfg, 'sliding_window', None) is None:
+                    text_cfg.sliding_window = 4096
+            else:
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    model_id, **model_kwargs,
+                )
 
         elif 'qwen' in model_name.lower():
 
@@ -614,13 +629,24 @@ class HuggingfaceModel(BaseModel):
         if self.stop_sequences is not None:
             for stop in self.stop_sequences:
                 if answer.endswith(stop):
-                    # Found a stop sequence - remove it
                     sliced_answer = answer[:-len(stop)]
-                    # Calculate how many tokens were in the stop sequence
                     stop_tokens_encoded = self.tokenizer.encode(stop, add_special_tokens=False)
                     num_stop_tokens = len(stop_tokens_encoded)
-                    logging.debug(f"🛑 Removed stop sequence {repr(stop)} ({num_stop_tokens} tokens)")
+                    logging.debug(f"Removed stop sequence {repr(stop)} ({num_stop_tokens} tokens)")
                     break
+            
+            # Fallback: if a stop sequence appears in the interior (the StoppingCriteria
+            # may let 1-2 extra tokens through), truncate at the first occurrence.
+            if num_stop_tokens == 0:
+                for stop in self.stop_sequences:
+                    idx = sliced_answer.find(stop)
+                    if idx > 0:
+                        tail = sliced_answer[idx:]
+                        tail_tokens = self.tokenizer.encode(tail, add_special_tokens=False)
+                        num_stop_tokens = len(tail_tokens)
+                        sliced_answer = sliced_answer[:idx]
+                        logging.debug(f"Truncated at interior stop {repr(stop)} ({num_stop_tokens} tokens)")
+                        break
             
             # Verify stop sequences were removed successfully
             if not all([stop not in sliced_answer for stop in self.stop_sequences]):

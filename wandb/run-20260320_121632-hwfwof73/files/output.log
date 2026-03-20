@@ -1,0 +1,28 @@
+12:16:34 [INFO] Phase 6 step: 1/22 runs need analysis.
+12:16:34 [INFO] [1/1] Phase 6: Large/squad/Llama-3.1-8B ...
+12:17:04 [INFO]   Phase 6 complete -> results/pipeline/Large/squad/Llama-3.1-8B/phase6 (29.6s)
+Traceback (most recent call last):
+  File "/system/user/studentwork/boldis/super-guacamole/run_full_pipeline.py", line 807, in <module>
+    main()
+  File "/system/user/studentwork/boldis/super-guacamole/run_full_pipeline.py", line 784, in main
+    run_phase6_step(runs, state)
+  File "/system/user/studentwork/boldis/super-guacamole/run_full_pipeline.py", line 279, in run_phase6_step
+    df = pd.read_csv(csv_path)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/system/user/studentwork/boldis/nllSAR/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file

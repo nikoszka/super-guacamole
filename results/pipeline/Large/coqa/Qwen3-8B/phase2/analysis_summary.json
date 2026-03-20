@@ -1,0 +1,16 @@
+{
+  "total_tokens_analyzed": 1115,
+  "position_correlation": -0.00014200021374631937,
+  "nll_correlation": 0.07444349217691211,
+  "mean_relevance_weight": 0.8594753687825438,
+  "std_relevance_weight": 0.02648935438312394,
+  "mean_nll": 0.13681321891157985,
+  "std_nll": 0.24675305623759083,
+  "pos_tag_statistics": {
+    "UNKNOWN": {
+      "mean_relevance": 0.8594753687825438,
+      "std_relevance": 0.026489354383124032,
+      "count": 1115
+    }
+  }
+}

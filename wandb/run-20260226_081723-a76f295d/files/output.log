@@ -1,0 +1,3 @@
+08:17:25 [INFO] Phase 6 step: 1/19 runs need analysis.
+08:17:25 [INFO] [1/1] Phase 6: Large/squad/Llama-3.1-8B ...
+08:26:52 [ERROR]   Phase 6 FAILED for Large/squad/Llama-3.1-8B/run-20260219_212433-1a1pw3ee: Command '['/system/user/studentwork/boldis/nllSAR/bin/python', 'src/analysis/phase6_weighting_schemes_comparison.py', '--pickle-path', 'src/boldis/uncertainty/wandb/Large/squad/Llama-3.1-8B/run-20260219_212433-1a1pw3ee/files/validation_generations.pkl', '--model-name', 'Llama-3.1-8B', '--output-dir', 'results/pipeline/Large/squad/Llama-3.1-8B/phase6']' returned non-zero exit status 1.
