@@ -383,6 +383,8 @@ def run_phase5_step(runs, state):
             "--pickle-path", run["pickle_path"],
             "--model-name", run["model"],
             "--output-dir", str(output_dir),
+            "--no-sar",
+            "--no-se",
         ]
         try:
             subprocess.run(cmd, check=True, timeout=7200)

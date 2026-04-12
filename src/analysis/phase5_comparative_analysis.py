@@ -527,8 +527,12 @@ def main():
     from analysis.utils import load_tokenizer
     tokenizer = load_tokenizer(args.model_name)
     
-    # Entailment model for Semantic Entropy
-    entailment_model = EntailmentDeberta()
+    # Entailment model for Semantic Entropy (only load if needed)
+    entailment_model = None
+    if not args.no_se:
+        entailment_model = EntailmentDeberta()
+    else:
+        logger.info("Skipping DeBERTa entailment model (--no-se flag set)")
     
     # Compute all metrics
     results = compute_all_metrics(

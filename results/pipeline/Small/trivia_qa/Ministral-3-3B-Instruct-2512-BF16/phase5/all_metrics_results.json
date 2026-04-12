@@ -1,0 +1,40 @@
+{
+  "aurocs": {
+    "g_nll": 0.8063009510869565,
+    "average_nll": 0.8179347826086957,
+    "perplexity": 0.8179347826086957,
+    "avg_token_prob": 0.8186990489130435,
+    "rw_gnll": 0.762962962962963
+  },
+  "num_examples": 400,
+  "comparison_table": [
+    {
+      "Metric": "Avg Token Prob",
+      "AUROC": 0.8186990489130435
+    },
+    {
+      "Metric": "Perplexity",
+      "AUROC": 0.8179347826086957
+    },
+    {
+      "Metric": "Average NLL",
+      "AUROC": 0.8179347826086957
+    },
+    {
+      "Metric": "G-NLL",
+      "AUROC": 0.8063009510869565
+    },
+    {
+      "Metric": "RW-G-NLL",
+      "AUROC": 0.762962962962963
+    },
+    {
+      "Metric": "SAR",
+      "AUROC": NaN
+    },
+    {
+      "Metric": "Semantic Entropy",
+      "AUROC": NaN
+    }
+  ]
+}

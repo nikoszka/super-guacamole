@@ -4,8 +4,7 @@
     "average_nll": 0.6097787046692156,
     "perplexity": 0.6097787046692156,
     "avg_token_prob": 0.5844629822732013,
-    "rw_gnll": 0.5777777777777777,
-    "sar": 0.5434045881126173
+    "rw_gnll": 0.5777777777777777
   },
   "num_examples": 400,
   "comparison_table": [
@@ -31,7 +30,7 @@
     },
     {
       "Metric": "SAR",
-      "AUROC": 0.5434045881126173
+      "AUROC": NaN
     },
     {
       "Metric": "Semantic Entropy",

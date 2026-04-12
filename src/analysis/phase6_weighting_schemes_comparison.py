@@ -813,24 +813,25 @@ def compute_all_weighted_nlls(
             high_unc_w = compute_high_uncertainty_only_weights(token_log_likelihoods, percentile=75)
             low_unc_w = compute_low_uncertainty_only_weights(token_log_likelihoods, percentile=25)
             
-            # SAR-style relevance weights
-            sar_w = compute_sar_weights(entry, similarity_model, tokenizer, cache=sar_cache)
-            
-            if len(sar_w) != num_tokens:
-                logger.warning(f"SAR weight mismatch for {example_id}, skipping SAR-based schemes for this example")
-                sar_w = None
-            
-            # Hybrid schemes (if SAR available)
-            if sar_w is not None:
-                hybrid_middle_50_w = compute_hybrid_middle_sar_weights(num_tokens, sar_w, alpha=0.5)
-                hybrid_gaussian_50_w = compute_hybrid_gaussian_sar_weights(num_tokens, sar_w, alpha=0.5)
-                hybrid_middle_70_w = compute_hybrid_middle_sar_weights(num_tokens, sar_w, alpha=0.7)
-                hybrid_gaussian_70_w = compute_hybrid_gaussian_sar_weights(num_tokens, sar_w, alpha=0.7)
-            else:
-                hybrid_middle_50_w = None
-                hybrid_gaussian_50_w = None
-                hybrid_middle_70_w = None
-                hybrid_gaussian_70_w = None
+            # SAR-style relevance weights — isolated so failures don't kill
+            # the positional/NLL schemes computed above.
+            sar_w = None
+            hybrid_middle_50_w = None
+            hybrid_gaussian_50_w = None
+            hybrid_middle_70_w = None
+            hybrid_gaussian_70_w = None
+            try:
+                sar_w = compute_sar_weights(entry, similarity_model, tokenizer, cache=sar_cache)
+                if len(sar_w) != num_tokens:
+                    logger.debug(f"SAR weight mismatch for {example_id}: got {len(sar_w)}, expected {num_tokens}")
+                    sar_w = None
+                if sar_w is not None:
+                    hybrid_middle_50_w = compute_hybrid_middle_sar_weights(num_tokens, sar_w, alpha=0.5)
+                    hybrid_gaussian_50_w = compute_hybrid_gaussian_sar_weights(num_tokens, sar_w, alpha=0.5)
+                    hybrid_middle_70_w = compute_hybrid_middle_sar_weights(num_tokens, sar_w, alpha=0.7)
+                    hybrid_gaussian_70_w = compute_hybrid_gaussian_sar_weights(num_tokens, sar_w, alpha=0.7)
+            except Exception as sar_err:
+                logger.debug(f"SAR failed for {example_id}: {sar_err}")
             
             # Compute weighted NLLs for basic schemes
             results['uniform'][example_id] = compute_weighted_nll(

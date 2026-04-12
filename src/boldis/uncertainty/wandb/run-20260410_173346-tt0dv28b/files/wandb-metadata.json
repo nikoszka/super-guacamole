@@ -1,0 +1,96 @@
+{
+  "os":  "Linux-5.14.0-611.41.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "python":  "CPython 3.11.14",
+  "startedAt":  "2026-04-10T15:33:46.098651Z",
+  "args":  [
+    "--model_name",
+    "Llama-3.1-8B",
+    "--dataset",
+    "trivia_qa",
+    "--num_samples",
+    "400",
+    "--num_few_shot",
+    "0",
+    "--temperature",
+    "0.5",
+    "--num_generations",
+    "10",
+    "--brief_prompt",
+    "manual",
+    "--enable_brief",
+    "--brief_always",
+    "--no-compute_uncertainties",
+    "--no-compute_p_true",
+    "--no-get_training_set_generations",
+    "--use_context",
+    "--entity",
+    "nikosteam",
+    "--project",
+    "super_guacamole",
+    "--experiment_lot",
+    "se_replication_Llama_trivia_qa_20260410_123956"
+  ],
+  "program":  "/system/user/studentwork/boldis/super-guacamole/src/generate_answers.py",
+  "codePath":  "src/generate_answers.py",
+  "codePathLocal":  "generate_answers.py",
+  "git":  {
+    "remote":  "git@github.com:nikoszka/super-guacamole.git",
+    "commit":  "2ee8835a176767d8077310a4fb2c7f5923b1ecd6"
+  },
+  "email":  "nikosz@hotmail.sk",
+  "root":  "./boldis/uncertainty",
+  "host":  "student10",
+  "executable":  "/system/user/studentwork/boldis/nllSAR/bin/python",
+  "cpu_count":  36,
+  "cpu_count_logical":  72,
+  "gpu":  "NVIDIA TITAN V",
+  "gpu_count":  5,
+  "disk":  {
+    "/":  {
+      "total":  "198524506112",
+      "used":  "25472466944"
+    }
+  },
+  "memory":  {
+    "total":  "404818661376"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-10c3d70a-57ad-07eb-ae2d-fad92bde9dba"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-76c92af4-8527-715d-2bd5-a2f20bb25018"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-d5a14ec3-9bdc-8678-b004-f4bbda608770"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-342a189d-f792-733b-be7e-108c32a29267"
+    },
+    {
+      "name":  "NVIDIA TITAN V",
+      "memoryTotal":  "12884901888",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-2cbe56e0-d23c-b40c-b28b-d22a31ef298f"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "writerId":  "ot0ko5s998mtjknmk8mwdfr1calb0ddh"
+}

@@ -1,0 +1,8 @@
+Metric,AUROC
+Average NLL,0.7152
+Perplexity,0.7152
+Avg Token Prob,0.70016
+G-NLL,0.66848
+RW-G-NLL,0.0
+SAR,
+Semantic Entropy,

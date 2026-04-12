@@ -1,0 +1,12 @@
+{"time":"2026-04-08T23:55:07.4842546+02:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2026-04-08T23:55:08.276127556+02:00","level":"INFO","msg":"stream: created new stream","id":"z6clnamd"}
+{"time":"2026-04-08T23:55:08.276230272+02:00","level":"INFO","msg":"handler: started","stream_id":"z6clnamd"}
+{"time":"2026-04-08T23:55:08.279055728+02:00","level":"INFO","msg":"stream: started","id":"z6clnamd"}
+{"time":"2026-04-08T23:55:08.279117225+02:00","level":"INFO","msg":"writer: started","stream_id":"z6clnamd"}
+{"time":"2026-04-08T23:55:08.279138311+02:00","level":"INFO","msg":"sender: started","stream_id":"z6clnamd"}
+{"time":"2026-04-09T00:43:39.581728572+02:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/nikosteam/super_guacamole/z6clnamd/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-04-09T01:47:16.074930316+02:00","level":"INFO","msg":"stream: closing","id":"z6clnamd"}
+{"time":"2026-04-09T01:47:18.064238549+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-09T01:47:18.398661719+02:00","level":"INFO","msg":"handler: closed","stream_id":"z6clnamd"}
+{"time":"2026-04-09T01:47:18.400549718+02:00","level":"INFO","msg":"sender: closed","stream_id":"z6clnamd"}
+{"time":"2026-04-09T01:47:18.400579901+02:00","level":"INFO","msg":"stream: closed","id":"z6clnamd"}
