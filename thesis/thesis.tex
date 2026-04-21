@@ -1,0 +1,984 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_US
+% !BIB program = biber
+%% 
+%% The above lines help editors like TeXstudio to automatically choose the right tools
+%% to compile your LaTeX source file. If your tool does not support these magic comments,
+%% you will need to make appropriate manual choices.
+%% 
+%% You can safely use "pdflatex" instead of "xelatex" if you prefer the pdfLaTeX toolchain.
+%% However, pdfLaTeX will not be able to deliver the professional font experience that you
+%% will get with XeLaTeX. You can also safely use "lualatex" instead of "xelatex" while
+%% preserving the professional font experience if you prefer the LuaLaTeX toolchain.
+%% 
+%% _Important_: These magic comments should be on the first lines of your source file.
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%%            JJJJ   K                         K   UUUU         UUUU  
+%%            JJJJ   KKKK                   KKKK   UUUU         UUUU  
+%%            JJJJ   KKKKKK               KKKKKK   UUUU         UUUU  
+%%            JJJJ      KKKKKK         KKKKKK      UUUU         UUUU  
+%%            JJJJ         KKKKKK   KKKKKK         UUUU         UUUU  
+%%            JJJJ            KKKKKKKKK            UUUU         UUUU  
+%%    JJ     JJJJJ               KKK               UUUUU       UUUUU  
+%%  JJJJJJJJJJJJJ    KKKKKKKKKKKKKKKKKKKKKKKKKKK    UUUUUUUUUUUUUUU   
+%%    JJJJJJJJJ      KKKKKKKKKKKKKKKKKKKKKKKKKKK      UUUUUUUUUUU     
+%% 
+%% This is an example file for using the JKU LaTeX technical report template
+%% for your thesis.
+%% 
+%% Template created by Michael Roland (2021)
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Document class: This is a koma-script book.
+%% 
+\documentclass[a4paper,oneside,10pt,ngerman,english]{scrbook}
+%% 
+%% The comma-separated list in square brackets are class options.
+%% Useful options that you might want to use:
+%% 
+%% Paper size:
+%%  * a4paper ... A4 paper size
+%% 
+%% Optimize for single-sided or double-sided printing:
+%%  * oneside ... single-sided
+%%  * twoside ... double-sided
+%% 
+%% Base font size:
+%%  * 10pt ... 10-pt font is used for normal text
+%%  * 11pt ... 11-pt font is used for normal text
+%% 
+%% Define document languages (the last specified language becomes the document default
+%% language):
+%%  * ngerman ... German
+%%  * english ... English
+%%  * ...
+%% 
+%% Alternate document classes: While the JKU report template supports the koma-script classes
+%% `scrartcl', `scrreprt' and `scrbook', your should always use the book class `scrbook' for
+%% your thesis.
+%%  
+%% _Important_: The document class should be the first line of LaTeX code in your main
+%% source file. Do not place anything but comments / magic comments above that line (unless
+%% you really know what you are doing).
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Treat input files as UTF-8 encoded. Make sure to always load this when you use pdfLaTeX
+%% so that pdfLaTeX knows how to read and interpret characters in this source file.
+%% 
+\usepackage[utf8]{inputenc}
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Use the JKU LaTeX technical report template for this document.
+%% 
+\usepackage[mathesis,fancyfonts]{jkureport}
+%% 
+%% The comma-separated list in square brackets are theme options. Useful options that you
+%% might want to use:
+%% 
+%% Document type:
+%%  * phdthesis     ... PhD thesis.
+%%  * mathesis      ... Master's thesis.
+%%  * diplomathesis ... Diploma thesis.
+%%  * bathesis      ... Bachelor's thesis.
+%%  * seminarreport ... Seminar report.
+%%  * techreport    ... Technical report.
+%% 
+%% Color scheme selection options:
+%%  * JKU  ... Use JKU (gray) color scheme (this is the default if no scheme is selected).
+%%  * BUS  ... Use Business School color scheme.
+%%  * LIT  ... Use Linz Institute of Technology color scheme.
+%%  * MED  ... Use MED faculty color scheme.
+%%  * RE   ... Use RE faculty color scheme.
+%%  * SOE  ... Use School of Education color scheme.
+%%  * SOWI ... Use SOWI faculty color scheme.
+%%  * TNF  ... Use TNF faculty color scheme.
+%% 
+%% Space-efficient monospace font options (requires XeTeX/LuaTeX):
+%%  * compactmono   ... Use condensed fixed-width font everywhere.
+%%  * nocompactverb ... Do not use condensed fixed-width font for verbatim and listings.
+%% 
+%% Style-breaking options:
+%%  * noimprint      ... Do not insert imprint on title pages.
+%%  * nojkulogo      ... Do not insert JKU & K logos on title pages.
+%%  * capstitle      ... Set document title in capital letters.
+%%  * nofancyfonts   ... Do not use custom TTF fonts with XeTeX/LuaTeX / supress pdfLaTeX warning.
+%%  * equalmargins   ... Decrease the outer page margin to have both page margins of equal size
+%%                       (the additional outer margin is intentional and to be used for
+%%                       anotations; equalmargins also causes the text width to be
+%%                       significantly larger than optimal for reading).
+%% 
+%% Experimental options:
+%%  * mathastext ... Use standard document fonts (enhanced with symbols from Fira Math font
+%%                   when using XeTeX/LuaTeX) in math mode.
+%% 
+%% Advanced options:
+%%  * legacymode={<mode>} ... Activate a legacy mode to account for previous formal requirements,
+%%                            styles, and/or features. May be specified mutliple times to activate
+%%                            multiple legacy modes. The following <mode>s are supported:
+%%      - phd2021             ... Adapt cover sheet to formal requirements for unstructured
+%%                                doctoral programs before 2021W (also accounts for change from
+%%                                "Beurteiler*in" to "Betreuer*in" in 2024W versions of the German
+%%                                thesis cover sheets)
+%%  * noautopdfinfo       ... Do not automatically try to add pdfinfo with hyperref from document
+%%                            metadata fields.
+%%  * logopath={<path>}   ... Set the path where the theme can find its own logo resources. This
+%%                            should typically be a relative path and the default is `./logos'.
+%%  * fontpath={<path>}   ... Set the path where the theme can find its own font resources. This
+%%                            should typically be a relative path and the default is `./fonts'.
+%% 
+%% Hint: Boolean options can be used in the forms `option' or `option=true' the enable the
+%% option and `nooption' or `option=false' to disable the option.
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% This is the place where you can load additional packages. If you want to load
+%% a package `biblatex', you would use the command `\usepackage{biblatex}'.
+%% 
+
+\usepackage{csquotes}
+\usepackage[backend=biber,citestyle=numeric,sortcites=true,maxcitenames=2,style=ACM-Reference-Format]{biblatex}
+\setcounter{biburlnumpenalty}{100} %% reducing biburl* penalties typically improves URL placement in bibliography
+\setcounter{biburllcpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\usepackage{todonotes}
+\usepackage{import}
+\usepackage{amsfonts}
+\usepackage{subfigure}
+%\usepackage{acronym}
+
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Bibliography data files.
+%% 
+
+\addbibresource{references.bib}
+
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%% Begin with the frontmatter (among other things, this switches to roman page numbers)
+\frontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Thesis information and title page
+%% 
+
+%% Command \title{title}: sets the title of your thesis
+\title{Token-Level Relevance Weighting for Uncertainty Quantification in Large Language Model Question Answering}
+
+%% Command \titleshort{short title}: sets an abbreviated version of the thesis title for page heads
+%\titleshort{Optional space for your abbreviated title}
+
+%% Command \subtitle{subtitle}: sets the subtitle for seminar/technical reports (not used for theses)
+%\subtitle{Seminar Report}
+
+%% Command \author{name}: sets the author's name; use \prefix{} and \suffix{} to add academic titles
+%%   and suffixes, use \matno{} to add the immatriculation number
+\author{Nikolas Boldis \suffix{Bc.}\matno{11706481}}
+
+%% Command \supervisor[number,gender]{name}: sets the name of the supervisor (where number optionally
+%%   defines the rank of the supervisor (1-3) and gender specifies if the supervisor is male (m) or
+%%   female (f/w) to adapt gender-specific terms in German)
+\supervisor{\prefix{Prof. Dr.} Firstname~Lastname}
+
+%% Command \assistantsupervisor{name}: sets the name of the assistant supervisor(s)
+\assistantsupervisor{\prefix{Dr.} Firstname~Lastname \suffix{MSc}}
+
+%% Command \degree{degree}{degree program}: sets the degree and degree program name
+\degree{Master of Science}{Artificial Intelligence}
+%% Please make sure to insert the _correct_ degree and degree program names for your studies before
+%% submission. Examples for degrees at JKU:
+%%  * Diplom-Ingenieurin / Diplom-Ingenieur
+%%  * Doctor medicinae universae
+%%  * Master of Arts
+%%  * Master of Laws
+%%  * Master of legal and business aspects in technics
+%%  * Master of Science
+%%  * Master of Science in Digital Business Management
+%%  * Master of Science Global Business
+%%  * Master of Social Sciences
+%%  * Doktorin / Doktor der Geistes- und Kulturwissenschaften
+%%  * Doktorin / Doktor der Medizinischen Wissenschaften
+%%  * Doktorin / Doktor der Naturwissenschaften
+%%  * Doktorin / Doktor der Rechtswissenschaften
+%%  * Doktorin / Doktor der Sozial- und Wirtschaftswissenschaften
+%%  * Doktorin / Doktor der technischen Wissenschaften
+%%  * Doctor of Philosophy
+
+%% Command \submissiondepartment{institute or department}: set the department that the thesis is submitted at
+\submissiondepartment{Institute for Machine Learning}
+
+%% Command \date{YYYY-MM-DD}: set the day of submission (defaults to today)
+%\date{2020-04-09}
+
+%% Command \keywords{text}: set the document keywords
+%\keywords{Space for your comma-separated keywords}
+
+
+%% Finally, print the title page using the above information:
+\maketitle
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Include your abstract into the frontmatter
+%% 
+
+\import{./}{00-abstract}
+
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Include your acknowledgements into the frontmatter (optional and typically only
+%% used to acknowledge external funding, discuss with your supvervisor if unsure)
+%% 
+
+%\import{./}{acknowledgements}
+
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Add a table of contents (and optionally various other lists)
+%% 
+
+%% Make sure to start the table of contents on a new odd page (odd is only relevant in twoside layout)
+\cleardoubleoddpage
+%% Print the table of contents
+\tableofcontents
+
+%% Make sure to start the list of tables on a new odd page (odd is only relevant in twoside layout)
+%\cleardoubleoddpage
+%% Print the list of tables (optional and often not necessary)
+%\listoftables
+
+%% Make sure to start the list of figures on a new odd page (odd is only relevant in twoside layout)
+%\cleardoubleoddpage
+%% Print the list of figures (optional and often not necessary)
+%\listoffigures
+
+%% Make sure to start the list of acronyms on a new odd page (odd is only relevant in twoside layout)
+%\cleardoubleoddpage
+%% Include list of acronyms (optional and often not necessary)
+%\import{./}{acronyms}
+
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Begin with the mainmatter (among other things, this switches to arabic page numbers)
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Include your chapters
+%% 
+
+
+\chapter{Introduction}
+\label{ch:intro}
+% TODO (chapter scope): ~3-5 pages. Funnel structure: broad (LLMs in
+% high-stakes use) -> narrow (UQ matters) -> specific (token aggregation
+% is underspecified) -> this thesis. End the chapter with the outline.
+% Do NOT cover method details, related work, or results here.
+%
+% NB on citations: bibkeys below are PLACEHOLDERS. Please add entries
+% to references.bib before first compile -- confirm the key spellings
+% match what you put in the .bib.
+
+\section{Motivation}
+\label{sec:motivation}
+Large language models (LLMs) are increasingly deployed in settings where a
+confident wrong answer is more harmful than an admitted absence of knowledge:
+clinical decision support, legal drafting, scientific literature review, and
+software engineering copilots. In all of these settings, the consumer of the
+generated text treats the output as evidence and acts on it. When the model is
+correct, fluency is a feature; when the model is wrong but fluent, fluency is
+an attack surface. Reliable \emph{uncertainty quantification} (UQ) is therefore
+a prerequisite rather than an accessory for safe LLM deployment
+\cite{amodei2016concreteproblems,hendrycks2021unsolved,farquhar2024detecting}.
+
+UQ for LLMs is hard for reasons that do not arise in standard classification
+or regression. Outputs are variable-length token sequences, many of which are
+semantically equivalent \cite{kuhn2023semantic}. The model samples
+autoregressively, so the same prompt can produce lexically different but
+semantically identical answers, and the probability the model assigns to its
+own output is defined over tokens rather than meanings. Consequently, a raw
+per-token probability signal captures both genuine epistemic uncertainty about
+the answer and superficial lexical variation that the application does not
+care about \cite{hullermeier2021aleatoric}.
+
+Two broad families of methods dominate the current literature. \emph{Sampling-based}
+methods, such as semantic entropy \cite{kuhn2023semantic} and Shifting
+Attention to Relevance (SAR) \cite{duan2024sar}, generate multiple output
+sequences and analyse their agreement. They are theoretically attractive but
+require many forward passes per query and, in the case of semantic entropy, an
+auxiliary natural-language inference model to detect semantic equivalence.
+\emph{Single-pass} methods, of which the most recent is the generative
+negative log-likelihood (G-NLL) proposed by Aichberger et
+al.~\cite{aichberger2024rethinking}, score a single greedy decoding by summing
+its per-token log-likelihoods. G-NLL is competitive with sampling-based
+methods while requiring only the forward passes that were already needed to
+produce the answer, which makes it the pragmatic choice for deployment at
+scale.
+
+The efficiency of G-NLL comes at a conceptual cost. G-NLL aggregates per-token
+log-likelihoods uniformly, implicitly asserting that every generated token
+contributes equally to the answer's uncertainty. This assumption is at odds
+with the central observation of SAR \cite{duan2024sar}, namely that natural
+language exhibits substantial \emph{linguistic redundancy}: a handful of
+content-bearing tokens carry the answer's meaning, while function words and
+boilerplate contribute little to its correctness. SAR operationalises this
+observation by weighting token log-likelihoods by a relevance score obtained
+through multi-sample token ablation. G-NLL ignores it. This thesis is
+concerned with the question of whether the relevance-weighting idea of SAR
+can be imported into the single-pass regime of G-NLL---that is, whether we
+can preserve the computational profile of G-NLL while correcting its uniform
+aggregation.
+
+
+\section{Problem Statement}
+\label{sec:problem}
+% TODO: ~0.5 page. Focus: state the GAP precisely, not the solution.
+Given a prompt $x$ and a greedy decoding $y = (y_1, \ldots, y_T)$ produced by
+an LLM, the goal of sequence-level UQ for selective question answering is to
+assign $y$ a scalar score $u(y \mid x) \in \mathbb{R}$ such that the ranking of
+scores separates correct from incorrect answers. The state-of-the-art
+single-pass estimator, G-NLL, defines $u$ as an unweighted sum of per-token
+negative log-likelihoods \cite{aichberger2024rethinking}. This estimator is
+cheap, theoretically grounded, and empirically strong, but by construction it
+treats every token position as equally informative about answer correctness.
+
+The evidence against uniform aggregation is twofold. First, the linguistic
+argument made by Duan et al.~\cite{duan2024sar}: content-bearing tokens and
+function words are not interchangeable carriers of meaning, so an aggregator
+that treats them as such discards signal that correlates with correctness.
+Second, the empirical analysis reported in
+Chapter~\ref{ch:token-analysis} of this thesis, in which per-token
+negative log-likelihoods are shown to vary over more than an order of
+magnitude within a single answer and to differ systematically between correct
+and incorrect generations.
+
+SAR addresses uniform aggregation directly but at a cost that negates the
+efficiency rationale of G-NLL: it requires $K$ stochastic samples per query
+and a per-token ablation pass per sample, yielding roughly $K{\cdot}(T{+}1)$
+forward passes for a single uncertainty score \cite{duan2024sar}. To date, no
+single-pass estimator has combined the token-level relevance weighting of SAR
+with the greedy-decoding economics of G-NLL. Closing this gap is the problem
+this thesis addresses.
+
+
+\section{Research Questions}
+\label{sec:rqs}
+% TODO: ~0.25-0.5 page. Each RQ must be measurable by ONE chapter/section:
+%   RQ1 -> answered in Ch.~\ref{ch:token-analysis} (empirical NLL heterogeneity)
+%   RQ2 -> answered in Ch.~\ref{ch:rwgnll} + \S6.1 (RW-G-NLL vs G-NLL AUROC)
+%   RQ3 -> answered in \S6.2 (vs position-based schemes)
+%   RQ4 -> answered in \S6.4 (1B / 8B / 70B scaling)
+We structure the thesis around four research questions, each answered by a
+dedicated chapter or results section.
+\begin{description}
+    \item[RQ1] Do tokens contribute unequally to the uncertainty of a greedy
+    LLM answer, as measured by the within-answer distribution of per-token
+    negative log-likelihoods, and does this distribution differ between
+    correct and incorrect answers?
+    \item[RQ2] Can a single-pass, relevance-weighted aggregator of per-token
+    log-likelihoods improve selective-QA AUROC over G-NLL without additional
+    sampling?
+    \item[RQ3] How does such a relevance-weighted aggregator compare to
+    purely positional weighting schemes that require no semantic signal?
+    \item[RQ4] Do the empirical findings for RQ2--RQ3 generalise across
+    model families and across model scales from 1B to 70B parameters?
+\end{description}
+
+
+\section{Hypothesis}
+\label{sec:hypothesis}
+% TODO: ~0.25 page. ONE falsifiable sentence, then one paragraph of rationale.
+\paragraph{H1.}
+Weighting per-token negative log-likelihoods by a semantic relevance score
+derived from single-shot token ablation yields strictly higher AUROC for
+selective question answering than unweighted G-NLL, across model families and
+across model scales from 1B to 70B parameters, on TriviaQA.
+
+\noindent
+The hypothesis is motivated by two observations established in the
+literature. First, per-token probabilities reflect both meaning-preserving
+lexical variation and genuine answer uncertainty, and the former does not
+correlate with correctness \cite{kuhn2023semantic}. Second, token relevance
+estimated via ablation is a useful correction signal, as demonstrated by
+SAR in the multi-sample regime \cite{duan2024sar}. If these two observations
+transfer to the single-sample regime, a relevance-weighted variant of G-NLL
+should dominate the uniform-weighted baseline. Mechanism, estimator, and
+computational profile are deferred to Chapter~\ref{ch:rwgnll}.
+
+
+\section{Contributions}
+\label{sec:contributions}
+This thesis makes the following contributions.
+\begin{description}
+    \item[C1] An empirical characterisation of per-token negative
+    log-likelihood heterogeneity under greedy decoding, showing that token
+    NLL varies substantially within answers and differs systematically
+    between correct and incorrect generations (Chapter~\ref{ch:token-analysis}).
+    \item[C2] \textsc{RW-G-NLL}, a single-pass, sampling-free,
+    relevance-weighted aggregator of per-token log-likelihoods that preserves
+    the computational profile of G-NLL while correcting its uniform
+    aggregation (Chapter~\ref{ch:rwgnll}).
+    \item[C3] A systematic evaluation of RW-G-NLL against G-NLL,
+    length-normalised NLL, positional weighting schemes, SAR, and semantic
+    entropy, across model families and model scales from 1B to 70B
+    parameters on TriviaQA, with secondary validation on CoQA
+    (Chapter~\ref{ch:results}).
+    \item[C4] A reproducible open-source pipeline, including configuration,
+    judge protocol, and per-model run scripts, covering all experiments
+    reported in this thesis (Appendix~\ref{app:impl}).
+\end{description}
+
+
+\section{Thesis Outline}
+\label{sec:outline}
+% TODO: ~0.25 page. Roadmap only.
+Chapter~\ref{ch:background} reviews the background required for the rest of
+the thesis: the Transformer architecture, autoregressive generation, the
+aleatoric--epistemic distinction as it applies to language generation, and the
+three families of LLM UQ methods against which RW-G-NLL will be compared.
+Chapter~\ref{ch:token-analysis} reports an exploratory empirical analysis of
+per-token NLL behaviour under greedy decoding, establishing the heterogeneity
+that motivates a non-uniform aggregator. Chapter~\ref{ch:rwgnll} formalises
+RW-G-NLL, specifies its token-ablation relevance signal, and analyses its
+computational profile relative to SAR. Chapter~\ref{ch:exp-design} describes
+the full experimental design used to answer RQ1--RQ4, including the model
+grid, datasets, baselines, and evaluation protocol.
+Chapter~\ref{ch:results} reports the main results. Chapter~\ref{ch:discussion}
+interprets those results, returns to RQ1--RQ4, and discusses limitations and
+future work.
+
+\chapter{Background}
+\label{ch:background}
+% TODO (chapter scope): ~7-10 pages. Goal: give an AI-MSc reader exactly
+% the minimum they need to read Ch.~3-6. Be ruthlessly selective. For
+% every topic ask: "does RW-G-NLL depend on this?" If no, cut it or push
+% it to the appendix. Cite -- do not re-derive -- well-known results.
+% Budget split (approx): \S2.1=1p, \S2.2=1.5p, \S2.3=1.5p, \S2.4=3p, \S2.5=0.5p.
+%
+% Suggested narrative arc:
+%   \S2.1 How LLMs produce tokens (Transformer + autoregression) ->
+%   \S2.2 What a probability over a token is and how G-NLL sums them ->
+%   \S2.3 Aleatoric vs epistemic in the LLM setting ->
+%   \S2.4 How the field currently quantifies uncertainty (G-NLL, PPL,
+%         Semantic Entropy, SAR) ->
+%   \S2.5 How we measure "good UQ" (AUROC for selective QA).
+\section{Transformer Architecture}
+% TODO: ~1 page. Focus: only what is needed for the reader to
+% understand WHY a per-token probability exists. Keep the attention
+% equation, one sentence on multi-head, one on residuals + LN, one on
+% the final softmax head. Cite Vaswani et al. (2017). Do NOT re-derive
+% backprop, explain training, or survey architecture variants.
+% Transformers & LLMs (brief overview)
+Start with motivation:
+The Transformer architecture (Vaswani et al., 2017) revolutionized NLP by replacing recurrent structures with self-attention mechanisms, enabling parallel processing and better long-range dependency modeling.
+
+Explain key concepts:
+Self-attention mechanism (with equation)
+\begin{equation}
+\mathrm{Attention}(Q,K,V) = \mathrm{softmax}\left(\frac{QK^{\mathsf{T}}}{\sqrt{d_k}}\right)V
+\end{equation}
+Multi-head attention
+Positional encoding
+Feed-forward networks
+
+Focus on what's relevant to THE work:
+Crucially for our work, Transformers generate text autoregressively, computing $P(y_t \mid y_1,\dots,y_{t-1}, x)$ for each token. This token-level probability is the foundation for uncertainty quantification.
+\section{Autoregressive Generation}
+% TODO: ~1.5 pages. This is the technical spine the rest of the thesis
+% stands on. Must define cleanly:
+%   (i)   P(y_t | y_{<t}, x)
+%   (ii)  greedy decoding vs stochastic sampling (temperature, top-k/p)
+%   (iii) the sequence log-likelihood and its negation (G-NLL)
+%   (iv)  length normalisation (mean-NLL / perplexity)
+% Fix NOTATION here once and reuse it everywhere. Every later chapter
+% should reference these equations by number rather than redefining.
+Explain the generation process (pseudocode):
+\begin{verbatim}
+for t in range(max_length):
+    logits = model(input_ids)
+    probs = softmax(logits)
+    next_token = sample(probs)  # or argmax for greedy
+    input_ids.append(next_token)
+\end{verbatim}
+
+Connect to uncertainty:
+Each token's log-probability $\log P(y_t\mid\text{context})$ provides a measure of the model's confidence. Aggregating these across the sequence yields the generative negative log-likelihood (G-NLL):
+\begin{equation}
+\mathrm{G\mbox{-}NLL}(y\mid x) = -\sum_{t=1}^{T} \log P\left(y_t\mid y_{<t}, x\right).
+\end{equation}
+
+\section{Fundamentals of Predictive Uncertainty}
+% TODO: ~1.5 pages total for this section. Keep it ML-generic first,
+% then specialise to LLMs.
+
+\subsection{Aleatoric vs. Epistemic Uncertainty}
+% TODO: ~0.75 page. Focus: the classical definition (Hora 1996 / Der
+% Kiureghian & Ditlevsen 2009 / Hullermeier & Waegeman 2021) and how
+% it maps onto LLM generation. Make clear that per-token log-probs
+% mostly capture aleatoric uncertainty under a fixed model, and that
+% epistemic uncertainty requires sampling/ensembling (link forward to
+% Semantic Entropy in \S2.4.2). This distinction motivates why RW-G-NLL
+% is a CHEAP aleatoric-style signal, not a full UQ solution.
+
+\subsection{Uncertainty in the Context of Language Generation}
+% TODO: ~0.75 page. Focus: what makes LLM UQ hard compared to classification.
+% Bullets to cover: variable-length outputs, semantic equivalence
+% (``Paris'' vs ``the capital of France''), exposure bias, and the
+% open-endedness problem (Kuhn et al. 2023). End with a short list of
+% what a "good" UQ signal must satisfy (calibration, selective QA usable,
+% cheap at inference). This list is the target RW-G-NLL will be judged on.
+
+\section{Uncertainty Quantification Methods}
+% TODO (section scope): ~3 pages total. Organise by COST tier, not by year:
+%   \S2.4.1 single-pass (G-NLL, PPL, length-normalised NLL) -- CHEAP, your
+%           family.
+%   \S2.4.2 sampling-based (Semantic Entropy, Monte Carlo predictive
+%           entropy) -- EXPENSIVE, the strong baseline.
+%   \S2.4.3 token-importance (SAR) -- HYBRID, your direct inspiration.
+% For each: (1) the formula, (2) cost in forward passes, (3) AUROC-range
+% reported in the original paper, (4) one-line strength/weakness.
+\subsection{Sequence-Level Methods}
+G-NLL (Your baseline):
+\begin{equation}
+\mathrm{G\mbox{-}NLL}(y\mid x) = -\sum_{t=1}^{T} \log P\left(y_t\mid y_{<t}, x\right).
+\end{equation}
+Properties:
+\begin{itemize}
+\item Simple to compute (no additional inference).
+\item Treats all tokens equally.
+\item Baseline in multiple studies [cite].
+\end{itemize}
+Perplexity:
+\begin{equation}
+\mathrm{PPL} = \exp\left(\frac{\mathrm{G\mbox{-}NLL}(y\mid x)}{T}\right),
+\end{equation}
+where $T$ is the number of generated tokens.
+
+
+\subsection{Sampling-Based Methods}
+% TODO: focus on Semantic Entropy (Kuhn et al. 2023) as the primary
+% sampling-based baseline you will compare against. Explain bidirectional
+% entailment clustering in 1 paragraph; do not re-prove their theorems.
+% Mention predictive entropy / lexical similarity briefly as historical
+% context. Be explicit about cost: SE requires ~10 samples + an NLI model
+% per query -- this sets up the efficiency argument for RW-G-NLL.
+Semantic Entropy (Kuhn et al., 2023):
+Rather than measuring syntactic variation, semantic entropy clusters semantically equivalent answers using entailment models, then computes entropy over semantic clusters.
+\begin{equation}
+\mathrm{SE} = -\sum_{c} P(c)\,\log P(c),
+\end{equation}
+where $c$ denotes semantic clusters.
+Key insight to mention:
+Semantic Entropy showed that LLMs can know what they don't know, achieving AUROC > 0.7 for detecting incorrect answers on various QA tasks.
+\subsection{Token Importance Methods}
+% TODO: this subsection is load-bearing because RW-G-NLL is framed
+% against SAR. Cover: (a) the relevance-weight definition via token
+% ablation + sentence similarity, (b) the fact that SAR averages over
+% MULTIPLE stochastic samples, (c) its reported AUROC ballpark. End
+% the subsection with one sentence of the form "RW-G-NLL isolates SAR's
+% relevance-weighting idea and applies it to a SINGLE greedy generation,
+% which we formalise in Ch.~\ref{ch:rwgnll}." -- no method details here.
+SAR - Shifting Attention to Relevance (The inspiration):
+This is CRITICAL to cite and explain well since RW-G-NLL builds on this.
+Dhuliawala et al. (2023) introduced SAR, which weights token log-likelihoods by their semantic relevance. For each token, they measure relevance via ablation: removing the token and computing semantic similarity between the original and ablated text.
+\begin{equation}
+\mathrm{SAR}(y\mid x) = \sum_{t=1}^{T} w_t\,\bigl(-\log P(y_t\mid y_{<t}, x)\bigr),
+\qquad w_t = 1 - \mathrm{sim}\bigl(y, y_{\setminus t}\bigr).
+\end{equation}
+Difference from G-NLL:
+\begin{itemize}
+\item Requires multiple stochastic samples (expensive).
+\item Computes relevance weights via ablation.
+\item Normalizes by the sum of weights.
+\end{itemize}
+Our contribution vs SAR:
+While SAR requires multiple temperature-based samples (typically 10-20), our RW-G-NLL applies the same relevance weighting principle to single greedy generations, making it computationally efficient for deployment.
+% SAR (relevance weighting inspiration)
+\section{Evaluation Metrics}
+% TODO: ~0.5 page. Focus: justify AUROC as the PRIMARY metric for selective
+% QA -- treat UQ as a binary classifier of "answer correct vs incorrect"
+% using the uncertainty score as logit. Mention (briefly) why you did NOT
+% use: ECE (requires calibration, not just ranking), accuracy@coverage
+% curves (secondary, in appendix), Brier (needs probabilistic targets).
+% Define correctness operationally via LLM-as-judge and forward-ref \S5.4
+% for the exact judge protocol.
+We use Area Under the ROC Curve to measure how well uncertainty scores separate correct from incorrect answers. An AUROC of 0.5 indicates random performance, while 1.0 indicates perfect separation.
+
+\chapter{Empirical Analysis of Token-Level NLL}
+\label{ch:token-analysis}
+% TODO (chapter scope): ~3-5 pages. Exploratory study only; the full
+% multi-model grid is in Ch.~\ref{ch:results}. Budget split: \S3.1=0.5p,
+% \S3.2=2p (three figures), \S3.3=0.5p, \S3.4=0.25p.
+%
+% No \section{Motivation} here on purpose: motivation lives in \S1.1--\S1.2.
+% Open the chapter with 2-3 sentences that cross-reference the intro and
+% state the narrow question this chapter answers. The paragraph below is
+% your current draft text; TODO: tighten to a cross-reference such as
+% "As argued in \S\ref{...}, G-NLL aggregates token log-probabilities
+% uniformly. This chapter asks whether, empirically, tokens differ enough
+% in their per-token NLL to justify a non-uniform scheme."
+Before proposing a weighting scheme, we must first establish whether tokens indeed contribute unequally to answer quality. We conduct an exploratory analysis of token-level negative log-likelihood patterns.
+\section{Experimental Setup}
+% TODO: ~0.5 page. Give EVERY knob needed to reproduce the figures
+% in \S3.2: model checkpoint (HF id + revision), dataset split + size,
+% decoding args (temperature=0, max_new_tokens, stop sequences),
+% tokenizer, prompt template, judge model + prompt, hardware.
+% Note: this is a SMALL-scale exploratory study -- make clear that the
+% full multi-model evaluation lives in Ch.~\ref{ch:exp-design}. This
+% avoids the reader thinking your main results rest on 1B/400 samples.
+Model: Llama-3.2-1B (chosen for computational efficiency)
+Dataset: TriviaQA validation set (400 samples)
+Generation: Greedy decoding (temperature=0.0)
+Evaluation: LLM-as-judge (Llama-3.1-70B) for binary correctness
+
+For each generated answer, we extract:
+\begin{itemize}
+\item Token strings: $y_t$
+\item Token IDs: vocabulary indices
+\item Token log-probabilities: $\log P(y_t\mid\text{context})$
+\item Token position: $t \in [1, T]$
+\end{itemize}
+
+\section{Distribution Analysis}
+% TODO: ~2 pages. Three figures answering three sub-questions:
+%   (a) Are token NLLs HETEROGENEOUS within an answer? -> histogram + IQR.
+%   (b) Does NLL depend on POSITION? -> mean NLL vs. position t.
+%   (c) Does NLL separate CORRECT from INCORRECT answers? -> per-token
+%       NLL distribution split by judge label; report t-test / KS.
+% Each figure needs: caption, axes, sample size (n), and ONE sentence
+% of interpretation. Do NOT foreshadow the fix (weighting) here; just
+% describe what you see. The weighting argument lives in \S3.4.
+% Analysis on representative model (Llama-3.2-1B or 8B)
+Figure 3.1: Token NLL Distribution
+> "Token-level NLL values range from 0.1 to 5.2 across all answers, with a mean of 0.8 (SD=0.6). This high variance suggests tokens differ substantially in how confidently the model generates them."
+Figure 3.2: NLL by Token Position
+> "Early tokens (positions 1-5) show higher NLL (mean=1.2) compared to later tokens (positions 20-25, mean=0.6), indicating the model becomes more confident as generation proceeds."
+Figure 3.3: Correct vs Incorrect Answers
+> "Correct answers show mean token NLL of 0.7, while incorrect answers show mean NLL of 1.1 (p < 0.001, t-test). This 57 percent increase suggests token-level confidence correlates with answer quality."
+\section{Observations}
+% TODO: ~0.5 page. A NUMBERED list (F1..F4) of the empirical claims,
+% each with an effect size and a figure/table pointer. These bullets
+% are the evidence Ch.~7 will cite to answer RQ1. Keep them factual --
+% no ``therefore'' or ``this motivates'' clauses; that's \S3.4.
+% Summary of the empirical findings only. No re-motivation.
+Finding 1: Tokens vary substantially in NLL (range: 0.1-5.2)
+Finding 2: Position effects exist (early tokens more uncertain)
+Finding 3: Incorrect answers have higher per-token NLL
+Finding 4: Not all tokens are equally predictive
+
+\section{Implications for Weighted Aggregation}
+% TODO: ~0.25 page. ONE paragraph only. Connect F1-F4 to the next
+% chapter -- heterogeneity (F1) + correlation with correctness (F3)
+% imply a weighted aggregator can do better than uniform G-NLL, but
+% the WEIGHTS must come from a signal the model provides at inference
+% time (no ground-truth access). This motivates the ablation-based
+% relevance signal formalised in \S\ref{ch:rwgnll}.
+% In-chapter bridge into Chapter 4 (NOT a restatement of \S1.1/\S1.2).
+Implication: Uniform weighting (G-NLL) may be suboptimal.
+A weighting scheme that accounts for token importance could improve
+uncertainty estimation.
+
+
+\chapter{Relevance-Weighted G-NLL (RW-G-NLL)}
+\label{ch:rwgnll}
+% TODO (chapter scope): ~5-8 pages. This is the main methods chapter.
+% Budget split: opener=0.25p, \S4.1=2p, \S4.2=2p, \S4.3=1p, \S4.4=1.5p.
+%
+% No \section{Problem Formulation} here on purpose: the problem was stated
+% in \S1.2 and motivated empirically in Chapter~\ref{ch:token-analysis}.
+% Open with 2-3 sentences pointing back to those, then move straight into
+% the method. TODO: tighten the paragraph below to a cross-reference.
+Given the token-level analysis showing non-uniform importance, we propose Relevance-Weighted G-NLL (RW-G-NLL), which weights each token's log-likelihood by its semantic relevance to the overall answer.
+\section{Token Ablation Method}
+% TODO: ~2 pages. Define the RELEVANCE SIGNAL formally.
+% Cover: (1) how a token is ``ablated'' (mask vs delete vs UNK -- state
+% which you use and why); (2) the similarity function sim(y, y_{\setminus t})
+% -- embedding model, pooling, cosine vs NLI; (3) how you map similarity
+% to a weight w_t (1 - sim, softmax, clipping); (4) edge cases (BOS/EOS,
+% whitespace, subword pieces). Include a small worked example (one
+% question, 5-10 tokens) with a weight table so the reader SEES the
+% mechanism before \S4.2.
+\section{The RW-G-NLL Algorithm}
+% TODO: ~2 pages. (1) The equation, numbered and referenceable.
+% (2) Pseudocode (numpy-style) matching your implementation in the repo.
+% (3) Normalisation choice: unnormalised sum vs sum-of-weights
+% normalisation vs length-normalised -- state which is the default and
+% why. (4) A ``properties'' paragraph: reduces to G-NLL when w_t=const,
+% strictly \geq 0, invariant under w_t rescaling IFF normalised.
+% RW-G-NLL formula
+\section{Computational Considerations}
+% TODO: ~1 page. The WHOLE point of RW-G-NLL vs SAR is cost.
+% Quantify: SAR needs K stochastic samples + K*T ablation passes
+% (~K*(T+1) forwards total); RW-G-NLL needs 1 greedy + T ablation
+% forwards. Give a wall-clock table for 1B/8B/70B on your hardware
+% (TriviaQA mean answer length). Also discuss: KV-cache reuse for
+% ablation, batching strategies, memory (this is useful in Appx.~D too).
+\section{Relationship to Existing Methods}
+% TODO: ~1.5 pages. Short comparative subsections, not re-explanations:
+%   - vs G-NLL: RW-G-NLL reduces to it when w_t = 1/T.
+%   - vs length-normalised NLL: same cost, different weighting principle.
+%   - vs SAR: same weighting principle, single-sample vs multi-sample.
+%   - vs Semantic Entropy: orthogonal (aleatoric token-level vs
+%     semantic-cluster epistemic). Note they can be combined.
+% End with a small taxonomy figure/table placing RW-G-NLL on a
+% (cost, signal type) 2x2.
+
+
+\chapter{Experimental Design}
+\label{ch:exp-design}
+% TODO (chapter scope): ~3-5 pages. Reader should be able to replicate
+% any number in Ch.~6 after reading this chapter. Do NOT include any
+% results or plots here. Budget split: \S5.1=0.75p, \S5.2=0.5p,
+% \S5.3=1p, \S5.4=1p, \S5.5=0.5p.
+% No \section{Research Hypotheses} here: RQs live in \S1.3 and the
+% hypothesis in \S1.4. Open the chapter with one short paragraph of the
+% form "We evaluate H1 (\S\ref{...}) through the protocol described
+% below." Do NOT restate RQ1--RQ4 or the hypothesis verbatim.
+% Models: Small (1B), Medium (8B), Large (70B) - one from each family
+\section{Models}
+% TODO: ~0.75 page. Focus: justify the model grid, not describe each
+% model in depth (that's background). Use 3 scale tiers (e.g. 1B / 8B /
+% 70B) and >= 2 families (e.g. Llama-3, Qwen-3) so RQ4 (generalisation)
+% has a real answer. Tabulate: family, params, HF id, tokenizer, context
+% length. Note quantisation / precision if any (this matters for logprobs).
+\section{Datasets}
+% TODO: ~0.5 page. Primary: TriviaQA (short factoid, closed-book). Briefly
+% mention SQuAD and CoQA as secondary / appendix. For each: split used,
+% sample size, why it is a VALID testbed for UQ (i.e. there is a clear
+% notion of correctness). Acknowledge: TriviaQA's reference answers are
+% imperfect -> motivates LLM-as-judge in \S5.4.
+% Dataset: TriviaQA (primary) + brief mention of SQuAD
+% Baselines: G-NLL, linear weighting, SAR, Semantic Entropy
+\section{Baseline Methods}
+% TODO: ~1 page. Three baseline tiers mirroring \S2.4:
+%   (B1) Cheap aggregators: G-NLL, length-normalised NLL, PPL.
+%   (B2) Positional schemes: linear decay, middle-peak (from your
+%        Phase 6 sweep -- pick the best 2-3, document the rest in Appx.~A).
+%   (B3) Strong SOTA: SAR (K=10), Semantic Entropy (K=10 + NLI).
+% For each baseline, fix ONE set of hyperparameters per paper defaults
+% and report those here, not in Ch.~6. State sampling temp for SAR/SE.
+% Metrics: AUROC
+\section{Evaluation Protocol}
+% TODO: ~1 page. Pin down:
+%   - Correctness labelling: LLM-as-judge model, prompt template, few-shot
+%     examples, tie-breaking rule. Cite your judge-validation run (see
+%     \texttt{recompute\_accuracy\_with\_judge.py}).
+%   - Metric: AUROC with 95\% CIs via bootstrapping (n=1000 resamples).
+%   - Statistical test for pairwise method comparison (paired bootstrap
+%     or DeLong's test -- pick one and state it).
+%   - Seeds: number of seeds for sampling-based baselines (SAR / SE),
+%     deterministic for greedy methods.
+\section{Implementation Details}
+% TODO: ~0.5 page. Hardware (GPU type and count, see SETUP\_3x11GB\_GPUS.md),
+% framework (HF transformers version), precision (bf16/fp16), KV-cache
+% reuse for ablation, wandb run groups, random seeds, and a pointer to
+% the exact shell scripts (\texttt{run\_small\_models.sh}, \texttt{run\_large\_models.sh},
+% \texttt{run\_ultra\_large\_models.sh}). Full config dump goes in Appx.~D.
+
+
+
+\chapter{Results and Analysis}
+\label{ch:results}
+% TODO (chapter scope): ~6-10 pages. One section PER comparison, each
+% answering exactly one RQ. Every section should have the same shape:
+% (1) headline number / figure, (2) statistical test, (3) 2-3 sentence
+% interpretation. Save broader discussion for Ch.~7.
+% Budget split: \S6.1=1.5p, \S6.2=1.5p, \S6.3=2p (punchline figure),
+% \S6.4=1.5p, \S6.5=1.5p.
+\section{RW-G-NLL vs. G-NLL Baseline}
+% TODO: ~1.5 pages. Answers RQ2. Main table: AUROC (with 95\% CI) for
+% G-NLL, length-normalised NLL, RW-G-NLL per model. Headline figure:
+% paired AUROC-delta bar chart. Report win rate over seeds/models. Show
+% ONE per-example case where RW-G-NLL flips the ranking correctly.
+\section{RW-G-NLL vs. Position-Based Schemes}
+% TODO: ~1.5 pages. Answers RQ3. Goal: show that SEMANTIC relevance >
+% positional priors. Include the best 2-3 positional schemes from your
+% Phase 6 sweep (middle peak, linear decay, NLL-proportional). Full 10+
+% schemes go in Appx.~A. Key sub-question: does adding semantic
+% relevance on top of a positional prior help? -> one ``hybrid'' row.
+% Comparison with best 2-3 positional schemes from Phase 6
+\section{RW-G-NLL vs. State-of-the-Art (SAR, Semantic Entropy)}
+% TODO: ~2 pages. The efficiency-frontier section. Plot: AUROC vs
+% forward-pass count (or wall-clock) across {G-NLL, RW-G-NLL, SAR@K=5,10,
+% SE@K=5,10}. The punchline figure of the thesis. State honestly where
+% RW-G-NLL loses -- probably to SE on epistemic-heavy queries -- this
+% strengthens the ``cheap aleatoric signal'' framing rather than
+% weakening it.
+\section{Performance Across Model Scales}
+% TODO: ~1.5 pages. Answers RQ4. One plot: AUROC vs model size, one
+% line per method, one panel per family. Comment on whether the
+% RW-G-NLL gain GROWS, SHRINKS, or is FLAT with scale. Acknowledge 70B
+% is the largest tested -- generalisation to frontier models is future
+% work (Ch.~7).
+% Show generalization from 1B to 70B
+\section{Weight Pattern Analysis}
+% TODO: ~1.5 pages. Qualitative section. Answer ``what tokens does
+% RW-G-NLL up-weight?'' by showing (a) part-of-speech distribution of
+% top-k weighted tokens, (b) rank correlation between RW-G-NLL weights
+% and attention / SAR weights, (c) 2-3 illustrative example answers
+% with per-token w_t overlaid. This is where the reader BELIEVES the
+% mechanism, so invest one really clean figure here.
+% Analysis: what factors make tokens semantically relevant?
+
+\chapter{Discussion and Conclusions}
+\label{ch:discussion}
+% TODO (chapter scope): ~3-5 pages. This chapter INTERPRETS what
+% Ch.~\ref{ch:results} showed; it does NOT introduce new experiments.
+% Structure: interpretation -> RQ summary -> limitations -> future
+% work -> closing. Every claim here must be backed by a forward/back
+% reference to a result section.
+% Budget split: \S7.1=1.5p (3 subsections x 0.5p), \S7.2=1p,
+% \S7.3=1p, \S7.4=0.5p, \S7.5=0.25p.
+
+\section{Interpretation of Empirical Results}
+% TODO: ~1.5 pages total across the three subsections below. Turn
+% numbers into narrative. Each subsection takes ONE surprising or
+% load-bearing finding and explains WHY it happened, citing the
+% relevant result section.
+\subsection{The Dominance of Self-Referential Uncertainty}
+% Key finding: NLL Proportional (0.724 AUROC) is the most powerful signal, 
+% outperforming all other heuristics by identifying "pivotal" error tokens.
+
+\subsection{Positional Priors vs. Semantic Ablation}
+% Finding: Middle Peak (0.611 AUROC) outperforming pure SAR (0.596 AUROC) 
+% reveals that answer location is a surprisingly robust shortcut.
+
+\subsection{Scaling and Generalization}
+% Analysis: Results remain consistent as models scale from 1B to 70B parameters, 
+% validating the stability of RW-G-NLL.
+
+\section{Summary of Research Questions}
+% TODO: ~1 page. Four short paragraphs (one per RQ). Each is a three-line
+% answer: (1) restate RQ as a question, (2) answer YES/NO/PARTIAL with
+% the headline number, (3) pointer to the results section. This is where
+% RQ1-RQ4 get their definitive answer; ch.~1 posed them, ch.~7 answers.
+% RQ1: Establishing token importance heterogeneity.
+% RQ2: Confirming AUROC gains via relevance weighting (up to 45% improvement).
+% RQ3: Evaluating the synergy of Hybrid Semantic+Positional schemes.
+% RQ4: Generalisation across model families and scales (1B-70B).
+
+\section{Practical Implementation and Limitations}
+% TODO: ~1 page. Be honest -- reviewers look for this section.
+\subsection{The Efficiency Frontier: O(1) vs O(N)}
+% Highlighting that NLL Proportional provides SOTA-level UQ without 
+% the massive cost of sampling-based methods. 
+
+\subsection{Current Limitations and Threats to Validity}
+% TODO: enumerate explicitly. Suggested list:
+%   (L1) Requires logit access -> doesn't apply to API-only closed models.
+%   (L2) Ablation cost still scales with T -> long-form generation open.
+%   (L3) Similarity function is a modelling choice -> sensitivity not
+%        exhaustively ablated (forward-ref Appx.~A).
+%   (L4) LLM-as-judge correctness labels are noisy; document agreement
+%        rate with human labels on a sample.
+%   (L5) Evaluated only on English short-form QA; multilinguality open.
+% Dependence on internal logprob access and sensitivity to answer length.
+
+\section{Final Contributions and Future Work}
+% TODO: ~0.5 page. Contributions = verbatim from \S1.5, now CHECKED-OFF against
+% results (one line each: "C1 validated in \S3.4 (F1-F4)", etc.).
+% Future work: be concrete, 3-5 bullets. Examples:
+%   - RW-G-NLL for abstractive summarisation / code generation.
+%   - Combining RW-G-NLL with Semantic Entropy (cheap aleatoric + epistemic).
+%   - Learning the weighting function end-to-end via a small head.
+%   - Distilling ablation-free approximations of w_t.
+% Contribution: A validated methodology for efficient, token-level UQ.
+% Future Work: Adapting RW-G-NLL for abstractive summarization.
+
+\section{Concluding Remarks}
+% TODO: ~0.25 page. ONE paragraph. Restate the thesis in plain language,
+% link back to the motivation in \S1.1, and end on the broader claim
+% about cheap, reliable UQ as a prerequisite for safe LLM deployment.
+% Closing: Reliable uncertainty is the backbone of safe LLM deployment.
+
+\appendix
+\chapter{Additional Weighting Schemes}
+% TODO: full grid from your Phase 6 sweep. One table, one figure,
+% per-scheme AUROC across models. Text is minimal -- the main chapters
+% should cite specific rows by label.
+% Detailed results for all 10+ schemes tested
+\chapter{Extended Model Results}
+% TODO: per-family breakdown (Llama, Qwen, Mistral, ...). Same table
+% schema as \S6.4 but exhaustive. Also put prompt-leakage / cleaning
+% notes here (see \texttt{fix\_qwen3\_prompt\_leakage.py}).
+% Full results for all 9 model families
+\chapter{CoQA Dataset Results}
+% TODO: secondary-dataset sanity check. Same protocol as TriviaQA, just
+% the table. Use this to argue external validity beyond TriviaQA.
+\chapter{Implementation Details}
+\label{app:impl}
+% TODO: reproducibility pack. Repo structure, exact pip env
+% (\texttt{nllsar.yml}), hardware, wandb project/entity, seeds, and
+% the set of shell scripts needed to regenerate each chapter's figures:
+%   Ch.~3 -> \texttt{run\_greedy\_decoding.py}
+%   Ch.~6 -> \texttt{run\_multi\_model\_experiments.sh},
+%            \texttt{run\_se\_sar\_comparison.sh}
+% Code structure, hardware used, and hyperparameter logs
+
+\import{./}{01-introduction}
+\import{./}{02-example}
+% ...
+\import{./}{09-conclusion}
+
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Print the bibliography
+%% 
+%% Make sure to start the bibliography on a new odd page (odd is only relevant in twoside layout)
+\cleardoubleoddpage
+\printbibliography
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Begin with the appendix part (all further chapters will be appendices)
+\appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Include your appendix chapters
+%% 
+
+\import{./}{91-appendix}
+% ...
+
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoubleoddpage
+
+\end{document}
+\endinput
